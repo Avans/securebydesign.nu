@@ -1,0 +1,11 @@
+# Nuxt / Node
+node_modules
+.nuxt
+.output
+.data
+dist
+.env
+.vercel
+*.log
+.DS_Store
+.playwright-mcp

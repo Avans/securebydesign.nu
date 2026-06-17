@@ -1,0 +1,417 @@
+<!-- Secure by Design - interactieve praatplaat v2. Zelfstandig HTML-bestand. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure by Design · Praatplaat</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --paper:#f3ede1; --paper2:#ece4d4; --card:#fbf7ef; --ink:#211d18; --ink2:#5a5249; --line:#cdc2ad;
+  --w1:#bd7a1c; --w2:#b03a2c; --w3:#1f6f68; --w4:#56488a;
+  --accent:#b03a2c; --make:#bd7a1c;
+  --shadow:0 1px 0 rgba(33,29,24,.04), 0 8px 22px -16px rgba(33,29,24,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Hanken Grotesk',system-ui,sans-serif; font-size:15px; line-height:1.5;
+  background-image:linear-gradient(rgba(33,29,24,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(33,29,24,.025) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+body::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1340px; margin:0 auto; padding:0 24px}
+a{color:inherit}
+
+header.hero{padding:52px 0 22px}
+.kicker{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); font-weight:500}
+h1{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(38px,6vw,74px); line-height:.95; margin:.16em 0 .08em; letter-spacing:-.01em}
+h1 em{font-style:italic; color:var(--w3)}
+.lede{max-width:64ch; font-size:clamp(15px,1.6vw,18px); color:var(--ink2); margin:.4em 0 1.1em}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{font-family:'JetBrains Mono',monospace; font-size:11.5px; padding:6px 11px; border:1px solid var(--line); border-radius:999px; background:rgba(251,247,239,.6); color:var(--ink2)}
+.chip b{color:var(--ink); font-weight:500}
+
+.sec-h{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(22px,3vw,30px); letter-spacing:-.01em; margin:48px 0 4px; display:flex; align-items:baseline; gap:12px}
+.sec-h .no{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); font-weight:500}
+.sec-sub{color:var(--ink2); max-width:74ch; margin:0 0 18px}
+
+.principles{display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr)); gap:12px}
+.pr{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 15px; box-shadow:var(--shadow)}
+.pr h4{margin:0 0 4px; font-size:14.5px; font-weight:700; display:flex; gap:8px; align-items:center}
+.pr h4 span{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent)}
+.pr p{margin:0; font-size:13px; color:var(--ink2)}
+
+.controls{position:sticky; top:0; z-index:50; margin:30px 0 6px; padding:12px 0;
+  background:linear-gradient(var(--paper) 72%,rgba(243,237,225,0)); backdrop-filter:blur(2px);
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px}
+.toggle{display:inline-flex; align-items:center; gap:9px; cursor:pointer; user-select:none; font-size:13.5px; font-weight:600}
+.sw{width:42px; height:23px; border-radius:999px; background:#d8cdb7; border:1px solid var(--line); position:relative; transition:background .2s}
+.sw::after{content:""; position:absolute; top:1.5px; left:2px; width:18px; height:18px; border-radius:50%; background:var(--card); box-shadow:0 1px 2px rgba(0,0,0,.25); transition:transform .2s}
+.toggle.on .sw{background:var(--accent)}
+.toggle.on .sw::after{transform:translateX(18px)}
+.legend{display:flex; flex-wrap:wrap; gap:6px 14px; margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink2)}
+.legend span{display:inline-flex; align-items:center; gap:6px}
+.dot{width:11px; height:11px; border-radius:3px; display:inline-block}
+.lg-soc{width:12px;height:12px;border-radius:50%;background:var(--ink2);display:inline-block}
+.lg-int{width:12px;height:12px;background:var(--ink2);display:inline-block;transform:rotate(45deg)}
+.lg-mk{width:13px;height:13px;border:1.5px dashed var(--make);border-radius:3px;display:inline-block}
+
+.board{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; align-items:start; margin-top:6px}
+.col{--c:var(--w1); position:relative; opacity:0; transform:translateY(12px); animation:rise .5s forwards}
+.col[data-w="2"]{--c:var(--w2); animation-delay:.1s} .col[data-w="3"]{--c:var(--w3); animation-delay:.18s} .col[data-w="4"]{--c:var(--w4); animation-delay:.26s}
+.col[data-w="1"]{animation-delay:.04s}
+@keyframes rise{to{opacity:1; transform:none}}
+.col-h{position:relative; padding:12px 14px 13px 18px; border-radius:12px 12px 4px 4px; background:var(--c); color:#fdf8ee; overflow:hidden; box-shadow:var(--shadow)}
+.col-h::after{content:""; position:absolute; right:-18px; top:-30px; width:90px; height:90px; border-radius:50%; background:rgba(255,255,255,.08)}
+.col-h .wk{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; opacity:.85; text-transform:uppercase}
+.col-h h3{font-family:'Fraunces',serif; font-weight:600; font-size:21px; margin:3px 0 2px; line-height:1.05}
+.col-h .ph{font-size:11.5px; opacity:.9; font-family:'JetBrains Mono',monospace; letter-spacing:.03em}
+.stack{display:flex; flex-direction:column; gap:8px; margin-top:9px}
+
+.card{background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden; transition:transform .14s, box-shadow .14s, border-color .14s; border-left:3px solid var(--c)}
+.card:hover{transform:translateY(-2px); box-shadow:0 14px 28px -18px rgba(33,29,24,.55)}
+.card.soc{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 9%,var(--card)),var(--card))}
+.card.int{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 14%,var(--card)),var(--card)); border-left-width:5px}
+.card .hd{display:flex; gap:10px; align-items:flex-start; padding:10px 12px; cursor:pointer}
+.bk{font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; color:#fff; background:var(--c); padding:3px 6px; border-radius:5px; flex:none; margin-top:1px; min-width:32px; text-align:center}
+.card .ti{font-size:13.5px; font-weight:600; line-height:1.22}
+.bt{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--c); font-weight:500; display:inline-flex; align-items:center; gap:4px; margin-top:3px}
+.bt .ic{font-size:9px}
+.pills{display:flex; gap:3px; flex-wrap:wrap; margin-top:5px}
+.pill{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.02em; color:var(--ink2); border:1px solid var(--line); border-radius:999px; padding:1px 6px; background:rgba(255,255,255,.4); cursor:help}
+.pill::before{content:""; width:5px;height:5px;border-radius:50%; background:var(--c); display:inline-block; margin-right:4px; vertical-align:middle}
+body:not(.metro) .pills{display:none}
+.mk-mark{margin-left:auto; flex:none; font-size:13px; color:var(--make); opacity:.5}
+.chev{flex:none; margin-top:2px; transition:transform .2s; color:var(--ink2)}
+.card.open .chev{transform:rotate(90deg)}
+.card .body{display:none; padding:0 12px 12px 12px; border-top:1px dashed var(--line)}
+.card.open .body{display:block; animation:slide .2s ease}
+@keyframes slide{from{opacity:0; transform:translateY(-4px)}to{opacity:1}}
+.body dl{margin:9px 0 0; display:grid; grid-template-columns:auto 1fr; gap:4px 10px}
+.body dt{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--c); padding-top:2px}
+.body dd{margin:0; font-size:12.5px; color:var(--ink2)}
+.old{font-size:11px; color:#8a8070; margin-top:9px; font-style:italic; border-top:1px dotted var(--line); padding-top:7px}
+.mk-note{margin-top:9px; font-size:12px; background:rgba(189,122,28,.08); border:1px dashed var(--make); border-radius:8px; padding:7px 9px; color:#7a5410; display:none}
+.card.open .mk-note, body.mk .card.has-mk .mk-note{display:block}
+body.mk .card.has-mk{border-color:var(--make); box-shadow:0 0 0 1.5px color-mix(in srgb,var(--make) 35%,transparent), var(--shadow)}
+body.mk .card.has-mk .mk-mark{opacity:1}
+
+.metro-grid{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--card); box-shadow:var(--shadow)}
+table.cov{border-collapse:collapse; width:100%; min-width:620px; font-size:12.5px}
+table.cov th,table.cov td{padding:8px 10px; text-align:left; border-bottom:1px solid var(--line)}
+table.cov thead th{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink2); background:var(--paper2)}
+table.cov thead th:nth-child(2){color:var(--w1)} table.cov thead th:nth-child(3){color:var(--w2)}
+table.cov thead th:nth-child(4){color:var(--w3)} table.cov thead th:nth-child(5){color:var(--w4)}
+table.cov tbody tr:hover{background:rgba(33,29,24,.03)}
+.st-name{font-weight:600; color:var(--ink)}
+.st-code{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); margin-right:7px}
+.st-sub{font-size:11px; color:var(--ink2); display:block; margin-top:1px}
+.cov-cell{font-family:'JetBrains Mono',monospace; font-size:10.5px; white-space:nowrap}
+.cov-on{display:inline-block; padding:2px 6px; border-radius:5px; color:#fff; font-weight:500}
+.cov-w1{background:var(--w1)} .cov-w2{background:var(--w2)} .cov-w3{background:var(--w3)} .cov-w4{background:var(--w4)}
+.cov-off{color:#bdb29c}
+
+.src-split{display:grid; grid-template-columns:1fr; gap:18px}
+.src-band h3{font-family:'Fraunces',serif; font-size:18px; font-weight:600; margin:0 0 3px}
+.src-band .bd{font-size:12.5px; color:var(--ink2); margin:0 0 12px}
+.src-band.opt{border:1px dashed var(--line); border-radius:14px; padding:18px 18px 6px; background:rgba(176,58,44,.03)}
+.src-band.opt h3{color:var(--accent)}
+.src-band.opt .flag{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--accent); padding:2px 8px; border-radius:999px}
+.src-groups{display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:14px}
+.src-card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 15px; box-shadow:var(--shadow)}
+.src-card h4{margin:0 0 9px; font-size:12px; font-family:'JetBrains Mono',monospace; letter-spacing:.04em; text-transform:uppercase; color:var(--accent)}
+.src-card ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:7px}
+.src-card li{font-size:12.5px; line-height:1.3}
+.src-card a{font-weight:600; text-decoration:none; border-bottom:1.5px solid var(--w3)}
+.src-card a:hover{background:var(--w3); color:#fff}
+.opt .src-card a{border-bottom-color:var(--accent)} .opt .src-card a:hover{background:var(--accent)}
+.src-card .d{color:var(--ink2); font-size:11.5px}
+
+.make{background:linear-gradient(180deg,rgba(189,122,28,.08),rgba(189,122,28,.03)); border:1px dashed var(--make); border-radius:16px; padding:20px 22px}
+.make-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(235px,1fr)); gap:16px; margin-top:4px}
+.make-grid h4{margin:0 0 7px; font-size:12px; font-family:'JetBrains Mono',monospace; letter-spacing:.04em; text-transform:uppercase; color:#7a5410}
+.make-grid ul{margin:0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:5px}
+.make-grid li{font-size:12.5px; color:var(--ink2); padding-left:20px; position:relative}
+.make-grid li::before{content:"✎"; position:absolute; left:0; color:var(--make)}
+.make-grid li b{color:var(--ink); font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500}
+.ready{margin-top:14px; padding-top:12px; border-top:1px dashed var(--make); font-size:12.5px; color:#7a5410}
+.ready b{font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--make); display:block; margin-bottom:3px}
+
+footer{margin:50px 0 40px; padding-top:18px; border-top:1px solid var(--line); color:var(--ink2); font-size:12.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px}
+
+@media(max-width:1080px){ .board{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:560px){ .board{grid-template-columns:1fr} .legend{margin-left:0} .wrap{padding:0 16px} }
+@media(prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Secure by Design · NLQF6 · praatplaat</div>
+    <h1>Veiligheid als <em>ontwerpkwaliteit</em></h1>
+    <p class="lede">De eerste vier weken brengen tech én non-tech naar één gezamenlijk niveau. Security is hier geen eindcontrole of hackcursus, maar een ontwerphouding: breed over product, proces, mens en organisatie. De praktijk dient om kennis te laten beklijven vóór de kennistoets — diepe technische vaardigheid komt erna.</p>
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <h2 class="sec-h"><span class="no">01</span> Uitgangspunten</h2>
+  <div class="principles" id="principles"></div>
+
+  <div class="controls">
+    <div class="toggle on" id="t-metro"><span class="sw"></span> Metrostations tonen</div>
+    <div class="toggle" id="t-mk"><span class="sw"></span> Zelf te maken markeren</div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--w1)"></i>wk1</span>
+      <span><i class="dot" style="background:var(--w2)"></i>wk2</span>
+      <span><i class="dot" style="background:var(--w3)"></i>wk3</span>
+      <span><i class="dot" style="background:var(--w4)"></i>wk4</span>
+      <span><i class="lg-soc"></i>blok 8 sociaal/spel</span>
+      <span><i class="lg-int"></i>blok 9 integratie</span>
+      <span><i class="lg-mk"></i>op maat te maken</span>
+    </div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <h2 class="sec-h"><span class="no">02</span> Metrokaart — dekken we alle onderwerpen?</h2>
+  <p class="sec-sub">De negen kernonderwerpen zijn "metrostations". Elk blok doet één of meer stations aan; de tabel laat zien hoe elk onderwerp door de vier weken loopt. Zo zie je in één oogopslag dat alles geraakt wordt én waar het zwaartepunt ligt.</p>
+  <div class="metro-grid"><table class="cov" id="cov"></table></div>
+
+  <h2 class="sec-h"><span class="no">03</span> Bronnen</h2>
+  <p class="sec-sub">Zoveel mogelijk kant-en-klaar en gratis. Bewust gesplitst: de kernroute is breed en ontwerpgericht; technische lab-tools blijven daarbuiten als optionele verdieping, zodat de minor niet ICT-geframed raakt.</p>
+  <div class="src-split">
+    <div class="src-band">
+      <h3>Kernbronnen — gezamenlijke basis</h3>
+      <p class="bd">Concepten, frameworks en NL/EU-context die passen bij de brede ontwerpinsteek. Plus de serious games voor de spelblokken (blok 8).</p>
+      <div class="src-groups" id="src-core"></div>
+    </div>
+    <div class="src-band opt">
+      <h3><span class="flag">niet in de kernroute</span> &nbsp;Optioneel — technische verdieping</h3>
+      <p class="bd">Waardevol, maar te technisch voor de gezamenlijke basis. Aanbieden als bronnenbank, demo of verdiepingsspoor (bijv. LU2 / technisch profiel). Niet centraal verplicht; níét mee openen.</p>
+      <div class="src-groups" id="src-opt"></div>
+    </div>
+  </div>
+
+  <h2 class="sec-h"><span class="no">04</span> Wat maken we zélf?</h2>
+  <p class="sec-sub">De ontwerpinsteek leunt op canvases, maps en kaartsets in plaats van kant-en-klare tools — dus hier zit het meeste maakwerk. Zet "Zelf te maken markeren" aan om te zien bij welke blokken het hoort.</p>
+  <div class="make">
+    <div class="make-grid" id="make"></div>
+    <div class="ready" id="ready"></div>
+  </div>
+
+  <footer>
+    <span>Praatplaat bij het Secure-by-Design masteroverzicht · 4 weken × 9 blokken.</span>
+    <span>Klik een blok voor detail · schakelaars boven voor lagen.</span>
+  </footer>
+</div>
+
+<script>
+const chips=["NLQF6","4 weken","9 blokken/week","7 lessen + 2 verwerking","36 blokken","10 metrostations","tech + non-tech","kennistoets"];
+document.getElementById('chips').innerHTML=chips.map((c,i)=>`<span class="chip">${i===0?'<b>'+c+'</b>':c}</span>`).join('');
+
+const principles=[
+ ["Secure by Design","P1","Veiligheid is een ontwerpkwaliteit die vanaf het begin meegaat — geen eindcontrole. Dat is de rode draad door alle vier de weken."],
+ ["Breed, niet ICT-geframed","P2","Product, proces, mens en organisatie staan centraal. Niet met hacken openen; techniek is één invalshoek, geen voorwaarde."],
+ ["9 blokken per week","P3","Blok 1–7 zijn echte lessen, blok 8 is sociaal/spel, blok 9 is integratie & reflectie. Activerende werkvormen landen in 8 en 9."],
+ ["Doorlopende casus","P4","Het security-context canvas uit week 1 groeit week na week door tot het secure-by-design dossier in week 4. Eén casus verbindt alles."],
+ ["Tech + non-tech gelijk","P5","Scheidslijn is techniek-comfort, niet voorkennis. Security is voor allebei nieuw; de toets is voor iedereen gelijk."],
+ ["Praktijk = ankeren","P6","Spel, canvas en retrieval dienen het onthouden vóór de kennistoets — niet het zelfstandig kunnen. Dat komt na deze minor."]
+];
+document.getElementById('principles').innerHTML=principles.map(p=>
+ `<div class="pr"><h4><span>${p[1]}</span>${p[0]}</h4><p>${p[2]}</p></div>`).join('');
+
+const stations={
+ S1:["Basis & bewustwording / product security","CIA-BIV, cryptografie & grenzen, beroemde fouten (OV-chip, DigiNotar, Stuxnet)"],
+ S2:["Security mindset & cultuur","Social engineering, training, niet óf maar wanneer, security first"],
+ S3:["Hacker-mindset & dreigingen","Black/white/grey hat, dark web, motieven, aanvallersdenken"],
+ S4:["Governance & supply chain","AVG, NIS2, CRA, ISO, NIST, CIS Controls, supply chain"],
+ S5:["Threat modelling, monitoring & risico","STRIDE, attack trees, kill chain, SOC, logging, risicoanalyse"],
+ S6:["Security requirements & architectuur","Zero trust, defense in depth, rate limiting, key management, access control"],
+ S7:["SDLC / PDLC / CI-CD","Security in de software-/productlevenscyclus, CI/CD"],
+ S7a:["SDLC — technische diepgang","Upgrades, patches, supply-chain attacks, SBOM"],
+ S8:["Testing, pentest & incident response","Rapportage, post-mortem, communicatie, ITIL, incident response"],
+ SO:["Overige onderwerpen","Phishing, DDoS, MitM, ransomware-as-a-service, IAM, cloud, devices"]
+};
+
+const B=(b,t,thema,kern,onderw,st,act,old,mk)=>({b,t,thema,kern,onderw,st,act,old,mk});
+const weeks=[
+ {n:1,theme:"Mindset & cultuur",phase:"waarom & wie",s:[
+  B(1,"les","Intro Secure by Design: veiligheid als ontwerpkwaliteit","Security is geen eindcontrole maar een ontwerpkwaliteit die vanaf het begin meegaat.","CIA/BIV, product security, security first; OV-chipkaart, DigiNotar, Stuxnet als falende principes.",["S1","S2"],"Korte kickoff; klassikaal 'wat is veilig ontworpen'; mini-incidenten gebruiken om BIV/CIA te herkennen; gezamenlijke begrippenkaart starten.","Oud: S1.1 (opener + primer + live demo). Demo verschuift; niet met hacken openen.",true),
+  B(2,"les","Wat kan er misgaan? Producten, diensten, processen en systemen","Schade, impact en risico's verkennen zonder direct in techniek te schieten.","Sms-spoofing, IMEI-cloning, stingray, USB, energiecentrales, publieke infra, robots, supply chain.",["S1","SO"],"Groepsbrainstorm per domein; voorbeelden sorteren op product/dienst/proces/systeem; bespreking van schade en impact.","Oud: deels S1.1 en S1.4.",true),
+  B(3,"les","Security-principes: least privilege, defense in depth, secure by default","Basisprincipes als ontwerpregels voor veiligere keuzes.","Cryptografie & grenzen, vertrouwelijkheid, integriteit, authenticatie, onweerlegbaarheid, defense in depth, access control.",["S1","S6"],"Principes uitleggen via herkenbare ontwerpkeuzes; koppelen aan eerdere risico's; kort principekaartje maken.","Oud: deels S1.4. Least privilege / secure-by-default ontbraken expliciet — nu toegevoegd.",true),
+  B(4,"les","Menselijk gedrag en securitycultuur","Security hangt samen met gedrag, routines, verantwoordelijkheid en cultuur.","Social engineering, training/informatie, niet alles is technisch oplosbaar, actie bij vermoed incident.",["S2","SO"],"Phishing/social-engineering voorbeelden bespreken; duo-opdracht 'waarom klikken mensen?'; ontwerp van één gedragsmaatregel.","Oud: S1.2 + S1.3.",false),
+  B(5,"les","Stakeholders, belangen en verantwoordelijkheden","In kaart brengen wie belang heeft bij security en wie invloed heeft op ontwerpkeuzes.","Bedreigers (staat, hacker, concurrent); belangen van gebruiker, organisatie, leverancier, toezichthouder, beheerder.",["S2","S3","S4"],"Stakeholdermap maken; rollen en belangen bespreken; per stakeholder één securityverwachting formuleren.","Oud: S1.4.",true),
+  B(6,"les","Assets en misbruikscenario's","Bepalen wat beschermd moet worden en hoe een ontwerp misbruikt kan worden.","Data, processen, systemen, mensen, apparaten, identity, authentication, access management, datamisbruik.",["S1","S3","S5","SO"],"Assets inventariseren; assetwaarde bepalen; eerste abuse cases schrijven vanuit gebruiker, aanvaller en beheerder.","Oud: S1.4, deels S1.5 (maar breder en minder technisch dan Juice Shop).",true),
+  B(7,"les","Weekopbrengst: security-context en eerste abuse cases","De week sluit inhoudelijk af met context, assets, stakeholders en eerste misbruikscenario's.","Security-context, assets, stakeholders, bedreigers, kwetsbaarheden, mogelijke schade, eerste abuse cases.",["S1","S2","S3","S5"],"Teams presenteren hun context in 3 minuten; peer-vragen; docent maakt de gezamenlijke rode draad zichtbaar.","Oud: S1.6 (consolidatie).",false),
+  B(8,"soc","Sociaal blok: security bingo / kennismaking via risico's","Elkaar leren kennen via herkenbare security-situaties en dilemma's.","Phishing, wachtwoorden, telefoonverlies, publieke wifi, USB, MFA, social engineering, persoonlijke ervaringen.",["S2","SO"],"Security bingo; dilemma-kaarten; ervaringen uitwisselen en koppelen aan securitycultuur.","Nieuw spelblok. Inhoudelijke input uit S1.3.",true),
+  B(9,"int","Integratieblok: security context canvas","De inhoud van week 1 komt samen in één gezamenlijke casus.","CIA/BIV, assets, stakeholders, bedreigers, eerste dreigingen, eerste ontwerpprincipes, eerste abuse cases.",["S1","S2","S3","S5"],"Security context canvas invullen; korte gallery walk; canvas bewaren als startpunt voor week 2.","Nieuw kernartefact; deels S1.4 + S1.6.",true)
+ ]},
+ {n:2,theme:"De boze buitenwereld",phase:"dreigingen & aanvallers",s:[
+  B(1,"les","Aanvallersdenken: assets, motieven, toegang en impact","Redeneren vanuit motieven, toegangspunten, kwetsbaarheden en schade.","Black/white/grey hat, dark web, gestolen data, motieven, toegang, impact, bedreigers.",["S3","SO"],"Attackerspersona maken; motief-toegang-impact invullen; klassikale bespreking van ethische grenzen.","Oud: S2.1 (hacker-mindset).",true),
+  B(2,"les","Dreigingen in digitale én organisatorische context","Dreigingen breed bekijken: digitaal, fysiek, menselijk, procesmatig en organisatorisch.","Phishing, DDoS, MitM, ransomware-as-a-service, social engineering, supply-chain attacks, cloud, devices.",["S1","S3","SO"],"Dreigingskaart sorteren; dreigingen koppelen aan casus-assets; korte threat-landscape mini-jigsaw.","Oud: S2.2 (threat landscape).",true),
+  B(3,"les","Incidentanalyse: waar faalde het ontwerp?","Een incident analyseren als gevolg van keuzes in ontwerp, proces, gedrag, techniek of governance.","OV-chipkaart, DigiNotar, certificate authority, Stuxnet, zero-day, falende beveiligingsprincipes.",["S1","S3","S5","S8"],"Incidentcasus in groepen; oorzaak-gevolg-keten maken; aangeven welk securityprincipe faalde.","Nieuw in wk2; verwant aan S3.5 (post-mortem).",true),
+  B(4,"les","OWASP / MITRE als voorbeelden van dreigingsdenken","Kennismaken met frameworks die dreigingen helpen herkennen en ordenen.","CVE, OWASP, MITRE, cyber kill chain, CVSS, kwetsbaarheden duiden en classificeren.",["S3","S4","S5"],"Korte frameworktour; voorbeeldkwetsbaarheden classificeren; MITRE/OWASP/CVE vergelijken als ordeningstaal.","Oud: S2.1 + S2.2.",false),
+  B(5,"les","Risico's inschatten: kans, impact, prioriteit","Risico's wegen en prioriteren — niet elke dreiging is even belangrijk.","Information at risk → threats → mitigations; kwetsbaarheid, dreiging, risico, maatregel, CVSS.",["S5","S6"],"Risicomatrix invullen; top 5 risico's kiezen; kans/impact onderbouwen.","Oud: S2.5 (risicoanalyse).",true),
+  B(6,"les","Eerste ontwerpmaatregelen: voorkomen, beperken, detecteren, herstellen","Risico's koppelen aan eerste maatregelen en ontwerpkeuzes.","Mitigations, CIS Controls, access control, logging, rate limiting, defense in depth, cryptografie, key management.",["S5","S6","S4"],"Per toprisico maatregelen bedenken; indelen in voorkomen/beperken/detecteren/herstellen; eerste ontwerpbesluiten noteren.","Nieuw/uitgebreid t.o.v. S2.5.",false),
+  B(7,"les","Intro monitoring en detectie","Veilig ontwerpen betekent ook dat afwijkingen zichtbaar en bespreekbaar worden.","Security Operations Centre, logging/monitoring, logging van security-relevante acties, detectie als ontwerpkeuze.",["S5","S8"],"Bespreken wat je in logs wilt zien; detectievragen formuleren; monitoring als ontwerpkeuze koppelen aan risico's.","Oud: S2.6 (monitoring).",false),
+  B(8,"soc","Sociaal/spelblok: dreigingenkaartspel of attack-tree challenge","Teams oefenen met aanvallersdenken en dreigingsherkenning.","Attack trees, persona non grata, cyber kill chain; dreigingen koppelen aan asset, motief, toegang, impact.",["S3","S5"],"Attack-tree challenge in teams; punten voor creativiteit én plausibiliteit; korte debrief op ontwerpimplicaties.","Oud: S2.1 (attack tree) + S2.3 (STRIDE-spel). Eventueel Cornucopia/EoP als kaartspel.",true),
+  B(9,"int","Integratieblok: risicoprofiel + eerste ontwerpmaatregelen","De week eindigt met een prioriteitenlijst van risico's en eerste maatregelen voor de casus.","Topdreigingen, risicoprioritering, eerste CIS Controls, mitigaties, ontwerpmaatregelen, detectiepunten.",["S3","S4","S5","S6"],"Risicoprofiel opleveren; maatregelen reviewen; link leggen met governancevragen voor week 3.","Oud: S2.4 + S2.5 + S2.6.",true)
+ ]},
+ {n:3,theme:"Governance & organisatie",phase:"+ incident response",s:[
+  B(1,"les","Governance-light: rollen, verantwoordelijkheden en eigenaarschap","Security vraagt om duidelijke rollen, besluitvorming, eigenaarschap en afspraken.","Security governance, verantwoordelijkheden, eigenaarschap, niet óf maar wanneer, actie bij vermoed incident.",["S4","S2"],"RACI-light maken; eigenaarschap van risico's bespreken; escalatiepad schetsen.","Oud: S3.1 (governance).",true),
+  B(2,"les","Compliance versus security","Het verschil tussen voldoen aan regels en daadwerkelijk veilig ontwerpen.","AVG/GDPR, NIS2, CRA, ISO, NIST, HIPAA, SOC 2; regelconform vs. werkelijk veilig.",["S4"],"Casusvragen: wanneer ben je compliant maar nog niet veilig? Regels vertalen naar ontwerpvragen.","Oud: S3.2 (wetgeving & compliance).",false),
+  B(3,"les","ISO 27001 op hoofdlijnen","ISO 27001 als managementsysteem voor informatiebeveiliging, risico's en verbetering.","ISO, NIST, beleid, risicoanalyse, controls, continu verbeteren, relatie met bredere frameworks.",["S4","S5"],"PDCA-cyclus koppelen aan security; controls als beheersmaatregelen; mini-controlkaart maken.","Oud: S3.1 (governance).",true),
+  B(4,"les","NIS2, AVG en CRA op hoofdlijnen","Wet- en regelgeving als context voor ontwerpbeslissingen.","NIS2, AVG/GDPR, CRA, product security, privacy, zorgplicht, ketenverantwoordelijkheid.",["S4","S1"],"Wetgevingsposter per groep; kernverplichtingen vertalen naar gevolgen voor ontwerp of organisatie.","Oud: S3.2 (wetgeving & compliance).",true),
+  B(5,"les","Supply chain security","Afhankelijkheden van leveranciers, software, data, platformen en ketenpartners onderzoeken.","Supply chain (attacks), Software Bill of Materials, leveranciers, cloud, data, software, platforms.",["S4","S7a","SO"],"Dependency map maken; blind-trust-punten markeren; SBOM als concept bespreken.","Oud: S3.3 (supply chain).",true),
+  B(6,"les","Organisatorische maatregelen: awareness, procedures, autorisaties","Securitymaatregelen zijn ook organisatorisch en gedragsmatig.","Training, awareness, procedures, identity, authentication, access management, verzekeringen.",["S2","S4","SO"],"Maatregelenmenu maken; technische vs. organisatorische maatregelen vergelijken; awareness-interventie ontwerpen.","Oud: deels S3.1 + S1.3.",false),
+  B(7,"les","Incident response, crisiscommunicatie en vertrouwen","Ontwerpen voor het moment waarop het misgaat.","Incident response, rapportage, reparatie/post-mortem, externe communicatie, ITIL, handelen bij incidenten.",["S8","S2","S4"],"Incident lifecycle bespreken; communicatiekaart maken; post-mortemvragen voorbereiden.","Oud: S3.4 + S3.5.",true),
+  B(8,"soc","Sociaal/spelblok: Backdoors & Breaches","Incident response, rollen, detectie, communicatie en besluitvorming onder druk ervaren.","Incident response, SOC-denken, logging, monitoring, rapportage, externe communicatie, post-mortem, teamrollen.",["S8","S5","S4","S2"],"Backdoors & Breaches spelen; rollen verdelen; observatoren letten op communicatie, besluitvorming en escalatie.","Oud: S3.4. Rechtstreekse match — kant-en-klaar spel.",false),
+  B(9,"int","Integratieblok: governancekaart + responsafspraken","De week eindigt met rollen, verantwoordelijkheden, compliancepunten en responsafspraken.","Governancekaart, ketenafhankelijkheden, wetgeving, incidentprocedure, communicatie- en herstelafspraken.",["S4","S8","S2"],"Governancekaart opleveren; lessons learned uit het spel verwerken; responsafspraken koppelen aan de casus.","Oud: S3.5 + S3.6.",true)
+ ]},
+ {n:4,theme:"Ontwerp & testing",phase:"requirements → testen",s:[
+  B(1,"les","Security requirements formuleren","Risico's vertalen naar concrete, toetsbare en relevante security-eisen.","Security requirements, information at risk → threats → mitigations, CIS Controls als input.",["S6","S5","S4"],"Risico's omzetten naar requirements; eisen SMART/toetsbaar maken; eerste acceptatiecriteria formuleren.","Oud: S4.1 (van dreiging naar eis).",true),
+  B(2,"les","Maatregelen kiezen: techniek, proces, gedrag en organisatie","Maatregelen afwegen vanuit effectiviteit, haalbaarheid en context.","CIS Controls toepassen, implementation groups, roadmap, auditbare vragen, technisch + organisatorisch.",["S6","S4","S2"],"Maatregelen prioriteren; trade-offs bespreken; controls koppelen aan risico's en organisatiecontext.","Nieuw; CIS-controls als expliciet maatregelenkader (ontbrak in oude HTML).",false),
+  B(3,"les","Architectuur en ontwerpprincipes, breed uitgelegd","Architectuur breed: lagen, grenzen, toegang, verantwoordelijkheden en samenhang.","Zero trust, defense in depth, silo's, rate limiting, access control, key management, cryptografie, post-quantum.",["S6","S1","SO"],"Bewust slecht ontwerp verbeteren; ontwerpprincipes toepassen; architectuurschets maken.","Oud: S4.2 (secure architecture).",true),
+  B(4,"les","Threat modelling als gezamenlijke ontwerptaal","Threat modelling verbindt techniek, proces, organisatie, gedrag en risico in één gedeelde taal.","Threat modelling algemeen, STRIDE, PASTA, LINDDUN, persona non grata, attack trees.",["S5","S6"],"Threat model op de casus maken of aanscherpen; STRIDE-light gebruiken; bedreigingen koppelen aan ontwerpkeuzes.","Oud: S2.3 + S2.4. Whiteboard/canvas i.p.v. technische tool.",true),
+  B(5,"les","Van requirement naar ontwerpkeuze","Traceerbaarheid aanleggen van risico naar ontwerpbeslissing.","Dreiging → risico → requirement → maatregel → ontwerpbeslissing; logging, access control, cryptografie, monitoring.",["S6","S5"],"Traceability matrix invullen; ontwerpbeslissingen onderbouwen; gaten in de keten markeren.","Oud: deels S4.1 + S4.2.",true),
+  B(6,"les","Security in de lifecycle: ontwerp, bouw, gebruik, beheer","Security als doorlopend proces gedurende de hele levenscyclus.","SDLC, PDLC, CI/CD, upgrade/downgrade/patches, supply-chain attacks, SBOM, project opzetten.",["S7","S7a","S4"],"Lifecycle-map maken; security-activiteiten plaatsen in ontwerp/bouw/test/beheer; patching en SBOM bespreken.","Oud: S4.3 (SDLC kort + CI/CD).",true),
+  B(7,"les","Testen en valideren: hoe weet je dat het veiliger is?","Hoe ontwerpkeuzes worden getoetst en gevalideerd.","Testing, pentesting, simulaties, rapportage, reparatie/post-mortem, CVE/CVSS om bevindingen te duiden.",["S8","S5","S6"],"Testsoorten matchen aan requirements; acceptatiecriteria controleren; validatieplan-light maken.","Oud: S4.4 + S4.5 (concepten; hands-on labs optioneel).",true),
+  B(8,"soc","Sociaal blok: peer review carrousel","Teams verdedigen ontwerpkeuzes en geven feedback vanuit verschillende rollen.","Rollen: aanvaller, gebruiker, compliance, beheer, communicatie, architectuur; feedback op onderbouwing.",["S6","S5","S4","S8"],"Peer review carrousel; elk team beoordeeld vanuit meerdere rollen; feedback omzetten naar verbeteracties.","Nieuw; vervangt/verbreedt S4.6.",true),
+  B(9,"int","Integratieblok: secure-by-design dossier + toetsvoorbereiding","Alles komt samen in een mini-dossier; voorbereiden op casusgericht redeneren.","Context, assets, dreigingen, risico's, governance, requirements, architectuur, lifecycle, monitoring, test, respons.",["S1","S2","S3","S4","S5","S6","S7","S8","SO"],"Mini secure-by-design dossier afronden; conceptmap maken; oefencasusvragen bespreken.","Oud: S4.6 (synthese & toetsvoorbereiding).",true)
+ ]}
+];
+
+const esc=s=>(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const typeMeta={les:["les",""],soc:["sociaal · spel","●"],int:["integratie","◆"]};
+const board=document.getElementById('board');
+weeks.forEach(w=>{
+  const col=document.createElement('div'); col.className='col'; col.dataset.w=w.n;
+  let html=`<div class="col-h"><div class="wk">Week ${w.n}</div><h3>${w.theme}</h3><div class="ph">${w.phase}</div></div><div class="stack">`;
+  w.s.forEach(s=>{
+    const meta=typeMeta[s.t];
+    const cls=s.t==='soc'?'soc':(s.t==='int'?'int':'');
+    const pills=s.st.map(c=>`<span class="pill" title="${esc(stations[c][0])}">${c}</span>`).join('');
+    const dt=[`<dt>Kern</dt><dd>${esc(s.kern)}</dd>`,
+              `<dt>Onderwerpen</dt><dd>${esc(s.onderw)}</dd>`,
+              `<dt>Doen</dt><dd>${esc(s.act)}</dd>`,
+              `<dt>Stations</dt><dd>${s.st.map(c=>`<b style="color:var(--c)">${c}</b> ${esc(stations[c][0])}`).join('<br>')}</dd>`].join('');
+    html+=`<div class="card ${cls} ${s.mk?'has-mk':''}">
+      <div class="hd" role="button" tabindex="0" aria-expanded="false">
+        <span class="bk">Blok ${s.b}</span>
+        <div style="flex:1">
+          <div class="ti">${esc(s.thema)}</div>
+          <div class="bt">${meta[1]?`<span class="ic">${meta[1]}</span>`:''}${meta[0]}</div>
+          <div class="pills">${pills}</div>
+        </div>
+        ${s.mk?'<span class="mk-mark" title="op maat te maken">✎</span>':''}
+        <span class="chev">▸</span>
+      </div>
+      <div class="body">
+        <dl>${dt}</dl>
+        ${s.mk?`<div class="mk-note"><b>✎ zelf te maken</b>Bespreek bij dit blok welk canvas / kaartset / sjabloon je vooraf bouwt.</div>`:''}
+        <div class="old">${esc(s.old)}</div>
+      </div>
+    </div>`;
+  });
+  html+=`</div>`;
+  col.innerHTML=html;
+  board.appendChild(col);
+});
+
+board.addEventListener('click',e=>{
+  const hd=e.target.closest('.hd'); if(!hd)return; if(e.target.closest('a'))return;
+  const card=hd.closest('.card'); const open=card.classList.toggle('open');
+  hd.setAttribute('aria-expanded',open);
+});
+board.addEventListener('keydown',e=>{
+  if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('hd')){e.preventDefault(); e.target.click();}
+});
+
+const tmg=document.getElementById('t-metro'), tk=document.getElementById('t-mk');
+const apply=()=>{document.body.classList.toggle('metro',tmg.classList.contains('on'));
+                 document.body.classList.toggle('mk',tk.classList.contains('on'));};
+tmg.onclick=()=>{tmg.classList.toggle('on');apply();};
+tk.onclick=()=>{tk.classList.toggle('on');apply();};
+apply();
+
+const order=["S1","S2","S3","S4","S5","S6","S7","S7a","S8","SO"];
+const cov={}; order.forEach(c=>cov[c]=[[],[],[],[]]);
+weeks.forEach((w,wi)=>w.s.forEach(s=>s.st.forEach(c=>{ if(cov[c]) cov[c][wi].push(s.b); })));
+let ch=`<thead><tr><th>Metrostation</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th></tr></thead><tbody>`;
+order.forEach(c=>{
+  ch+=`<tr><td><span class="st-code">${c}</span><span class="st-name">${esc(stations[c][0])}</span><span class="st-sub">${esc(stations[c][1])}</span></td>`;
+  cov[c].forEach((arr,wi)=>{
+    if(arr.length) ch+=`<td class="cov-cell"><span class="cov-on cov-w${wi+1}">blok ${arr.join(', ')}</span></td>`;
+    else ch+=`<td class="cov-cell cov-off">—</td>`;
+  });
+  ch+=`</tr>`;
+});
+ch+=`</tbody>`;
+document.getElementById('cov').innerHTML=ch;
+
+const core=[
+ ["Concepten & frameworks",[
+   ["OWASP Top 10","https://owasp.org/Top10/","meest voorkomende web-risico's als taal"],
+   ["OWASP ASVS","https://owasp.org/www-project-application-security-verification-standard/","requirements-denken"],
+   ["OWASP SAMM","https://owaspsamm.org","governance / volwassenheid"],
+   ["CIS Controls","https://www.cisecurity.org/controls","concreet maatregelenkader"],
+   ["MITRE ATT&CK","https://attack.mitre.org","aanvalstechnieken & detectie"],
+   ["Cyber Kill Chain","https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html","aanvalsfasen"],
+   ["Threat modelling (OWASP)","https://owasp.org/www-community/Threat_Modeling","STRIDE & methodes"],
+   ["CVE / CVSS (NVD)","https://nvd.nist.gov","kwetsbaarheden duiden & scoren"],
+   ["NIST CSF","https://www.nist.gov/cyberframework","governance-kapstok"],
+   ["NIST SSDF","https://csrc.nist.gov/projects/ssdf","secure development lifecycle"],
+   ["ISO 27001 (overzicht)","https://www.iso.org/standard/27001","managementsysteem infosec"]]],
+ ["NL / EU & recht",[
+   ["NCSC-NL","https://www.ncsc.nl","incl. voormalig DTC: 5 basisprincipes, CyberVeilig Check"],
+   ["ENISA Threat Landscape","https://www.enisa.europa.eu","EU-dreigingsoverzicht"],
+   ["Autoriteit Persoonsgegevens","https://www.autoriteitpersoonsgegevens.nl","AVG & datalek-meldplicht (72u)"],
+   ["NIS2 (EU)","https://digital-strategy.ec.europa.eu/en/policies/nis2-directive","zorgplicht & ketenverantwoordelijkheid"],
+   ["Cyber Resilience Act","https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act","product security in de EU"]]],
+ ["Serious games (blok 8)",[
+   ["Backdoors & Breaches","https://play.backdoorsandbreaches.com","incident response — gratis online"],
+   ["Elevation of Privilege","https://github.com/adamshostack/eop","STRIDE-kaartspel (gratis PDF)"],
+   ["OWASP Cornucopia","https://cornucopia.owasp.org","threat-modelling kaartspel"]]],
+ ["Awareness",[
+   ["Google Phishing Quiz","https://phishingquiz.withgoogle.com","awareness-oefening"],
+   ["Veiliginternetten","https://veiliginternetten.nl","laagdrempelige NL-bron"]]]
+];
+const opt=[
+ ["Lab-omgevingen (verdieping)",[
+   ["OWASP Juice Shop","https://owasp.org/www-project-juice-shop/","demo of LU2 / technisch profiel"],
+   ["TryHackMe","https://tryhackme.com","optioneel verdiepingsspoor"],
+   ["PortSwigger Academy","https://portswigger.net/web-security","bronnenbank webhacking"],
+   ["PicoCTF","https://picoctf.org","keuzeactiviteit / CTF"]]],
+ ["Tools & primer (optioneel)",[
+   ["OWASP Threat Dragon","https://www.threatdragon.org","tool-demo; basis liever op canvas"],
+   ["Cloudflare Learning Center","https://www.cloudflare.com/learning/","netwerk-primer als prework"],
+   ["MDN — How the web works","https://developer.mozilla.org/en-US/docs/Learn","prework browser/HTTP"]]]
+];
+const renderSrc=(arr)=>arr.map(g=>
+ `<div class="src-card"><h4>${g[0]}</h4><ul>${g[1].map(x=>
+   `<li><a href="${x[1]}" target="_blank" rel="noopener">${esc(x[0])} ↗</a><br><span class="d">${esc(x[2])}</span></li>`).join('')}</ul></div>`).join('');
+document.getElementById('src-core').innerHTML=renderSrc(core);
+document.getElementById('src-opt').innerHTML=renderSrc(opt);
+
+const make=[
+ ["Canvases & maps — de ruggengraat",[
+   ["Security context canvas","W1·9 (kernartefact, loopt door)"],["Stakeholdermap","W1·5"],["Asset- & abuse-case canvas","W1·6"],
+   ["Attackerspersona","W2·1"],["Risicomatrix","W2·5"],["Risicoprofiel","W2·9"],
+   ["RACI-light","W3·1"],["Dependency map","W3·5"],["Governancekaart","W3·9"],
+   ["Traceability matrix","W4·5"],["Lifecycle-map","W4·6"],["Security-by-design dossier","W4·9 (eindartefact)"]]],
+ ["Kaartsets & spelmateriaal",[
+   ["Principekaartjes","W1·3"],["Security bingo + dilemmakaarten","W1·8"],
+   ["Dreigingskaarten-sorteerset","W2·2"],["Attack-tree challenge","W2·8"],
+   ["STRIDE-light canvas","W4·4"],["Testsoorten match-up","W4·7"],["Rollenkaarten peer-review","W4·8"]]],
+ ["Casussen kiezen / samenstellen",[
+   ["Doorlopende venture / fictief bedrijf","loopt door alle weken"],["Incidentcasus","W2·3"],
+   ["Breach-writeup","W3·7"],["Wetgevingsposter-casus","W3·4"],["'Slecht ontworpen' architectuur (A4)","W4·3"]]],
+ ["Retrieval, slides & toetsing",[
+   ["Weekquiz (Kahoot/Menti)","bij blok 7 of 9"],["Begrippenkaart","W1·1"],
+   ["Kickoff-slides","W1·1"],["Framework-tour slides","W2·4"],["Monitoring-intro","W2·7"],
+   ["Oefencasusvragen + kennistoets","W4·9"]]]
+];
+document.getElementById('make').innerHTML=make.map(g=>
+ `<div><h4>${g[0]}</h4><ul>${g[1].map(x=>`<li><b>${esc(x[1])}</b> · ${esc(x[0])}</li>`).join('')}</ul></div>`).join('');
+document.getElementById('ready').innerHTML=`<b>Kant-en-klaar — niet zelf maken</b>Backdoors & Breaches (W3·8), Elevation of Privilege / Cornucopia (spelblokken), de framework-referenties (OWASP, MITRE, CIS, CVE/CVSS) en de Google Phishing Quiz. Hierop bouw je voort; je hoeft ze niet te ontwikkelen.`;
+</script>
