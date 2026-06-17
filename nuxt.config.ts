@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'nl' },
       title: 'Secure by Design · Minor',
+      link: [
+        // Static spinning-shield SVG (animates in Firefox/Safari); the
+        // animated-favicon client plugin drives the spin in all browsers.
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+      ],
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

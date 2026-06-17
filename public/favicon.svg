@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f6f68"/>
+      <stop offset="1" stop-color="#155049"/>
+    </linearGradient>
+  </defs>
+  <!-- The shield spins around its vertical axis (Y-flip). Renders animated in
+       Firefox/Safari; the canvas plugin animates it everywhere else. -->
+  <g>
+    <animateTransform attributeName="transform" type="scale"
+      values="1 1; 0.04 1; 1 1" keyTimes="0; 0.5; 1"
+      additive="sum" dur="2.6s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0; 30.7 0; 0 0" keyTimes="0; 0.5; 1"
+      additive="sum" dur="2.6s" repeatCount="indefinite"/>
+    <path d="M32 3 L57 13 L57 32 C57 49 45 59 32 63 C19 59 7 49 7 32 L7 13 Z"
+      fill="url(#shield)" stroke="#bd7a1c" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M22 32 L29 40 L43 23" fill="none" stroke="#f3ede1"
+      stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
