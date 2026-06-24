@@ -4,7 +4,7 @@
       <span>🇳🇱 <b>This minor is taught in Dutch only.</b> This English version explains the programme for international readers and partners — the course itself runs entirely in Dutch.</span>
     </div>
 
-    <header class="site-header">
+    <header class="site-header" :class="{ 'menu-open': menuOpen }">
       <div class="wrap bar">
         <NuxtLink :to="localePath('/')" class="brand" :aria-label="locale === 'en' ? 'Avans · Secure by Design — home' : 'Avans · Secure by Design — home'">
           <img src="/avans_xl_logo.svg" alt="Avans Hogeschool" />
@@ -15,15 +15,25 @@
           </span>
         </NuxtLink>
 
-        <nav class="site-nav">
-          <NuxtLink v-for="item in nav" :key="item.base" :to="localePath(item.base)">
+        <button
+          class="nav-toggle"
+          type="button"
+          :aria-expanded="menuOpen"
+          aria-controls="site-nav"
+          :aria-label="menuOpen ? (locale === 'en' ? 'Close menu' : 'Menu sluiten') : (locale === 'en' ? 'Open menu' : 'Menu openen')"
+          @click="menuOpen = !menuOpen"
+        >
+          <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav">
+          <NuxtLink v-for="item in nav" :key="item.base" :to="localePath(item.base)" @click="menuOpen = false">
             {{ item.label[locale] }}
           </NuxtLink>
+          <NuxtLink :to="switchPath" class="lang" :aria-label="`Switch to ${otherLocale.toUpperCase()}`" @click="menuOpen = false">
+            {{ otherLocale.toUpperCase() }}
+          </NuxtLink>
         </nav>
-
-        <NuxtLink :to="switchPath" class="lang" :aria-label="`Switch to ${otherLocale.toUpperCase()}`">
-          {{ otherLocale.toUpperCase() }}
-        </NuxtLink>
       </div>
     </header>
 
@@ -45,6 +55,11 @@
 
 <script setup>
 const { locale, localePath, otherLocale, switchPath } = useI18nNav()
+
+const menuOpen = ref(false)
+const route = useRoute()
+// Close the mobile drawer whenever the route changes.
+watch(() => route.fullPath, () => { menuOpen.value = false })
 
 const nav = [
   { base: '/', label: { nl: 'Home', en: 'Home' } },
