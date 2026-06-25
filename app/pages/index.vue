@@ -39,11 +39,11 @@
       </p>
     </div>
 
-    <div class="video reveal" role="img" aria-label="Videoplaceholder — introductievideo volgt">
-      <div class="play" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
-      </div>
-      <div class="vtxt">Introductievideo — volgt</div>
+    <div class="video reveal">
+      <video controls preload="metadata" playsinline aria-label="Introductievideo Secure by Design">
+        <source src="/intro.mp4" type="video/mp4" />
+        Je browser ondersteunt deze video niet.
+      </video>
     </div>
 
     <h2 class="sec-h"><span class="no">02</span> Zo lees je deze minor — drie flows</h2>
