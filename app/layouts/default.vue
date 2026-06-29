@@ -50,6 +50,8 @@
         </span>
       </div>
     </footer>
+
+    <FeedbackButton />
   </div>
 </template>
 

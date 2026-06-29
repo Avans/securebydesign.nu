@@ -3,6 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-06-17',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      // Supabase anon key is safe to expose client-side; access is governed
+      // by Row Level Security. Set both in .env (see .env.example).
+      supabaseUrl: process.env.SUPABASE_URL || '',
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY || ''
+    }
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'nl' },
