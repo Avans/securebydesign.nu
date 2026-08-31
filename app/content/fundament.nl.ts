@@ -366,6 +366,7 @@ export default {
           onderw: 'Attack trees, persona non grata, cyber kill chain; dreigingen koppelen aan asset, motief, toegang, impact.',
           st: ['S3', 'S5'],
           act: 'Attack-tree challenge in teams; punten voor creativiteit én plausibiliteit; korte debrief op ontwerpimplicaties.',
+          mat: [['Attack-tree challenge', '/attack-tree']],
           old: 'Oud: S2.1 (attack tree) + S2.3 (STRIDE-spel). Eventueel Cornucopia/EoP als kaartspel.',
           mk: true
         },
@@ -461,6 +462,7 @@ export default {
           onderw: 'Incident response, rapportage, reparatie/post-mortem, externe communicatie, ITIL, handelen bij incidenten.',
           st: ['S8', 'S2', 'S4'],
           act: 'Incident lifecycle bespreken; communicatiekaart maken; post-mortemvragen voorbereiden.',
+          mat: [['Breach-writeup', '/breach-writeup']],
           old: 'Oud: S3.4 + S3.5.',
           mk: true
         },
@@ -534,6 +536,7 @@ export default {
           onderw: 'Threat modelling algemeen, STRIDE, PASTA, LINDDUN, persona non grata, attack trees.',
           st: ['S5', 'S6'],
           act: 'Threat model op de casus maken of aanscherpen; STRIDE-light gebruiken; bedreigingen koppelen aan ontwerpkeuzes.',
+          mat: [['STRIDE-light canvas', '/stride-light']],
           old: 'Oud: S2.3 + S2.4. Whiteboard/canvas i.p.v. technische tool.',
           mk: true
         },
@@ -686,10 +689,8 @@ export default {
         ['Security bingo', 'W1·8', '/security-bingo'],
         ['Dilemmakaarten', 'W1·8', '/dilemmakaarten'],
         ['Dreigingskaarten-sorteerset', 'W2·2', '/dreigingskaarten'],
-        ['Attack-tree challenge', 'W2·8'],
-        ['STRIDE-light canvas', 'W4·4'],
-        ['Testsoorten match-up', 'W4·7'],
-        ['Rollenkaarten peer-review', 'W4·8']
+        ['Attack-tree challenge', 'W2·8', '/attack-tree'],
+        ['STRIDE-light canvas', 'W4·4', '/stride-light']
       ]
     ],
     [
@@ -697,7 +698,7 @@ export default {
       [
         ['Doorlopende venture / fictief bedrijf', 'loopt door alle weken'],
         ['Incidentcasus', 'W2·3'],
-        ['Breach-writeup', 'W3·7'],
+        ['Breach-writeup', 'W3·7', '/breach-writeup'],
         ['Wetgevingsposter-casus', 'W3·4'],
         ["'Slecht ontworpen' architectuur (A4)", 'W4·3']
       ]

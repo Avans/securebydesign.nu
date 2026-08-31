@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Attack-tree Challenge — A3</title>
+<style>
+  @page { size: A3 landscape; margin: 0; }
+  :root{
+    --paper:#f3ede1; --card:#fbf7ef; --ink:#211d18; --ink2:#5a5249; --line:#cdc2ad;
+    --w1:#bd7a1c; --w2:#b03a2c; --w3:#1f6f68; --w4:#56488a;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Hanken Grotesk',-apple-system,'Helvetica Neue',Arial,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:#8c8578; font-family:var(--sans); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact}
+
+  .sheet{
+    width:420mm; height:297mm; background:var(--paper); padding:9mm 9mm 8mm;
+    display:flex; flex-direction:column; gap:3.2mm; page-break-after:always; position:relative;
+  }
+  .sheet:last-child{page-break-after:auto}
+  @media screen{ .sheet{margin:8mm auto; box-shadow:0 2mm 8mm rgba(0,0,0,.35)} }
+  body.shot .sheet{margin:0; box-shadow:none}
+  body.shot .sheet{display:none}
+  body.shot.p1 .sheet:nth-of-type(1),
+  body.shot.p2 .sheet:nth-of-type(2),
+  body.shot.p3 .sheet:nth-of-type(3){display:flex}
+
+  /* ---------- kop ---------- */
+  .head{display:flex; align-items:flex-end; justify-content:space-between; gap:8mm;
+        border-bottom:1.1mm solid var(--w2); padding-bottom:2.4mm}
+  .head .kick{font-family:var(--mono); font-size:7pt; letter-spacing:.22em; text-transform:uppercase;
+              color:var(--w2); font-weight:600}
+  .head h1{font-family:var(--serif); font-size:25pt; line-height:1; font-weight:600; letter-spacing:-.01em; margin-top:1mm}
+  .head h1 em{font-style:normal; color:var(--w2)}
+  .head .sub{font-size:8.5pt; color:var(--ink2); margin-top:1.4mm; max-width:178mm}
+  .meta{display:flex; gap:4mm; align-items:flex-end}
+  .meta .f{font-family:var(--mono); font-size:6.6pt; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2)}
+  .meta .f i{display:block; font-style:normal; border-bottom:.35mm solid var(--line); height:6.5mm;
+             font-family:var(--sans); font-size:9.5pt; color:var(--ink); letter-spacing:0;
+             text-transform:none; padding:0 1.5mm; line-height:8mm}
+  .meta .w-casus i{width:58mm} .meta .w-team i{width:32mm}
+  .meta .w-doel i{width:20mm} .meta .w-d i{width:24mm}
+
+  /* ---------- generieke box ---------- */
+  .box{background:var(--card); border:.35mm solid var(--line); border-top:.9mm solid var(--w2);
+       padding:2.6mm 3.2mm 2.2mm; display:flex; flex-direction:column; position:relative; overflow:hidden}
+  .box h2{font-family:var(--serif); font-size:12pt; font-weight:600; line-height:1.06; padding-right:9mm}
+  .box .q{font-size:7.5pt; color:var(--ink2); line-height:1.32; margin-top:1.1mm; font-style:italic}
+  .box .space{flex:1; margin-top:2mm;
+       background-image:repeating-linear-gradient(to bottom, transparent 0 7.2mm, var(--line) 7.2mm 7.45mm);
+       opacity:.55}
+  .box .tag{font-family:var(--mono); font-size:6.2pt; letter-spacing:.08em; text-transform:uppercase;
+            color:var(--ink2); opacity:.75; margin-top:1.4mm; text-align:right}
+  .box .n{position:absolute; top:2.2mm; right:3mm; font-family:var(--mono); font-size:12pt;
+          font-weight:600; color:var(--w2); opacity:.42; line-height:1}
+
+  /* ---------- bovenstrook: doel + aanvaller ---------- */
+  .top{display:grid; grid-template-columns:1.5fr 1fr; gap:5mm; height:33mm}
+  .top .box{border-top-color:var(--w1)}
+  .top .box .n{color:var(--w1)}
+  .top .box .space{background-image:none; border:.35mm dashed var(--line); border-radius:1mm; opacity:.75}
+  .top .assets{font-family:var(--mono); font-size:6.4pt; letter-spacing:.08em; text-transform:uppercase;
+               color:var(--ink2); margin-top:1.2mm; display:flex; gap:2mm; align-items:center}
+  .top .assets u{text-decoration:none; border-bottom:.35mm solid var(--line); flex:1; height:4.6mm}
+
+  /* ---------- zonelabel + stam ---------- */
+  .zone{font-family:var(--mono); font-size:7pt; letter-spacing:.16em; text-transform:uppercase;
+        color:var(--ink2); font-weight:600; display:flex; align-items:baseline; gap:3mm}
+  .zone b{color:var(--w2)}
+  .zone span{letter-spacing:.04em; text-transform:none; font-family:var(--sans); font-size:7.6pt;
+             font-weight:400; font-style:italic; color:var(--ink2); opacity:.9}
+  .stem{height:2.4mm; position:relative}
+  .stem::after{content:''; position:absolute; left:50%; top:0; bottom:0; width:.35mm; background:var(--line)}
+  .conn{display:grid; grid-template-columns:1fr 1fr 1fr; height:3.6mm}
+  .conn i{position:relative; border-top:.35mm solid var(--line)}
+  .conn i:first-child{margin-left:16.6%} .conn i:last-child{margin-right:16.6%}
+  .conn i::after{content:''; position:absolute; left:50%; top:0; bottom:0; width:.35mm; background:var(--line)}
+  .conn i:first-child::after{left:auto; right:0} .conn i:last-child::after{left:0}
+
+  /* ---------- de boom ---------- */
+  .tree{flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm}
+  .branch{display:flex; flex-direction:column; gap:2.6mm; min-height:0}
+  .route{background:var(--card); border:.35mm solid var(--line); border-top:.9mm solid var(--w2);
+         padding:2mm 3mm 2mm; position:relative}
+  .route h3{font-family:var(--serif); font-size:11pt; font-weight:600; line-height:1.06}
+  .route .q{font-size:7.2pt; color:var(--ink2); font-style:italic; margin-top:.8mm; line-height:1.3}
+  .leaf{flex:1; background:var(--card); border:.35mm solid var(--line); border-left:.9mm solid var(--line);
+        padding:1.8mm 2.6mm 1.6mm; display:flex; flex-direction:column; position:relative; min-height:0}
+  .leaf .code{position:absolute; top:1.6mm; right:2.4mm; font-family:var(--mono); font-size:7pt;
+              font-weight:600; color:var(--w2); opacity:.5}
+  .leaf .lines{flex:1; margin-top:1.4mm;
+       background-image:repeating-linear-gradient(to bottom, transparent 0 5.4mm, var(--line) 5.4mm 5.65mm);
+       opacity:.5}
+  .leaf .hint{font-family:var(--mono); font-size:5.9pt; letter-spacing:.06em; text-transform:uppercase;
+              color:var(--ink2); opacity:.75; display:flex; justify-content:space-between; gap:2mm;
+              margin-top:1.2mm; align-items:center}
+  .leaf .hint b{font-weight:600; color:var(--w2); opacity:.8}
+  .leaf .ask{font-family:var(--mono); font-size:5.9pt; letter-spacing:.06em; text-transform:uppercase;
+             color:var(--ink2); opacity:.8}
+  .marks{display:flex; gap:1.6mm; align-items:center}
+  .marks u{text-decoration:none; width:3.6mm; height:3.6mm; border-radius:99mm; border:.35mm solid var(--line);
+           display:inline-block}
+
+  /* ---------- onderstrook ---------- */
+  .strip{display:grid; grid-template-columns:1.35fr 1fr .78fr; gap:5mm; height:41mm}
+  .strip .box{border-top:.9mm dashed var(--w3)}
+  .strip .box .n{color:var(--w3); opacity:.5; font-size:11pt}
+  .tbl{flex:1; margin-top:1.6mm; display:grid; grid-template-columns:1.5fr .8fr 1.2fr;
+       gap:0 2.4mm; align-content:start}
+  .tbl .th{font-family:var(--mono); font-size:6pt; letter-spacing:.1em; text-transform:uppercase;
+           color:var(--ink2); border-bottom:.35mm solid var(--line); padding-bottom:.8mm}
+  .tbl .td{border-bottom:.35mm solid var(--line); height:6.2mm}
+  .tbl .fx{font-size:7.2pt; line-height:1.2; padding:1mm 0 .8mm; border-bottom:.35mm solid var(--line); color:var(--ink)}
+
+  /* score */
+  .score{flex:1; margin-top:1.4mm; display:flex; flex-direction:column; gap:1.1mm; justify-content:center}
+  .score .r{display:flex; align-items:center; gap:2.4mm; font-size:7.4pt; color:var(--ink2)}
+  .score .r b{font-family:var(--mono); font-size:7.6pt; color:var(--w2); width:5mm; text-align:center}
+  .score .r span{flex:1; line-height:1.2}
+  .score .r i{font-style:normal; border:.35mm solid var(--line); border-radius:1mm; width:13mm; height:5.6mm;
+              background:var(--paper)}
+  .score .tot{border-top:.35mm solid var(--line); padding-top:1.2mm; margin-top:.4mm}
+  .score .tot span{font-family:var(--mono); font-size:6.6pt; letter-spacing:.1em; text-transform:uppercase; color:var(--ink)}
+  .score .tot i{border-color:var(--w2); border-width:.6mm}
+
+  /* ---------- voet ---------- */
+  .foot{display:flex; align-items:center; justify-content:space-between; gap:6mm; padding-top:.5mm}
+  .growth{display:flex; align-items:center; gap:2.5mm; font-family:var(--mono); font-size:6.6pt;
+          letter-spacing:.08em; text-transform:uppercase}
+  .pill{padding:1mm 2.6mm; border-radius:99mm; border:.35mm solid var(--line); color:var(--ink2)}
+  .pill.p1{border-color:var(--w1); color:var(--w1)}
+  .pill.p3{border-color:var(--w3); color:var(--w3)}
+  .pill.p4{border-color:var(--w4); color:var(--w4)}
+  .pill.on{background:var(--w2); border-color:var(--w2); color:#fff; font-weight:600}
+  .arrow{color:var(--line)}
+  .credit{font-family:var(--mono); font-size:6.4pt; color:var(--ink2); opacity:.8; letter-spacing:.06em}
+
+  /* ---------- ingevulde variant ---------- */
+  .filled .space,.filled .lines{display:none}
+  .filled .fill{flex:1; margin-top:1.4mm; font-size:7.5pt; line-height:1.3; color:var(--ink)}
+  .filled .fill p{margin-bottom:1.2mm}
+  .filled .fill b{color:var(--w2); font-weight:600}
+  .filled .a{font-family:var(--mono); font-size:6.6pt; color:var(--w1); font-weight:600}
+  .filled .grey{color:var(--ink2)}
+  .filled .leaf .fill{font-size:7.3pt; line-height:1.28}
+  .filled .leaf.hit{border-left-color:var(--w2)}
+  .filled .leaf.uniq{border-left-color:var(--w1)}
+  .filled .marks u.on{background:var(--w2); border-color:var(--w2)}
+  .filled .marks u.on.u{background:var(--w1); border-color:var(--w1)}
+  .stamp{font-family:var(--mono); font-size:6.6pt; letter-spacing:.14em; text-transform:uppercase;
+         color:#fff; background:var(--w3); padding:1mm 2.6mm; border-radius:99mm; font-weight:600}
+
+  /* ---------- pagina 3: doelkaarten + scoreblad ---------- */
+  .deck{flex:1; display:grid; grid-template-columns:1fr 132mm; gap:6mm; min-height:0}
+  .cards{display:grid; grid-template-columns:1fr 1fr 1fr 1fr; grid-template-rows:1fr 1fr; gap:4mm}
+  .kaart{background:var(--card); border:.35mm dashed var(--line); border-top:.9mm solid var(--w2);
+         padding:3mm 3.2mm 2.6mm; display:flex; flex-direction:column; position:relative; overflow:hidden}
+  .kaart .k{font-family:var(--mono); font-size:6.6pt; letter-spacing:.12em; text-transform:uppercase;
+            color:var(--w2); font-weight:600}
+  .kaart h3{font-family:var(--serif); font-size:12.5pt; font-weight:600; line-height:1.1; margin-top:1.6mm}
+  .kaart .q{font-size:7.4pt; color:var(--ink2); line-height:1.32; margin-top:1.8mm; font-style:italic}
+  .kaart .cover{margin-top:auto; display:flex; flex-direction:column; gap:1.4mm;
+                font-family:var(--mono); font-size:5.9pt; letter-spacing:.08em; text-transform:uppercase;
+                color:var(--ink2)}
+  .kaart .cover .lbl{opacity:.8}
+  .kaart .cover .row{display:flex; gap:3mm; align-items:center; color:var(--ink)}
+  .kaart .cover .row span{display:flex; align-items:center; gap:1.2mm}
+  .kaart .cover .row u{text-decoration:none; width:3.2mm; height:3.2mm; border-radius:99mm;
+                       border:.35mm solid var(--line); display:inline-block}
+  .kaart .who{margin-top:3mm; padding-top:0}
+  .kaart .who span{font-family:var(--mono); font-size:5.9pt; letter-spacing:.08em; text-transform:uppercase;
+                   color:var(--ink2); opacity:.8}
+  .kaart .who div{margin-top:1.4mm; height:16mm;
+       background-image:repeating-linear-gradient(to bottom, transparent 0 7.4mm, var(--line) 7.4mm 7.65mm);
+       opacity:.55}
+  .kaart .bot{margin-top:2.4mm; padding-top:2mm; border-top:.35mm solid var(--line);
+              display:flex; justify-content:space-between; align-items:baseline; gap:2mm}
+  .kaart .bot .a{font-family:var(--mono); font-size:6.4pt; color:var(--w1); font-weight:600}
+  .kaart .bot .g{font-family:var(--mono); font-size:5.9pt; letter-spacing:.06em; text-transform:uppercase;
+                 color:var(--ink2); opacity:.8}
+  .side{display:flex; flex-direction:column; gap:4mm; min-height:0}
+  .side .box{flex:1; border-top-color:var(--w3)}
+  .side .box .n{color:var(--w3)}
+  .stbl{flex:1; margin-top:1.8mm; display:grid; grid-template-columns:1.5fr .7fr .7fr .7fr .8fr;
+        gap:0 2mm; align-content:start}
+  .stbl .th{font-family:var(--mono); font-size:5.9pt; letter-spacing:.08em; text-transform:uppercase;
+            color:var(--ink2); border-bottom:.35mm solid var(--line); padding-bottom:.8mm; text-align:center}
+  .stbl .th:first-child{text-align:left}
+  .stbl .td{border-bottom:.35mm solid var(--line); height:7.4mm}
+  .rules{margin-top:1.6mm; display:flex; flex-direction:column; gap:1.5mm}
+  .rules li{list-style:none; font-size:7.6pt; line-height:1.3; color:var(--ink2); padding-left:5mm; position:relative}
+  .rules li b{color:var(--ink); font-weight:600}
+  .rules li span.no{position:absolute; left:0; top:0; font-family:var(--mono); font-size:6.6pt;
+                    color:var(--w3); font-weight:600}
+  .rondes{margin-top:auto; padding-top:2.4mm; border-top:.35mm solid var(--line);
+          display:grid; grid-template-columns:1fr 1fr; gap:1.8mm 4mm}
+  .rondes div{font-size:7.4pt; color:var(--ink2); line-height:1.25}
+  .rondes div b{display:block; font-family:var(--mono); font-size:6pt; letter-spacing:.1em;
+                text-transform:uppercase; color:var(--w3); margin-bottom:.5mm}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGINA 1 · BLANCO WERKBLAD ============ -->
+<section class="sheet">
+  <div class="head">
+    <div>
+      <div class="kick">Secure by Design · Fundament · week 2 · lesblok 8</div>
+      <h1>Attack-<em>tree</em> Challenge</h1>
+      <div class="sub">Eén doel van de aanvaller bovenaan, drie routes eronder. Elk pad krijgt één zin “hoe dan?” en een assetnummer uit het week&nbsp;1-canvas — een pad zonder assetnummer is een mening. Punten voor wat plausibel is, extra punten voor wat niemand anders bedacht.</div>
+    </div>
+    <div class="meta">
+      <div class="f w-casus">casus<i></i></div>
+      <div class="f w-team">team<i></i></div>
+      <div class="f w-doel">doelkaart<i></i></div>
+      <div class="f w-d">datum<i></i></div>
+    </div>
+  </div>
+
+  <div class="top">
+    <div class="box"><span class="n">1</span><h2>Het doel van de aanvaller</h2>
+      <div class="q">Schrijf het doel van je doelkaart hier over, in de ik-vorm van de aanvaller. Eén zin, geen middel — “ik wil …”, niet “ik hack …”.</div>
+      <div class="space"></div>
+      <div class="assets">raakt de assets<u></u></div></div>
+
+    <div class="box"><span class="n">2</span><h2>Wie wil dit, en waarom?</h2>
+      <div class="q">Persona non grata: wie is het, wat levert het hem op, en wat heeft hij ervoor over? Geen hoodie — een naam, een motief en een grens.</div>
+      <div class="space"></div>
+      <div class="tag">← blok 1 · aanvallersdenken</div></div>
+  </div>
+
+  <div class="zone"><b>De boom</b> · drie routes naar hetzelfde doel
+    <span>per blad: hoe dan (één zin) · welk assetnummer · EN of OF ten opzichte van het blad erboven</span></div>
+  <div class="stem"></div>
+  <div class="conn"><i></i><i></i><i></i></div>
+
+  <div class="tree">
+    <div class="branch">
+      <div class="route"><h3>Via de mens</h3>
+        <div class="q">Vragen, vertrouwen, meekijken, meelopen. Geen enkele regel code.</div></div>
+      <div class="leaf"><span class="code">M1</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">M2</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">M3</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">M4</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+    </div>
+
+    <div class="branch">
+      <div class="route"><h3>Via het apparaat &amp; de techniek</h3>
+        <div class="q">Toestellen, sessies, accounts, netwerk — en alles wat blijft openstaan.</div></div>
+      <div class="leaf"><span class="code">T1</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">T2</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">T3</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">T4</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+    </div>
+
+    <div class="branch">
+      <div class="route"><h3>Via de keten, het proces &amp; de organisatie</h3>
+        <div class="q">Leveranciers, beheer, afspraken die er niet zijn, rechten die blijven staan.</div></div>
+      <div class="leaf"><span class="code">K1</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">K2</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">K3</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">K4</span><div class="lines"></div>
+        <div class="hint"><span class="ask">hoe dan? · asset</span><span class="marks">EN / OF ✔<u></u> ★<u></u></span></div></div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="box"><span class="n">✂</span><h2>Het snijpunt — één maatregel, meerdere takken</h2>
+      <div class="q">Welke maatregel haalt in één klap de meeste bladeren weg? Noteer welke, en hoe je zou merken dat iemand het tóch probeert.</div>
+      <div class="tbl">
+        <div class="th">maatregel</div><div class="th">snijdt af</div><div class="th">hoe merken we het?</div>
+        <div class="td"></div><div class="td"></div><div class="td"></div>
+        <div class="td"></div><div class="td"></div><div class="td"></div>
+        <div class="td"></div><div class="td"></div><div class="td"></div>
+      </div>
+      <div class="tag">→ blok 9 · risicoprofiel</div></div>
+
+    <div class="box"><span class="n">✗</span><h2>Te mooi om waar te zijn</h2>
+      <div class="q">Welk pad sneuvelde bij “hoe dan?” — en wat maakte het onrealistisch: te duur, te veel geluk, of te veel mensen die moeten meewerken?</div>
+      <div class="space"></div></div>
+
+    <div class="box"><span class="n">Σ</span><h2>Jurypunten</h2>
+      <div class="score">
+        <div class="r"><b>✔</b><span>plausibel pad — 1 punt</span><i></i></div>
+        <div class="r"><b>★</b><span>plausibel én uniek — 1 punt extra</span><i></i></div>
+        <div class="r"><b>✂</b><span>snijpunt mét detectie — 3 punten</span><i></i></div>
+        <div class="r tot"><b></b><span>totaal</span><i></i></div>
+      </div></div>
+  </div>
+
+  <div class="foot">
+    <div class="growth">
+      <span class="pill p1">wk1 context</span><span class="arrow">→</span>
+      <span class="pill on">wk2 risico</span><span class="arrow">→</span>
+      <span class="pill p3">wk3 governance</span><span class="arrow">→</span>
+      <span class="pill p4">wk4 ontwerp → dossier</span>
+    </div>
+    <div class="credit">Minor Secure by Design · Avans Hogeschool · securebydesign.nu</div>
+  </div>
+</section>
+
+<!-- ============ PAGINA 2 · INGEVULD VOORBEELD ============ -->
+<section class="sheet filled">
+  <div class="head">
+    <div>
+      <div class="kick">Secure by Design · Fundament · week 2 · lesblok 8 · <span style="color:var(--w3)">docentvoorbeeld</span></div>
+      <h1>Attack-<em>tree</em> Challenge</h1>
+      <div class="sub">Referentie-uitwerking op de doorlopende casus van week&nbsp;1. Bewust vollediger dan wat een team in de challenge haalt — twee sterke bladeren per route is een prima opbrengst. Let op de bladeren die aan elkaar vastzitten (EN): daar zit het snijpunt.</div>
+    </div>
+    <div class="meta">
+      <div class="f w-casus">casus<i>Wijkzorg-app “Naaste”</i></div>
+      <div class="f w-team">team<i>voorbeeld</i></div>
+      <div class="f w-doel">doelkaart<i>D1</i></div>
+      <div class="f w-d">datum<i>—</i></div>
+    </div>
+  </div>
+
+  <div class="top">
+    <div class="box"><span class="n">1</span><h2>Het doel van de aanvaller</h2>
+      <div class="fill"><p>“Ik wil lezen hoe het met haar gaat — wanneer de zorg langskomt, wat er in de notities staat — <b>zonder dat iemand doorheeft dat ik meekijk</b>.”</p>
+        <p class="grey">Niet: “ik wil de app hacken”. Het doel is informatie over één persoon, niet het systeem.</p></div>
+      <div class="assets">raakt de assets<u style="border:0"><span class="a">A1 zorgnotities · A3 mantelzorgertoegang · A4 telefoons · A5 chat</span></u></div></div>
+
+    <div class="box"><span class="n">2</span><h2>Wie wil dit, en waarom?</h2>
+      <div class="fill"><p><b>Ex-partner van een cliënt.</b> Motief: controle houden — weten wie er komt en wanneer zij alleen is.</p>
+        <p>Middelen: veel tijd, kent de familie, mag zichzelf voorstellen als bezorgde naaste. Grens: hij wil <span class="grey">niet</span> betrapt worden en niets doen dat strafbaar oogt.</p></div>
+      <div class="tag">← blok 1 · aanvallersdenken</div></div>
+  </div>
+
+  <div class="zone"><b>De boom</b> · drie routes naar hetzelfde doel
+    <span>✔ = plausibel volgens de jury · ★ = geen ander team had dit · EN = alleen samen met het blad erboven</span></div>
+  <div class="stem"></div>
+  <div class="conn"><i></i><i></i><i></i></div>
+
+  <div class="tree">
+    <div class="branch">
+      <div class="route"><h3>Via de mens</h3>
+        <div class="q">Vragen, vertrouwen, meekijken, meelopen. Geen enkele regel code.</div></div>
+      <div class="leaf hit"><span class="code">M1</span>
+        <div class="fill">Belt de teamleider als “bezorgde zoon” en vraagt mantelzorgertoegang. Koppelen gaat telefonisch; er is geen controle op wie hij is.</div>
+        <div class="hint"><span class="ask a">A3 A1</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf uniq"><span class="code">M2</span>
+        <div class="fill">Vraagt in de familie-app of iemand “de link” doorstuurt. De uitnodiging is aan niemand gebonden: wie hem opent, is de familie.</div>
+        <div class="hint"><span class="ask a">A3</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u class="on u"></u></span></div></div>
+      <div class="leaf"><span class="code">M3</span>
+        <div class="fill">Wacht bij de bushalte op de verzorgende: pushmeldingen tonen de cliëntnaam op een vergrendeld scherm.</div>
+        <div class="hint"><span class="ask a">A1</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">M4</span>
+        <div class="fill">Praat een verzorgende aan op de sportclub: “hoe gaat het met haar?” Zij vertelt het uit betrokkenheid.</div>
+        <div class="hint"><span class="ask a">A1 A6</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+    </div>
+
+    <div class="branch">
+      <div class="route"><h3>Via het apparaat &amp; de techniek</h3>
+        <div class="q">Toestellen, sessies, accounts, netwerk — en alles wat blijft openstaan.</div></div>
+      <div class="leaf hit"><span class="code">T1</span>
+        <div class="fill">Neemt de telefoon van de verzorgende mee uit de onafgesloten auto tijdens het huisbezoek.</div>
+        <div class="hint"><span class="ask a">A4</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf hit"><span class="code">T2</span>
+        <div class="fill">De sessie stond nog open — geen automatische vergrendeling. Acht dossiers, inclusief chat, staan meteen open.</div>
+        <div class="hint"><span class="ask a">A1 A5</span><span class="marks"><b>EN op T1</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">T3</span>
+        <div class="fill">De teamtelefoon heeft één pincode die iedereen kent en die op de achterkant staat geplakt.</div>
+        <div class="hint"><span class="ask a">A4 A1</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">T4</span>
+        <div class="fill">De oefenomgeving voor nieuwe medewerkers draait op een kopie van echte dossiers en staat open op internet.</div>
+        <div class="hint"><span class="ask a">A1</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+    </div>
+
+    <div class="branch">
+      <div class="route"><h3>Via de keten, het proces &amp; de organisatie</h3>
+        <div class="q">Leveranciers, beheer, afspraken die er niet zijn, rechten die blijven staan.</div></div>
+      <div class="leaf"><span class="code">K1</span>
+        <div class="fill">Meldt zich bij de externe bouwer als medewerker met een probleem; support zoekt in productie mee op cliëntnaam.</div>
+        <div class="hint"><span class="ask a">A1</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf"><span class="code">K2</span>
+        <div class="fill">Support werkt op één gedeeld admin-account: achteraf is “iemand van support” de enige naam die je vindt.</div>
+        <div class="hint"><span class="ask a">A1 A2</span><span class="marks"><b>EN op K1</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+      <div class="leaf uniq"><span class="code">K3</span>
+        <div class="fill">Zijn nieuwe partner werkte er tot vorige maand. Haar account staat nog open; niemand is eigenaar van het afsluiten.</div>
+        <div class="hint"><span class="ask a">A1 A3</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u class="on u"></u></span></div></div>
+      <div class="leaf"><span class="code">K4</span>
+        <div class="fill">De apotheekkoppeling loopt op één gedeeld token; wie het token heeft, ziet de medicatie per cliënt.</div>
+        <div class="hint"><span class="ask a">A2</span><span class="marks"><b>OF</b> ✔<u class="on"></u> ★<u></u></span></div></div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="box"><span class="n">✂</span><h2>Het snijpunt — één maatregel, meerdere takken</h2>
+      <div class="tbl" style="margin-top:1.4mm">
+        <div class="th">maatregel</div><div class="th">snijdt af</div><div class="th">hoe merken we het?</div>
+        <div class="fx">Sessie aan het toestel binden, automatisch vergrendelen, meldingen zonder naam</div>
+        <div class="fx">T1+T2, T3, M3</div>
+        <div class="fx">melding bij een sessie op een onbekend toestel</div>
+        <div class="fx">Mantelzorger koppelen alleen na bevestiging door de teamleider, op één geverifieerde persoon</div>
+        <div class="fx">M1, M2</div>
+        <div class="fx">maandlijst nieuwe koppelingen naar de teamleider</div>
+        <div class="fx">Support op eigen naam, productie alleen na akkoord, offboarding met eigenaar</div>
+        <div class="fx">K1+K2, K3</div>
+        <div class="fx">wekelijkse export van supportzoekopdrachten op cliëntnaam</div>
+      </div>
+      <div class="tag">→ blok 9 · risicoprofiel</div></div>
+
+    <div class="box"><span class="n">✗</span><h2>Te mooi om waar te zijn</h2>
+      <div class="fill">
+        <p><b>Inbraak bij de bouwer, ’s nachts, in het serverhok.</b> Sneuvelde bij “hoe dan?”: deze aanvaller wil niet betrapt worden — en één telefoontje (M1) werkt beter.</p>
+        <p><b>Zero-day in de app kopen.</b> Plausibel voor een andere aanvaller, niet voor deze: geld noch toegang tot die markt. <span class="grey">Eervolle vermelding, nul punten.</span></p>
+      </div></div>
+
+    <div class="box"><span class="n">Σ</span><h2>Jurypunten</h2>
+      <div class="score">
+        <div class="r"><b>✔</b><span>plausibel pad — 1 punt</span><i style="text-align:center;line-height:5.6mm;font-family:var(--mono);font-size:8pt">12</i></div>
+        <div class="r"><b>★</b><span>plausibel én uniek — 1 punt extra</span><i style="text-align:center;line-height:5.6mm;font-family:var(--mono);font-size:8pt">2</i></div>
+        <div class="r"><b>✂</b><span>snijpunt mét detectie — 3 punten</span><i style="text-align:center;line-height:5.6mm;font-family:var(--mono);font-size:8pt">3</i></div>
+        <div class="r tot"><b></b><span>totaal</span><i style="text-align:center;line-height:5.6mm;font-family:var(--mono);font-size:9pt;font-weight:600">17</i></div>
+      </div></div>
+  </div>
+
+  <div class="foot">
+    <div class="growth">
+      <span class="pill p1">wk1 context</span><span class="arrow">→</span>
+      <span class="pill on">wk2 risico</span><span class="arrow">→</span>
+      <span class="pill p3">wk3 governance</span><span class="arrow">→</span>
+      <span class="pill p4">wk4 ontwerp → dossier</span>
+      <span class="stamp">voorbeeld</span>
+    </div>
+    <div class="credit">Minor Secure by Design · Avans Hogeschool · securebydesign.nu</div>
+  </div>
+</section>
+
+<!-- ============ PAGINA 3 · DOELKAARTEN & SCOREBLAD ============ -->
+<section class="sheet">
+  <div class="head">
+    <div>
+      <div class="kick">Secure by Design · Fundament · week 2 · lesblok 8 · spelmateriaal</div>
+      <h1>Doelkaarten <em>&amp; scoreblad</em></h1>
+      <div class="sub">Acht doelen op de doorlopende casus. Elk team trekt er één en ziet die van de anderen niet — dat maakt de ★-ronde spannend. Snijd langs de stippellijn; D8 hoort altijd in het spel te zitten.</div>
+    </div>
+    <div class="meta">
+      <div class="f w-casus">casus<i>Wijkzorg-app “Naaste”</i></div>
+      <div class="f w-d">datum<i></i></div>
+    </div>
+  </div>
+
+  <div class="deck">
+    <div class="cards">
+      <div class="kaart"><div class="k">D1 · lezen</div>
+        <h3>Lees het dossier van één cliënt — zonder dat iemand het merkt</h3>
+        <div class="q">Je wilt weten hoe het met haar gaat en wanneer de zorg langskomt. Betrapt worden is geen optie.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A1 A3 A4 A5</span><span class="g">min. 1 route zonder techniek</span></div></div>
+
+      <div class="kaart"><div class="k">D2 · wijzigen</div>
+        <h3>Verander ongemerkt de medicatiegegevens van één cliënt</h3>
+        <div class="q">Het hoeft niet groot te zijn. Eén dosering, één dag, en niemand die het terugziet.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A2 A1</span><span class="g">wie merkt het, en wanneer?</span></div></div>
+
+      <div class="kaart"><div class="k">D3 · toegang</div>
+        <h3>Word “mantelzorger” bij een cliënt die je niet kent</h3>
+        <div class="q">Je hoeft niets te forceren. Je hoeft alleen te worden toegelaten door iemand die je gelooft.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A3 A1</span><span class="g">wie besluit dit nu?</span></div></div>
+
+      <div class="kaart"><div class="k">D4 · misleiden</div>
+        <h3>Zorg dat de verzorgende vanmiddag op verkeerde informatie handelt</h3>
+        <div class="q">Niet het systeem is je doel, maar wat een mens doet met wat er op het scherm staat.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A2 A1</span><span class="g">schade zonder inbraak</span></div></div>
+
+      <div class="kaart"><div class="k">D5 · platleggen</div>
+        <h3>Leg de app plat op het drukste moment van de dag</h3>
+        <div class="q">De vraag is niet of het lukt, maar wat mensen dán doen — en welk risico dáár ontstaat.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A2 A4 A6</span><span class="g">beschrijf ook de terugval</span></div></div>
+
+      <div class="kaart"><div class="k">D6 · meenemen</div>
+        <h3>Neem de cliëntenlijst mee naar buiten, zonder in te breken</h3>
+        <div class="q">Je mag naar binnen. Je werkt er — of je werkte er tot vorige maand.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A1 A6</span><span class="g">insider: geen inbraak nodig</span></div></div>
+
+      <div class="kaart"><div class="k">D7 · uitwissen</div>
+        <h3>Doe iets in het dossier en zorg dat niemand kan zien dat jij het was</h3>
+        <div class="q">Het gaat niet om de daad, maar om de vraag: kunnen ze het achteraf nog aan iemand koppelen?</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A1 A4</span><span class="g">kijk naar gedeelde accounts</span></div></div>
+
+      <div class="kaart"><div class="k">D8 · vertrouwen</div>
+        <h3>Beschadig het vertrouwen in de organisatie zonder één systeem aan te raken</h3>
+        <div class="q">Geen inlog, geen apparaat, geen code. Alleen mensen, verhalen en timing.</div>
+        <div class="cover"><span class="lbl">welke routes heb je gedekt?</span>
+          <span class="row"><span><u></u>mens</span><span><u></u>techniek</span><span><u></u>keten</span></span></div>
+        <div class="who"><span>wie is de aanvaller? · motief</span><div></div></div>
+        <div class="bot"><span class="a">A6</span><span class="g">techniek is hier verboden</span></div></div>
+    </div>
+
+    <div class="side">
+      <div class="box"><span class="n">Σ</span><h2>Scoreblad</h2>
+        <div class="q">Eén regel per team. De jury vult in tijdens de verdedigingsronde, hardop, met de reden erbij.</div>
+        <div class="stbl">
+          <div class="th">team</div><div class="th">✔</div><div class="th">★</div><div class="th">✂</div><div class="th">totaal</div>
+          <div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div>
+          <div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div>
+          <div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div>
+          <div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div>
+          <div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div>
+          <div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div><div class="td"></div>
+        </div>
+        <div class="tag">✔ 1 pt · ★ 1 pt extra · ✂ 3 pt</div></div>
+
+      <div class="box"><span class="n">§</span><h2>Juryregels</h2>
+        <ul class="rules">
+          <li><span class="no">1</span><b>Een pad zonder assetnummer is een mening.</b> Geen nummer uit het week 1-canvas, geen punt.</li>
+          <li><span class="no">2</span><b>“Hoe dan?” moet in één zin kunnen.</b> Met een dinsdagochtend erbij: wie doet wat, waar, met wat in zijn hand.</li>
+          <li><span class="no">3</span><b>Uniek is wat de zaal niet heeft.</b> De jury vraagt het hardop: heeft iemand anders dit ook? Eén hand omhoog en de ★ vervalt.</li>
+          <li><span class="no">4</span><b>Films mogen.</b> Ze krijgen de eervolle vermelding en nul punten — en de vraag: voor wélke aanvaller zou dit wél kloppen?</li>
+          <li><span class="no">5</span><b>Het snijpunt telt alleen mét detectie.</b> Een maatregel zonder “hoe merken we het” is een halve maatregel.</li>
+          <li><span class="no">6</span><b>Geen echte systemen, geen echte mensen.</b> Alles blijft binnen de casus; dit is denkwerk op papier.</li>
+        </ul>
+        <div class="rondes">
+          <div><b>ronde 1 · 12 min</b>Boom bouwen. Drie routes, minstens twee bladeren per route.</div>
+          <div><b>ronde 2 · 8 min</b>Vellen doorgeven. Het buurteam vult aan wat jij miste.</div>
+          <div><b>ronde 3 · 15 min</b>Verdedigen. De jury vraagt bij elk blad: hoe dan?</div>
+          <div><b>ronde 4 · 10 min</b>Snijpunt zoeken. Eén maatregel, zoveel mogelijk takken.</div>
+        </div></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="growth">
+      <span class="pill p1">wk1 context</span><span class="arrow">→</span>
+      <span class="pill on">wk2 risico</span><span class="arrow">→</span>
+      <span class="pill p3">wk3 governance</span><span class="arrow">→</span>
+      <span class="pill p4">wk4 ontwerp → dossier</span>
+    </div>
+    <div class="credit">Minor Secure by Design · Avans Hogeschool · securebydesign.nu</div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -51,6 +51,21 @@
     </div>
     <p class="sec-sub note" v-html="t.zonesNote"></p>
 
+    <template v-if="t.rounds">
+      <h2 class="sec-h"><span class="no">{{ t.sections.sr.no }}</span> {{ t.sections.sr.h }}</h2>
+      <p class="sec-sub">{{ t.sections.sr.sub }}</p>
+      <ol class="rondes">
+        <li
+          v-for="(r, i) in t.rounds" :key="r[1]" class="reveal"
+          :style="{ animationDelay: i * 0.08 + 's' }"
+        >
+          <b>{{ r[0] }}</b>
+          <div><span>{{ r[1] }}</span><i>{{ r[2] }}</i></div>
+        </li>
+      </ol>
+      <p class="sec-sub note" v-html="t.roundsNote"></p>
+    </template>
+
     <h2 class="sec-h"><span class="no">{{ t.sections.s3.no }}</span> {{ t.sections.s3.h }}</h2>
     <p class="sec-sub" v-html="t.sections.s3.sub"></p>
     <ol class="growth">
@@ -119,6 +134,14 @@ figure.sheet figcaption{margin-top:8px; font-size:13px; color:var(--ink2)}
 .zone p{margin:8px 0 0; font-size:13.5px; color:var(--ink2); line-height:1.5}
 .note{margin-top:16px}
 
+.rondes{list-style:none; padding:0; margin:0; display:grid; gap:10px}
+.rondes li{display:flex; gap:14px; align-items:baseline; background:var(--card); border:1px solid var(--line);
+  border-left:4px solid var(--w2); border-radius:10px; padding:13px 16px}
+.rondes b{flex:0 0 auto; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--w2); width:120px}
+.rondes span{font-family:'Fraunces',serif; font-weight:600; font-size:16px; margin-right:8px}
+.rondes i{font-style:normal; font-size:13.5px; color:var(--ink2); line-height:1.5}
+
 .growth{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
 .growth li{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--c); border-radius:10px; padding:14px 16px}
 .growth b{display:block; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--c)}
@@ -129,5 +152,7 @@ figure.sheet figcaption{margin-top:8px; font-size:13px; color:var(--ink2)}
 
 @media (max-width:860px){
   .zones,.growth{grid-template-columns:1fr}
+  .rondes li{display:block}
+  .rondes b{display:block; width:auto; margin-bottom:4px}
 }
 </style>

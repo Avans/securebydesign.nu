@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Assetkaartjes — A4, 9 per vel</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  :root{
+    --paper:#f3ede1; --ink:#211d18; --ink2:#5a5249; --line:#cdc2ad; --edge:#b9ae98;
+    --w1:#bd7a1c; --w2:#b03a2c; --w3:#1f6f68;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Hanken Grotesk',-apple-system,'Helvetica Neue',Arial,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:#8c8578; font-family:var(--sans); color:var(--ink);
+       -webkit-print-color-adjust:exact; print-color-adjust:exact}
+
+  .sheet{width:210mm; height:297mm; background:#fff; padding:16.5mm 10.5mm;
+         page-break-after:always; position:relative}
+  .sheet:last-child{page-break-after:auto}
+  @media screen{ .sheet{margin:8mm auto; box-shadow:0 2mm 8mm rgba(0,0,0,.35)} }
+  .grid{display:grid; grid-template-columns:repeat(3,63mm); grid-auto-rows:88mm; justify-content:center}
+
+  .kaart{border:.2mm solid var(--edge); border-top:2.2mm solid var(--w1);
+         padding:2.6mm 2.8mm 2.2mm; display:flex; flex-direction:column; overflow:hidden; background:#fff}
+
+  .k-top{display:flex; align-items:flex-start; justify-content:space-between; gap:2mm}
+  .k-a{font-family:var(--mono); font-size:12pt; font-weight:600; color:var(--w1); letter-spacing:.04em;
+       border-bottom:.35mm solid var(--line); min-width:17mm; line-height:1.15; padding-bottom:.3mm}
+  .k-kick{font-family:var(--mono); font-size:5.2pt; letter-spacing:.16em; text-transform:uppercase;
+          color:var(--ink2); text-align:right; line-height:1.35; padding-top:1mm}
+
+  .k-lbl{font-family:var(--mono); font-size:5.4pt; letter-spacing:.14em; text-transform:uppercase;
+         color:var(--ink2); margin-top:2.2mm; margin-bottom:.9mm}
+  .k-lbl.q{color:var(--w2)}
+  .lines{background-image:repeating-linear-gradient(to bottom, transparent 0 4.6mm, var(--line) 4.6mm 4.82mm);
+         opacity:.6}
+  .l2{height:9.6mm} .l1{height:4.9mm} .l3{height:14.4mm}
+
+  .soorten{display:grid; grid-template-columns:1fr 1fr 1fr; gap:.8mm 1.4mm; margin-top:.4mm}
+  .soorten span{font-size:5.6pt; display:flex; align-items:center; gap:.9mm; color:var(--ink); line-height:1.1}
+  .cb{width:2.3mm; height:2.3mm; border:.3mm solid var(--ink2); flex:none; display:inline-block}
+
+  .k-schade{flex:1; display:flex; flex-direction:column}
+  .k-schade .lines{flex:1}
+  .k-schade .hint{font-size:5.6pt; color:var(--ink2); font-style:italic; margin-bottom:.9mm; line-height:1.25}
+
+  .k-foot{display:flex; align-items:center; justify-content:space-between; margin-top:1.6mm;
+          border-top:.25mm dotted var(--line); padding-top:1.4mm}
+  .k-foot .biv{display:flex; align-items:center; gap:1.2mm}
+  .k-foot .biv i{font-style:normal; font-family:var(--mono); font-size:5.2pt; letter-spacing:.12em;
+                 text-transform:uppercase; color:var(--ink2); margin-right:.6mm}
+  .k-foot .biv span{width:4.4mm; height:4.4mm; border:.3mm solid var(--line); border-radius:99mm;
+                    font-family:var(--mono); font-size:6pt; color:var(--ink2);
+                    display:flex; align-items:center; justify-content:center}
+  .k-foot .ster{font-size:9pt; color:var(--line); display:flex; align-items:center; gap:1.2mm}
+  .k-foot .ster em{font-style:normal; font-family:var(--mono); font-size:5pt; letter-spacing:.1em;
+                   text-transform:uppercase; color:var(--ink2)}
+
+  /* ---------- ingevulde kaart ---------- */
+  .kaart.vb{border-top-color:var(--w3)}
+  .kaart.vb .k-a{color:var(--w3); border-bottom-color:var(--w3)}
+  .kaart.vb .k-kick{color:var(--w3)}
+  .vb .val{font-size:7pt; line-height:1.3; color:var(--ink)}
+  .vb .val.small{font-size:6.6pt}
+  .vb .cb.on{background:var(--w1); border-color:var(--w1)}
+  .vb .biv span.on{background:var(--w1); border-color:var(--w1); color:#fff; font-weight:600}
+  .vb .ster.on{color:var(--w1)}
+
+  .vel-uitleg{position:absolute; left:10.5mm; right:10.5mm; bottom:6mm;
+              display:flex; justify-content:space-between; align-items:baseline;
+              font-family:var(--mono); font-size:6pt; letter-spacing:.06em; color:var(--ink2)}
+  .vel-uitleg b{color:var(--w1)}
+  .vel-uitleg .r{text-transform:none; font-family:var(--sans); font-size:6.4pt; font-style:italic}
+</style>
+</head>
+<body>
+
+<!-- ============ VEL 1 · 9 BLANCO KAARTJES ============ -->
+<section class="sheet">
+  <div class="grid">
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+  </div>
+  <div class="vel-uitleg">
+    <span><b>Assetkaartjes</b> · 63 × 88 mm · snij op de kaderlijn · print zoveel vellen als je nodig hebt</span>
+    <span class="r">Eén asset per kaartje. Nummer ze A1, A2 … — die nummers reizen mee naar week 2, 3 en 4.</span>
+  </div>
+</section>
+
+<!-- ============ VEL 2 · DOCENTVOORBEELD ============ -->
+<section class="sheet">
+  <div class="grid">
+
+    <div class="kaart vb">
+      <div class="k-top"><div class="k-a">A2</div><div class="k-kick">voorbeeld<br>“Naaste”</div></div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="val">Medicatiegegevens, dagelijks doorgegeven door de apotheek</div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb on"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="val small">De cliënt. De apotheek levert, de zorg gebruikt.</div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="val small">Verandert of veroudert stil → een verzorgende dient het verkeerde toe. De cliënt merkt het als eerste, en lichamelijk.</div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span class="on">I</span><span>V</span></div>
+        <div class="ster on"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+
+    <div class="kaart vb">
+      <div class="k-top"><div class="k-a">A3</div><div class="k-kick">voorbeeld<br>“Naaste”</div></div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="val">Identiteit &amp; toegang van de mantelzorger</div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb on"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="val small">De cliënt geeft het, de organisatie beheert het.</div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="val small">Aan de verkeerde toegekend → een buitenstaander leest structureel mee. Dit is de sleutel tot A1 en A5: gaat dit mis, dan gaat de rest vanzelf mee.</div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span class="on">I</span><span>V</span></div>
+        <div class="ster on"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+
+    <div class="kaart vb">
+      <div class="k-top"><div class="k-a">A6</div><div class="k-kick">voorbeeld<br>“Naaste”</div></div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="val">Vertrouwen van cliënten in de zorgorganisatie</div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb on"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="val small">Van de organisatie — maar de cliënt bepaalt het.</div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="val small">Eén incident in de krant en families zeggen de app op. Niet te herstellen met techniek; dít is waarom een niet-technische asset op tafel hoort.</div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span class="on">I</span><span>V</span></div>
+        <div class="ster on"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+    <div class="kaart">
+      <div class="k-top">
+        <div class="k-a">A</div>
+        <div class="k-kick">asset<br>W1 · blok 6</div>
+      </div>
+      <div class="k-lbl">wat is het?</div>
+      <div class="lines l2"></div>
+      <div class="k-lbl">soort</div>
+      <div class="soorten">
+        <span><i class="cb"></i>data</span><span><i class="cb"></i>proces</span><span><i class="cb"></i>systeem</span>
+        <span><i class="cb"></i>mens/rol</span><span><i class="cb"></i>relatie</span><span><i class="cb"></i>geld/cont.</span>
+      </div>
+      <div class="k-lbl">van wie is het?</div>
+      <div class="lines l1"></div>
+      <div class="k-schade">
+        <div class="k-lbl q">wat gaat er stuk als dit …</div>
+        <div class="hint">wegvalt / uitlekt / verandert? Noem wie het merkt.</div>
+        <div class="lines"></div>
+      </div>
+      <div class="k-foot">
+        <div class="biv"><i>weegt</i><span>B</span><span>I</span><span>V</span></div>
+        <div class="ster"><em>kroonjuweel</em>★</div>
+      </div>
+    </div>
+  </div>
+  <div class="vel-uitleg">
+    <span><b>Docentvoorbeeld</b> · de drie kroonjuwelen van de casus “Naaste”</span>
+    <span class="r">Leg deze drie neer als de klas vastloopt — vooral A6 opent het gesprek voor niet-technische teams.</span>
+  </div>
+</section>
+
+</body>
+</html>

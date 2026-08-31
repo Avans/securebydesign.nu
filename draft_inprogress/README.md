@@ -42,6 +42,10 @@ Nummer versies binnen een bestand (0.1, 0.2 …); pas bij `vastgesteld` naar 1.0
 ## Nu in ontwikkeling
 
 - [`security-context-canvas/`](security-context-canvas/) — kernartefact W1·lesblok 9, groeit door tot het SbD-dossier in W4·9. Status: **voorstel 0.2**. Voorbeeld-PDF (A3, blanco + ingevuld) ligt er; wacht op de keuze van de doorlopende casus.
+- [`asset-abuse-canvas/`](asset-abuse-canvas/) — werkvel bij W1·lesblok 6; voedt vak 7 en 8 van het contextcanvas. Status: **in review 0.2**. Werkvel-A3 en assetkaartjes (blanco + ingevuld) liggen er, met lesplan; wacht net als het contextcanvas op de casuskeuze.
+- [`stride-light-canvas/`](stride-light-canvas/) — threat-modelling canvas W4·lesblok 4, erft de assetnummers uit week 1 en voedt de traceability-matrix van blok 5. Status: **voorstel 0.1**. A3-PDF (blanco + ingevuld) ligt er; staat als pagina op de site (`/stride-light`), nog niet in het menu.
+- [`breach-writeup/`](breach-writeup/) — casusmateriaal bij W3·lesblok 7 (incident response & crisiscommunicatie). Status: **voorstel 0.1**. De writeup zelf staat als pagina op de site (`/breach-writeup`), nog niet in het menu. Open: wanneer de 72-uursklok begon, en of de gebeurteniskaartjes voor de tijdlijnwerkvorm er nog bij komen.
+- [`attack-tree-challenge/`](attack-tree-challenge/) — spelblok W2·lesblok 8; trekt de assetnummers uit week 1 door en levert de snijpunten voor het risicoprofiel van blok 9. Status: **voorstel 0.1**. A3-PDF (werkblad, docentvoorbeeld, doelkaarten + scoreblad) ligt er; staat als pagina op de site (`/attack-tree`), nog niet in het menu. Open: kaartspel óf challenge, wie de jury is, en of teams op één casus of op hun eigen casus werken.
 - [`security-bingo-dilemmas/`](security-bingo-dilemmas/) — spelblok W1·lesblok 8. Status: **voorstel 0.1**. Het materiaal zelf staat al op de site (zie hieronder); hier liggen de onderbouwing en het lesplan. Open: duur van het blok (90 of 60 min) en wie de reflectielus in W4·9 uitvoert.
 
 ## Verhuisd naar de site

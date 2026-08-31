@@ -366,6 +366,7 @@ export default {
           onderw: 'Attack trees, persona non grata, cyber kill chain; link threats to asset, motive, access, impact.',
           st: ['S3', 'S5'],
           act: 'Attack-tree challenge in teams; points for creativity and plausibility; short debrief on design implications.',
+          mat: [['Attack-tree challenge', '/attack-tree']],
           old: 'Old: S2.1 (attack tree) + S2.3 (STRIDE game). Possibly Cornucopia/EoP as a card game.',
           mk: true
         },
@@ -461,6 +462,7 @@ export default {
           onderw: 'Incident response, reporting, repair/post-mortem, external communication, ITIL, acting on incidents.',
           st: ['S8', 'S2', 'S4'],
           act: 'Discuss the incident lifecycle; make a communication card; prepare post-mortem questions.',
+          mat: [['Breach write-up', '/breach-writeup']],
           old: 'Old: S3.4 + S3.5.',
           mk: true
         },
@@ -534,6 +536,7 @@ export default {
           onderw: 'Threat modelling in general, STRIDE, PASTA, LINDDUN, persona non grata, attack trees.',
           st: ['S5', 'S6'],
           act: 'Make or sharpen a threat model on the case; use STRIDE-light; link threats to design choices.',
+          mat: [['STRIDE-light canvas', '/stride-light']],
           old: 'Old: S2.3 + S2.4. Whiteboard/canvas instead of a technical tool.',
           mk: true
         },
@@ -686,10 +689,8 @@ export default {
         ['Security bingo', 'W1·8', '/security-bingo'],
         ['Dilemma cards', 'W1·8', '/dilemmakaarten'],
         ['Threat-card sorting set', 'W2·2', '/dreigingskaarten'],
-        ['Attack-tree challenge', 'W2·8'],
-        ['STRIDE-light canvas', 'W4·4'],
-        ['Test-types match-up', 'W4·7'],
-        ['Role cards peer review', 'W4·8']
+        ['Attack-tree challenge', 'W2·8', '/attack-tree'],
+        ['STRIDE-light canvas', 'W4·4', '/stride-light']
       ]
     ],
     [
@@ -697,7 +698,7 @@ export default {
       [
         ['Continuous venture / fictional company', 'runs through all weeks'],
         ['Incident case', 'W2·3'],
-        ['Breach write-up', 'W3·7'],
+        ['Breach write-up', 'W3·7', '/breach-writeup'],
         ['Legislation-poster case', 'W3·4'],
         ["'Badly designed' architecture (A4)", 'W4·3']
       ]
