@@ -75,6 +75,7 @@ export default {
     onderwerpen: 'Topics',
     doen: 'Do',
     stations: 'Stations',
+    materiaal: 'Material',
     mkTitle: 'to build to measure',
     mkNoteB: '✎ to build yourself',
     mkNoteBody:
@@ -199,6 +200,7 @@ export default {
           onderw: 'Cryptography & limits, confidentiality, integrity, authentication, non-repudiation, defense in depth, access control.',
           st: ['S1', 'S6'],
           act: 'Explain principles through recognisable design choices; link to earlier risks; make a short principle card.',
+          mat: [['Principle cards', '/principekaartjes']],
           old: 'Old: partly S1.4. Least privilege / secure-by-default were not explicit — now added.',
           mk: true
         },
@@ -254,6 +256,7 @@ export default {
           onderw: 'Phishing, passwords, losing your phone, public wifi, USB, MFA, social engineering, personal experiences.',
           st: ['S2', 'SO'],
           act: 'Security bingo; dilemma cards; exchange experiences and link them to security culture.',
+          mat: [['Security bingo', '/security-bingo'], ['Dilemma cards', '/dilemmakaarten']],
           old: 'New game block. Content input from S1.3.',
           mk: true
         },
@@ -265,6 +268,7 @@ export default {
           onderw: 'CIA/BIV, assets, stakeholders, threat actors, first threats, first design principles, first abuse cases.',
           st: ['S1', 'S2', 'S3', 'S5'],
           act: 'Fill in the security context canvas; short gallery walk; keep the canvas as a starting point for week 2.',
+          mat: [['Security context canvas', '/canvas']],
           old: 'New core artefact; partly S1.4 + S1.6.',
           mk: true
         }
@@ -294,6 +298,7 @@ export default {
           onderw: 'Phishing, DDoS, MitM, ransomware-as-a-service, social engineering, supply-chain attacks, cloud, devices.',
           st: ['S1', 'S3', 'SO'],
           act: 'Sort a threat card set; link threats to case assets; short threat-landscape mini-jigsaw.',
+          mat: [['Threat-card sorting set', '/dreigingskaarten']],
           old: 'Old: S2.2 (threat landscape).',
           mk: true
         },
@@ -305,6 +310,7 @@ export default {
           onderw: 'OV-chipkaart, DigiNotar, certificate authority, Stuxnet, zero-day, failing security principles.',
           st: ['S1', 'S3', 'S5', 'S8'],
           act: 'Incident case in groups; build a cause-effect chain; indicate which security principle failed.',
+          mat: [['Principle cards', '/principekaartjes']],
           old: 'New in wk2; related to S3.5 (post-mortem).',
           mk: true
         },
@@ -659,7 +665,7 @@ export default {
     [
       'Canvases & maps — the backbone',
       [
-        ['Security context canvas', 'W1·9 (core artefact, runs throughout)'],
+        ['Security context canvas', 'W1·9 (core artefact, runs throughout)', '/canvas'],
         ['Stakeholder map', 'W1·5'],
         ['Asset & abuse-case canvas', 'W1·6'],
         ['Attacker persona', 'W2·1'],
@@ -676,9 +682,10 @@ export default {
     [
       'Card sets & game material',
       [
-        ['Principle cards', 'W1·3'],
-        ['Security bingo + dilemma cards', 'W1·8'],
-        ['Threat-card sorting set', 'W2·2'],
+        ['Principle cards', 'W1·3', '/principekaartjes'],
+        ['Security bingo', 'W1·8', '/security-bingo'],
+        ['Dilemma cards', 'W1·8', '/dilemmakaarten'],
+        ['Threat-card sorting set', 'W2·2', '/dreigingskaarten'],
         ['Attack-tree challenge', 'W2·8'],
         ['STRIDE-light canvas', 'W4·4'],
         ['Test-types match-up', 'W4·7'],

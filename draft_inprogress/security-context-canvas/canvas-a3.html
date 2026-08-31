@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Security Context Canvas — A3</title>
+<style>
+  @page { size: A3 landscape; margin: 0; }
+  :root{
+    --paper:#f3ede1; --card:#fbf7ef; --ink:#211d18; --ink2:#5a5249; --line:#cdc2ad;
+    --w1:#bd7a1c; --w2:#b03a2c; --w3:#1f6f68; --w4:#56488a;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Hanken Grotesk',-apple-system,'Helvetica Neue',Arial,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:#8c8578; font-family:var(--sans); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact}
+
+  .sheet{
+    width:420mm; height:297mm; background:var(--paper); padding:9mm 9mm 8mm;
+    display:flex; flex-direction:column; gap:4mm; page-break-after:always; position:relative;
+  }
+  .sheet:last-child{page-break-after:auto}
+  @media screen{ .sheet{margin:8mm auto; box-shadow:0 2mm 8mm rgba(0,0,0,.35)} }
+
+  /* ---------- kop ---------- */
+  .head{display:flex; align-items:flex-end; justify-content:space-between; gap:8mm;
+        border-bottom:1.1mm solid var(--w1); padding-bottom:2.6mm}
+  .head .kick{font-family:var(--mono); font-size:7pt; letter-spacing:.22em; text-transform:uppercase;
+              color:var(--w1); font-weight:600}
+  .head h1{font-family:var(--serif); font-size:25pt; line-height:1; font-weight:600; letter-spacing:-.01em; margin-top:1mm}
+  .head .sub{font-size:8.5pt; color:var(--ink2); margin-top:1.4mm; max-width:150mm}
+  .meta{display:flex; gap:4mm; align-items:flex-end}
+  .meta .f{font-family:var(--mono); font-size:6.6pt; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2)}
+  .meta .f i{display:block; font-style:normal; border-bottom:.35mm solid var(--line); height:6.5mm;
+             font-family:var(--sans); font-size:9.5pt; color:var(--ink); letter-spacing:0;
+             text-transform:none; padding:0 1.5mm; line-height:8mm}
+  .meta .w-casus i{width:62mm} .meta .w-team i{width:34mm}
+  .meta .w-v i{width:16mm} .meta .w-d i{width:24mm}
+
+  /* ---------- zones + raster ---------- */
+  .zones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 5mm}
+  .zone{font-family:var(--mono); font-size:7pt; letter-spacing:.16em; text-transform:uppercase;
+        color:var(--ink2); font-weight:600; padding-bottom:1.4mm}
+  .zone b{color:var(--w1)}
+
+  .grid{flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr 1fr 1fr; gap:4mm 5mm}
+  .box{background:var(--card); border:.35mm solid var(--line); border-top:.9mm solid var(--w1);
+       padding:3mm 3.4mm 2.6mm; display:flex; flex-direction:column; position:relative; overflow:hidden}
+  .box .n{position:absolute; top:2.4mm; right:3.2mm; font-family:var(--mono); font-size:12pt;
+          font-weight:600; color:var(--w1); opacity:.42; line-height:1}
+  .box h2{font-family:var(--serif); font-size:12.5pt; font-weight:600; line-height:1.06; padding-right:8mm}
+  .box .q{font-size:7.6pt; color:var(--ink2); line-height:1.32; margin-top:1.2mm; font-style:italic}
+  .box .space{flex:1; margin-top:2.2mm;
+       background-image:repeating-linear-gradient(to bottom, transparent 0 7.2mm, var(--line) 7.2mm 7.45mm);
+       opacity:.55}
+  .box .tag{font-family:var(--mono); font-size:6.2pt; letter-spacing:.08em; text-transform:uppercase;
+            color:var(--ink2); opacity:.75; margin-top:1.6mm; text-align:right}
+
+  /* ---------- onderbalk ---------- */
+  .strip{display:grid; grid-template-columns:1fr 1fr; gap:5mm; height:26mm}
+  .strip .box{border-top:.9mm dashed var(--w2)}
+  .strip .box .n{font-size:11pt; opacity:.5; color:var(--w2)}
+  .foot{display:flex; align-items:center; justify-content:space-between; gap:6mm; padding-top:.5mm}
+  .growth{display:flex; align-items:center; gap:2.5mm; font-family:var(--mono); font-size:6.6pt;
+          letter-spacing:.08em; text-transform:uppercase}
+  .pill{padding:1mm 2.6mm; border-radius:99mm; border:.35mm solid var(--line); color:var(--ink2)}
+  .pill.on{background:var(--w1); border-color:var(--w1); color:#fff; font-weight:600}
+  .pill.p2{border-color:var(--w2); color:var(--w2)}
+  .pill.p3{border-color:var(--w3); color:var(--w3)}
+  .pill.p4{border-color:var(--w4); color:var(--w4)}
+  .arrow{color:var(--line)}
+  .credit{font-family:var(--mono); font-size:6.4pt; color:var(--ink2); opacity:.8; letter-spacing:.06em}
+
+  /* ---------- ingevulde variant ---------- */
+  .filled .box .space{display:none}
+  .filled .fill{flex:1; margin-top:2mm; font-size:8pt; line-height:1.36; color:var(--ink)}
+  .filled .fill p{margin-bottom:1.4mm}
+  .filled .fill b{color:var(--w2); font-weight:600}
+  .filled .fill .a{font-family:var(--mono); font-size:7pt; color:var(--w1); font-weight:600}
+  .filled .fill ul{list-style:none}
+  .filled .fill li{margin-bottom:1.3mm; padding-left:2.6mm; position:relative}
+  .filled .fill li::before{content:'–'; position:absolute; left:0; color:var(--w1)}
+  .stamp{font-family:var(--mono); font-size:6.6pt; letter-spacing:.14em; text-transform:uppercase;
+         color:#fff; background:var(--w3); padding:1mm 2.6mm; border-radius:99mm; font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGINA 1 · BLANCO ============ -->
+<section class="sheet">
+  <div class="head">
+    <div>
+      <div class="kick">Secure by Design · Fundament · week 1 · lesblok 9</div>
+      <h1>Security Context Canvas</h1>
+      <div class="sub">Elk vak is de oogst van één lesblok uit week 1. Vul in met post-its, verplaats gerust, en schrijf op wat je nog niet weet.</div>
+    </div>
+    <div class="meta">
+      <div class="f w-casus">casus<i></i></div>
+      <div class="f w-team">team<i></i></div>
+      <div class="f w-v">versie<i>1.0</i></div>
+      <div class="f w-d">datum<i></i></div>
+    </div>
+  </div>
+
+  <div class="zones">
+    <div class="zone"><b>A</b> · Wat &amp; waarom</div>
+    <div class="zone"><b>B</b> · Wie</div>
+    <div class="zone"><b>C</b> · Wat beschermen we</div>
+  </div>
+
+  <div class="grid">
+    <div class="box"><span class="n">1</span><h2>Casus &amp; scope</h2>
+      <div class="q">Waar hebben we het precies over? Wat hoort er nog nét wel bij — en wat laten we bewust buiten beschouwing?</div>
+      <div class="space"></div><div class="tag">← lesblok 2</div></div>
+
+    <div class="box"><span class="n">4</span><h2>Stakeholders &amp; belangen</h2>
+      <div class="q">Wie heeft belang, wie beslist, wie draagt het risico? Waar botsen die belangen?</div>
+      <div class="space"></div><div class="tag">← lesblok 5</div></div>
+
+    <div class="box"><span class="n">7</span><h2>Assets &amp; kroonjuwelen</h2>
+      <div class="q">Wat moet beschermd worden? Nummer ze A1, A2 … — deze nummers gebruik je de rest van de minor.</div>
+      <div class="space"></div><div class="tag">← lesblok 6</div></div>
+
+    <div class="box"><span class="n">2</span><h2>Waarde &amp; belofte</h2>
+      <div class="q">Waarom doet dit ertoe? Wat verwachten mensen stilzwijgend als ze dit gebruiken?</div>
+      <div class="space"></div><div class="tag">← lesblok 1</div></div>
+
+    <div class="box"><span class="n">5</span><h2>Gebruikers &amp; gedrag</h2>
+      <div class="q">Wat doen mensen echt op een drukke dag? Waar snijden ze de bocht af omdat veilig te omslachtig is?</div>
+      <div class="space"></div><div class="tag">← lesblok 4</div></div>
+
+    <div class="box"><span class="n">8</span><h2>Abuse cases</h2>
+      <div class="q">Minstens drie, altijd zo: <b>Als</b> ⟨wie⟩ ⟨wat doet⟩, <b>dan</b> ⟨welke schade⟩ <b>op</b> ⟨assetnummer⟩.</div>
+      <div class="space"></div><div class="tag">← lesblok 6</div></div>
+
+    <div class="box"><span class="n">3</span><h2>BIV-profiel</h2>
+      <div class="q">Wat is hier de ergste schade: meekijken (V), gegevens die niet kloppen (I), of dat het niet werkt (B)? Zet op volgorde, mét reden.</div>
+      <div class="space"></div><div class="tag">← lesblok 1</div></div>
+
+    <div class="box"><span class="n">6</span><h2>Wie zou dit misbruiken?</h2>
+      <div class="q">Denk breed: buitenstaanders, eigen mensen, leveranciers, toeval. Wat is het motief?</div>
+      <div class="space"></div><div class="tag">← lesblok 8</div></div>
+
+    <div class="box"><span class="n">9</span><h2>Ontwerpprincipes &amp; keuzes</h2>
+      <div class="q">Welke twee principes gelden hier? Schrijf per principe één concrete keuze: <i>principe → dus wij kiezen …</i></div>
+      <div class="space"></div><div class="tag">← lesblok 3</div></div>
+  </div>
+
+  <div class="strip">
+    <div class="box"><span class="n">⚑</span><h2>Aannames &amp; open vragen</h2>
+      <div class="q">Wat hebben we aangenomen omdat het niet in de casus stond? Wat zouden we willen weten, en aan wie vragen we dat?</div></div>
+    <div class="box"><span class="n">➜</span><h2>Meenemen naar week 2</h2>
+      <div class="q">Welk risico vinden we nú het scherpst, en waarom? Eén zin.</div></div>
+  </div>
+
+  <div class="foot">
+    <div class="growth">
+      <span class="pill on">wk1 context</span><span class="arrow">→</span>
+      <span class="pill p2">wk2 risico</span><span class="arrow">→</span>
+      <span class="pill p3">wk3 governance</span><span class="arrow">→</span>
+      <span class="pill p4">wk4 ontwerp → dossier</span>
+    </div>
+    <div class="credit">Minor Secure by Design · Avans Hogeschool · securebydesign.nu</div>
+  </div>
+</section>
+
+<!-- ============ PAGINA 2 · INGEVULD VOORBEELD ============ -->
+<section class="sheet filled">
+  <div class="head">
+    <div>
+      <div class="kick">Secure by Design · Fundament · week 1 · lesblok 9 · <span style="color:var(--w3)">docentvoorbeeld</span></div>
+      <h1>Security Context Canvas</h1>
+      <div class="sub">Referentie-uitwerking. Bewust vollediger dan wat teams in 50 minuten halen — gebruik de kwaliteitslat, niet dit vel, als norm.</div>
+    </div>
+    <div class="meta">
+      <div class="f w-casus">casus<i>Wijkzorg-app “Naaste”</i></div>
+      <div class="f w-team">team<i>voorbeeld</i></div>
+      <div class="f w-v">versie<i>1.0</i></div>
+      <div class="f w-d">datum<i>—</i></div>
+    </div>
+  </div>
+
+  <div class="zones">
+    <div class="zone"><b>A</b> · Wat &amp; waarom</div>
+    <div class="zone"><b>B</b> · Wie</div>
+    <div class="zone"><b>C</b> · Wat beschermen we</div>
+  </div>
+
+  <div class="grid">
+    <div class="box"><span class="n">1</span><h2>Casus &amp; scope</h2>
+      <div class="fill">
+        <p>De app, de koppeling met de apotheek, de telefoons van verzorgenden en de externe bouwer/beheerder.</p>
+        <p><b>Buiten scope:</b> het personeelssysteem — dat raakt de cliëntzorg niet rechtstreeks.</p>
+      </div><div class="tag">← lesblok 2</div></div>
+
+    <div class="box"><span class="n">4</span><h2>Stakeholders &amp; belangen</h2>
+      <div class="fill">
+        <p>Cliënt · mantelzorger · verzorgende · teamleider · externe bouwer · apotheek · zorgverzekeraar · FG.</p>
+        <p><b>Botsing:</b> teamleider wil snel inloggen op de gang; de FG wil sterke authenticatie.</p>
+      </div><div class="tag">← lesblok 5</div></div>
+
+    <div class="box"><span class="n">7</span><h2>Assets &amp; kroonjuwelen</h2>
+      <div class="fill">
+        <p><span class="a">A1</span> zorgnotities · <span class="a">A2</span> medicatiegegevens ★ · <span class="a">A3</span> identiteit/toegang mantelzorger ★</p>
+        <p><span class="a">A4</span> telefoons verzorgenden · <span class="a">A5</span> chatgeschiedenis · <span class="a">A6</span> vertrouwen van cliënten ★</p>
+        <p style="color:var(--ink2)">★ = kroonjuweel</p>
+      </div><div class="tag">← lesblok 6</div></div>
+
+    <div class="box"><span class="n">2</span><h2>Waarde &amp; belofte</h2>
+      <div class="fill">
+        <p>Mantelzorgers voelen zich betrokken en gerustgesteld.</p>
+        <p>Stilzwijgende belofte: <b>“wat hier staat klopt, en alleen wij kunnen het zien.”</b></p>
+        <p>Beide helften van die belofte kunnen los sneuvelen — dat is het gesprek.</p>
+      </div><div class="tag">← lesblok 1</div></div>
+
+    <div class="box"><span class="n">5</span><h2>Gebruikers &amp; gedrag</h2>
+      <div class="fill">
+        <p>Verzorgende met acht cliënten op een ochtend blijft ingelogd; telefoon ligt in de auto.</p>
+        <p>Notities worden ’s avonds thuis uit het hoofd bijgewerkt — dat raakt <b>integriteit</b>, niet vertrouwelijkheid.</p>
+      </div><div class="tag">← lesblok 4</div></div>
+
+    <div class="box"><span class="n">8</span><h2>Abuse cases</h2>
+      <div class="fill"><ul>
+        <li><b>Als</b> iemand zich als familielid voordoet en toegang krijgt, <b>dan</b> leest een buitenstaander mee <b>op</b> <span class="a">A3, A1</span></li>
+        <li><b>Als</b> een telefoon met actieve sessie wordt gestolen, <b>dan</b> liggen notities van meerdere cliënten op straat <b>op</b> <span class="a">A4, A1, A5</span></li>
+        <li><b>Als</b> de apotheekkoppeling stil verouderde medicatie doorgeeft, <b>dan</b> handelt een verzorgende op onjuiste info <b>op</b> <span class="a">A2</span></li>
+      </ul></div><div class="tag">← lesblok 6</div></div>
+
+    <div class="box"><span class="n">3</span><h2>BIV-profiel</h2>
+      <div class="fill">
+        <p><b>I → V → B.</b></p>
+        <p>Onjuiste medicatienotities geven direct schade aan een cliënt; dat weegt zwaarder dan een lek.</p>
+        <p>Voor de cliënt zélf ligt V mogelijk hoger — dat spanningsveld benoemen.</p>
+      </div><div class="tag">← lesblok 1</div></div>
+
+    <div class="box"><span class="n">6</span><h2>Wie zou dit misbruiken?</h2>
+      <div class="fill"><ul>
+        <li>nieuwsgierige buurman die zich voordoet als familie</li>
+        <li>ex-partner die via mantelzorger-toegang wil meelezen</li>
+        <li>medewerker van de bouwer met productietoegang</li>
+        <li>verzorgende die per ongeluk bij de verkeerde cliënt schrijft</li>
+      </ul></div><div class="tag">← lesblok 8</div></div>
+
+    <div class="box"><span class="n">9</span><h2>Ontwerpprincipes &amp; keuzes</h2>
+      <div class="fill">
+        <p><b>Least privilege</b> → een mantelzorger ziet alleen zijn eigen naaste, en alleen de zorgmomenten.</p>
+        <p><b>Secure by default</b> → automatisch uitloggen na inactiviteit.</p>
+        <p style="color:var(--ink2)">Ruil: kost gemak voor de verzorgende. Bewust genomen.</p>
+      </div><div class="tag">← lesblok 3</div></div>
+  </div>
+
+  <div class="strip">
+    <div class="box"><span class="n">⚑</span><h2>Aannames &amp; open vragen</h2>
+      <div class="fill"><p>We nemen aan dat de bouwer géén toegang heeft tot productiedata — dat weten we niet. <b>Vraag aan de teamleider:</b> wie kan er bij de gegevens van de externe partij?</p></div></div>
+    <div class="box"><span class="n">➜</span><h2>Meenemen naar week 2</h2>
+      <div class="fill"><p>Scherpste risico: <span class="a">A3</span> — mantelzorger-toegang toekennen is nu een menselijke beslissing zonder controle, en dat opent alle andere assets.</p></div></div>
+  </div>
+
+  <div class="foot">
+    <div class="growth">
+      <span class="pill on">wk1 context</span><span class="arrow">→</span>
+      <span class="pill p2">wk2 risico</span><span class="arrow">→</span>
+      <span class="pill p3">wk3 governance</span><span class="arrow">→</span>
+      <span class="pill p4">wk4 ontwerp → dossier</span>
+      <span class="stamp">voorbeeld</span>
+    </div>
+    <div class="credit">Minor Secure by Design · Avans Hogeschool · securebydesign.nu</div>
+  </div>
+</section>
+
+</body>
+</html>

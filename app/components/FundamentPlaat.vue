@@ -95,6 +95,14 @@
                       <b style="color:var(--c)">{{ c }}</b> {{ t.stations[c][0] }}<br v-if="ci < s.st.length - 1" />
                     </template>
                   </dd>
+                  <template v-if="s.mat">
+                    <dt>{{ t.labels.materiaal }}</dt>
+                    <dd>
+                      <NuxtLink v-for="m in s.mat" :key="m[1]" class="mat-link" :to="localePath(m[1])" @click.stop>
+                        {{ m[0] }} →
+                      </NuxtLink>
+                    </dd>
+                  </template>
                 </dl>
                 <div v-if="s.mk" class="mk-note">
                   <b>{{ t.labels.mkNoteB }}</b>{{ t.labels.mkNoteBody }}
@@ -177,7 +185,11 @@
           <div v-for="(g, gi) in t.make" :key="gi" class="reveal" :style="{ animationDelay: gi * 60 + 'ms' }">
             <h4>{{ g[0] }}</h4>
             <ul>
-              <li v-for="(x, xi) in g[1]" :key="xi"><b>{{ x[1] }}</b> · {{ x[0] }}</li>
+              <li v-for="(x, xi) in g[1]" :key="xi">
+                <b>{{ x[1] }}</b> ·
+                <NuxtLink v-if="x[2]" class="mk-link" :to="localePath(x[2])">{{ x[0] }} →</NuxtLink>
+                <template v-else>{{ x[0] }}</template>
+              </li>
             </ul>
           </div>
         </div>
@@ -198,6 +210,9 @@
 import { ref, computed } from 'vue'
 
 const props = defineProps({ t: { type: Object, required: true } })
+
+// Kaartsets en canvases die een eigen pagina hebben, linken mee in de juiste taal.
+const { localePath } = useI18nNav()
 
 const showMetro = ref(true)
 const showMk = ref(false)
@@ -305,6 +320,8 @@ h1 em{font-style:italic; color:var(--w3)}
 .body dl{margin:9px 0 0; display:grid; grid-template-columns:auto 1fr; gap:4px 10px}
 .body dt{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--c); padding-top:2px}
 .body dd{margin:0; font-size:12.5px; color:var(--ink2)}
+.mat-link{display:inline-block; font-size:12.5px; font-weight:600; text-decoration:none; color:var(--c); border-bottom:1.5px solid var(--c); margin-right:10px}
+.mat-link:hover{background:var(--c); color:#fff}
 .old{font-size:11px; color:#8a8070; margin-top:9px; font-style:italic; border-top:1px dotted var(--line); padding-top:7px}
 .mk-note{margin-top:9px; font-size:12px; background:rgba(189,122,28,.08); border:1px dashed var(--make); border-radius:8px; padding:7px 9px; color:#7a5410; display:none}
 .card.open .mk-note, .plate.mk .card.has-mk .mk-note{display:block}
@@ -348,6 +365,8 @@ table.cov tbody tr:hover{background:rgba(33,29,24,.03)}
 .make-grid ul{margin:0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:5px}
 .make-grid li{font-size:12.5px; color:var(--ink2); padding-left:20px; position:relative}
 .make-grid li::before{content:"✎"; position:absolute; left:0; color:var(--make)}
+.make-grid li .mk-link{font-weight:600; color:#7a5410; text-decoration:none; border-bottom:1.5px solid var(--make)}
+.make-grid li .mk-link:hover{background:var(--make); color:#fff}
 .make-grid li b{color:var(--ink); font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500}
 .ready{margin-top:14px; padding-top:12px; border-top:1px dashed var(--make); font-size:12.5px; color:#7a5410}
 .ready b{font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--make); display:block; margin-bottom:3px}
