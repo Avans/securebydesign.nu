@@ -9,3 +9,7 @@ dist
 *.log
 .DS_Store
 .playwright-mcp
+
+# Tijdelijke Marp-exports (lokaal testen)
+lesmateriaal/**/_pptx/
+~$*.pptx

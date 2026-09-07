@@ -40,20 +40,40 @@ de rest van de decks staat er los van.
 
 ## Van Markdown naar PowerPoint
 
-De decks zijn geschreven voor [Marp](https://marp.app): `---` scheidt de slides, HTML-commentaar
-(`<!-- ... -->`) wordt een notitie bij de slide.
+De decks zijn Marp-markdown: `---` scheidt de slides, HTML-commentaar (`<!-- ... -->`) onder een
+slide is de docentnotitie.
 
 ```bash
-# één deck
-npx @marp-team/marp-cli@latest w1b1-intro-secure-by-design.md -o w1b1-intro-secure-by-design.pptx
-
-# alle decks in deze map
-npx @marp-team/marp-cli@latest --pptx w1b*.md
+pip install python-pptx                      # eenmalig
+cd lesmateriaal
+python3 md-naar-pptx.py week1/w1b*.md -o week1/_pptx
 ```
 
-`--pdf` in plaats van `--pptx` geeft een handout. Voor bewerken in PowerPoint zelf: exporteer naar
-`.pptx`, open, en pas het thema toe — de Marp-export levert bewust een kale opmaak zodat de
-huisstijl in PowerPoint blijft leven.
+Het script gebruikt [`avans_template.pptx`](../avans_template.pptx) als sjabloon en kiest per
+slide de passende Avans-layout:
+
+| Markdown | Avans-layout |
+|---|---|
+| eerste slide (`# Titel`) | *Opening slide - rood - zonder foto* |
+| slide met alléén koppen (`## Deel 1 · Verhaal`) | *Titelslide basic rood* |
+| slide met een tabel of codeblok | *Alleen titel* + eigen tabel |
+| gewone tekstslide | *Lege dia* |
+
+Alle 89 layouts van de template blijven in het bestand zitten, dus in PowerPoint kun je per slide
+via **Start → Indeling** een andere Avans-slide kiezen (fotoslides, avatiles, agenda, eindslide).
+Kleuren en lettertype komen uit het thema: Avans-rood `#C6002A`, Arial.
+
+Opties: `--template andere.pptx` voor een ander sjabloon, `--geen-template` voor kale opmaak.
+`_pptx/` staat in `.gitignore` — de markdown is de bron, de pptx is wegwerpbaar.
+
+Voor een snelle preview of een PDF-handout kan ook [Marp](https://marp.app):
+
+```bash
+npx @marp-team/marp-cli@latest --pdf week1/w1b1-intro-secure-by-design.md
+```
+
+Let op: `marp --pptx` zet elke slide om in een **plaatje**, laat de docentnotities vallen en kent
+de huisstijl niet. Bruikbaar om te kijken, niet om mee te werken.
 
 ## Conventies in de decks
 
