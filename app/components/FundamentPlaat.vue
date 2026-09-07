@@ -287,9 +287,15 @@ h1 em{font-style:italic; color:var(--w3)}
 .lg-mk{width:13px;height:13px;border:1.5px dashed var(--make);border-radius:3px;display:inline-block}
 
 .board{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; align-items:start; margin-top:6px}
-.col{--c:var(--w1); position:relative; opacity:0; transform:translateY(12px); animation:rise .5s forwards}
-.col[data-w="2"]{--c:var(--w2); animation-delay:.1s} .col[data-w="3"]{--c:var(--w3); animation-delay:.18s} .col[data-w="4"]{--c:var(--w4); animation-delay:.26s}
-.col[data-w="1"]{animation-delay:.04s}
+.col{--c:var(--w1); position:relative}
+.col[data-w="2"]{--c:var(--w2)} .col[data-w="3"]{--c:var(--w3)} .col[data-w="4"]{--c:var(--w4)}
+/* De kolommen zijn standaard zichtbaar; alleen wie beweging wil, krijgt de intro.
+   Zo blijft het fundament staan als animaties uit staan (of niet afspelen). */
+@media(prefers-reduced-motion:no-preference){
+  .col{opacity:0; transform:translateY(12px); animation:rise .5s forwards}
+  .col[data-w="1"]{animation-delay:.04s} .col[data-w="2"]{animation-delay:.1s}
+  .col[data-w="3"]{animation-delay:.18s} .col[data-w="4"]{animation-delay:.26s}
+}
 @keyframes rise{to{opacity:1; transform:none}}
 .col-h{position:relative; padding:12px 14px 13px 18px; border-radius:12px 12px 4px 4px; background:var(--c); color:#fdf8ee; overflow:hidden; box-shadow:var(--shadow)}
 .col-h::after{content:""; position:absolute; right:-18px; top:-30px; width:90px; height:90px; border-radius:50%; background:rgba(255,255,255,.08)}
@@ -375,5 +381,6 @@ footer{margin:50px 0 40px; padding-top:18px; border-top:1px solid var(--line); c
 
 @media(max-width:1080px){ .board{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:560px){ .board{grid-template-columns:1fr} .legend{margin-left:0} .wrap{padding:0 16px} }
-@media(prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}
+  .col,.reveal{opacity:1!important; transform:none!important}}
 </style>
