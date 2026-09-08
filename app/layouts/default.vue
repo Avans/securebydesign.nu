@@ -68,6 +68,7 @@ const nav = [
   { base: '/fundament', label: { nl: 'Fundament', en: 'Foundation' } },
   { base: '/professioneel-profiel', label: { nl: 'Professioneel Profiel', en: 'Professional Profile' } },
   { base: '/project', label: { nl: 'Project', en: 'Project' } },
+  { base: '/eindevent', label: { nl: 'Eind Event', en: 'Final event' } },
   { base: '/partners', label: { nl: 'Partners', en: 'Partners' } },
   { base: '/contact', label: { nl: 'Contact', en: 'Contact' } }
 ]

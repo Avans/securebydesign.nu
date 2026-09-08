@@ -48,9 +48,7 @@
 
     <h2 class="sec-h"><span class="no">02</span> Zo lees je deze minor — drie flows</h2>
     <p class="sec-sub">
-      De minor kent drie opeenvolgende flows. Elke flow heeft een eigen praatplaat die laat zien wat je
-      doet en waarom. Lees ze in volgorde: elke flow bouwt voort op de vorige. Klik op een kaart om de
-      bijbehorende praatplaat te openen.
+      De minor start met Fundament. Vanaf week 5 lopen profielverdieping en bedrijfsproject naast elkaar, met een gezamenlijk Eind Event in week 19. Klik op een kaart voor de opbouw en activiteiten.
     </p>
     <div class="flows">
       <NuxtLink to="/fundament" class="flow reveal" style="--c:var(--w2); animation-delay:0s">
@@ -64,18 +62,18 @@
       </NuxtLink>
 
       <NuxtLink to="/professioneel-profiel" class="flow reveal" style="--c:var(--w4); animation-delay:.1s">
-        <span class="step">Flow 2 · verdieping</span>
+        <span class="step">Flow 2 · week 5–10, verdieping tot week 19</span>
         <h3>Professioneel Profiel</h3>
         <p>
           Je stapt uit bij een station en gaat de diepte in. Je kiest één of meer onderwerpen, doet
           praktisch onderzoek voor een fictieve opdrachtgever en levert een prototype óf rapport.
-          Portfolio + eindpresentatie vormen de toets.
+          Week 10 is een tussenreview; je ontwikkelt door naar de profielworkshops in week 19.
         </p>
         <span class="go">Open de praatplaat →</span>
       </NuxtLink>
 
       <NuxtLink to="/project" class="flow reveal" style="--c:var(--w3); animation-delay:.2s">
-        <span class="step">Flow 3 · het project</span>
+        <span class="step">Flow 3 · start week 5, intensief vanaf week 11</span>
         <h3>Cybersecurity-project</h3>
         <p>
           Met een team van vier à vijf los je een echt cybervraagstuk op voor een bedrijf. De vragen
@@ -83,6 +81,9 @@
           de aanpak bepaalt.
         </p>
         <span class="go">Open de praatplaat →</span>
+      </NuxtLink>
+      <NuxtLink to="/eindevent" class="flow" style="--c:var(--w1)">
+        <span class="step">Week 19 · samen leren & resultaten delen</span><h3>Eind Event</h3><p>Profielworkshops in de ochtend, keynotes en resultaatpresentaties van alle projecten vanaf 14:00. Voor studenten, opdrachtgevers en bedrijfsdelegaties.</p><span class="go">Open de praatplaat →</span>
       </NuxtLink>
     </div>
 

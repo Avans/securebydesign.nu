@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive } from 'vue'
+import LessenOverzicht from './LessenOverzicht.vue'
 
 defineProps({
   t: { type: Object, required: true }
@@ -148,6 +149,8 @@ function onKey(e, li, ti) {
           </dl>
         </div>
       </div>
+
+      <LessenOverzicht id="lessons-heading" :t="t.lessons" number="04" />
 
       <h2 class="sec-h">
         <span class="no">{{ t.sections.toets.no }}</span> {{ t.sections.toets.heading }}

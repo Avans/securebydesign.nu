@@ -5,17 +5,17 @@ export default {
   hero: {
     kicker: 'Secure by Design · Phase 2 · plate',
     title: 'The <em>Professional Profile</em>',
-    lede: 'Phase 1 brought everyone to one shared foundation. In phase 2 you step off at a station and go deep: you pick one or more cybersecurity topics, carry out practical research on them for a fictional client, and deliver a prototype or report. Your portfolio and final presentation form the assessment.'
+    lede: 'Phase 1 brought everyone to one shared foundation. In phase 2 you step off at a station and go deep: you pick one or more cybersecurity topics, carry out practical research on them for a fictional client, and deliver a prototype or report. The real company project also starts in week 5. Week 10 is an interim review; your profile and portfolio continue developing towards the workshops in week 19.'
   },
 
   chips: [
-    'phase 2',
+    'phase 2 · weeks 5–10',
     'free choice of topic',
     '1 or more topics',
     'practical research',
     'prototype or report',
     'fictional client',
-    'portfolio + final presentation',
+    'interim review week 10 · workshops week 19',
     'tech & non-tech'
   ],
 
@@ -39,9 +39,9 @@ export default {
       sub: 'Two worked-out approaches to give direction — one build-focused, one research-focused.'
     },
     toets: {
-      no: '04',
-      heading: 'From choice to assessment',
-      sub: "Here's how the track runs, and this is what goes into your portfolio and final presentation."
+      no: '05',
+      heading: 'From choice to interim review and knowledge transfer',
+      sub: "Your portfolio develops with your work: initial results in week 10, further specialisation and knowledge transfer towards week 19."
     }
   },
 
@@ -57,7 +57,7 @@ export default {
     ['Practical research', 'K2', "It's about doing: not just reading, but researching, testing, building or validating. A demonstrable practical core is required."],
     ['Prototype or report', 'K3', 'Your deliverable is a working prototype, or a well-founded report/advice. What fits your topic and your angle is up to you.'],
     ['Fictional client', 'K4', 'Aim your work at a fictional client with a real problem. That forces scope, relevance and professional communication.'],
-    ['Assessment = portfolio + presentation', 'K5', 'You are assessed on your portfolio (process, choices, evidence) and a final presentation in which you defend your work to the client.'],
+    ['Interim review & knowledge transfer', 'K5', 'Week 10 reviews your initial result and portfolio. Continue developing towards an active workshop with related profiles in week 19. Strong work may also receive a keynote slot.'],
     ['Tech and non-tech', 'K6', 'Every topic can be approached technically (building) or organisationally/research-wise. Choose the angle that suits you.']
   ],
 
@@ -143,13 +143,334 @@ export default {
     ]]
   ],
 
+  lessons: {
+  "heading": "Learning programme · weeks 5–10",
+  "intro": "Your profile and real company project start together in week 5. Nine 1.5-hour timetable blocks per week shift from shared teaching towards application, with regular depth and feedback. Workshops are supported working time, not nine classroom lessons.",
+  "labels": {
+    "week": "Week",
+    "core": "Core",
+    "activity": "Activity",
+    "output": "Output"
+  },
+  "types": {
+    "les": "Lessons & clinics",
+    "atelier": "Profile workshop",
+    "project": "Company project",
+    "feedback": "Feedback & knowledge sharing",
+    "tutor": "Tutor meeting"
+  },
+  "allocation": {
+    "caption": "Timetable allocation · 1.5-hour blocks",
+    "activity": "Activity",
+    "total": "Total",
+    "rows": [
+      {
+        "label": "Lessons & clinics",
+        "values": [
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "Profile workshop",
+        "values": [
+          3,
+          2,
+          3,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "label": "Company project",
+        "values": [
+          2,
+          3,
+          3,
+          4,
+          5,
+          5
+        ]
+      },
+      {
+        "label": "Feedback & knowledge sharing",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "From week 6, clinics follow profile choices. Working sessions have specific tasks and agreed tutor availability.",
+    "Protect the weekly feedback block: show visible work and discuss profile and project. From week 7, practise short explanations or a mini-workshop.",
+    "Week 10 is an interim review, not profile completion. Continue development and your portfolio through the project, focused study and the week 19 workshop.",
+    "The company assignment and individual profile question remain identifiable but can inform each other. Block allocations can shift if an intake is delayed."
+  ],
+  "links": [
+    {
+      "path": "/project",
+      "label": "Continue the project · weeks 11–19"
+    },
+    {
+      "path": "/eindevent",
+      "label": "Profile workshops at the final event"
+    }
+  ],
+  "weeks": [
+    {
+      "n": 5,
+      "title": "Explore",
+      "goal": "Profile + company project",
+      "blocks": [
+        {
+          "title": "Specialisation & intake preparation",
+          "core": "Explore topics, scope an initial question and practise an intake.",
+          "activity": "Compare research angles and practise probing a client request.",
+          "output": "Two possible profile topics and intake questions.",
+          "type": "les",
+          "badge": "Block 1–3"
+        },
+        {
+          "title": "First experiment",
+          "core": "Compare topics through a small practical investigation.",
+          "activity": "Run a small experiment and record what you want to learn.",
+          "output": "Initial findings and personal learning goals.",
+          "type": "atelier",
+          "badge": "Block 4–6"
+        },
+        {
+          "title": "Team & assignment",
+          "core": "Start the real company project alongside your profile.",
+          "activity": "Form a team, read the brief and prepare first client contact.",
+          "output": "Team agreements, initial brief and intake schedule.",
+          "type": "project",
+          "badge": "Block 7–8"
+        },
+        {
+          "title": "Visible progress",
+          "core": "Make your initial choices discussable.",
+          "activity": "Show your experiment and questions to peers and your tutor.",
+          "output": "Feedback and specific next actions.",
+          "type": "feedback",
+          "badge": "Block 9"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "title": "Choose",
+      "goal": "Profile + company project",
+      "blocks": [
+        {
+          "title": "Topic clinic & research design",
+          "core": "Choose a specialisation and a suitable method.",
+          "activity": "Justify your choice, scope and success criteria; attend a relevant clinic.",
+          "output": "Research question, method and success criteria.",
+          "type": "les",
+          "badge": "Block 1–3"
+        },
+        {
+          "title": "Set up profile research",
+          "core": "Make your individual investigation feasible.",
+          "activity": "Design an experiment or research plan with sources and resources.",
+          "output": "Profile research plan.",
+          "type": "atelier",
+          "badge": "Block 4–5"
+        },
+        {
+          "title": "Intake & problem understanding",
+          "core": "Understand the business and the underlying problem.",
+          "activity": "Conduct the intake; record stakeholders, scope, authorisation and data agreements before execution.",
+          "output": "Problem understanding, mandate and client agreements.",
+          "type": "project",
+          "badge": "Block 6–8"
+        },
+        {
+          "title": "Review choices",
+          "core": "Discuss your profile choice and the client problem.",
+          "activity": "Show your plan and intake findings; separate facts, assumptions and open questions.",
+          "output": "Updated plans and follow-up client questions.",
+          "type": "feedback",
+          "badge": "Block 9"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "title": "Investigate",
+      "goal": "Profile + company project",
+      "blocks": [
+        {
+          "title": "Topic clinic & evidence",
+          "core": "Deepen your topic and assess evidence quality.",
+          "activity": "Attend a relevant clinic and compare sources or methods.",
+          "output": "Justified research choices.",
+          "type": "les",
+          "badge": "Block 1–2"
+        },
+        {
+          "title": "First research iteration",
+          "core": "Conduct your profile research.",
+          "activity": "Collect and analyse initial data or build an experiment; record a reproducible method.",
+          "output": "Initial findings with evidence.",
+          "type": "atelier",
+          "badge": "Block 3–5"
+        },
+        {
+          "title": "Approach & initial project research",
+          "core": "Develop the project approach and begin within agreed scope.",
+          "activity": "Specify questions, methods, roles and schedule; conduct an initial investigation.",
+          "output": "Draft project plan and initial evidence.",
+          "type": "project",
+          "badge": "Block 6–8"
+        },
+        {
+          "title": "Share an insight",
+          "core": "Practise knowledge transfer towards week 19.",
+          "activity": "Explain an insight or lead a mini-exercise in five minutes; discuss project progress.",
+          "output": "Peer feedback on content and explanation, plus actions.",
+          "type": "feedback",
+          "badge": "Block 9"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "title": "Try & test",
+      "goal": "Profile + company project",
+      "blocks": [
+        {
+          "title": "Depth & validation",
+          "core": "Design a check for your own result.",
+          "activity": "Use workshop questions to shape a clinic and create a validation plan.",
+          "output": "Validation plan with testable criteria.",
+          "type": "les",
+          "badge": "Block 1–2"
+        },
+        {
+          "title": "Test profile results",
+          "core": "Check whether your initial result holds up.",
+          "activity": "Run a test, discuss limitations and adjust your research.",
+          "output": "Test findings and revised research plan.",
+          "type": "atelier",
+          "badge": "Block 3–4"
+        },
+        {
+          "title": "Try a direction with the client",
+          "core": "Check the value of your approach.",
+          "activity": "Discuss findings and try a direction; update scope and plan using feedback.",
+          "output": "Client feedback and a supported next direction.",
+          "type": "project",
+          "badge": "Block 5–8"
+        },
+        {
+          "title": "Review & mini-exercise",
+          "core": "Learn from each other’s tests and explanations.",
+          "activity": "Show a result and have a peer complete a short exercise.",
+          "output": "Improvements for research, project and knowledge transfer.",
+          "type": "feedback",
+          "badge": "Block 9"
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Connect",
+      "goal": "Profile + company project",
+      "blocks": [
+        {
+          "title": "Clinic on a shared obstacle",
+          "core": "Deepen an issue affecting multiple students.",
+          "activity": "Bring questions and work with related profiles on a common obstacle.",
+          "output": "A useful insight or method for the next step.",
+          "type": "les",
+          "badge": "Block 1"
+        },
+        {
+          "title": "Expertise for your team",
+          "core": "Investigate an open question and make insights useful.",
+          "activity": "Develop a tool, guideline or demonstration from relevant profile insights.",
+          "output": "Profile evidence and an applicable knowledge contribution.",
+          "type": "atelier",
+          "badge": "Block 2–3"
+        },
+        {
+          "title": "Research & develop",
+          "core": "Continue the company assignment with justified choices.",
+          "activity": "Investigate, develop or test; connect profile knowledge to project decisions where relevant.",
+          "output": "Project results with justified choices.",
+          "type": "project",
+          "badge": "Block 4–8"
+        },
+        {
+          "title": "Share & adjust",
+          "core": "Check whether others can use your expertise.",
+          "activity": "Have peers try your contribution and discuss project decisions with your tutor.",
+          "output": "Usability feedback and revised actions.",
+          "type": "feedback",
+          "badge": "Block 9"
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "title": "Take stock",
+      "goal": "Profile + company project",
+      "blocks": [
+        {
+          "title": "Conclusions & limitations",
+          "core": "Draw conclusions supported by evidence.",
+          "activity": "Practise explaining results, uncertainty and limitations.",
+          "output": "Supported conclusions without overclaiming.",
+          "type": "les",
+          "badge": "Block 1"
+        },
+        {
+          "title": "Profile interim review",
+          "core": "Record your first research result; the profile continues.",
+          "activity": "Show your research, reflect on learning goals and plan further development towards week 19.",
+          "output": "Interim portfolio and profile/workshop development plan.",
+          "type": "atelier",
+          "badge": "Block 2–3"
+        },
+        {
+          "title": "Project progress review",
+          "core": "Prepare the transition to four project days.",
+          "activity": "Review early results and client feedback; plan the next period and prepare Business Understanding.",
+          "output": "Project progress record, updated plan and presentation material.",
+          "type": "project",
+          "badge": "Block 4–8"
+        },
+        {
+          "title": "Feedback & next steps",
+          "core": "Make the next step specific for profile and project.",
+          "activity": "Discuss visible work, research questions and planning with peers and your tutor.",
+          "output": "Follow-up agreements and potential workshop groupings.",
+          "type": "feedback",
+          "badge": "Block 9"
+        }
+      ]
+    }
+  ]
+},
+
   steps: [
     ['Choose & explore', 'Pick one or more topics that genuinely draw you in.'],
     ['Scope & client', 'Choose a fictional client and demarcate the problem.'],
     ['Research question', 'Formulate a sharp, practical question you can answer.'],
     ['Practical research', 'Build a prototype or do focused research — deliver evidence.'],
     ['Portfolio', 'Record context, choices, process and results.'],
-    ['Final presentation', 'Defend your work and advice to the client.']
+    ['Interim review → knowledge transfer', 'Week 10: show your initial result and next steps. Continue developing and share your expertise in a profile workshop at the final event in week 19.']
   ],
 
   portfolioPanel: {

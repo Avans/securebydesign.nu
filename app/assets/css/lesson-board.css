@@ -1,0 +1,48 @@
+.board{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; align-items:start; margin-top:6px}
+.col{--c:var(--w1); position:relative}
+.col[data-w="2"]{--c:var(--w2)} .col[data-w="3"]{--c:var(--w3)} .col[data-w="4"]{--c:var(--w4)}
+/* De kolommen zijn standaard zichtbaar; alleen wie beweging wil, krijgt de intro.
+   Zo blijft het fundament staan als animaties uit staan (of niet afspelen). */
+@media(prefers-reduced-motion:no-preference){
+  .col{opacity:0; transform:translateY(12px); animation:rise .5s forwards}
+  .col[data-w="1"]{animation-delay:.04s} .col[data-w="2"]{animation-delay:.1s}
+  .col[data-w="3"]{animation-delay:.18s} .col[data-w="4"]{animation-delay:.26s}
+}
+@keyframes rise{to{opacity:1; transform:none}}
+.col-h{position:relative; padding:12px 14px 13px 18px; border-radius:12px 12px 4px 4px; background:var(--c); color:#fdf8ee; overflow:hidden; box-shadow:var(--shadow)}
+.col-h::after{content:""; position:absolute; right:-18px; top:-30px; width:90px; height:90px; border-radius:50%; background:rgba(255,255,255,.08)}
+.col-h .wk{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; opacity:.85; text-transform:uppercase}
+.col-h h3{font-family:'Fraunces',serif; font-weight:600; font-size:21px; margin:3px 0 2px; line-height:1.05}
+.col-h .ph{font-size:11.5px; opacity:.9; font-family:'JetBrains Mono',monospace; letter-spacing:.03em}
+.stack{display:flex; flex-direction:column; gap:8px; margin-top:9px}
+
+.card{background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden; transition:transform .14s, box-shadow .14s, border-color .14s; border-left:3px solid var(--c)}
+.card:hover{transform:translateY(-2px); box-shadow:0 14px 28px -18px rgba(33,29,24,.55)}
+.card.soc{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 9%,var(--card)),var(--card))}
+.card.int{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 14%,var(--card)),var(--card)); border-left-width:5px}
+.card .hd{display:flex; gap:10px; align-items:flex-start; padding:10px 12px; cursor:pointer}
+.bk{font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; color:#fff; background:var(--c); padding:3px 6px; border-radius:5px; flex:none; margin-top:1px; min-width:32px; text-align:center}
+.card .ti{font-size:13.5px; font-weight:600; line-height:1.22}
+.bt{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--c); font-weight:500; display:inline-flex; align-items:center; gap:4px; margin-top:3px}
+.bt .ic{font-size:9px}
+.pills{display:flex; gap:3px; flex-wrap:wrap; margin-top:5px}
+.pill{font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.02em; color:var(--ink2); border:1px solid var(--line); border-radius:999px; padding:1px 6px; background:rgba(255,255,255,.4); cursor:help}
+.pill::before{content:""; width:5px;height:5px;border-radius:50%; background:var(--c); display:inline-block; margin-right:4px; vertical-align:middle}
+.plate:not(.metro) .pills{display:none}
+.mk-mark{margin-left:auto; flex:none; font-size:13px; color:var(--make); opacity:.5}
+.chev{flex:none; margin-top:2px; transition:transform .2s; color:var(--ink2)}
+.card.open .chev, .card[open] .chev{transform:rotate(90deg)}
+.card .body{display:none; padding:0 12px 12px 12px; border-top:1px dashed var(--line)}
+.card.open .body, .card[open] .body{display:block; animation:slide .2s ease}
+@keyframes slide{from{opacity:0; transform:translateY(-4px)}to{opacity:1}}
+.body dl{margin:9px 0 0; display:grid; grid-template-columns:auto 1fr; gap:4px 10px}
+.body dt{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--c); padding-top:2px}
+.body dd{margin:0; font-size:12.5px; color:var(--ink2)}
+
+.card summary.hd{list-style:none}
+.card summary.hd::-webkit-details-marker{display:none}
+.card .hd:focus-visible{outline:2px solid var(--c); outline-offset:-3px; border-radius:8px}
+.card .lesson-heading{flex:1; min-width:0}
+@media(max-width:1080px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.board{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.col{opacity:1!important; transform:none!important} .card,.chev{transition:none!important} .card.open .body,.card[open] .body{animation:none!important}}

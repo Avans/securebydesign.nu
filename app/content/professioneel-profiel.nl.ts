@@ -5,17 +5,17 @@ export default {
   hero: {
     kicker: 'Secure by Design · Fase 2 · praatplaat',
     title: 'Het <em>Professioneel Profiel</em>',
-    lede: 'Fase 1 bracht iedereen naar één gezamenlijke basis. In fase 2 stap je uit bij een station en ga je de diepte in: je kiest één of meer cybersecurity-onderwerpen, doet er praktisch onderzoek naar voor een fictieve opdrachtgever, en levert een prototype of rapport. Je portfolio en eindpresentatie vormen de toets.'
+    lede: 'Fase 1 bracht iedereen naar één gezamenlijke basis. In fase 2 stap je uit bij een station en ga je de diepte in: je kiest één of meer cybersecurity-onderwerpen, doet er praktisch onderzoek naar voor een fictieve opdrachtgever, en levert een prototype of rapport. Vanaf week 5 start ook het echte bedrijfsproject. Week 10 is een tussenreview; je profiel en portfolio ontwikkelen door richting de workshops in week 19.'
   },
 
   chips: [
-    'fase 2',
+    'fase 2 · week 5–10',
     'vrije onderwerpkeuze',
     '1 of meer topics',
     'praktisch onderzoek',
     'prototype óf rapport',
     'fictieve opdrachtgever',
-    'portfolio + eindpresentatie',
+    'tussenreview week 10 · workshops week 19',
     'tech & non-tech'
   ],
 
@@ -39,9 +39,9 @@ export default {
       sub: 'Twee uitgewerkte aanpakken om richting te geven — één bouwgericht, één onderzoeksgericht.'
     },
     toets: {
-      no: '04',
-      heading: 'Van keuze naar toets',
-      sub: 'Zo loopt het traject, en dit zit er in je portfolio en eindpresentatie.'
+      no: '05',
+      heading: 'Van keuze naar tussenreview en kennisoverdracht',
+      sub: 'Je portfolio groeit mee: eerste resultaten in week 10, verdere verdieping en kennisoverdracht richting week 19.'
     }
   },
 
@@ -57,7 +57,7 @@ export default {
     ['Praktisch onderzoek', 'K2', 'Het draait om dóén: niet alleen lezen, maar onderzoeken, testen, bouwen of valideren. Een aantoonbare praktische kern is verplicht.'],
     ['Prototype óf rapport', 'K3', 'Je deliverable is een werkend prototype, of een onderbouwd rapport/advies. Wat past bij je onderwerp en je invalshoek bepaal je zelf.'],
     ['Fictieve opdrachtgever', 'K4', 'Richt je werk op een fictieve opdrachtgever met een echt probleem. Dat dwingt scope, relevantie en professionele communicatie af.'],
-    ['Toets = portfolio + presentatie', 'K5', 'Je wordt beoordeeld op je portfolio (proces, keuzes, bewijs) én een eindpresentatie waarin je je werk verdedigt voor de opdrachtgever.'],
+    ['Tussenreview & kennisoverdracht', 'K5', 'Week 10 is een tussenreview van je eerste resultaat en portfolio. Je ontwikkelt door richting week 19, waarin je met verwante profielen een actieve workshop verzorgt. Sterke uitwerkingen kunnen daarnaast een keynote krijgen.'],
     ['Tech én non-tech', 'K6', 'Elk onderwerp kan technisch (bouwen) óf organisatorisch/onderzoekend worden aangepakt. Kies de invalshoek die bij jou past.']
   ],
 
@@ -143,13 +143,334 @@ export default {
     ]]
   ],
 
+  lessons: {
+  "heading": "Lesopbouw · week 5–10",
+  "intro": "Je profiel en het echte bedrijfsproject starten samen in week 5. Negen roosterblokken van 1,5 uur per week: minder gezamenlijke instructie, steeds meer toepassing, met vaste verdieping en feedback. Werkplaatsen zijn begeleide werktijd; niet ieder blok is klassikale les.",
+  "labels": {
+    "week": "Week",
+    "core": "Kern",
+    "activity": "Doen",
+    "output": "Opbrengst"
+  },
+  "types": {
+    "les": "Lessen & clinics",
+    "atelier": "Profielwerkplaats",
+    "project": "Bedrijfsproject",
+    "feedback": "Feedback & kennis delen",
+    "tutor": "Tutoroverleg"
+  },
+  "allocation": {
+    "caption": "Roosterverdeling · blokken van 1,5 uur",
+    "activity": "Activiteit",
+    "total": "Totaal",
+    "rows": [
+      {
+        "label": "Lessen & clinics",
+        "values": [
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "Profielwerkplaats",
+        "values": [
+          3,
+          2,
+          3,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "label": "Bedrijfsproject",
+        "values": [
+          2,
+          3,
+          3,
+          4,
+          5,
+          5
+        ]
+      },
+      {
+        "label": "Feedback & kennis delen",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "Keuzeclinics sluiten vanaf week 6 aan op de profielkeuzes. Werkplaatsen hebben een concrete opdracht en afgesproken beschikbaarheid van begeleiding.",
+    "Het wekelijkse feedbackblok is beschermd: toon zichtbaar werk en bespreek profiel én project. Vanaf week 7 oefen je ook korte uitleg of een mini-workshop.",
+    "Week 10 is een tussenreview, geen afronding van het profiel. Je verdieping en portfolio lopen door via het project, gerichte studie en de profielworkshop in week 19.",
+    "De bedrijfsopdracht en je eigen profielvraag zijn herkenbaar onderscheiden, maar mogen inhoudelijk op elkaar aansluiten. De blokverdeling kan verschuiven als een intake later plaatsvindt."
+  ],
+  "links": [
+    {
+      "path": "/project",
+      "label": "Verder met het project · week 11–19"
+    },
+    {
+      "path": "/eindevent",
+      "label": "Profielworkshops op het Eind Event"
+    }
+  ],
+  "weeks": [
+    {
+      "n": 5,
+      "title": "Verkennen",
+      "goal": "Profiel + bedrijfsproject",
+      "blocks": [
+        {
+          "title": "Verdieping & intake voorbereiden",
+          "core": "Verken profielonderwerpen, baken een eerste onderzoeksvraag af en oefen een intakegesprek.",
+          "activity": "Vergelijk invalshoeken en oefen doorvragen op een klantvraag.",
+          "output": "Twee mogelijke profielonderwerpen en een intakevragenlijst.",
+          "type": "les",
+          "badge": "Blok 1–3"
+        },
+        {
+          "title": "Eerste proef",
+          "core": "Vergelijk onderwerpen door iets kleins te onderzoeken of te maken.",
+          "activity": "Voer een kleine proef uit en leg vast wat je nog wilt leren.",
+          "output": "Eerste proef met bevindingen en persoonlijke leerdoelen.",
+          "type": "atelier",
+          "badge": "Blok 4–6"
+        },
+        {
+          "title": "Team & opdracht",
+          "core": "Start het echte bedrijfsproject naast je eigen profiel.",
+          "activity": "Vorm een team, lees de opdracht en bereid het eerste bedrijfscontact voor.",
+          "output": "Teamafspraken, eerste opdrachtbeeld en intakeplanning.",
+          "type": "project",
+          "badge": "Blok 7–8"
+        },
+        {
+          "title": "Zichtbare voortgang",
+          "core": "Maak je eerste keuzes bespreekbaar.",
+          "activity": "Laat je proef en intakevragen zien; vraag feedback van medestudenten en begeleider.",
+          "output": "Feedback en concrete acties voor volgende week.",
+          "type": "feedback",
+          "badge": "Blok 9"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "title": "Kiezen",
+      "goal": "Profiel + bedrijfsproject",
+      "blocks": [
+        {
+          "title": "Keuzeclinic & onderzoeksopzet",
+          "core": "Kies verdieping en een passende onderzoeksmethode.",
+          "activity": "Onderbouw je profielkeuze en formuleer scope en succescriteria. Volg een clinic passend bij je onderwerp.",
+          "output": "Onderzoeksvraag, methode en succescriteria.",
+          "type": "les",
+          "badge": "Blok 1–3"
+        },
+        {
+          "title": "Profielonderzoek opzetten",
+          "core": "Maak je persoonlijke verdieping uitvoerbaar.",
+          "activity": "Werk een proef- of onderzoeksplan uit met benodigde bronnen en middelen.",
+          "output": "Onderzoeksplan voor je profiel.",
+          "type": "atelier",
+          "badge": "Blok 4–5"
+        },
+        {
+          "title": "Intake & probleembeeld",
+          "core": "Begrijp het bedrijf en de vraag achter de opdracht.",
+          "activity": "Voer de intake uit; leg stakeholders, scope, toestemming en afspraken over data vast vóór uitvoering.",
+          "output": "Probleembeeld, mandaat en werkafspraken met het bedrijf.",
+          "type": "project",
+          "badge": "Blok 6–8"
+        },
+        {
+          "title": "Keuzes toetsen",
+          "core": "Bespreek zowel je profielkeuze als het bedrijfsprobleem.",
+          "activity": "Toon je onderzoeksplan en intakebevindingen; onderscheid feiten, aannames en open vragen.",
+          "output": "Bijgestelde plannen en vervolgvragen voor het bedrijf.",
+          "type": "feedback",
+          "badge": "Blok 9"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "title": "Onderzoeken",
+      "goal": "Profiel + bedrijfsproject",
+      "blocks": [
+        {
+          "title": "Keuzeclinic & bewijs",
+          "core": "Verdiep je onderwerp en beoordeel de kwaliteit van bewijs.",
+          "activity": "Volg een gerichte clinic en vergelijk bronnen of onderzoeksmethoden.",
+          "output": "Onderbouwde keuzes voor je eigen onderzoek.",
+          "type": "les",
+          "badge": "Blok 1–2"
+        },
+        {
+          "title": "Eerste onderzoeksronde",
+          "core": "Voer je profielonderzoek uit.",
+          "activity": "Verzamel en analyseer eerste gegevens of bouw een proef; leg de werkwijze navolgbaar vast.",
+          "output": "Eerste bevindingen met bewijs.",
+          "type": "atelier",
+          "badge": "Blok 3–5"
+        },
+        {
+          "title": "Aanpak & eerste projectonderzoek",
+          "core": "Maak de projectaanpak concreet en start binnen de afgesproken scope.",
+          "activity": "Werk onderzoeksvraag, methode, rollen en planning uit; voer een eerste onderzoeksactiviteit uit.",
+          "output": "Concept-plan van aanpak en eerste projectbewijs.",
+          "type": "project",
+          "badge": "Blok 6–8"
+        },
+        {
+          "title": "Een inzicht delen",
+          "core": "Oefen kennisoverdracht richting week 19.",
+          "activity": "Leg in vijf minuten een inzicht uit of begeleid een mini-oefening; bespreek ook de projectvoortgang.",
+          "output": "Peerfeedback op inhoud en uitleg, plus weekacties.",
+          "type": "feedback",
+          "badge": "Blok 9"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "title": "Beproeven",
+      "goal": "Profiel + bedrijfsproject",
+      "blocks": [
+        {
+          "title": "Verdieping & validatie",
+          "core": "Ontwerp een toets voor je eigen resultaat.",
+          "activity": "Gebruik vragen uit de werkplaats voor een clinic en maak een test- of validatieplan.",
+          "output": "Validatieplan met toetsbare criteria.",
+          "type": "les",
+          "badge": "Blok 1–2"
+        },
+        {
+          "title": "Profielresultaat toetsen",
+          "core": "Onderzoek of je eerste resultaat standhoudt.",
+          "activity": "Voer een test uit, bespreek beperkingen en stel je onderzoek bij.",
+          "output": "Testbevindingen en een bijgesteld onderzoeksplan.",
+          "type": "atelier",
+          "badge": "Blok 3–4"
+        },
+        {
+          "title": "Richting beproeven met het bedrijf",
+          "core": "Toets of de aanpak waardevol is voor de opdrachtgever.",
+          "activity": "Bespreek bevindingen en beproef een richting; werk scope en plan bij op basis van feedback.",
+          "output": "Opdrachtgeverfeedback en een onderbouwde vervolgrichting.",
+          "type": "project",
+          "badge": "Blok 5–8"
+        },
+        {
+          "title": "Review & mini-oefening",
+          "core": "Leer van elkaars tests en uitleg.",
+          "activity": "Toon een resultaat en laat een ander een korte oefening uitvoeren.",
+          "output": "Verbeterpunten voor onderzoek, project en kennisoverdracht.",
+          "type": "feedback",
+          "badge": "Blok 9"
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Verbinden",
+      "goal": "Profiel + bedrijfsproject",
+      "blocks": [
+        {
+          "title": "Clinic rond een gedeeld knelpunt",
+          "core": "Verdiep waar meerdere studenten vastlopen.",
+          "activity": "Breng vragen in en werk met verwante profielen aan een inhoudelijk knelpunt.",
+          "output": "Een bruikbaar inzicht of aanpak voor je volgende stap.",
+          "type": "les",
+          "badge": "Blok 1"
+        },
+        {
+          "title": "Expertise voor het team",
+          "core": "Verdiep een open profielvraag en maak je inzichten bruikbaar.",
+          "activity": "Onderzoek verder en vertaal relevante inzichten naar een hulpmiddel, richtlijn of demonstratie voor je team.",
+          "output": "Profielbewijs en een toepasbare kennisbijdrage.",
+          "type": "atelier",
+          "badge": "Blok 2–3"
+        },
+        {
+          "title": "Onderzoeken & ontwikkelen",
+          "core": "Zet de bedrijfsopdracht voort met onderbouwde keuzes.",
+          "activity": "Onderzoek, ontwikkel of test; verbind waar passend profielkennis aan projectbesluiten.",
+          "output": "Projectresultaten met verantwoorde keuzes.",
+          "type": "project",
+          "badge": "Blok 4–8"
+        },
+        {
+          "title": "Kennis delen & bijsturen",
+          "core": "Toets of anderen je expertise kunnen gebruiken.",
+          "activity": "Laat je kennisbijdrage uitproberen en bespreek projectkeuzes met tutor en peers.",
+          "output": "Feedback op bruikbaarheid en bijgewerkte acties.",
+          "type": "feedback",
+          "badge": "Blok 9"
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "title": "Tussenbalans",
+      "goal": "Profiel + bedrijfsproject",
+      "blocks": [
+        {
+          "title": "Conclusies & beperkingen",
+          "core": "Trek conclusies die passen bij je bewijs.",
+          "activity": "Oefen het uitleggen van resultaten, onzekerheden en beperkingen.",
+          "output": "Onderbouwde conclusies zonder te grote claims.",
+          "type": "les",
+          "badge": "Blok 1"
+        },
+        {
+          "title": "Profieltussenreview",
+          "core": "Leg je eerste onderzoeksresultaat vast; het profiel loopt door.",
+          "activity": "Toon wat je hebt onderzocht, reflecteer op je leerdoelen en bepaal je verdere verdieping richting week 19.",
+          "output": "Tussenportfolio en vervolgplan voor profiel en workshop.",
+          "type": "atelier",
+          "badge": "Blok 2–3"
+        },
+        {
+          "title": "Projecttussenbalans",
+          "core": "Bereid de overgang naar vier projectdagen voor.",
+          "activity": "Beoordeel eerste resultaten en opdrachtgeverfeedback; plan de volgende periode en bereid Business Understanding voor.",
+          "output": "Projecttussenstand, bijgewerkt plan en presentatiemateriaal.",
+          "type": "project",
+          "badge": "Blok 4–8"
+        },
+        {
+          "title": "Feedback & vervolgafspraken",
+          "core": "Maak de volgende stap concreet voor profiel én project.",
+          "activity": "Bespreek zichtbaar werk, verdiepingsvragen en de planning met peers en begeleider.",
+          "output": "Vervolgafspraken en mogelijke workshopverwantschappen.",
+          "type": "feedback",
+          "badge": "Blok 9"
+        }
+      ]
+    }
+  ]
+},
+
   steps: [
     ['Kies & verken', 'Pak één of meer onderwerpen die je echt trekken.'],
     ['Scope & opdrachtgever', 'Kies een fictieve opdrachtgever en baken het probleem af.'],
     ['Onderzoeksvraag', 'Formuleer een scherpe, praktische vraag die je kunt beantwoorden.'],
     ['Praktisch onderzoek', 'Bouw een prototype óf doe gericht onderzoek — lever bewijs.'],
     ['Portfolio', 'Leg context, keuzes, proces en resultaten vast.'],
-    ['Eindpresentatie', 'Verdedig je werk en advies voor de opdrachtgever.']
+    ['Tussenreview → kennisoverdracht', 'Week 10: toon je eerste resultaat en vervolgplan. Ontwikkel door en deel je expertise in een profielworkshop tijdens het Eind Event in week 19.']
   ],
 
   portfolioPanel: {

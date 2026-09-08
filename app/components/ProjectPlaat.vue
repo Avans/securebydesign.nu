@@ -64,6 +64,8 @@
         </div>
       </div>
 
+      <LessenOverzicht id="project-lessons" :t="t.lessons" number="03" />
+
       <h2 class="sec-h"><span class="no">{{ t.sections.lanes.no }}</span> {{ t.sections.lanes.h }}</h2>
       <p class="sec-sub">{{ t.sections.lanes.sub }}</p>
       <div class="lanes-band">
@@ -120,6 +122,7 @@
 
 <script setup>
 import { reactive } from 'vue'
+import LessenOverzicht from './LessenOverzicht.vue'
 
 const props = defineProps({ t: { type: Object, required: true } })
 

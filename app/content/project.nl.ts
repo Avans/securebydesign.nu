@@ -3,10 +3,10 @@ export default {
     kicker: 'Secure by Design · Fase 3 · praatplaat',
     titlePre: 'Het ',
     titleEm: 'Cybersecurity-project',
-    lede: 'In fase 3 los je met een team van vier à vijf een echt cybersecurity-vraagstuk op voor een bedrijf. De vragen verschillen enorm — een pentest, een NIS2-advies, een detectie-oplossing, een awareness-traject — maar de route eronder is universeel. Deze plaat is die route: een aanpak die past op elk type cybervraag, met daarin gemarkeerd waar jullie zélf de aanpak bepalen.'
+    lede: 'Vanaf week 5 start je het bedrijfsproject naast je profiel; vanaf week 11 werk je er intensief aan. In fase 3 los je met een team van vier à vijf een echt cybersecurity-vraagstuk op voor een bedrijf. De vragen verschillen enorm — een pentest, een NIS2-advies, een detectie-oplossing, een awareness-traject — maar de route eronder is universeel. Deze plaat is die route: een aanpak die past op elk type cybervraag, met daarin gemarkeerd waar jullie zélf de aanpak bepalen.'
   },
   chips: [
-    'fase 3',
+    'fase 3 · doorloop week 5–19',
     'team van 4–5',
     'echt bedrijf als opdrachtgever',
     'elk type cybervraag',
@@ -26,18 +26,18 @@ export default {
       intro: 'De inhoud verschilt per vraag, de route niet · klik een fase open · ◆ = hier maak je keuzes'
     },
     lanes: {
-      no: '03',
+      no: '04',
       h: 'Doorlopende sporen',
       sub: 'Dit zijn in een cyber-project geen losse fasen maar lijnen die de héle rit meelopen. Verwaarloos je er één, dan loopt het project vast — of erger.',
       tag: 'loopt door alle fasen heen'
     },
     forks: {
-      no: '04',
+      no: '05',
       h: 'Keuzepunten — waar je je eigen aanpak bepaalt',
       sub: 'De route ligt vast, maar op deze punten kiest het team bewust. Onderbouw elke keuze in je plan van aanpak — dáár zit het professionele oordeel.'
     },
     team: {
-      no: '05',
+      no: '06',
       h: 'Team & plan van aanpak',
       rolesTitle: 'Rollen in een team van 4–5',
       rolesSub: 'Bij vier personen combineer je rollen. Laat ze gerust rouleren per fase.',
@@ -54,6 +54,314 @@ export default {
     ['Succes = risico verlaagd', 'A6', 'Het is niet ‘werkt de functie’, maar ‘is de organisatie aantoonbaar veiliger’ of ‘is de vraag met bewijs beantwoord’.'],
     ['Overdracht telt mee', 'A7', 'De organisatie moet ná jullie verder kunnen. Advies, playbook of kennisoverdracht hoort bij het resultaat — niet ‘klaar, succes ermee’.']
   ],
+  lessons: {
+  "heading": "Lesopbouw · week 5–19",
+  "intro": "Het project begint in week 5, naast je profiel. Week 11 is de overgang naar vier projectdagen en één vaste onderwijs- en begeleidingsdag per week, geen nieuwe start. De bestaande projectfasen lopen door en mogen overlappen. Week 19 volgt het ritme van het Eind Event.",
+  "labels": {
+    "week": "Week",
+    "core": "Kern",
+    "activity": "Doen",
+    "output": "Opbrengst"
+  },
+  "types": {
+    "les": "Lessen & clinics",
+    "atelier": "Profielwerkplaats",
+    "project": "Bedrijfsproject",
+    "feedback": "Feedback & kennis delen",
+    "tutor": "Tutoroverleg"
+  },
+  "notes": [
+    "Week 5–6: team vormen, intake voorbereiden en uitvoeren; opdracht, mandaat en probleembeeld vastleggen.",
+    "Week 7–8: aanpak uitwerken, eerste onderzoek doen en een richting beproeven met opdrachtgeverfeedback.",
+    "Week 9–10: onderzoeken en ontwikkelen, eerste resultaten beoordelen en vervolg plannen. Dit vormt het bewijs voor Business Understanding in week 11.",
+    "Iedere week tutorcontact: in week 5–10 binnen het vaste feedbackblok; vanaf week 11 een teamgesprek van circa 30–45 minuten op de onderwijsdag. De midterm vervangt die week het gewone gesprek.",
+    "Neem zichtbaar werk, feedback en een concrete vraag mee. Bespreek ook mandaat, databeheer, risico’s, bewijs en samenwerking; sluit af met acties. Profielverdieping en portfolio blijven doorlopen.",
+    "Bedrijfsoplevering bij voorkeur week 18, uiterlijk maandag week 19. Donderdag week 19: Eind Event. Week 20: herkansingen en reparaties."
+  ],
+  "links": [
+    {
+      "path": "/professioneel-profiel",
+      "label": "Gezamenlijke start en rooster · week 5–10"
+    },
+    {
+      "path": "/eindevent",
+      "label": "Programma Eind Event · week 19"
+    }
+  ],
+  "weeks": [
+    {
+      "n": 11,
+      "title": "Business Understanding",
+      "goal": "Context, scope & aanpak toetsen",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Business Understanding-middag",
+          "core": "Laat zien wat de echte opdracht blijkt te zijn na het werk in week 5–10.",
+          "activity": "Presenteer bedrijfscontext, probleem, waarde, bewijs, aannames en open vragen. Zes teams: 13:00 opening; 13:15 drie presentaties van 25 min; 14:30 pauze; 14:45 drie presentaties; 16:00–16:30 feedback verwerken.",
+          "output": "Aangescherpt opdrachtbeeld en vervolgvragen voor het bedrijf."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Context, scope & aanpak toetsen",
+          "activity": "Toets peerfeedback bij de opdrachtgever en werk de lopende aanpak bij.",
+          "output": "Bijgewerkt plan en projectresultaten binnen de bevestigde scope."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "title": "Bewijs & validatie",
+      "goal": "Uitvoeren & onderzoeken",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Werkatelier bewijs & validatie",
+          "core": "Maak aantoonbaar hoe je de onderzoeksvraag beantwoordt.",
+          "activity": "Werk aan bronkwaliteit, reproduceerbaarheid, testcriteria en beperkingen met voorbeelden uit je project.",
+          "output": "Validatieplan en afspraken over bewijsvoering."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Uitvoeren & onderzoeken",
+          "activity": "Onderzoek, bouw of test; verzamel bewijs volgens je validatieplan.",
+          "output": "Navolgbare bevindingen of een getest deelproduct."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "title": "Samenwerken & bijsturen",
+      "goal": "Uitvoeren & onderzoeken",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Intervisie met praktijksituaties",
+          "core": "Houd verwachtingen en uitvoering op elkaar aangesloten.",
+          "activity": "Bespreek scopewijzigingen, afhankelijkheden en lastige afstemming; oefen een gesprek met de opdrachtgever.",
+          "output": "Afgesproken acties voor een concreet samenwerkingsknelpunt."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Uitvoeren & onderzoeken",
+          "activity": "Werk verder, stem wijzigingen af en bereid de midterm voor met zichtbaar resultaat.",
+          "output": "Tussenresultaten, opdrachtgeverfeedback en reviewvragen."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "title": "Midterm review",
+      "goal": "Uitvoering toetsen & bijsturen",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Midterm met opdrachtgeverfeedback",
+          "core": "Beoordeel kwaliteit, richting en haalbaarheid nu bijsturen nog kan.",
+          "activity": "Demonstreer eerste resultaten, onderbouw bewijskracht en bespreek resterende risico’s en planning. Nodig de opdrachtgever uit of haal vooraf gerichte feedback op.",
+          "output": "Reviewverslag en geprioriteerd plan voor de tweede helft."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Uitvoering toetsen & bijsturen",
+          "activity": "Verwerk de review en onderzoek of beproef de belangrijkste verbeteringen.",
+          "output": "Aangescherpte resultaten en haalbare planning."
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "title": "Analyseren & adviseren",
+      "goal": "Analyseren, prioriteren & adviseren",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Van bevinding naar advies",
+          "core": "Maak resultaten bruikbaar voor besluiten van het bedrijf.",
+          "activity": "Weeg bevindingen op risico en bedrijfsimpact; vergelijk aanbevelingen op haalbaarheid en onderbouw trade-offs.",
+          "output": "Geprioriteerde aanbevelingen met bewijs en beperkingen."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Analyseren, prioriteren & adviseren",
+          "activity": "Analyseer verder, toets aanbevelingen bij het bedrijf en vul ontbrekend bewijs aan.",
+          "output": "Conceptadvies of verbeterd product met onderbouwing."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "title": "Kennis overdragen",
+      "goal": "Overdracht voorbereiden",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Workshop kennisoverdracht",
+          "core": "Zorg dat de ontvanger zelfstandig verder kan.",
+          "activity": "Bepaal doelgroep en leerdoel; oefen uitleg, laat een ander iets doen en controleer begrip. Pas dit toe op de bedrijfsoverdracht én een profielworkshop.",
+          "output": "Overdrachtsopzet en een beproefde workshopoefening."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Overdracht voorbereiden",
+          "activity": "Werk product en documentatie uit; bepaal met het bedrijf wat nodig is voor zelfstandig gebruik.",
+          "output": "Concept-overdrachtspakket en afspraken over oplevering."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "title": "Valideren & afronden",
+      "goal": "Adviseren → opleveren",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Peerreview conceptoplevering",
+          "core": "Toets of resultaat en advies voldoen aan de succescriteria.",
+          "activity": "Review elkaars product, conclusies, bewijs, beperkingen en overdrachtsmateriaal. Prioriteer laatste verbeteringen.",
+          "output": "Reviewbevindingen en een afgebakende verbeterlijst."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Adviseren → opleveren",
+          "activity": "Voer laatste validatie en verbeteringen uit; bevestig de bedrijfsoplevering.",
+          "output": "Gevalideerd eindconcept en opleverafspraken."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "title": "Opleveren aan het bedrijf",
+      "goal": "Opleveren & overdragen",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Bedrijfsoplevering & presentatiecoaching",
+          "core": "Draag het resultaat over aan de mensen die ermee verdergaan.",
+          "activity": "Presenteer en demonstreer bij het bedrijf, voer kennisoverdracht uit en leg feedback en vervolgafspraken vast. Oefen op de onderwijsdag je verhaal voor het Eind Event.",
+          "output": "Overgedragen resultaat, opdrachtgeverfeedback en presentatieconcept."
+        },
+        {
+          "type": "project",
+          "badge": "4 dagen",
+          "title": "Projectwerk",
+          "core": "Opleveren & overdragen",
+          "activity": "Verwerk opleverfeedback, rond documentatie af en bereid projectstand en profielworkshop voor.",
+          "output": "Opleverpakket en eventmateriaal. Uitwijkmoment voor bedrijfsoplevering: uiterlijk maandag week 19."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    },
+    {
+      "n": 19,
+      "title": "Eind Event & afsluiting",
+      "goal": "Delen, reflecteren & afsluiten",
+      "blocks": [
+        {
+          "type": "les",
+          "badge": "Onderwijs",
+          "title": "Generale repetitie & Eind Event",
+          "core": "Deel projectresultaten en persoonlijke expertise met anderen.",
+          "activity": "Maandag tot woensdag: laatste afronding, workshops en keynotes oefenen, demo’s testen. Donderdag: workshops in de ochtend; vanaf 14:00 keynotes en alle zes projectpresentaties.",
+          "output": "Projectpresentatie, profielworkshop en gedeelde resultaten."
+        },
+        {
+          "type": "project",
+          "badge": "Afronden",
+          "title": "Reflectie & afsluiting",
+          "core": "Delen, reflecteren & afsluiten",
+          "activity": "Vrijdag: evalueer samenwerking en ontwikkeling; sluit met het bedrijf af en controleer afspraken over toegang en klantdata.",
+          "output": "Reflectie en afrondingscheck; concrete afspraken voor eventuele herkansing of reparatie in week 20."
+        },
+        {
+          "type": "tutor",
+          "badge": "Tutor",
+          "title": "Wekelijkse voortgang & feedback",
+          "core": "Maak de volgende stap concreet en blijf je eigen expertise verdiepen.",
+          "activity": "Bespreek zichtbaar werk, opdrachtgeverfeedback, een concrete vraag en je profielontwikkeling. Controleer planning en doorlopende sporen.",
+          "output": "Vastgelegde keuzes, feedback en acties voor team en individuele verdieping."
+        }
+      ]
+    }
+  ]
+},
   stages: [
     {
       ph: 'Fase 0',

@@ -48,9 +48,7 @@
 
     <h2 class="sec-h"><span class="no">02</span> How to read this minor — three flows</h2>
     <p class="sec-sub">
-      The minor has three consecutive flows. Each flow has its own visual overview (a “praatplaat”) showing
-      what you do and why. Read them in order: each flow builds on the last. Click a card to open the
-      corresponding overview.
+      The minor starts with Foundation. From week 5, profile development and the company project run alongside one another, culminating in the final event in week 19. Open a card for the programme and activities.
     </p>
     <div class="flows">
       <NuxtLink to="/en/fundament" class="flow reveal" style="--c:var(--w2); animation-delay:0s">
@@ -64,18 +62,17 @@
       </NuxtLink>
 
       <NuxtLink to="/en/professioneel-profiel" class="flow reveal" style="--c:var(--w4); animation-delay:.1s">
-        <span class="step">Flow 2 · specialisation</span>
+        <span class="step">Flow 2 · weeks 5–10, development until week 19</span>
         <h3>Professional Profile</h3>
         <p>
           You step off at a station and go deep. You choose one or more topics, do practical research for a
-          fictional client and deliver a prototype or a report. Your portfolio and final presentation form the
-          assessment.
+          fictional client and deliver a prototype or a report. Week 10 is an interim review; continue developing towards the profile workshops in week 19.
         </p>
         <span class="go">Open the overview →</span>
       </NuxtLink>
 
       <NuxtLink to="/en/project" class="flow reveal" style="--c:var(--w3); animation-delay:.2s">
-        <span class="step">Flow 3 · the project</span>
+        <span class="step">Flow 3 · starts week 5, intensive from week 11</span>
         <h3>Cybersecurity project</h3>
         <p>
           With a team of four or five you solve a real cyber challenge for a company. The questions vary
@@ -83,6 +80,9 @@
           approach yourselves.
         </p>
         <span class="go">Open the overview →</span>
+      </NuxtLink>
+      <NuxtLink to="/en/eindevent" class="flow" style="--c:var(--w1)">
+        <span class="step">Week 19 · learn together & share results</span><h3>Final event</h3><p>Morning profile workshops, followed by keynotes and all project presentations from 14:00. For students, clients and company delegates.</p><span class="go">Open the overview →</span>
       </NuxtLink>
     </div>
 
