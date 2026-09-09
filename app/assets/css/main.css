@@ -83,6 +83,8 @@ h1.title em{font-style:italic; color:var(--w3)}
 
 .prose p{max-width:72ch; color:var(--ink2); margin:0 0 14px; font-size:15.5px}
 .prose p b{color:var(--ink)}
+.page-home{--home-content-width:100%}
+.page-home .home-about p{max-width:var(--home-content-width)}
 
 /* intro video */
 .video{

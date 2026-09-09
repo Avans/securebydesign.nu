@@ -1,25 +1,27 @@
 <template>
-  <div class="page wrap">
+  <div class="page page-home wrap">
     <header class="hero">
       <div class="kicker">Minor · Avans Hogeschool</div>
       <h1 class="title">Veiligheid als <em>ontwerpkwaliteit</em></h1>
-      <p class="lede">
-        Welkom bij de minor <b>Secure by Design</b>. Geen losse hackcursus, maar een manier van kijken:
-        security hoort vanaf de eerste ontwerpkeuze bij je product, proces, mensen en organisatie.
-        In één semester groei je van gezamenlijke basis, via een eigen verdieping, naar een echt
-        cybersecurity-vraagstuk voor een opdrachtgever.
-      </p>
-      <div class="chips">
-        <span class="chip"><b>1 semester</b></span>
-        <span class="chip">3 flows</span>
-        <span class="chip">tech &amp; non-tech</span>
-        <span class="chip">ontwerpgericht</span>
-        <span class="chip">NLQF6</span>
-      </div>
+      <HomeIntroBadge>
+        <p class="lede">
+          Welkom bij de minor <b>Secure by Design</b>. Geen losse hackcursus, maar een manier van kijken:
+          security hoort vanaf de eerste ontwerpkeuze bij je product, proces, mensen en organisatie.
+          In één semester groei je van gezamenlijke basis, via een eigen verdieping, naar een echt
+          cybersecurity-vraagstuk voor een opdrachtgever.
+        </p>
+        <div class="chips">
+          <span class="chip"><b>1 semester</b></span>
+          <span class="chip">3 flows</span>
+          <span class="chip">tech &amp; non-tech</span>
+          <span class="chip">ontwerpgericht</span>
+          <span class="chip">NLQF6</span>
+        </div>
+      </HomeIntroBadge>
     </header>
 
     <h2 class="sec-h"><span class="no">01</span> Waar deze minor over gaat</h2>
-    <div class="prose">
+    <div class="prose home-about">
       <p>
         De meeste incidenten ontstaan niet doordat één firewall faalt, maar doordat veiligheid pas
         áchteraf werd bedacht. Deze minor draait dat om: je leert security te behandelen als een

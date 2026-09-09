@@ -1,25 +1,27 @@
 <template>
-  <div class="page wrap">
+  <div class="page page-home wrap">
     <header class="hero">
       <div class="kicker">Minor · Avans University of Applied Sciences</div>
       <h1 class="title">Security as a <em>design quality</em></h1>
-      <p class="lede">
-        Welcome to the <b>Secure by Design</b> minor. Not a stand-alone hacking course, but a way of looking
-        at things: security belongs in your very first design decision — across product, process, people and
-        organisation. Over one semester you grow from a shared foundation, through your own specialisation,
-        to a real cybersecurity challenge for a client.
-      </p>
-      <div class="chips">
-        <span class="chip"><b>1 semester</b></span>
-        <span class="chip">3 flows</span>
-        <span class="chip">tech &amp; non-tech</span>
-        <span class="chip">design-led</span>
-        <span class="chip">NLQF6</span>
-      </div>
+      <HomeIntroBadge>
+        <p class="lede">
+          Welcome to the <b>Secure by Design</b> minor. Not a stand-alone hacking course, but a way of looking
+          at things: security belongs in your very first design decision — across product, process, people and
+          organisation. Over one semester you grow from a shared foundation, through your own specialisation,
+          to a real cybersecurity challenge for a client.
+        </p>
+        <div class="chips">
+          <span class="chip"><b>1 semester</b></span>
+          <span class="chip">3 flows</span>
+          <span class="chip">tech &amp; non-tech</span>
+          <span class="chip">design-led</span>
+          <span class="chip">NLQF6</span>
+        </div>
+      </HomeIntroBadge>
     </header>
 
     <h2 class="sec-h"><span class="no">01</span> What this minor is about</h2>
-    <div class="prose">
+    <div class="prose home-about">
       <p>
         Most incidents don't happen because a single firewall fails, but because security was only considered
         <i>after the fact</i>. This minor flips that around: you learn to treat security as a
