@@ -1,10 +1,32 @@
 # Website en praatplaten
 
 - De Nuxt-website is de hoofdversie voor inhoud, lesopbouw en vormgeving. Werk wijzigingen uit in `app/pages/`, `app/components/`, `app/content/` en de bijbehorende styles.
-- De losse `*-praatplaat.html`-bestanden in de projectroot worden niet door de website gebruikt. Het zijn zelfstandige versies om los te openen of te delen; hun inhoud kan achterlopen op de website.
-- Houd deze HTML-bestanden niet automatisch parallel bij. Maak of actualiseer ze alleen wanneer de gebruiker om een losse HTML-praatplaat of export vraagt.
+- De voormalige losse `*-praatplaat.html`-bestanden uit de projectroot staan in `archief/2026-09-26-praatplaten/`. Ze worden niet door de website gebruikt en hun inhoud kan achterlopen op de website. Zie `archief/README.md` voor de index.
+- Houd losse HTML-praatplaten niet automatisch parallel bij. Maak of actualiseer exports alleen wanneer de gebruiker daarom vraagt; overschrijf daarvoor geen gearchiveerde versie.
 - Gebruik bij zo'n export de actuele website als bron, bij voorkeur via een herbruikbare exportwerkwijze. Behoud de gezamenlijke vormgeving en voorkom dubbel onderhoud van inhoud.
 - Maak bij oplevering duidelijk of de website, een los HTML-bestand of beide zijn aangepast. Verwijs naar de juiste pagina of het concrete bestand.
+
+## Archiveren
+
+- Bewaar te archiveren materiaal in `archief/JJJJ-MM-DD-onderwerp/`, met een korte, herkenbare onderwerpnaam. De datum is de archiveringsdatum, niet automatisch de maakdatum of inhoudelijke peildatum.
+- Voeg per verzameling een `README.md` toe met archiveringsdatum, reden, oorspronkelijke locatie, bestandslijst en de actuele leidende bron. Neem een link en korte omschrijving op in `archief/README.md` en houd de algemene README passend bij de structuur.
+- Behoud de inhoud van gearchiveerde bestanden. Bewaar samenhangende bestanden bij elkaar en controleer bij verplaatsing verwijzingen vanuit en naar die bestanden. Leg noodzakelijke padaanpassingen vast in de README van de verzameling.
+- Werk historische kopieën niet automatisch bij. Maak voor nieuwe versies of exports een afzonderlijk bestand of een nieuwe verzameling.
+- Het archief is geen onderdeel van de actieve website. Plaats het niet in `public/` en gebruik gearchiveerde inhoud niet als actuele bron voor websitewijzigingen.
+
+## Lessenbibliotheek en lokale reviews
+
+- `/ontwikkeling` is de lokale ingang voor lessen, reviews, acties en concepten. Registreer deze routes alleen tijdens ontwikkeling; `/lessen` en `/review/lessen` bestaan niet meer. Zet de werkplek niet in het publieke hoofdmenu of op de homepage. Neem ook de lesgegevens niet op in productie.
+- Bewaar acties als Markdown-taaklijst in `ACTIES.md` (deelbaar via Git). Alleen dit Markdown-bestand is beschrijfbaar via de lokale actie-API; behoud origin-, loopback- en conflictcontroles. Concepten uit `draft_inprogress/` zijn alleen leesbaar via de viewer; volg geen symlinks en exposeer geen willekeurige bestandspaden.
+
+- De lessen onder `/ontwikkeling/lessen` worden opgebouwd uit de Markdown-bronnen in `lesmateriaal/`, via `tooling/lessons/`. Bewerk de bron, niet de gegenereerde lesgegevens. Zie `tooling/lessons/README.md` voor selectie en omzetting.
+- Toon studentlessen via `LessonSlides.vue`, één Markdown-onderdeel per slide. Behoud slidekeuze via de URL, toetsenbediening en printen van alle slides. Studentbijlagen en de lokale review blijven doorlopende leesweergaven.
+- Gewone Markdown-tekst verschijnt in de lokale studentenweergave. Houd docentnotities in `<!-- ... -->`; markeer een volledig docentonderdeel met `<!-- review:teacher-only -->` tussen de Marp-scheidingen. Controleer zichtbare tekst ook inhoudelijk op antwoordmodellen: de omzetter kan dit niet automatisch beoordelen.
+- Houd docenthandleidingen, ruwe Markdown met notities en lokale reviews buiten publieke imports, productiegegevens en `public/`. Studentbijlagen moeten expliciet in de selectie worden opgenomen. Bestaande openbare PDF’s hebben hun eigen inhoud en worden hierdoor niet aangepast.
+- De gehele `/ontwikkeling`-werkplek en de lokale API’s zijn uitsluitend voor de lokale ontwikkelserver. Behoud hun uitsluiting uit productie en de controles op lokale toegang. Start met `./run.sh` of `npm run dev`.
+- Reviewfeedback staat in `.data/lesreviews/` en wordt niet met Git gedeeld. Verwerk feedback op verzoek in de genoemde Markdown-bron; controleer bronvingerafdruk, onderdeeltitels en regelnummers om verschoven opmerkingen niet verkeerd toe te passen. Opslaan van feedback betekent niet dat de lestekst is aangepast of publicatie is goedgekeurd.
+- Houd de interface tweetalig via `app/content/lessen.nl.ts` en `.en.ts`. Het lesmateriaal zelf blijft net als de kaartsets Nederlands; vermeld dit op de Engelse routes.
+- Controleer wijzigingen aan omzetting of review met `npm run test:lessons`, `npm run build` en relevante browsercontroles. Controleer dat docentnotities en reviewroutes niet in de productiebuild terechtkomen.
 
 ## Vormgeving en hergebruik
 

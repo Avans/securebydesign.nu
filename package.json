@@ -7,6 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "test:lessons": "node --test tooling/lessons/content.test.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -17,5 +18,8 @@
   },
   "overrides": {
     "esbuild": "^0.28.1"
+  },
+  "devDependencies": {
+    "markdown-it": "^15.0.2"
   }
 }

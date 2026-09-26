@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-06-17',
   devtools: { enabled: false },
+  modules: ['./tooling/lessons/module'],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
