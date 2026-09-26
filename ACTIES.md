@@ -4,6 +4,7 @@ Gebruik `- [ ]` voor een open actie en `- [x]` voor een afgeronde actie.
 Voeg eventueel een eigenaar, deadline of verwijzing naar een les toe aan de tekst.
 
 ## Open acties
+- [ ] Allen - Doornemen OPF
 - [ ] Mark en Irma - Tekst edubadge aanpassen
 - [ ] Mark - checken wat de stand van de docentstages is
 - [ ] Mark - Even checken wat de stand van inschrijvingen is
