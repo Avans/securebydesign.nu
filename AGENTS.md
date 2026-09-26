@@ -30,7 +30,7 @@
 
 ## Didactische opbouw van lessen
 
-- Gebruik week 1 als didactische referentie: laat een herkenbaar voorbeeld het begrip introduceren en draag het denkwerk daarna geleidelijk over aan studenten. De kern is **voordoen → samen proberen → zelfstandig toepassen**.
+- Gebruik als didactische referentie: laat een herkenbaar voorbeeld het begrip introduceren en draag het denkwerk daarna geleidelijk over aan studenten. De kern is **voordoen → samen proberen → zelfstandig toepassen**.
 - Werk vóór een nieuwe zelfstandige opdracht minstens één representatief voorbeeld zichtbaar uit op de slides. Laat zien hoe je van casusfeit via afweging naar een ingevulde rij, controle of afspraak komt. Een leeg format, definitielijst of voorbeeld dat alleen in speaker notes staat is daarvoor niet voldoende.
 - Laat de klas vervolgens een kleine variant aanvullen of twee uitwerkingen vergelijken. Geef bij zelfstandig werk een andere situatie of gewijzigde voorwaarde, zodat studenten moeten redeneren en niet alleen overschrijven.
 - Gebruik voorbeelden in de uitleg én de oefening. Bouw voort op dezelfde casus, assets en eerdere opbrengsten; voeg waar nuttig een herkenbaar alledaags contrast toe. Markeer fictieve details, mandaten, termijnen en normen als oefenaannames. Behoud bronverwijzingen en juridische voorwaarden.
