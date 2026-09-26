@@ -103,3 +103,21 @@ test('dashboard excludes completed actions and reviews, reopens changed sources 
     assert.equal((await dashboardData(dir)).reviews.find(r => r.id === lesson.id).status, 'changes')
   } finally { await rm(dir, { recursive: true, force: true }) }
 })
+
+test('additional lesson files only include regular Markdown in the four week folders', async () => {
+  const { lessonFiles, renderDraft } = await import('./workspace-api.mjs')
+  const { symlink } = await import('node:fs/promises')
+  const dir = await mkdtemp(path.join(tmpdir(), 'lesson-files-'))
+  try {
+    await mkdir(path.join(dir, 'lesmateriaal/week3'), { recursive: true })
+    await writeFile(path.join(dir, 'lesmateriaal/week3/docenthandleiding.md'), '# Teacher')
+    await writeFile(path.join(dir, 'lesmateriaal/week3/README.md'), '# Overview')
+    await writeFile(path.join(dir, 'lesmateriaal/week3/ignored.pdf'), 'pdf')
+    await symlink(path.join(dir, 'lesmateriaal/week3/README.md'), path.join(dir, 'lesmateriaal/week3/link.md'))
+    const files = await lessonFiles(dir)
+    assert.deepEqual(files, ['week3/README.md', 'week3/docenthandleiding.md'])
+    const html = renderDraft('[Teacher](docenthandleiding.md) [Secret](../../.env)', 'week3/README.md', files, '/ontwikkeling/bestanden')
+    assert.ok(html.includes('/ontwikkeling/bestanden?bestand=week3%2Fdocenthandleiding.md'))
+    assert.ok(!html.includes('href="../../.env"'))
+  } finally { await rm(dir, { recursive: true, force: true }) }
+})

@@ -21,6 +21,10 @@ const previous = position > 0 ? lessons[position - 1] : null
 const next = position >= 0 ? lessons[position + 1] : null
 const week = computed(() => t.value.weeks.find(w => w.n === selectedWeek))
 const isDev = import.meta.dev
+const { data: additional, error: additionalError } = !item && isDev
+  ? await useFetch('/__development', { server: false, query: { kind: 'lesson-files' }, key: `lesson-files-${selectedWeek || 'all'}` })
+  : { data: ref(null), error: ref(null) }
+const otherFiles = computed(() => (additional.value?.files || []).filter(file => (!selectedWeek || file.startsWith(`week${selectedWeek}/`)) && file.toLowerCase().includes(search.value.trim().toLowerCase())))
 function printLesson() { window.print() }
 useHead({ title: computed(() => `${item?.title || (week.value ? `${t.value.week} ${selectedWeek} · ${week.value.title}` : t.value.all)} · Secure by Design`) })
 </script>
@@ -60,6 +64,11 @@ useHead({ title: computed(() => `${item?.title || (week.value ? `${t.value.week}
         </section>
       </div>
       <section v-if="extras.length && !search" class="extra-material"><h2 class="sec-h"><span class="no">+</span>{{ t.attachments }}</h2><p class="sec-sub">{{ t.attachmentsIntro }}</p><div class="flows"><NuxtLink v-for="extra in extras" :key="extra.id" class="flow" :to="localePath(`/ontwikkeling/lessen/${extra.id}`)" style="--c:var(--w3)"><span class="step">{{ t.week }} {{ extra.week }}</span><h3 lang="nl">{{ extra.title }}</h3><span class="go">{{ t.open }} →</span></NuxtLink></div></section>
+      <section v-if="isDev" class="extra-material">
+        <h2 class="sec-h"><span class="no">+</span>{{ t.otherFiles }}</h2><p class="sec-sub">{{ t.otherIntro }}</p>
+        <p v-if="additionalError" role="alert">{{ t.fileError }}</p><p v-else-if="!additional" role="status">{{ t.fileLoading }}</p>
+        <div v-else class="flows"><NuxtLink v-for="file in otherFiles" :key="file" class="flow additional-file" :to="{ path: localePath('/ontwikkeling/bestanden'), query: { bestand: file } }" style="--c:var(--w4)"><span class="step">{{ t.week }} {{ file.match(/^week([1-4])/)[1] }}</span><h3>{{ file.split('/').pop() }}</h3><span class="go">{{ t.fileOpen }} →</span></NuxtLink></div>
+      </section>
     </template>
 
     <template v-else>
@@ -79,7 +88,7 @@ useHead({ title: computed(() => `${item?.title || (week.value ? `${t.value.week}
 
 <style scoped src="../assets/css/lesson-board.css"></style>
 <style scoped>
-.library{padding-bottom:60px}.breadcrumbs{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;font-size:13px;color:var(--ink2)}.breadcrumbs a{text-underline-offset:4px}
+.additional-file{min-width:0;overflow-wrap:anywhere}.library{padding-bottom:60px}.breadcrumbs{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;font-size:13px;color:var(--ink2)}.breadcrumbs a{text-underline-offset:4px}
 .lesson-title{font-size:clamp(36px,5vw,62px)!important;max-width:22ch;line-height:1.03!important}.search-row{display:flex;align-items:center;gap:14px;margin:22px 0 28px;flex-wrap:wrap}.search-row label{font-weight:600}.search-row input{font:inherit;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:min(100%,480px)}
 .slide-page .hero{padding:22px 0 8px}.slide-page .lesson-title{font-size:clamp(28px,3.5vw,42px)!important;max-width:none;margin:8px 0 14px}.slide-page .reader-actions{margin:10px 0}.slide-page .concept-note{margin:8px 0 12px}.slide-page .lesson-pagination{margin-left:0}
 button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 15px;border-radius:10px;cursor:pointer}

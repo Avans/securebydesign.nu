@@ -15,7 +15,9 @@ description: "Beveiliging organiseren en blijven verbeteren"
 90 minuten
 
 <!--
-⏱ 0–2. Pak één zwakke claim uit B2. Vandaag organiseren teams de opvolging ervan. ISO/IEC 27001:2022 is de referentie. Dit is onderwijs op hoofdlijnen, geen certificeringscursus of volledige normaudit.
+⏱ 0–2. Neem een zwakke claim uit B2: er staat iets afgesproken, maar niemand weet of het gebeurt. Vandaag krijgt die bevinding opvolging.
+
+De valkuil is dat studenten ISO als een verzameling vinkjes behandelen. Breng elk begrip terug naar hetzelfde probleem: hoe merkt Naaste dat een maatregel niet meer werkt, en wie doet er dan iets mee? ISO/IEC 27001:2022 is de referentie; dit is geen certificeringscursus of volledige normaudit.
 --> 
 
 ---
@@ -28,7 +30,9 @@ description: "Beveiliging organiseren en blijven verbeteren"
 4. het verschil uitleggen tussen een maatregel invoeren en de werking beoordelen.
 
 <!--
-⏱ 2–4. Laat studenten het leerdoel aanwijzen dat ze al deels beheersen. Vraag om een voorbeeld, niet alleen een hand. De opdracht en de afsluitende vragen controleren deze doelen.
+⏱ 2–4. Laat iemand uitleggen wat er ná het uitvoeren van een maatregel nog moet gebeuren. Verwacht “controleren”; vraag dan wat die controle kan opleveren.
+
+Het belangrijkste leerpunt is de stap van uitkomst naar verbetering. Een groen vakje invullen is niet genoeg als niemand weet wat bij een afwijking gebeurt.
 --> 
 
 ---
@@ -43,7 +47,9 @@ description: "Beveiliging organiseren en blijven verbeteren"
 | 85–90 | Afsluiting |
 
 <!--
-⏱ 4–5. Benoem de opbrengst en waar die in blok 9 terugkomt. De tijdvakken bij de docentnotities zijn leidend. Overgangen op één tijdstip nemen geen extra minuten in beslag.
+⏱ 4–5. B3 bevat een controlkaart en een verbeterlog. Die twee horen bij elkaar: eerst een maatregel ontwerpen, daarna reageren als de controle tegenvalt.
+
+Zeg dat beide in blok 9 terugkomen. Zo is de afwijking straks geen fout die studenten moeten wegwerken, maar informatie waarmee hun plan beter wordt.
 --> 
 
 ---
@@ -53,7 +59,7 @@ description: "Beveiliging organiseren en blijven verbeteren"
 ### Dezelfde tekortkoming komt terug
 
 <!--
-⏱ 5. Vraag wie een afspraak kent die na een paar weken weer wegzakte. Laat voorbeelden zonder namen noemen.
+⏱ 5. Overgang. Vraag wie een afspraak kent die na een paar weken wegzakte. Neem één voorbeeld zonder namen; de volgende slide maakt het probleem concreet.
 --> 
 
 ---
@@ -67,7 +73,11 @@ Een maand later blijkt een tweede oud account nog actief.
 Wat moet de organisatie veranderen om herhaling te verminderen?
 
 <!--
-⏱ 5–10. Laat twee studenten een technische actie en twee een procesactie noemen. De eerste verwijdering was zinvol, maar heeft het onderliggende proces niet noodzakelijk veranderd. Vraag naar de gebeurtenis die de verwijdering hoort te starten: uitdienst, rolwisseling of einde van een tijdelijke opdracht.
+⏱ 5–10. Vraag wie denkt dat het verwijderen van de toegang de eerste keer verkeerd was. Laat het verschil ontstaan tussen een nuttige reparatie en een probleem dat blijft terugkomen.
+
+Laat twee studenten een technische actie en twee een procesactie noemen. De eerste verwijdering was zinvol, maar heeft het onderliggende proces niet noodzakelijk veranderd. Vraag naar de gebeurtenis die de verwijdering hoort te starten: uitdienst, rolwisseling of einde van een tijdelijke opdracht.
+
+Bij “vaker accounts opruimen” vraag je wat het opruimen in gang zet. Anders heeft de klas alleen een extra terugkerende taak bedacht.
 --> 
 
 ---
@@ -81,7 +91,11 @@ Daarbij horen scope, verantwoordelijkheden, afspraken en periodieke beoordeling.
 ISO/IEC 27001 beschrijft eisen aan zo’n systeem.
 
 <!--
-⏱ 10–15. Gebruik een concrete vergelijking: een organisatie moet kunnen uitleggen hoe zij een terugkerend probleem signaleert, beslist en opvolgt. Een ISMS kan ondersteund worden door software, maar is geen product dat je installeert. Bron: https://www.iso.org/standard/27001. Houd de volledige normtekst buiten deze les.
+⏱ 10–15. Het begrip klinkt groter dan het hoeft te zijn. Begin bij de toegang uit de openingssituatie: wie merkt het probleem, wie beslist over verbetering en wie controleert de uitkomst?
+
+Gebruik een concrete vergelijking: een organisatie moet kunnen uitleggen hoe zij een terugkerend probleem signaleert, beslist en opvolgt. Een ISMS kan ondersteund worden door software, maar is geen product dat je installeert. Bron: https://www.iso.org/standard/27001. Houd de volledige normtekst buiten deze les.
+
+Laat iemand uitleggen wat er misgaat als je alleen een tool koopt en niemand die afspraken maakt. Daar zit de betekenis van het managementsysteem.
 --> 
 
 ---
@@ -98,7 +112,11 @@ ISO/IEC 27001 beschrijft eisen aan zo’n systeem.
 Een volgende controle laat zien of de verbetering standhoudt.
 
 <!--
-⏱ 15–20. PDCA is hier de didactische uitleg voor continu verbeteren, geen letterlijke hoofdstukindeling van de norm. Laat bij Check een bron van bewijs noemen. “We hebben een procedure” is bewijs van ontwerp, niet van uitgevoerde intrekking. Een bruikbare controle vergelijkt personeelsmutaties met accountstatus.
+⏱ 15–20. Laat vier studenten het toegangsvoorbeeld door de cyclus vertellen. Stop bij Check en vraag welk bewijs zij daadwerkelijk zouden bekijken.
+
+PDCA is hier de didactische uitleg voor continu verbeteren, geen letterlijke hoofdstukindeling van de norm. Laat bij Check een bron van bewijs noemen. “We hebben een procedure” is bewijs van ontwerp, niet van uitgevoerde intrekking. Een bruikbare controle vergelijkt personeelsmutaties met accountstatus.
+
+Als Check en Do hetzelfde antwoord krijgen, laat je twee verschillende werkwoorden opschrijven. Iets uitvoeren en beoordelen of het werkt zijn verschillende handelingen.
 --> 
 
 ---
@@ -112,7 +130,11 @@ De organisatie legt vast welke maatregelen nodig zijn en hoe zij die toepast.
 Bij een certificaat blijft de **scope** van het managementsysteem belangrijk.
 
 <!--
-⏱ 20–25. Noem op hoofdlijnen dat de verklaring van toepasselijkheid, Statement of Applicability, keuzes over relevante beheersmaatregelen vastlegt. Alle mogelijke controls blind afvinken is niet de les. Geef geen claim dat een bepaalde set van drie controls voldoende is voor ISO-certificering. Bron: ISO/IEC 27001, openbaar overzicht en normreferentie in bronnen-week3.md.
+⏱ 20–25. Teams willen graag weten welke lijst ze moeten afwerken. Vraag eerst wat binnen hun scope valt en welk risico zij proberen te beheersen.
+
+Noem op hoofdlijnen dat de verklaring van toepasselijkheid, Statement of Applicability, keuzes over relevante beheersmaatregelen vastlegt. Alle mogelijke controls blind afvinken is niet de les. Geef geen claim dat een bepaalde set van drie controls voldoende is voor ISO-certificering. Bron: ISO/IEC 27001, openbaar overzicht en normreferentie in bronnen-week3.md.
+
+Een lange lijst zonder reden is nog geen onderbouwde keuze. Laat één maatregel koppelen aan één risico voordat je verdergaat.
 --> 
 
 ---
@@ -122,7 +144,7 @@ Bij een certificaat blijft de **scope** van het managementsysteem belangrijk.
 ### Een controlkaart die blijft werken
 
 <!--
-⏱ 25. Werkblad B3 heeft een korte controlkaart en een verbeterlog. Elke groep gebruikt één risico uit week 2 en één bevinding uit blok 2.
+⏱ 25. Overgang naar B3. Elk team kiest één risico uit week 2 en één bevinding uit B2. Leg controlkaart en verbeterlog naast elkaar.
 --> 
 
 ---
@@ -139,7 +161,11 @@ Vul B3 in:
 - criterium voor voldoende werking.
 
 <!--
-⏱ 25–40. Modelleer desnoods één begin: A3, toegang blijft bestaan na intrekking van een mantelzorgrelatie. Doel: intrekking bereikt alle relevante accounts en sessies. Studenten kiezen zelf een controleerbaar criterium. Maak duidelijk dat frequenties en percentages oefennormen zijn en geen ISO-eisen.
+⏱ 25–40. Vijftien minuten voor een eerste controlkaart. Begin bij het risico en het gewenste effect; vul pas daarna de controle in. Anders wordt het formulier een verzameling losse goede bedoelingen.
+
+Modelleer desnoods één begin: A3, toegang blijft bestaan na intrekking van een mantelzorgrelatie. Doel: intrekking bereikt alle relevante accounts en sessies. Studenten kiezen zelf een controleerbaar criterium. Maak duidelijk dat frequenties en percentages oefennormen zijn en geen ISO-eisen.
+
+Loop langs met: “Waaraan zou je straks zien dat intrekking is gelukt?” Laat een student het antwoord opzoeken op de kaart, niet alleen mondeling geven.
 --> 
 
 ---
@@ -153,7 +179,11 @@ Wat doe je vandaag? Wat verander je aan het proces?
 Noteer op B3 een vervolgcontrole met datum, eigenaar en beslisregel.
 
 <!--
-⏱ 40–55. Laat teams directe correctie en structurele verbetering apart noteren. Twee van tien is 20% in deze steekproef, geen onderbouwde uitspraak over alle accounts. Vraag of de gemiste accounts een gezamenlijk kenmerk hebben, zoals een externe leverancier. Die informatie ontbreekt en moet als onderzoeksvraag terugkomen.
+⏱ 40–55. Dit is het kantelpunt van het blok. De controle valt tegen; dat is informatie waarmee je moet werken. Laat teams eerst zeggen wat ze nu herstellen en daarna wat ze aan het proces veranderen.
+
+Laat teams directe correctie en structurele verbetering apart noteren. Twee van tien is 20% in deze steekproef, geen onderbouwde uitspraak over alle accounts. Vraag of de gemiste accounts een gezamenlijk kenmerk hebben, zoals een externe leverancier. Die informatie ontbreekt en moet als onderzoeksvraag terugkomen.
+
+Als iemand “de medewerker beter instrueren” zegt, vraag je welke waarneming daarop wijst. Een oorzaak die nog niet is onderzocht blijft een hypothese.
 --> 
 
 ---
@@ -170,7 +200,11 @@ Kan het team bepalen:
 Verbeter de minst duidelijke regel.
 
 <!--
-⏱ 55–65. Laat reviewers één vraag formuleren die de makers niet mondeling mogen aanvullen: die informatie moet op de kaart. Een controlemoment zonder uitvoerder is nog geen plan. Koppel de eigenaar terug aan B1.
+⏱ 55–65. Wissel de kaart zonder mondelinge toelichting. Laat de reviewer de eerstvolgende controle uitvoeren in gedachten: wat heeft hij nodig en waar vindt hij dat?
+
+Laat reviewers één vraag formuleren die de makers niet mondeling mogen aanvullen: die informatie moet op de kaart. Een controlemoment zonder uitvoerder is nog geen plan. Koppel de eigenaar terug aan B1.
+
+Het beste commentaar wijst een ontbrekende handeling aan. Laat de maker die op de kaart toevoegen, zodat de verbetering ook zonder hem beschikbaar is.
 --> 
 
 ---
@@ -180,7 +214,7 @@ Verbeter de minst duidelijke regel.
 ### Wanneer werkt de verbetering?
 
 <!--
-⏱ 65. Gebruik één voorbeeld met een slimme meetwijze en één met een lege formulering zoals “regelmatig controleren”.
+⏱ 65. Overgang. Kies uit de rondgang een kaart met een bruikbare controle en een kaart met “regelmatig controleren”. Laat de klas het verschil onderzoeken.
 --> 
 
 ---
@@ -196,7 +230,11 @@ Verbeter de minst duidelijke regel.
 Welke aanvullende informatie is nodig?
 
 <!--
-⏱ 65–75. Vraag naar selectie van de steekproef, periode en soorten accounts. Laat het team aangeven wat de meting wel en niet onderbouwt. Veiligheid is niet terug te brengen tot één groen percentage. Een verslag met afwijkingen, herstel en vervolg is inhoudelijk sterker dan een dashboard zonder uitleg.
+⏱ 65–75. Zet één groen percentage op het bord en vraag: “Wat zouden we moeten weten voordat we hiervan gerust worden?” Laat de zaal de ontbrekende context verzamelen.
+
+Vraag naar selectie van de steekproef, periode en soorten accounts. Laat het team aangeven wat de meting wel en niet onderbouwt. Veiligheid is niet terug te brengen tot één groen percentage. Een verslag met afwijkingen, herstel en vervolg is inhoudelijk sterker dan een dashboard zonder uitleg.
+
+Je wilt dat studenten een ongunstige uitkomst durven bewaren. Een eerlijke afwijking met opvolging is leerzamer dan een groen getal dat niemand kan uitleggen.
 --> 
 
 ---
@@ -210,7 +248,11 @@ Welke aanvullende informatie is nodig?
 **Uitgangskaart:** beschrijf de eerstvolgende Check en het mogelijke Act-besluit voor jullie controlkaart.
 
 <!--
-⏱ 75–85. Laat studenten eerst schrijven. Verwacht bij Do uitvoering, bij Check beoordeling van uitvoering en werking. De eigenaar organiseert opvolging en middelen. Een goed Act-besluit hangt af van de uitkomst en kan ook betekenen dat een maatregel aangepast of vervangen moet worden.
+⏱ 75–85. Eerst stil schrijven. Vraag daarna een student om Do en een ander om Check voor hetzelfde risico uit te leggen.
+
+Verwacht bij Do uitvoering, bij Check beoordeling van uitvoering en werking. De eigenaar organiseert opvolging en middelen. Een goed Act-besluit hangt af van de uitkomst en kan ook betekenen dat een maatregel aangepast of vervangen moet worden.
+
+Laat bij Act benoemen welke uitkomst aanleiding is voor welk besluit. “We blijven verbeteren” is te vaag om er morgen werk van te maken.
 --> 
 
 ---
@@ -218,7 +260,7 @@ Welke aanvullende informatie is nodig?
 ## Deel 4 · Afsluiting
 
 <!--
-⏱ 85. Overgang. Laat het teamresultaat opslaan en benoem de individuele voorbereiding.
+⏱ 85. Overgang. Laat B3 klaarzetten om te bewaren. De controlkaart en het verbeterlog blijven bij elkaar.
 -->
 
 ---
@@ -232,7 +274,9 @@ Welke aanvullende informatie is nodig?
 Begrippen: ISMS, scope, beheersmaatregel, PDCA, toepasselijkheid.
 
 <!--
-⏱ 85–89. Laat ieder team zijn bestand opslaan met teamnaam en bloknummer. De individuele voorbereiding valt buiten deze 90 minuten. Vraag één student hardop te benoemen welke open vraag nog meegaat.
+⏱ 85–89. B3 bewaren met teamnaam en bloknummer, inclusief de reactie op de tegenvallende controle. Vraag één student wat door die uitkomst veranderde aan het oorspronkelijke plan.
+
+De voorbereiding voor blok 4 duurt twintig minuten buiten deze les. Studenten lezen de drie bronkaarten en noteren per kader welke partij of activiteit centraal staat. Laat ze geen lijst afkortingen maken; die partij of activiteit is de vraag waarmee we verdergaan.
 --> 
 
 ---
@@ -244,5 +288,9 @@ Begrippen: ISMS, scope, beheersmaatregel, PDCA, toepasselijkheid.
 - [Casus en oefenafspraken](casus-naaste-week3.md)
 
 <!--
-⏱ 89–90. Voorbereiding docent: Print B3. Gebruik de openbare ISO-uitleg. Voor de opdracht is geen betaald normdocument nodig. Bronnen geraadpleegd op 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
+⏱ 89–90. Wijs de openbare ISO-uitleg aan. De vraag voor later: wie merkt het wanneer deze maatregel niet meer werkt?
+
+Vóór de les klaarleggen en controleren: Print B3. Gebruik de openbare ISO-uitleg. Voor de opdracht is geen betaald normdocument nodig.
+
+Bronpeildatum van deze les: 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
 --> 

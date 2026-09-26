@@ -15,7 +15,9 @@ description: "Handelen met onvolledige informatie"
 90 minuten
 
 <!--
-⏱ 0–2. Gebruik incident-naaste-student.md en de docenthandleiding. Deze oefenversie maakt de tijdlijn van de bestaande breach-writeup consistent en laat onbewezen downloads open. Deel de docentuitwerking nog niet uit. De werkronde duurt 45 minuten, met vijf minuten transfer in de nabespreking.
+⏱ 0–2. Lees vóór de les incident-naaste-student.md en de docenthandleiding. Gebruik deze oefentijdlijn; de bestaande websiteversie is achtergrond. Onbewezen downloads blijven onbewezen. Houd de docentuitwerking bij je.
+
+Vandaag moet de klas leren handelen terwijl nog niet alles duidelijk is. Maak er geen speurwedstrijd naar de schuldige van. De werkronde duurt 45 minuten; reserveer ook de vijf minuten individuele transfer aan het einde.
 --> 
 
 ---
@@ -28,7 +30,9 @@ description: "Handelen met onvolledige informatie"
 4. een post-mortemvraag vertalen naar een concrete verbeterafspraak.
 
 <!--
-⏱ 2–4. Laat studenten het leerdoel aanwijzen dat ze al deels beheersen. Vraag om een voorbeeld, niet alleen een hand. De opdracht en de afsluitende vragen controleren deze doelen.
+⏱ 2–4. Vraag welk leerdoel het lastigst lijkt als informatie onvolledig is. Laat één student uitleggen waarom.
+
+Je let vandaag op het verschil tussen een feit, een vermoeden en een vervolgstap. Een stellige formulering is niet automatisch een goed antwoord.
 --> 
 
 ---
@@ -43,7 +47,9 @@ description: "Handelen met onvolledige informatie"
 | 85–90 | Afsluiting |
 
 <!--
-⏱ 4–5. Benoem de opbrengst en waar die in blok 9 terugkomt. De tijdvakken bij de docentnotities zijn leidend. Overgangen op één tijdstip nemen geen extra minuten in beslag.
+⏱ 4–5. Wijs tijdlijn, eerste bericht en verbeterafspraak aan als samenhangende opbrengsten voor B7. Ze gaan mee naar blok 9.
+
+De tijdlijn begrenst wat je in het bericht mag zeggen; de verbeterafspraak pakt iets aan dat uit diezelfde tijdlijn blijkt. Zo voorkom je drie losse opdrachten.
 --> 
 
 ---
@@ -53,7 +59,7 @@ description: "Handelen met onvolledige informatie"
 ### Een melding van buiten
 
 <!--
-⏱ 5. Laat studenten hun feit, vermoeden en vraag uit de voorbereiding naast elkaar leggen.
+⏱ 5. Overgang. Laat studenten hun voorbereide feit, vermoeden en vraag neerleggen. Bewaar die eerste reacties voor de nabespreking.
 --> 
 
 ---
@@ -67,7 +73,11 @@ Schrijf in één zin op wat volgens jou moet gebeuren. Leg die zin omgekeerd nee
 Wat moet je eerst weten om verder te beslissen?
 
 <!--
-⏱ 5–9. Neem twee vragen aan zonder het hele incident te vertellen. Een vraag naar de aard van de gegevens is bruikbaar. “Wie is de schuldige?” brengt het team nog niet bij een volgende handeling. Laat de eerste zinnen liggen tot de debrief.
+⏱ 5–9. Laat het eerste oordeel opschrijven en nog niet verbeteren. Aan het einde wil je kunnen terugzien wat nieuwe informatie met dat oordeel deed.
+
+Neem twee vragen aan zonder het hele incident te vertellen. Een vraag naar de aard van de gegevens is bruikbaar. “Wie is de schuldige?” brengt het team nog niet bij een volgende handeling. Laat de eerste zinnen liggen tot de debrief.
+
+Bij een beschuldiging vraag je welke waarneming haar ondersteunt. Geef het antwoord nog niet; een goede onderzoeksvraag is op dit moment voldoende.
 --> 
 
 ---
@@ -81,7 +91,11 @@ Bij een incident gaat het om **detecteren, reageren en herstellen**.
 Daarom liggen rollen, contacten en herstelafspraken al klaar vóór een melding.
 
 <!--
-⏱ 9–13. NIST SP 800-61r3 uit 2025 verbindt incidentrespons aan CSF 2.0. Bron: https://doi.org/10.6028/NIST.SP.800-61r3. Presenteer een oudere vierfasencyclus niet als de actuele NIST-indeling. Voor deze les gebruiken we eenvoudige werkvragen: wat weten we, wat beschermen we nu, wie beslist, wanneer beoordelen we herstel?
+⏱ 9–13. Begin bij de casus, niet bij het schema. Vraag wat Naaste tegelijk moet begrijpen, beschermen en organiseren als een melding binnenkomt.
+
+NIST SP 800-61r3 uit 2025 verbindt incidentrespons aan CSF 2.0. Bron: https://doi.org/10.6028/NIST.SP.800-61r3. Presenteer een oudere vierfasencyclus niet als de actuele NIST-indeling. Voor deze les gebruiken we eenvoudige werkvragen: wat weten we, wat beschermen we nu, wie beslist, wanneer beoordelen we herstel?
+
+Laat iemand een werkvraag verbinden met een rol uit B1. Daarmee wordt incidentrespons werk dat iemand moet doen, in plaats van een plaatje met fasen.
 --> 
 
 ---
@@ -95,7 +109,11 @@ Daarom liggen rollen, contacten en herstelafspraken al klaar vóór een melding.
 - Beoordeel meld- en communicatieverplichtingen.
 
 <!--
-⏱ 13–17. Deze activiteiten kunnen tegelijk lopen. Wacht met het stoppen van ernstige schade niet op een volledig bewijsdossier. Laat bevoegde specialisten afwegen hoe isoleren en vastleggen samen kunnen gaan. De les omvat geen onderzoek aan echte data of echte systemen. Koppel alle acties aan een verantwoordelijke rol.
+⏱ 13–17. Laat studenten twee acties noemen die naast elkaar kunnen plaatsvinden. Verwacht dat sommigen eerst alles willen uitzoeken voordat zij schade beperken.
+
+Deze activiteiten kunnen tegelijk lopen. Wacht met het stoppen van ernstige schade niet op een volledig bewijsdossier. Laat bevoegde specialisten afwegen hoe isoleren en vastleggen samen kunnen gaan. De les omvat geen onderzoek aan echte data of echte systemen. Koppel alle acties aan een verantwoordelijke rol.
+
+Vraag wat de gekozen actie mogelijk onmogelijk maakt voor de andere activiteit. Het doel is die afweging zichtbaar maken en bij een bevoegde rol leggen.
 --> 
 
 ---
@@ -109,7 +127,11 @@ Een eerste bericht geeft:
 Het noemt ook wanneer de volgende update komt.
 
 <!--
-⏱ 17–20. Benoem dat de tekst voor deze les een communicatie-oefening is. Een formele datalekmelding moet aan de toepasselijke eisen voldoen. Vermijd geruststelling die niet door feiten wordt gedragen. “We weten nog niet wie gegevens heeft ingezien” is informatie, mits het bericht ook zegt wat Naaste doet en waar mensen terechtkunnen. Bron voor de vereiste onderdelen: EDPB, zie bronnenlijst.
+⏱ 17–20. Lees een geruststellende zin zonder onderbouwing voor, bijvoorbeeld “er is niets aan de hand”. Vraag wat je zou moeten weten om dat te mogen zeggen.
+
+Benoem dat de tekst voor deze les een communicatie-oefening is. Een formele datalekmelding moet aan de toepasselijke eisen voldoen. Vermijd geruststelling die niet door feiten wordt gedragen. “We weten nog niet wie gegevens heeft ingezien” is informatie, mits het bericht ook zegt wat Naaste doet en waar mensen terechtkunnen. Bron voor de vereiste onderdelen: EDPB, zie bronnenlijst.
+
+Laat vervolgens een zin formuleren die de onzekerheid eerlijk benoemt én een volgende stap geeft. Alleen “we weten het niet” laat de lezer nog zonder handelingsperspectief.
 --> 
 
 ---
@@ -119,7 +141,7 @@ Het noemt ook wanneer de volgende update komt.
 ### De tijdlijn en een eerste bericht
 
 <!--
-⏱ 20. Deel delen A en B van de studentcasus uit. B bevat zes kaartjes in gemengde volgorde. De volledige docentuitwerking blijft bij de docent.
+⏱ 20. Overgang naar B7. Deel A en B van de studentcasus uit. De zes kaartjes uit B blijven in gemengde volgorde; de docentuitwerking blijft bij jou.
 --> 
 
 ---
@@ -138,7 +160,11 @@ Markeer:
 Schrijf bij elk gat welke rol of afspraak ontbreekt.
 
 <!--
-⏱ 20–35. Laat teams tien minuten reconstrueren en vijf minuten de gaten duiden. In de oefenversie is 5 februari om 11:00 het expliciet bevestigde moment. Eerdere bekendheid is een beargumenteerde onderzoeksvraag. Gebruik geen slogan over “116 dagen” uit de website, want die past niet bij de gebeurtenissen van 3 november tot 11 februari.
+⏱ 20–35. Tien minuten ordenen, vijf minuten voor de gaten. Laat bij elke datum het bijbehorende bewijskaartje liggen; anders worden vermoedens tijdens het gesprek ongemerkt feiten.
+
+Laat teams tien minuten reconstrueren en vijf minuten de gaten duiden. In de oefenversie is 5 februari om 11:00 het expliciet bevestigde moment. Eerdere bekendheid is een beargumenteerde onderzoeksvraag. Gebruik geen slogan over “116 dagen” uit de website, want die past niet bij de gebeurtenissen van 3 november tot 11 februari.
+
+Vraag bij een verschil van mening welk kaartje de conclusie draagt. Een onopgeloste vraag mag op de tijdlijn blijven staan, maar moet herkenbaar een vraag zijn.
 --> 
 
 ---
@@ -154,7 +180,11 @@ Bespreek:
 Noteer ook **één ding dat wel goed ging**.
 
 <!--
-⏱ 35–45. Verwacht testdata-afspraak, eigenaar van omgevingen, veilige meldroute en controle bij de bouwer. Goede respons: de omgeving gaat na bevestiging snel offline. Vermijd de conclusie dat phishingtraining bewezen effectief was omdat iemand een legitieme melding verwijderde. Benoem de begrijpelijke voorzichtigheid én de ontbrekende route.
+⏱ 35–45. Laat teams één stap teruggaan vóór het incident: welke afspraak had hier verschil kunnen maken? Daarmee verbind je de tijdlijn met hun eigen ontwerpwerk.
+
+Verwacht testdata-afspraak, eigenaar van omgevingen, veilige meldroute en controle bij de bouwer. Goede respons: de omgeving gaat na bevestiging snel offline. Vermijd de conclusie dat phishingtraining bewezen effectief was omdat iemand een legitieme melding verwijderde. Benoem de begrijpelijke voorzichtigheid én de ontbrekende route.
+
+Vraag bij “de medewerker had moeten opletten” naar de route die een legitieme melding bruikbaar had kunnen ontvangen. Laat de verbetering een handeling en een eigenaar krijgen.
 --> 
 
 ---
@@ -168,7 +198,11 @@ Gebruik alleen informatie die op dat moment bekend was.
 Neem onzekerheid, mogelijke gevolgen, maatregelen, advies en contact op. Noem een volgende update.
 
 <!--
-⏱ 45–55. De context op deel A beschrijft welke gegevens en aantallen om 11:00 zijn bevestigd. De latere krant en melding bij de AP mogen niet als reeds gebeurd in het bericht staan. Een fictief kanaal mag als oefenvoorziening worden voorgesteld. Gebruik geen bestaand e-mailadres of telefoonnummer. Een voorbeeld staat alleen in de docenthandleiding.
+⏱ 45–55. Zet het schrijfmoment zichtbaar vast op 11:00. Alles wat pas later bekend wordt, blijft buiten dit eerste bericht. Dat maakt de oefening moeilijker en eerlijker.
+
+De context op deel A beschrijft welke gegevens en aantallen om 11:00 zijn bevestigd. De latere krant en melding bij de AP mogen niet als reeds gebeurd in het bericht staan. Een fictief kanaal mag als oefenvoorziening worden voorgesteld. Gebruik geen bestaand e-mailadres of telefoonnummer. Een voorbeeld staat alleen in de docenthandleiding.
+
+Loop langs met: “Hoe weet Naaste dit op dat moment?” Laat onbewezen geruststelling schrappen en vervangen door wat wel vaststaat en wat de organisatie nu doet.
 --> 
 
 ---
@@ -186,7 +220,11 @@ Kun je beantwoorden:
 Herstel één onduidelijke zin.
 
 <!--
-⏱ 55–65. Laat de lezer eerst zonder uitleg reageren. Beoordeel helderheid en feitelijkheid, niet wie de mooiste formulering heeft. Een diagnose, naam of concrete cliëntinformatie is nooit nodig in deze oefenmail.
+⏱ 55–65. Laat de lezer benoemen wat hij denkt dat er gebeurd is en wat hij nu zou doen. De schrijver luistert; hij mag zijn formulering nog niet verdedigen.
+
+Laat de lezer eerst zonder uitleg reageren. Beoordeel helderheid en feitelijkheid, niet wie de mooiste formulering heeft. Een diagnose, naam of concrete cliëntinformatie is nooit nodig in deze oefenmail.
+
+Vraag waar de lezer meer zekerheid uit de tekst haalde dan het dossier geeft. Dat is een belangrijker verbeterpunt dan een onhandige zin.
 --> 
 
 ---
@@ -196,7 +234,7 @@ Herstel één onduidelijke zin.
 ### De lessen achter het incident
 
 <!--
-⏱ 65. Laat de eerste oordelen weer omdraaien. Vraag wat de tijdlijn aan die eerste reactie heeft veranderd.
+⏱ 65. Overgang. Pak de eerste oordelen terug. Vraag wat de tijdlijn daaraan heeft veranderd; laat de klas het verschil zelf benoemen.
 --> 
 
 ---
@@ -210,7 +248,11 @@ De AP-melding volgt op 8 februari, 17:00.
 Hoeveel tijd is verstreken? Welke eerdere signalen moet je ook onderzoeken?
 
 <!--
-⏱ 65–72. Er zijn 78 uur verstreken, dus zes uur voorbij 72 uur, zelfs bij dit laatste bevestigde beginpunt. Bij eerdere bekendheid is de termijn eerder begonnen. Dit is geen keuze tussen twee even vrije startdata. Een te late melding vraagt uitleg en moet alsnog plaatsvinden. Of alle feiten juridisch voldoende waren op 22 januari of 4 februari vraagt nadere beoordeling. Bron: EDPB.
+⏱ 65–72. Laat eerst rekenen voordat je het antwoord geeft. Vraag welk beginpunt het team gebruikt en wat daarvoor het bewijs is. Een juiste som met een willekeurig startmoment is geen goede onderbouwing.
+
+Er zijn 78 uur verstreken, dus zes uur voorbij 72 uur, zelfs bij dit laatste bevestigde beginpunt. Bij eerdere bekendheid is de termijn eerder begonnen. Dit is geen keuze tussen twee even vrije startdata. Een te late melding vraagt uitleg en moet alsnog plaatsvinden. Of alle feiten juridisch voldoende waren op 22 januari of 4 februari vraagt nadere beoordeling. Bron: EDPB.
+
+Laat de klas de uitkomst scheiden van de open vraag naar eerdere bekendheid. De onzekerheid over eerder weten maakt het laatste bevestigde tijdvak niet langer.
 --> 
 
 ---
@@ -225,7 +267,11 @@ Noteer op B7:
 Welke voorwaarde moet gelden voordat een afgesloten omgeving weer in gebruik mag?
 
 <!--
-⏱ 72–80. Laat eerst vier minuten een verbeterafspraak schrijven en daarna vier minuten terugkoppelen. Herstel is niet alleen “de server draait”: toegang, gegevenskwaliteit, monitoring en passende zorgcontinuïteit moeten zijn beoordeeld. Kies voor het eigen scenario relevante criteria en een bevoegde beslisser. Neem geen medische procedure op.
+⏱ 72–80. Laat studenten een herstelcriterium formuleren dat meer zegt dan “de app is online”. Vraag wie kan beoordelen of aan dat criterium is voldaan.
+
+Laat eerst vier minuten een verbeterafspraak schrijven en daarna vier minuten terugkoppelen. Herstel is niet alleen “de server draait”: toegang, gegevenskwaliteit, monitoring en passende zorgcontinuïteit moeten zijn beoordeeld. Kies voor het eigen scenario relevante criteria en een bevoegde beslisser. Neem geen medische procedure op.
+
+Verbind de verbeterafspraak aan één waargenomen gat uit de tijdlijn. Een algemene wens als “beter communiceren” moet terug naar een handeling, eigenaar en controle.
 --> 
 
 ---
@@ -239,7 +285,11 @@ Welke voorwaarde moet gelden voordat een afgesloten omgeving weer in gebruik mag
 Bewaar één concrete afspraak voor het spel en blok 9.
 
 <!--
-⏱ 80–85. Vraag individuele antwoorden. Het eerste antwoord moet onderscheid maken tussen geen waarneming en geen gebeurtenis. Bij het derde antwoord volstaat niet “de organisatie”: laat een rol uit B1 noemen. Dit is tevens de vijf minuten transfer uit het oorspronkelijke lesvoorstel.
+⏱ 80–85. Vijf minuten voor individueel begrip. Laat geen teamwoordvoerder voor iedereen antwoorden; het onderscheid tussen niet waargenomen en niet gebeurd moet iedere student zelf kunnen maken.
+
+Vraag individuele antwoorden. Het eerste antwoord moet onderscheid maken tussen geen waarneming en geen gebeurtenis. Bij het derde antwoord volstaat niet “de organisatie”: laat een rol uit B1 noemen. Dit is tevens de vijf minuten transfer uit het oorspronkelijke lesvoorstel.
+
+Sluit af met één student die een ontwerpkeuze noemt die hij na dit incident anders zou maken, met een concrete reden.
 --> 
 
 ---
@@ -247,7 +297,7 @@ Bewaar één concrete afspraak voor het spel en blok 9.
 ## Deel 4 · Afsluiting
 
 <!--
-⏱ 85. Overgang. Laat het teamresultaat opslaan en benoem de individuele voorbereiding.
+⏱ 85. Overgang. Tijdlijn, eerste bericht en verbeterafspraak samen klaarzetten. Dat is B7, niet alleen de laatste versie van de mail.
 -->
 
 ---
@@ -261,7 +311,9 @@ Bewaar één concrete afspraak voor het spel en blok 9.
 Begrippen: incidentrespons, bekendheid, containment, herstel, post-mortem.
 
 <!--
-⏱ 85–89. Laat ieder team zijn bestand opslaan met teamnaam en bloknummer. De individuele voorbereiding valt buiten deze 90 minuten. Vraag één student hardop te benoemen welke open vraag nog meegaat.
+⏱ 85–89. Laat B7 met teamnaam en bloknummer bewaren. Vraag welke eerste aanname het team heeft moeten bijstellen. Dat is een goede brug naar het spel, waarin nieuwe informatie ook tot andere keuzes kan leiden.
+
+De individuele voorbereiding duurt vijftien minuten buiten dit blok: lees de korte introductie in w3b8-backdoors-en-breaches.md en kies een minder vanzelfsprekende rol. Laat studenten niet alvast proberen het verborgen scenario te achterhalen.
 --> 
 
 ---
@@ -275,5 +327,9 @@ Begrippen: incidentrespons, bekendheid, containment, herstel, post-mortem.
 - [Casus en oefenafspraken](casus-naaste-week3.md)
 
 <!--
-⏱ 89–90. Voorbereiding docent: Knip de zes gebeurteniskaartjes uit deel B of laat ze digitaal ordenen. Houd docenthandleiding-week3.md bij de hand. De websiteversie is achtergrond, niet het uitdeelvel voor deze les. Bronnen geraadpleegd op 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
+⏱ 89–90. Wijs de studentcasus aan als bron voor deze oefening. Een goede terugblik verbindt een waargenomen probleem aan een verbeterafspraak.
+
+Vóór de les klaarleggen en controleren: Knip de zes gebeurteniskaartjes uit deel B of laat ze digitaal ordenen. Houd docenthandleiding-week3.md bij de hand. De websiteversie is achtergrond, niet het uitdeelvel voor deze les.
+
+Bronpeildatum van deze les: 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
 --> 

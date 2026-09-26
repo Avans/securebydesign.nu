@@ -2,6 +2,19 @@
 const props = defineProps({ lesson: { type: Object, required: true }, t: { type: Object, required: true } })
 const route = useRoute()
 const router = useRouter()
+const teacherMode = ref(false)
+const isDev = import.meta.dev
+const notesPane = ref(null)
+const { data: teacherData, error: notesError, status: notesStatus, execute: loadNotes } = await useFetch('/__lesson-review', {
+  server: false, immediate: false, watch: false, query: { id: props.lesson.id }, key: `slide-notes-${props.lesson.id}`,
+})
+const currentNotes = computed(() => teacherData.value?.lesson.sections.find(s => s.id === active.value?.id)?.notes || '')
+async function toggleNotes() {
+  teacherMode.value = !teacherMode.value
+  if (teacherMode.value && !teacherData.value) await loadNotes()
+  await nextTick()
+  measure()
+}
 const deck = ref(null)
 const panes = ref([])
 const canFullscreen = ref(false)
@@ -32,7 +45,7 @@ function keyboard(event) {
   const el = event.target
   if (el.closest('input,textarea,select,[contenteditable="true"]')) return
   // Leave horizontal scrolling in wide tables to their own keyboard handler.
-  if (el.closest('.table-scroll,pre')) return
+  if (el.closest('.table-scroll,pre,.speaker-notes')) return
   const targets = { ArrowRight: current.value + 1, ArrowLeft: current.value - 1, Home: 0, End: total.value - 1 }
   if (!(event.key in targets)) return
   event.preventDefault()
@@ -55,6 +68,7 @@ watch(current, async () => {
   await nextTick()
   const pane = activePane()
   if (pane) pane.scrollTop = 0
+  if (notesPane.value) notesPane.value.scrollTop = 0
   measure()
 })
 watch(() => route.hash, followLegacyHash)
@@ -80,14 +94,23 @@ onBeforeUnmount(() => {
     <div class="deck-heading">
       <label for="slide-picker">{{ t.chooseSlide }}</label>
       <select id="slide-picker" :value="current" @change="go(Number($event.target.value))"><option v-for="(s, index) in lesson.sections" :key="s.id" :value="index">{{ index + 1 }} · {{ s.title }}</option></select>
+      <button v-if="isDev" type="button" :aria-pressed="teacherMode" aria-controls="speaker-notes" @click="toggleNotes">{{ teacherMode ? t.hideNotes : t.showNotes }}</button>
       <button v-if="canFullscreen" type="button" @click="toggleFullscreen">{{ fullscreen ? t.exitFullscreen : t.fullscreen }}</button>
     </div>
     <p v-if="fullscreenError" class="deck-message" role="status">{{ t.fullscreenError }}</p>
+    <div class="presenter-layout" :class="{ teaching: teacherMode }">
     <div class="slide-stage">
       <section v-for="(s, index) in lesson.sections" v-show="index === current" :key="s.id" class="slide" :aria-label="`${t.slide} ${index + 1}: ${s.title}`">
         <div class="slide-label">{{ t.week }} {{ lesson.week }} · {{ t.block }} {{ lesson.block }}<span>{{ String(index + 1).padStart(2, '0') }} / {{ total }}</span></div>
         <div ref="panes" :data-slide="s.id" class="slide-scroll" tabindex="0" :aria-label="`${t.slide}: ${s.title}`" :aria-describedby="index === current ? 'slide-keyboard-help' : undefined"><LessonText :html="s.html" /></div>
       </section>
+    </div>
+    <aside v-if="teacherMode" id="speaker-notes" ref="notesPane" class="speaker-notes" tabindex="0" :aria-label="t.speakerNotes">
+      <h2>{{ t.speakerNotes }}</h2><p class="notes-slide">{{ t.slide }} {{ current + 1 }} · {{ active?.title }}</p>
+      <p v-if="notesStatus === 'pending'" role="status">{{ t.notesLoading }}</p>
+      <div v-else-if="notesError" role="alert"><p>{{ t.notesError }}</p><button type="button" @click="loadNotes()">{{ t.retryNotes }}</button></div>
+      <p v-else class="notes-text" lang="nl">{{ currentNotes || t.noNotes }}</p>
+    </aside>
     </div>
     <div class="slide-controls">
       <button type="button" :disabled="current === 0" @click="go(current - 1)"><span aria-hidden="true">← </span>{{ t.previousSlide }}</button>
@@ -100,6 +123,10 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+.presenter-layout{min-height:0}.presenter-layout.teaching{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:18px}.speaker-notes{height:clamp(360px,55svh,680px);overflow:auto;min-width:0;padding:22px;background:var(--paper2);border:1px solid var(--line);border-radius:16px;overscroll-behavior:contain}.speaker-notes h2{font:600 24px 'Fraunces',serif;margin:0 0 12px}.notes-slide{font:11px 'JetBrains Mono',monospace;color:var(--ink2)}.notes-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.7}.teaching .slide{padding-left:22px;padding-right:22px}.slide-deck:fullscreen .presenter-layout{flex:1;min-height:0;display:grid}.slide-deck:fullscreen .speaker-notes{height:100%;min-height:0}.slide-deck:fullscreen .presenter-layout .slide-stage{min-height:0}
+@media(max-width:850px){.presenter-layout.teaching{grid-template-columns:minmax(0,1fr)}.speaker-notes{height:auto;max-height:45svh}.slide-deck:fullscreen .presenter-layout.teaching{display:block;overflow:auto}.slide-deck:fullscreen .teaching .slide{height:55svh}.slide-deck:fullscreen .speaker-notes{height:auto;margin-top:16px}}
+@media print{.presenter-layout.teaching{display:block}.speaker-notes{display:none}}
+
 .slide-deck{--slide-accent:var(--w1);margin-top:18px;min-width:0}.slide-deck[data-week="2"]{--slide-accent:var(--w2)}.slide-deck[data-week="3"]{--slide-accent:var(--w3)}.slide-deck[data-week="4"]{--slide-accent:var(--w4)}
 .deck-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px}.deck-heading label{font-weight:600;font-size:13px;flex-shrink:0}.deck-heading select{min-width:0;flex:1;max-width:650px;padding:10px 12px;font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:9px}.deck-heading>button{margin-left:auto}
 button{font:inherit;font-weight:600;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:10px 16px;cursor:pointer}button:disabled{opacity:.4;cursor:default}button:not(:disabled):hover{border-color:var(--slide-accent)}:focus-visible{outline:2px solid var(--slide-accent);outline-offset:3px}

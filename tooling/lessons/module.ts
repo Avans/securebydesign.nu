@@ -24,6 +24,7 @@ export default defineNuxtModule({
       for (const prefix of ['', '/en']) {
         for (const [name, path, file] of [
           ['development', '/ontwikkeling', 'workspace.vue'],
+          ['development-files', '/ontwikkeling/bestanden', 'files.vue'],
           ['development-opf', '/ontwikkeling/opf', 'workspace.vue'],
           ['development-actions', '/ontwikkeling/acties', 'workspace.vue'],
           ['development-drafts', '/ontwikkeling/concepten', 'workspace.vue'],

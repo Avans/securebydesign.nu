@@ -30,7 +30,7 @@
           <NuxtLink v-for="item in nav" :key="item.base" :to="localePath(item.base)" @click="menuOpen = false">
             {{ item.label[locale] }}
           </NuxtLink>
-          <NuxtLink :to="switchPath" class="lang" :aria-label="`Switch to ${otherLocale.toUpperCase()}`" @click="menuOpen = false">
+          <NuxtLink :to="{ path: switchPath, query: $route.query, hash: $route.hash }" class="lang" :aria-label="`Switch to ${otherLocale.toUpperCase()}`" @click="menuOpen = false">
             {{ otherLocale.toUpperCase() }}
           </NuxtLink>
         </nav>

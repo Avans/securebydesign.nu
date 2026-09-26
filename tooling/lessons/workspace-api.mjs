@@ -16,7 +16,7 @@ export async function draftFiles(root, folder = '') {
   return files.sort()
 }
 
-export function renderDraft(source, file, files) {
+export function renderDraft(source, file, files, viewer = '/ontwikkeling/concepten') {
   const md = new MarkdownIt({ html: false, linkify: true })
   const open = md.renderer.rules.link_open || ((tokens, index, options, env, self) => self.renderToken(tokens, index, options))
   md.renderer.rules.link_open = (tokens, index, options, env, self) => {
@@ -26,7 +26,7 @@ export function renderDraft(source, file, files) {
       const [relative] = href.split('#')
       const target = path.posix.normalize(path.posix.join(path.posix.dirname(file), relative))
       const match = files.includes(target) ? target : files.includes(`${target}/README.md`) ? `${target}/README.md` : files.find(name => name.startsWith(target.replace(/\/$/, '') + '/'))
-      if (match) token.attrSet('href', `/ontwikkeling/concepten?bestand=${encodeURIComponent(match)}`)
+      if (match) token.attrSet('href', `${viewer}?bestand=${encodeURIComponent(match)}`)
       else token.attrs = (token.attrs || []).filter(([key]) => key !== 'href')
     }
     return open(tokens, index, options, env, self)
@@ -40,6 +40,17 @@ export function renderDraft(source, file, files) {
     if (token.type === 'heading_open' || token.type === 'heading_close') token.tag = `h${Math.min(6, Number(token.tag.slice(1)) + 1)}`
   }
   return md.renderer.render(tokens, md.options, {})
+}
+
+export async function lessonFiles(root) {
+  const files = []
+  for (const directory of await readdir(path.join(root, 'lesmateriaal'), { withFileTypes: true })) {
+    if (!directory.isDirectory() || !/^week[1-4]$/.test(directory.name)) continue
+    for (const entry of await readdir(path.join(root, 'lesmateriaal', directory.name), { withFileTypes: true })) {
+      if (entry.isFile() && entry.name.endsWith('.md')) files.push(`${directory.name}/${entry.name}`)
+    }
+  }
+  return files.sort()
 }
 
 export async function dashboardData(root) {
@@ -79,6 +90,13 @@ export function workspaceHandler(root) {
     setHeader(event, 'Cache-Control', 'no-store')
     const query = getQuery(event)
     if (event.method === 'GET') {
+      if (query.kind === 'lesson-files') {
+        const files = await lessonFiles(root)
+        if (!query.file) return { files: files.filter(file => !/^week[1-4]\/w[1-4]b\d+-/.test(file)) }
+        if (!files.includes(query.file)) throw createError({ statusCode: 404 })
+        const source = await readFile(path.join(root, 'lesmateriaal', query.file), 'utf8')
+        return { file: query.file, html: renderDraft(source.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, ''), query.file, files, '/ontwikkeling/bestanden') }
+      }
       if (query.kind === 'dashboard') return dashboardData(root)
       if (query.kind === 'opf') {
         const file = '.data/opf-voorbereiding/Voorbereiding OPF.md'

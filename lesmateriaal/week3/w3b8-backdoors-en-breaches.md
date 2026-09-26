@@ -15,7 +15,9 @@ description: "Samen beslissen tijdens een incident"
 90 minuten
 
 <!--
-⏱ 0–2. Sociaal/spelblok: kort verhaal, lange speelronde, net als het afwijkende ritme van week 1 blok 8. Speel standaard plenair met één Incident Master en roterende teamwoordvoerders. Zo kan één docent ook een grotere klas begeleiden. Lees de officiële Visual Guide vooraf. Als kaarten ontbreken, staat een volledig lokale tabletop in de docenthandleiding. Die heet nadrukkelijk geen Backdoors & Breaches.
+⏱ 0–2. Dit is het spelblok: jij legt kort uit en bewaakt daarna het gesprek. Speel plenair met één Incident Master en roterende teamwoordvoerders, zodat één docent de klas kan begeleiden.
+
+Lees de officiële Visual Guide vooraf. Ontbreken de kaarten, gebruik de lokale tabletop uit de docenthandleiding; die heet geen Backdoors & Breaches. De opbrengst is hoe studenten hun keuze onderbouwen, niet hoeveel toolnamen zij kennen.
 --> 
 
 ---
@@ -28,7 +30,9 @@ description: "Samen beslissen tijdens een incident"
 4. een les uit het spel omzetten in een afspraak voor Naaste.
 
 <!--
-⏱ 2–4. Laat studenten het leerdoel aanwijzen dat ze al deels beheersen. Vraag om een voorbeeld, niet alleen een hand. De opdracht en de afsluitende vragen controleren deze doelen.
+⏱ 2–4. Vraag waar studenten in een incidentgesprek zelf aandacht aan geven: onderzoeken, beslissen of vastleggen. Laat ze vandaag een minder vanzelfsprekende rol proberen.
+
+Je wilt dat iedereen kan uitleggen waarom een keuze op dat moment redelijk was. De einduitslag van het spel vertelt dat niet vanzelf.
 --> 
 
 ---
@@ -43,7 +47,9 @@ description: "Samen beslissen tijdens een incident"
 | 85–90 | Afsluiting |
 
 <!--
-⏱ 4–5. Benoem de opbrengst en waar die in blok 9 terugkomt. De tijdvakken bij de docentnotities zijn leidend. Overgangen op één tijdstip nemen geen extra minuten in beslag.
+⏱ 4–5. Het afwijkende ritme is bewust: korte instructie, veel spelen en een nabespreking die je niet laat vervallen. B8 verzamelt observaties voor de governancekaart in blok 9.
+
+Benoem vooraf dat een verloren spel bruikbare lessen kan opleveren. Stop daarom op tijd, ook als de klas nog een beurt wil.
 --> 
 
 ---
@@ -53,7 +59,7 @@ description: "Samen beslissen tijdens een incident"
 ### Rollen en spelafspraken
 
 <!--
-⏱ 5. Leg het officiële spelmateriaal klaar. De onderwijsrollen op de volgende pagina zijn aanvullingen voor deze les.
+⏱ 5. Overgang. Officieel spelmateriaal op tafel. Benoem dat de onderwijsrollen op de volgende slide aanvullingen voor deze les zijn.
 --> 
 
 ---
@@ -69,7 +75,11 @@ description: "Samen beslissen tijdens een incident"
 Binnen teams wisselt de woordvoerder na vijf beurten.
 
 <!--
-⏱ 5–10. Studenten overleggen in hun vaste teams. Eén team is per beurt aan zet, volgens een vooraf vaste volgorde. Alle teams houden hun eigen B8 bij. Bij drie studenten combineer je analist en besluitbewaker. Rollen en rotatie zijn didactische toevoegingen, niet officiële spelregels.
+⏱ 5–10. Regel de beurtvolgorde vóór het spel begint. Anders gaan de studenten met de meeste technische woorden vanzelf het gesprek dragen.
+
+Studenten overleggen in hun vaste teams. Eén team is per beurt aan zet, volgens een vooraf vaste volgorde. Alle teams houden hun eigen B8 bij. Bij drie studenten combineer je analist en besluitbewaker. Rollen en rotatie zijn didactische toevoegingen, niet officiële spelregels.
+
+Vraag een woordvoerder vooraf wat hij namens zijn team moet teruggeven: de keuze en de reden. De overige teams luisteren actief en houden hun eigen waarnemingen bij.
 --> 
 
 ---
@@ -85,7 +95,11 @@ De groep kiest procedures om te onderzoeken wat er is gebeurd.
 De officiële Visual Guide bepaalt de dobbelsteen-, bonus- en injectregels.
 
 <!--
-⏱ 10–15. Gebruik https://www.blackhillsinfosec.com/wp-content/uploads/2020/05/BB-Visual-Guide-WEB.pdf. Leg alleen de gebruikte kaarttermen uit in gewone taal. Geef geen extra punten voor moeilijke toolnamen. De kennis van een product is geen voorwaarde om een onderzoeksvraag te kunnen stellen. Gebruik B8 uitsluitend voor observatie, niet als extra officiële scorekaart.
+⏱ 10–15. Leg alleen uit wat nodig is om de eerste beurt te begrijpen. Een volledige inventarisatie van kaartnamen maakt het spel ontoegankelijk voor wie ze nog niet kent.
+
+Gebruik https://www.blackhillsinfosec.com/wp-content/uploads/2020/05/BB-Visual-Guide-WEB.pdf. Leg alleen de gebruikte kaarttermen uit in gewone taal. Geef geen extra punten voor moeilijke toolnamen. De kennis van een product is geen voorwaarde om een onderzoeksvraag te kunnen stellen. Gebruik B8 uitsluitend voor observatie, niet als extra officiële scorekaart.
+
+Vraag bij een onbekende procedure welk probleem zij moet helpen onderzoeken. Laat technische studenten dat in gewone taal toelichten; daarmee dragen zij bij zonder het gesprek over te nemen.
 --> 
 
 ---
@@ -95,7 +109,7 @@ De officiële Visual Guide bepaalt de dobbelsteen-, bonus- en injectregels.
 ### Onderzoek, besluit en terugkoppeling
 
 <!--
-⏱ 15. Start met één demonstratie die niet meetelt in de tien spelbeurten. De echte ronde begint op minuut 20.
+⏱ 15. Overgang. Eerst één demonstratie, buiten de tien spelbeurten. De echte ronde begint op minuut 20.
 --> 
 
 ---
@@ -111,7 +125,11 @@ Als dat niet lukt, weten we nog niet …”
 De observator noteert hoe de beslissing tot stand komt.
 
 <!--
-⏱ 15–20. Demonstreer met een niet-geheime situatie. Laat de spelers zien hoe een gekozen procedure en de officiële speluitkomst tot terugkoppeling leiden. Gebruik de procedurebonus en wachttijd zoals in de gids. De demonstratie is voorbereiding, geen verkapte elfde spelbeurt.
+⏱ 15–20. Denk in de proefbeurt hardop: wat weten we, welke vraag willen we beantwoorden en waarom kiezen we deze procedure? Laat ook zien wat je daarna vastlegt.
+
+Demonstreer met een niet-geheime situatie. Laat de spelers zien hoe een gekozen procedure en de officiële speluitkomst tot terugkoppeling leiden. Gebruik de procedurebonus en wachttijd zoals in de gids. De demonstratie is voorbereiding, geen verkapte elfde spelbeurt.
+
+Controleer vóór de echte ronde of een niet-technische student de keuze kan navertellen. De demonstratie is geslaagd als iedereen kan meedenken over de vraag, niet alleen over de kaartnaam.
 --> 
 
 ---
@@ -128,7 +146,11 @@ Per beurt maximaal **vier minuten**:
 Een onbekende term mag je laten uitleggen.
 
 <!--
-⏱ 20–40. De tijdlimiet is een lesaanpassing. Gebruik het officiële scenario en verander verborgen feiten niet achteraf om een team gelijk te geven. B8 vraagt om besluit, reden, uitkomst en onzekerheid. Laat stille studenten via de vaste beurtvolgorde ook aan bod komen. Een dobbelsteenuitkomst is een spelmechaniek en geen realistische succeswaarschijnlijkheid.
+⏱ 20–40. Jij bewaakt nu het ritme en de informatie. Vraag bij een keuze kort naar de reden, geef de uitkomst volgens het spel en laat de groep verder werken.
+
+De tijdlimiet is een lesaanpassing. Gebruik het officiële scenario en verander verborgen feiten niet achteraf om een team gelijk te geven. B8 vraagt om besluit, reden, uitkomst en onzekerheid. Laat stille studenten via de vaste beurtvolgorde ook aan bod komen. Een dobbelsteenuitkomst is een spelmechaniek en geen realistische succeswaarschijnlijkheid.
+
+Noteer één goed onderbouwde keuze en één moment waarop een vermoeden als feit werd behandeld. Die twee observaties zijn straks waardevoller dan een overzicht van alle beurten.
 --> 
 
 ---
@@ -144,7 +166,11 @@ De nieuwe woordvoerder vat in maximaal één minuut samen:
 Observatoren blijven letten op overdracht.
 
 <!--
-⏱ 40–45. De pauze telt niet als spelbeurt. Als de groep al klaar is, gebruik je de volgende twintig minuten voor een korte herneming van een eerder besluit onder een andere aanname. Verzin dan geen extra officiële score. Laat studenten uitleggen welk nieuw bewijs de keuze verandert.
+⏱ 40–45. Laat de nieuwe woordvoerder eerst vertellen wat het team al weet. Als dat alleen lukt met hulp van de voorganger, heb je meteen een overdrachtsprobleem gevonden.
+
+De pauze telt niet als spelbeurt. Als de groep al klaar is, gebruik je de volgende twintig minuten voor een korte herneming van een eerder besluit onder een andere aanname. Verzin dan geen extra officiële score. Laat studenten uitleggen welk nieuw bewijs de keuze verandert.
+
+Bewaar dat moment voor de nabespreking. Het rollenwisselen moet anderen echt laten beslissen, niet alleen dezelfde student via een andere stem laten spreken.
 --> 
 
 ---
@@ -160,7 +186,11 @@ Bij ieder voorstel vraagt de besluitbewaker:
 Noteer ontbrekende afspraken op B8.
 
 <!--
-⏱ 45–65. Houd de governancevragen kort zodat het echte spel kan doorgaan. Niet elke spelactie heeft een groot bestuurlijk besluit nodig. Bespreek alleen relevante gevolgen. Stop op minuut 65, ook als niet alles ontdekt is. De debrief levert de verbinding met het curriculum.
+⏱ 45–65. Let op wie na de rollenwissel nog niet aan het woord kwam. Een korte vraag naar de onzekerheid bij de keuze kan die student ruimte geven.
+
+Houd de governancevragen kort zodat het echte spel kan doorgaan. Niet elke spelactie heeft een groot bestuurlijk besluit nodig. Bespreek alleen relevante gevolgen. Stop op minuut 65, ook als niet alles ontdekt is. De debrief levert de verbinding met het curriculum.
+
+Verleng het spel niet ten koste van de nabespreking. De klas moet straks kunnen uitleggen wat zij uit een besluit leert, ook als het verborgen scenario nog niet helemaal is gevonden.
 --> 
 
 ---
@@ -170,7 +200,7 @@ Noteer ontbrekende afspraken op B8.
 ### Welke afspraken hielpen?
 
 <!--
-⏱ 65. Laat eerst de Incident Master het verborgen scenario en de speluitkomst toelichten. Houd dit feitelijk, zonder rangorde van studenten.
+⏱ 65. Overgang naar de debrief. De Incident Master onthult eerst het scenario en de uitkomst. Geen rangorde van studenten maken; die uitkomst is materiaal om van te leren.
 --> 
 
 ---
@@ -186,7 +216,11 @@ Iedere observator noemt één **concreet moment**:
 Wat veranderde daardoor aan het handelen?
 
 <!--
-⏱ 65–75. Reserveer twee minuten voor scenario-onthulling, vijf minuten voor observaties en drie voor gezamenlijke patronen. Vermijd achterafwijsheid: beoordeel de keuze met de kennis die op die beurt beschikbaar was. Een verloren spel kan goede besluitvorming bevatten en andersom.
+⏱ 65–75. Leg één keuze naast de informatie die toen beschikbaar was. Vraag pas daarna naar de uitkomst. Zo voorkom je dat geluk en goed redeneren hetzelfde worden.
+
+Reserveer twee minuten voor scenario-onthulling, vijf minuten voor observaties en drie voor gezamenlijke patronen. Vermijd achterafwijsheid: beoordeel de keuze met de kennis die op die beurt beschikbaar was. Een verloren spel kan goede besluitvorming bevatten en andersom.
+
+Gebruik je twee observaties uit de ronde. Laat de groep benoemen welke afspraak het gesprek hielp en welke ontbrekende afspraak voor verwarring zorgde.
 --> 
 
 ---
@@ -202,7 +236,11 @@ We controleren dit door …**
 Koppel de afspraak aan een asset en een eerder werkblad.
 
 <!--
-⏱ 75–82. Geef zeven minuten om B8 af te ronden. Een bruikbare opbrengst is bijvoorbeeld een vervanger voor de incidentcoördinator of een logboek waarin bevestigd en vermoed duidelijk verschillen. Geen namen van speltools kopiëren zonder te weten welk probleem zij oplossen.
+⏱ 75–82. Dit is de belangrijkste vertaling naar de minor. Vraag wat Naaste anders zou organiseren na wat de groep net heeft meegemaakt.
+
+Geef zeven minuten om B8 af te ronden. Een bruikbare opbrengst is bijvoorbeeld een vervanger voor de incidentcoördinator of een logboek waarin bevestigd en vermoed duidelijk verschillen. Geen namen van speltools kopiëren zonder te weten welk probleem zij oplossen.
+
+Laat één concrete afspraak kiezen die in blok 9 getest kan worden. Vraag welk spelmoment aanleiding gaf voor juist die verbetering.
 --> 
 
 ---
@@ -217,7 +255,11 @@ Schrijf twee zinnen:
 Deze reflectie gaat mee naar blok 9.
 
 <!--
-⏱ 82–85. Drie minuten stil schrijven. Dit is de individuele leeropbrengst naast het teamspel. Het aantal ontdekte kaarten bepaalt geen cijfer. De observaties ondersteunen de formatieve terugkoppeling.
+⏱ 82–85. Drie minuten stil schrijven, ook als het spel nog gesprek oproept. Iedereen kiest een eigen besluit om op terug te kijken.
+
+Drie minuten stil schrijven. Dit is de individuele leeropbrengst naast het teamspel. Het aantal ontdekte kaarten bepaalt geen cijfer. De observaties ondersteunen de formatieve terugkoppeling.
+
+Vraag naar wat de student toen wist en welke informatie zijn keuze veranderde. Je beoordeelt de redenering formatief, niet of iemand achteraf het scenario kan navertellen.
 --> 
 
 ---
@@ -225,7 +267,7 @@ Deze reflectie gaat mee naar blok 9.
 ## Deel 4 · Afsluiting
 
 <!--
-⏱ 85. Overgang. Laat het teamresultaat opslaan en benoem de individuele voorbereiding.
+⏱ 85. Overgang. Laat B8 erbij pakken en één afspraak markeren die het team straks wil meenemen naar blok 9.
 -->
 
 ---
@@ -239,7 +281,9 @@ Deze reflectie gaat mee naar blok 9.
 Neem alle werkbladen van deze week mee.
 
 <!--
-⏱ 85–89. Laat ieder team zijn bestand opslaan met teamnaam en bloknummer. De individuele voorbereiding valt buiten deze 90 minuten. Vraag één student hardop te benoemen welke open vraag nog meegaat.
+⏱ 85–89. B8 bewaren met teamnaam en bloknummer. Laat elk team één afspraak aanwijzen die het in blok 9 wil testen. Vraag welk spelmoment aanleiding gaf; anders wordt het een willekeurige toevoeging aan het dossier.
+
+De individuele voorbereiding is vijftien minuten buiten de les: begrippen uitleggen zonder aantekeningen. Alle werkbladen meenemen. In het volgende blok moeten de losse afspraken samen gaan werken.
 --> 
 
 ---
@@ -253,5 +297,9 @@ Neem alle werkbladen van deze week mee.
 - [Casus en oefenafspraken](casus-naaste-week3.md)
 
 <!--
-⏱ 89–90. Voorbereiding docent: Officiële kaartset, d20 en Visual Guide gereed. Lees het scenario vooraf en probeer één beurt. Print B8. Bij ontbrekend spelmateriaal gebruik je de uitgewerkte lokale tabletop, met de instructies uit de docenthandleiding. Bronnen geraadpleegd op 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
+⏱ 89–90. Sluit het spel af bij één afspraak die ook buiten het spel bruikbaar is. B8 bewaart de redenering, niet alleen de uitslag.
+
+Vóór de les klaarleggen en controleren: Officiële kaartset, d20 en Visual Guide gereed. Lees het scenario vooraf en probeer één beurt. Print B8. Bij ontbrekend spelmateriaal gebruik je de uitgewerkte lokale tabletop, met de instructies uit de docenthandleiding.
+
+Bronpeildatum van deze les: 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
 --> 

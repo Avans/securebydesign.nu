@@ -1,4 +1,6 @@
 export default {
+  otherFiles: 'Overige bestanden', otherIntro: 'Aanvullende Markdown per week, inclusief docentmateriaal. Alleen lokaal beschikbaar.', fileLoading: 'Bestanden laden…', fileError: 'Bestanden konden niet worden geladen.', fileOpen: 'Lees bestand', sourceFile: 'Bronbestand', backWeek: 'Terug naar weekoverzicht',
+  showNotes: 'Docentstand', hideNotes: 'Notities verbergen', speakerNotes: 'Speaker notes', notesLoading: 'Notities laden…', notesError: 'Notities konden niet worden geladen. Open de les via localhost.', retryNotes: 'Opnieuw proberen', noNotes: 'Geen notities bij deze slide.',
   title: 'De lessen', accent: 'bij elkaar', kicker: 'Fundament · lesmateriaal',
   intro: 'Van de eerste ontwerpkeuze tot een onderbouwd securitydossier. Kies een week, open een les en lees in je eigen tempo.',
   week: 'Week', block: 'Blok', lessons: 'lessen', minutes: '90 minuten', draft: 'Eerste versie',

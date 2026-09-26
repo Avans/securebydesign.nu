@@ -111,3 +111,20 @@ inhoudsopgave, opslaan/herladen en de docentnotities. De productieserver moet vo
 `/ontwikkeling`, alle subroutes, `/lessen`, `/review/lessen`, `/__development` en
 `/__lesson-review` een 404 geven; lesgegevens en docentnotities mogen niet in
 het productie-HTML of de JavaScript-bundels staan.
+
+## Docentstand naast de slides
+
+Klik in een lokale lespresentatie op **Docentstand** om de speaker notes naast
+de actieve slide te lezen. Notities worden via de lokale review-API geladen en
+op onderdeel-ID gekoppeld; ze wisselen mee bij navigatie. Op smalle schermen
+staan ze onder de slide. Volledig scherm neemt het notitiepaneel mee; printen
+laat de notities weg. Met **Notities verbergen** keer je terug naar alleen slides.
+
+## Overige weekbestanden
+
+Onder het lessenoverzicht staan alle aanvullende `.md`-bestanden direct in
+`lesmateriaal/week1` tot en met `week4`, inclusief README en docenthandleidingen.
+Ze openen in `/ontwikkeling/bestanden?bestand=week3/README.md`. De viewer en
+API bestaan alleen lokaal; er komen geen docentbestanden in de studentgegevens
+of productiebuild. Relatieve Markdown-links binnen deze weekmappen blijven
+bruikbaar. Andere bestandstypen, submappen en symlinks worden niet ontsloten.

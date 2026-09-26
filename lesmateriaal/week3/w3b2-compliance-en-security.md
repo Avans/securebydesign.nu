@@ -15,7 +15,9 @@ description: "Regels, bewijs en het werkelijke risico"
 90 minuten
 
 <!--
-⏱ 0–2. Gebruik de individuele voorbeelden uit blok 1. Vandaag leren studenten claims beoordelen. De inhoud en toepasselijkheid van AVG, NIS2/Cbw en CRA komen in blok 4, zodat deze twee lessen verschillende vragen beantwoorden.
+⏱ 0–2. Pak een individueel voorbeeld uit de voorbereiding: een regel die op papier bestaat. Vraag wat je daarmee al weet over het dagelijkse werk. Vandaag leren studenten een claim kleiner en controleerbaar maken.
+
+Laat de les niet afglijden naar “certificaten zeggen niets”. Ze zeggen iets binnen grenzen. De juridische toepasselijkheid van AVG, NIS2/Cbw en CRA komt in blok 4; hier oefenen we het beoordelen van bewijs.
 --> 
 
 ---
@@ -28,7 +30,9 @@ description: "Regels, bewijs en het werkelijke risico"
 4. uitleggen waarom een certificaat geen garantie op incidentvrij werken is.
 
 <!--
-⏱ 2–4. Laat studenten het leerdoel aanwijzen dat ze al deels beheersen. Vraag om een voorbeeld, niet alleen een hand. De opdracht en de afsluitende vragen controleren deze doelen.
+⏱ 2–4. Vraag bij het leerdoel over bewijs om één voorbeeld: wat zou aantonen dat een back-up bruikbaar is? Neem een antwoord en bewaar het voor de werkronde.
+
+Je zoekt vandaag het verschil tussen een afspraak, uitvoering en werking. Wie die drie uit elkaar kan houden, kan straks een leveranciersclaim onderzoeken.
 --> 
 
 ---
@@ -43,7 +47,9 @@ description: "Regels, bewijs en het werkelijke risico"
 | 85–90 | Afsluiting |
 
 <!--
-⏱ 4–5. Benoem de opbrengst en waar die in blok 9 terugkomt. De tijdvakken bij de docentnotities zijn leidend. Overgangen op één tijdstip nemen geen extra minuten in beslag.
+⏱ 4–5. B2 wordt het bewijsregister voor blok 9. Benoem vooral het gesprek in de derde ronde: teams moeten met hun vragen een leverancier tot een bruikbare afspraak brengen.
+
+Ze hoeven vandaag geen garanties te verzamelen, maar duidelijk te maken wat bekend is en wat nog gecontroleerd moet worden. Houd de overgangsslides kort.
 --> 
 
 ---
@@ -53,7 +59,7 @@ description: "Regels, bewijs en het werkelijke risico"
 ### Een leverancier heeft een certificaat
 
 <!--
-⏱ 5. Start met een fictieve offerte. Er is geen echt bedrijf of certificaat nodig.
+⏱ 5. Overgang. Leg een fictieve offerte voor. Vraag de klas haar even te lezen alsof zij voor Naaste moet inkopen; een echt bedrijf of certificaat is niet nodig.
 --> 
 
 ---
@@ -67,7 +73,11 @@ Wat zou je willen zien vóór je de overeenkomst tekent?
 Schrijf individueel één vraag over **scope** en één over **werking**.
 
 <!--
-⏱ 5–10. Verwachte vragen: welke rechtspersoon, dienst, locatie en periode dekt het certificaat? Valt de testomgeving eronder? Wie controleert toegang? Behandel het certificaat als relevante informatie, maar trek er geen conclusies uit over systemen die buiten de scope vallen.
+⏱ 5–10. Laat eerst iemand benoemen wat hem geruststelt aan de offerte. Vraag daarna: “Staat er ook dat juist de omgeving die wij gaan gebruiken is onderzocht?” Dat is het moment waarop scope betekenis krijgt.
+
+Verwachte vragen: welke rechtspersoon, dienst, locatie en periode dekt het certificaat? Valt de testomgeving eronder? Wie controleert toegang? Behandel het certificaat als relevante informatie, maar trek er geen conclusies uit over systemen die buiten de scope vallen.
+
+Als de klas het certificaat nu waardeloos noemt, ga één stap terug: welk deel van de claim wordt er wél door ondersteund?
 --> 
 
 ---
@@ -82,7 +92,11 @@ Schrijf individueel één vraag over **scope** en één over **werking**.
 | Assurance | SOC 2-rapport | Onderzoek en rapportage over beheersing |
 
 <!--
-⏱ 10–16. Laat studenten de termen in gewone taal teruggeven. ISO is de organisatie, ISO/IEC 27001 de norm. NIST is een instituut, CSF het bedoelde raamwerk. SOC 2 is geen EU-wet en geen ISO-certificaat. HIPAA is Amerikaanse gezondheidswetgeving, geen standaardplicht voor elke Nederlandse zorgapp. Hier alleen herkennen, geen apart HIPAA-college. Bronnen: ISO-overzicht, NIST CSF en AICPA SOC-bron in bronnen-week3.md.
+⏱ 10–16. Dit rijtje kan snel een afkortingenquiz worden. Laat bij elk begrip zeggen wat je ermee kunt: een verplichting begrijpen, een aanpak kiezen of bewijs beoordelen.
+
+Laat studenten de termen in gewone taal teruggeven. ISO is de organisatie, ISO/IEC 27001 de norm. NIST is een instituut, CSF het bedoelde raamwerk. SOC 2 is geen EU-wet en geen ISO-certificaat. HIPAA is Amerikaanse gezondheidswetgeving, geen standaardplicht voor elke Nederlandse zorgapp. Hier alleen herkennen, geen apart HIPAA-college. Bronnen: ISO-overzicht, NIST CSF en AICPA SOC-bron in bronnen-week3.md.
+
+Vraag één student een verkeerd gebruikte term te herstellen in een zin van de leverancier. Het herkennen moet een gesprek helpen, niet alleen een definitie opleveren.
 --> 
 
 ---
@@ -96,7 +110,11 @@ Schrijf individueel één vraag over **scope** en één over **werking**.
 **Open vraag:** omvat de controle ook accounts bij de bouwer, actieve sessies en tijdelijke krachten?
 
 <!--
-⏱ 16–21. Leg uit dat een steekproef bewijs binnen grenzen geeft. Laat studenten benoemen wat ze nog niet weten. Een beleidstekst bewijst de afspraak, uitgevoerde records ondersteunen uitvoering, een onafhankelijke controle helpt werking beoordelen. Claim niet dat één voorbeeld volledige compliance bewijst.
+⏱ 16–21. Pak de regel uit de voorbereiding er weer bij. Leg denkbeeldig drie dingen op tafel: de afspraak, een uitgevoerd werkrecord en een controleverslag. Vraag wat elk stuk toevoegt.
+
+Leg uit dat een steekproef bewijs binnen grenzen geeft. Laat studenten benoemen wat ze nog niet weten. Een beleidstekst bewijst de afspraak, uitgevoerde records ondersteunen uitvoering, een onafhankelijke controle helpt werking beoordelen. Claim niet dat één voorbeeld volledige compliance bewijst.
+
+Bij “dus het is veilig” vraag je: voor welk onderdeel, in welke periode en op grond van welk bewijs? Zo oefent de klas een begrensde conclusie.
 --> 
 
 ---
@@ -113,7 +131,11 @@ Voor Naaste:
 Welk restrisico blijft over?
 
 <!--
-⏱ 21–25. Gebruik een nieuwsgierige bevoegde medewerker als resterend risico. Goede toekenning van rechten voorkomt niet ieder misbruik door iemand die terecht toegang heeft. Een maatregel kan nuttig zijn zonder alle risico weg te nemen. De formulering op de slide is een oefeneis, geen letterlijk wetsartikel.
+⏱ 21–25. Hier leg je de brug naar risico’s uit week 2. Laat iemand de maatregel aanwijzen en een ander vertellen wat er daarna nog mis kan gaan.
+
+Gebruik een nieuwsgierige bevoegde medewerker als resterend risico. Goede toekenning van rechten voorkomt niet ieder misbruik door iemand die terecht toegang heeft. Een maatregel kan nuttig zijn zonder alle risico weg te nemen. De formulering op de slide is een oefeneis, geen letterlijk wetsartikel.
+
+Stuur antwoorden als “dan werkt de maatregel niet” terug. Laat studenten uitleggen welk risico kleiner werd en welk risico bleef bestaan.
 --> 
 
 ---
@@ -123,7 +145,7 @@ Welk restrisico blijft over?
 ### Claims uit een fictief leveranciersdossier
 
 <!--
-⏱ 25. Open werkblad B2. Elk team onderzoekt alle vier claims. Rollen wisselen ten opzichte van blok 1.
+⏱ 25. Overgang naar B2. Verdeel het fictieve dossier inclusief de feiten. Elk team onderzoekt alle vier claims; wissel de rollen ten opzichte van blok 1.
 --> 
 
 ---
@@ -140,7 +162,11 @@ Onderzoek de vier claims op B2:
 Noteer per claim: betekenis, ontbrekend bewijs en mogelijk restrisico.
 
 <!--
-⏱ 25–40. Geef de vier bijbehorende dossierfeiten uit B2 meteen mee. Studenten hoeven geen internetonderzoek te doen. Training kan afgerond zijn zonder dat de meldroute wordt gebruikt. Een geslaagde back-up zegt nog niet dat herstel werkt. De privacyverklaring bewijst geen juiste inrichting van toegang of bewaartermijnen.
+⏱ 25–40. Vijftien minuten. Laat teams bij elke claim eerst de bewering onderstrepen en daarna het dossierfeit ernaast leggen. Dat voorkomt dat ze meteen een nieuwe maatregel gaan verzinnen.
+
+Geef de vier bijbehorende dossierfeiten uit B2 meteen mee. Studenten hoeven geen internetonderzoek te doen. Training kan afgerond zijn zonder dat de meldroute wordt gebruikt. Een geslaagde back-up zegt nog niet dat herstel werkt. De privacyverklaring bewijst geen juiste inrichting van toegang of bewaartermijnen.
+
+Loop rond met één vraag: “Welk stukje van deze bewering kun je nu al aantonen?” Het ontbrekende bewijs hoort als vraag in B2, niet als zelfbedacht feit.
 --> 
 
 ---
@@ -157,7 +183,11 @@ Kies twee claims. Formuleer:
 Koppel elke controle aan één asset en risico van Naaste.
 
 <!--
-⏱ 40–55. Vraag steeds of de controle echt het geclaimde effect onderzoekt. “Vraag of ze veilig zijn” is geen controle. “Laat het verslag van de laatste hersteltest zien, inclusief afwijkingen en opvolging” is bruikbaar. Laat de groep zelf een haalbare frequentie kiezen en die als oefenkeuze markeren.
+⏱ 40–55. De lastigste stap is een controle kiezen die iets zegt over de werking. Een document opvragen is alleen nuttig als studenten kunnen uitleggen wat zij erin zoeken.
+
+Vraag steeds of de controle echt het geclaimde effect onderzoekt. “Vraag of ze veilig zijn” is geen controle. “Laat het verslag van de laatste hersteltest zien, inclusief afwijkingen en opvolging” is bruikbaar. Laat de groep zelf een haalbare frequentie kiezen en die als oefenkeuze markeren.
+
+Vraag bij een hersteltest: welke uitkomst zou jullie oordeel veranderen? Als het antwoord niets uitmaakt, controleert het team waarschijnlijk de verkeerde claim.
 --> 
 
 ---
@@ -171,7 +201,11 @@ De leverancier antwoordt uitsluitend met de dossierfeiten. Bij ontbrekende infor
 Na vijf minuten wisselen jullie. Noteer één voorwaarde voor akkoord.
 
 <!--
-⏱ 55–65. Bij drie studenten combineert één de leverancier- en notitierol. Corrigeer verzonnen bewijs direct. Het doel is professioneel doorvragen zonder absolute garanties te eisen. Een passende voorwaarde kan een hersteltest vóór ingebruikname zijn, met een aangewezen beoordelaar.
+⏱ 55–65. Laat de leverancier een onduidelijke vraag eerst letterlijk beantwoorden. “Zijn jullie veilig?” levert dan een beleefd “ja” op. De vrager moet zelf ontdekken waarom hij daar niet verder mee kan.
+
+Bij drie studenten combineert één de leverancier- en notitierol. Corrigeer verzonnen bewijs direct. Het doel is professioneel doorvragen zonder absolute garanties te eisen. Een passende voorwaarde kan een hersteltest vóór ingebruikname zijn, met een aangewezen beoordelaar.
+
+Beloon de vervolgvraag die de afspraak concreter maakt. Een stevig gesprek hoeft geen verhoor te worden; de leverancier mag ook eerlijk zeggen dat bewijs ontbreekt.
 --> 
 
 ---
@@ -181,7 +215,7 @@ Na vijf minuten wisselen jullie. Noteer één voorwaarde voor akkoord.
 ### Hoeveel zegt het bewijs?
 
 <!--
-⏱ 65. Oogst twee voorwaarden en laat een ander team de koppeling met het risico uitleggen.
+⏱ 65. Overgang. Laat twee teams een leveranciersvoorwaarde noemen. Een ander team legt uit welk risico die voorwaarde helpt beheersen.
 --> 
 
 ---
@@ -195,7 +229,11 @@ Na vijf minuten wisselen jullie. Noteer één voorwaarde voor akkoord.
 Welke denkfout zit in iedere uitspraak? Geef een voorbeeld uit het dossier.
 
 <!--
-⏱ 65–75. Beide uitspraken verwarren een bijdrage aan beheersing met absolute zekerheid. Laat de studenten het nuttige deel van de controle behouden. Bespreek ook dat aantoonbare naleving een eigen verplichting kan zijn, zelfs wanneer een team een risico laag inschat. Vermijd het beeld dat compliance slechts papierwerk is.
+⏱ 65–75. Laat studenten eerst kiezen welke uitspraak zij het meest herkennen en waarom. Beide uitersten maken het gesprek te gemakkelijk: blind vertrouwen of alles terzijde schuiven.
+
+Beide uitspraken verwarren een bijdrage aan beheersing met absolute zekerheid. Laat de studenten het nuttige deel van de controle behouden. Bespreek ook dat aantoonbare naleving een eigen verplichting kan zijn, zelfs wanneer een team een risico laag inschat. Vermijd het beeld dat compliance slechts papierwerk is.
+
+Laat ze één uitspraak opnieuw formuleren met behoud van wat de controle wél oplevert. De nuance moet zichtbaar worden in hun eigen zin.
 --> 
 
 ---
@@ -209,7 +247,11 @@ Welke denkfout zit in iedere uitspraak? Geef een voorbeeld uit het dossier.
 **Uitgangskaart:** herschrijf één te brede securityclaim zodat hij past bij het beschikbare bewijs.
 
 <!--
-⏱ 75–85. Antwoorden: raamwerk, bewijs van bruikbaar herstel, dekking van dienst en relevante omgevingen. Een goede herschrijving begrenst de claim: “De nachtelijke kopie is gemaakt. Herstel voor deze toepassing hebben we nog niet getest.” Laat drie studenten hun formulering voorlezen en let op ongefundeerde zekerheid.
+⏱ 75–85. Eerst individueel antwoorden, dan pas vergelijken. Zo hoor je of studenten zelf het verschil tussen bewijs en zekerheid kunnen uitleggen.
+
+Antwoorden: raamwerk, bewijs van bruikbaar herstel, dekking van dienst en relevante omgevingen. Een goede herschrijving begrenst de claim: “De nachtelijke kopie is gemaakt. Herstel voor deze toepassing hebben we nog niet getest.” Laat drie studenten hun formulering voorlezen en let op ongefundeerde zekerheid.
+
+Vraag bij de herschreven claim welke vervolgstap logisch is. Je wilt een zin waarmee een opdrachtgever verder kan, niet alleen een voorzichtigere formulering.
 --> 
 
 ---
@@ -217,7 +259,7 @@ Welke denkfout zit in iedere uitspraak? Geef een voorbeeld uit het dossier.
 ## Deel 4 · Afsluiting
 
 <!--
-⏱ 85. Overgang. Laat het teamresultaat opslaan en benoem de individuele voorbereiding.
+⏱ 85. Overgang. Laat de schrijver B2 openen. Controleer op de volgende slide wat het team bewaart en wat ieder zelf voorbereidt.
 -->
 
 ---
@@ -231,7 +273,9 @@ Welke denkfout zit in iedere uitspraak? Geef een voorbeeld uit het dossier.
 Begrippen: compliance, scope, norm, raamwerk, bewijs, restrisico.
 
 <!--
-⏱ 85–89. Laat ieder team zijn bestand opslaan met teamnaam en bloknummer. De individuele voorbereiding valt buiten deze 90 minuten. Vraag één student hardop te benoemen welke open vraag nog meegaat.
+⏱ 85–89. Laat B2 bewaren met teamnaam en bloknummer. Vraag welk bewijs nog ontbreekt en wie het zou moeten beoordelen. Daarmee verbind je het bewijsregister aan eigenaarschap uit blok 1.
+
+De individuele voorbereiding duurt twintig minuten buiten deze les: de openbare ISO-introductie lezen en in vijf zinnen beschrijven hoe je één controle onderhoudt. Dat is de volgende stap: zorgen dat een afspraak blijft werken.
 --> 
 
 ---
@@ -245,5 +289,9 @@ Begrippen: compliance, scope, norm, raamwerk, bewijs, restrisico.
 - [Casus en oefenafspraken](casus-naaste-week3.md)
 
 <!--
-⏱ 89–90. Voorbereiding docent: Print B2 inclusief dossierfeiten. Gebruik fictieve leveranciersclaims, geen echte vertrouwelijke auditrapporten. Bronnen geraadpleegd op 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
+⏱ 89–90. Laat de klas weten waar B2 en de bronnen staan. De vraag die blijft hangen: welk bewijs heb je voor precies deze claim?
+
+Vóór de les klaarleggen en controleren: Print B2 inclusief dossierfeiten. Gebruik fictieve leveranciersclaims, geen echte vertrouwelijke auditrapporten.
+
+Bronpeildatum van deze les: 7 september 2026. Voorbeelden en oefennormen zijn fictief, tenzij expliciet als bronfeit aangeduid. Antwoorden staan waar nodig in deze notities en in de docenthandleiding.
 --> 
