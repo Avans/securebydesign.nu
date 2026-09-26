@@ -41,8 +41,8 @@ Je zoekt vandaag het verschil tussen een afspraak, uitvoering en werking. Wie di
 
 | Tijd | Onderdeel |
 |---|---|
-| 0–25 | Verhaal, terugblik en begrippen |
-| 25–65 | Aan het werk in casusteams |
+| 0–25 | Casus, uitleg en uitgewerkt voorbeeld |
+| 25–65 | Zelf toepassen en testen in casusteams |
 | 65–85 | Terug & verdieping |
 | 85–90 | Afsluiting |
 
@@ -70,7 +70,7 @@ Ze hoeven vandaag geen garanties te verzamelen, maar duidelijk te maken wat beke
 
 Wat zou je willen zien vóór je de overeenkomst tekent?
 
-Schrijf individueel één vraag over **scope** en één over **werking**.
+Schrijf individueel: geldt het certificaat ook voor onze testomgeving, en hoe zien we of de afspraken in het dagelijks werk werken? Dat zijn vragen over **scope** en **werking**.
 
 <!--
 ⏱ 5–10. Laat eerst iemand benoemen wat hem geruststelt aan de offerte. Vraag daarna: “Staat er ook dat juist de omgeving die wij gaan gebruiken is onderzocht?” Dat is het moment waarop scope betekenis krijgt.
@@ -101,42 +101,49 @@ Vraag één student een verkeerd gebruikte term te herstellen in een zin van de 
 
 ---
 
-## Een controle heeft een beperkte reikwijdte
+## Voordoen · Een groen back-upbericht
 
-**Claim:** vertrekkende medewerkers verliezen hun toegang.
+**B2:** elke nacht een groene taakmelding. De laatste hersteltest was achttien maanden geleden, vóór de huidige appversie.
 
-**Bewijs:** drie uitgevoerde uitdienstmeldingen en bijbehorende accountcontroles.
+| Denkstap | Uitwerking |
+|---|---|
+| Wat ondersteunt dit? | De back-uptaak rapporteert succes |
+| Wat weet ik nog niet? | Of de huidige app bruikbaar herstelt |
+| Waarom doet dat ertoe? | A1 kan na uitval onbeschikbaar blijven |
+| Welke controle helpt? | Herstelproef met huidige versie en controle van gegevens |
 
-**Open vraag:** omvat de controle ook accounts bij de bouwer, actieve sessies en tijdelijke krachten?
+Een groene taakmelding is nog geen geslaagde herstelproef.
 
 <!--
-⏱ 16–21. Pak de regel uit de voorbereiding er weer bij. Leg denkbeeldig drie dingen op tafel: de afspraak, een uitgevoerd werkrecord en een controleverslag. Vraag wat elk stuk toevoegt.
+⏱ 16–21. Denk vijf minuten hardop vanuit één claim uit B2. Ik zie een groene melding en wil daar graag “we kunnen herstellen” van maken. Maar dat is een grotere conclusie dan het bewijs ondersteunt. Wijs het verschil aan tussen een kopie maken en de toepassing met die gegevens weer bruikbaar krijgen.
 
-Leg uit dat een steekproef bewijs binnen grenzen geeft. Laat studenten benoemen wat ze nog niet weten. Een beleidstekst bewijst de afspraak, uitgevoerde records ondersteunen uitvoering, een onafhankelijke controle helpt werking beoordelen. Claim niet dat één voorbeeld volledige compliance bewijst.
+Verbind iedere rij met de vorige: ontbrekend bewijs is relevant omdat zorgnotities na een storing nodig blijven. Een herstelproef moet de huidige toepassing en gegevens beoordelen; alleen zien dat een bestand bestaat is onvoldoende. Gebruik uitsluitend de dossierfeiten. De oude hersteltest is niet waardeloos, maar onderbouwt de huidige versie niet vanzelf.
 
-Bij “dus het is veilig” vraag je: voor welk onderdeel, in welke periode en op grond van welk bewijs? Zo oefent de klas een begrensde conclusie.
---> 
+Laat een student de begrensde conclusie in één zin teruggeven. Dit voorbeeld staat straks als referentie in het register; de andere drie claims moeten teams zelf onderzoeken.
+-->
 
 ---
 
-## Eis, maatregel en effect
+## Samen proberen · Iedereen volgde de training
 
-Voor Naaste:
+**B2:** het portaal toont 100% afronding. Er is geen verslag van een oefening met de meldroute.
 
-- **Eis:** toegang past bij iemands taak.
-- **Maatregel:** teamleider keurt rechten goed en laat ze intrekken.
-- **Bewijs:** aanvraag, uitvoering en controle horen bij elkaar.
-- **Effect:** onbevoegde toegang wordt minder waarschijnlijk.
+**Al ingevuld:** de registratie ondersteunt dat iedereen de module afrondde.
 
-Welk restrisico blijft over?
+Vul samen aan:
+1. Welke uitspraak over veilig handelen kun je nog niet doen?
+2. Welke korte proef geeft daar informatie over?
+3. Welk risico voor Naaste helpt die proef onderzoeken?
+
+Gebruik: **afspraak → uitvoering → bewijs van werking**.
 
 <!--
-⏱ 21–25. Hier leg je de brug naar risico’s uit week 2. Laat iemand de maatregel aanwijzen en een ander vertellen wat er daarna nog mis kan gaan.
+⏱ 21–25. Eén minuut individueel, twee minuten samen invullen, één minuut de redenering terughalen. Verwacht “nog een training”; vraag eerst welke handeling je wilt zien. Een medewerker die in een oefensituatie het juiste meldpunt vindt levert ander bewijs dan een afgeronde module.
 
-Gebruik een nieuwsgierige bevoegde medewerker als resterend risico. Goede toekenning van rechten voorkomt niet ieder misbruik door iemand die terecht toegang heeft. Een maatregel kan nuttig zijn zonder alle risico weg te nemen. De formulering op de slide is een oefeneis, geen letterlijk wetsartikel.
+Koppel de proef aan A1: bereikt een vermoeden van blootstelling van zorgnotities iemand die het beoordeelt? Laat studenten ook de grens benoemen: één geslaagde oefening bewijst niet dat iedereen altijd goed handelt. De maatregel kan het risico verkleinen zonder het weg te nemen.
 
-Stuur antwoorden als “dan werkt de maatregel niet” terug. Laat studenten uitleggen welk risico kleiner werd en welk risico bleef bestaan.
---> 
+Laat één student eis, maatregel en beoogd effect terugzeggen: meldingen bereiken een beoordelaar, een bereikbare route wordt geoefend, signalen blijven minder snel liggen. Dit is een oefeneis, geen letterlijk wetsartikel. De ontbrekende vervolgstappen werken teams op B2 uit.
+-->
 
 ---
 
@@ -159,10 +166,10 @@ Onderzoek de vier claims op B2:
 3. “De back-up slaagt elke nacht.”
 4. “De privacyverklaring staat online.”
 
-Noteer per claim: betekenis, ontbrekend bewijs en mogelijk restrisico.
+Neem de back-upclaim als voorgedane referentie. Werk de andere drie claims zelf uit: betekenis, ontbrekend bewijs en mogelijk restrisico. Maak de trainingsclaim vollediger dan onze gezamenlijke eerste stap.
 
 <!--
-⏱ 25–40. Vijftien minuten. Laat teams bij elke claim eerst de bewering onderstrepen en daarna het dossierfeit ernaast leggen. Dat voorkomt dat ze meteen een nieuwe maatregel gaan verzinnen.
+⏱ 25–40. Vijftien minuten: controleer kort de voorgedane back-upclaim en gebruik de rest voor de andere drie. Laat teams bij elke claim eerst de bewering onderstrepen en daarna het dossierfeit ernaast leggen. Dat voorkomt dat ze meteen een nieuwe maatregel gaan verzinnen.
 
 Geef de vier bijbehorende dossierfeiten uit B2 meteen mee. Studenten hoeven geen internetonderzoek te doen. Training kan afgerond zijn zonder dat de meldroute wordt gebruikt. Een geslaagde back-up zegt nog niet dat herstel werkt. De privacyverklaring bewijst geen juiste inrichting van toegang of bewaartermijnen.
 

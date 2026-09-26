@@ -41,8 +41,8 @@ De kwaliteit zit vandaag in de onderbouwing: weten waarom iets geldt, of precies
 
 | Tijd | Onderdeel |
 |---|---|
-| 0–25 | Verhaal, terugblik en begrippen |
-| 25–65 | Aan het werk in casusteams |
+| 0–25 | Casus, uitleg en uitgewerkt voorbeeld |
+| 25–65 | Samen proberen en uitwerken in casusteams |
 | 65–85 | Terug & verdieping |
 | 85–90 | Afsluiting |
 
@@ -64,43 +64,49 @@ De bronkaart helpt zoeken; zij neemt het denkwerk niet over. Houd de introductie
 
 ---
 
-## Waar de regels naar kijken
+## Een testkopie: drie verschillende vragen
 
-| Kader | Hoofdvraag voor deze les |
+**Oefensituatie:** de bouwer wil echte zorgnotities in een externe testomgeving gebruiken. Naaste wil weten welke afspraken nodig zijn.
+
+| Invalshoek | Wat moeten we onderzoeken? |
 |---|---|
-| AVG | Hoe verwerken we persoonsgegevens? |
-| NIS2 / Nederlandse Cbw | Welke organisatie moet haar digitale weerbaarheid organiseren? |
-| CRA | Welke partij brengt een product met digitale elementen op de markt? |
+| AVG | Welke persoonsgegevens worden daar verwerkt, waarom en door wie? |
+| NIS2 / Cbw | Welke betrokken organisatie valt onder het toepassingsgebied? |
+| CRA | Wat levert de bouwer als product en welke rol heeft hij daarbij? |
 
-Meerdere kaders kunnen tegelijk relevant zijn.
+“Er is een app” beantwoordt die drie vragen nog niet.
 
 <!--
-⏱ 5–10. Gebruik dezelfde app bij alle drie de invalshoeken. Vraag telkens: “Naar welke partij of activiteit kijken we nu?” Daarmee voorkom je dat studenten wetten als drie stapels algemene securityregels onthouden.
+⏱ 5–10. Laat eerst zonder wetnamen benoemen wat studenten willen weten over het testverzoek. Orden hun vragen daarna met de tabel. Zo krijgen de kaders betekenis vanuit dezelfde gebeurtenis. Begin niet met drie definities die zij moeten onthouden.
 
-Benoem dat dit oriëntatievragen zijn, geen volledige juridische toepasselijkheidstest. Een zorgapp is niet automatisch een CRA-product en een zorgorganisatie valt niet enkel door haar naam automatisch onder de Cbw. Sector, omvang, activiteiten, uitzonderingen en de precieze productrol doen ertoe. Gebruik de drie officiële bronlinks op B4.
+Benoem dat dit oriëntatievragen zijn, geen volledige juridische toepasselijkheidstest. De externe testomgeving is een fictieve uitbreiding. Laat bij elke invalshoek één bekend gegeven en één ontbrekend gegeven noemen. Het doel van testen beantwoordt bijvoorbeeld nog niet welke gegevens daarvoor nodig zijn.
 
-Als iemand op basis van één casuskenmerk een definitieve conclusie trekt, laat je aanwijzen welke andere gegevens nog ontbreken.
---> 
+Gebruik de bronkaarten van B4 voor de juridische uitleg en behoud hun peildatum. Toepasselijkheid van Cbw en CRA staat niet vast in de casus. Als iemand uit “zorgapp” een definitief oordeel afleidt, vraag welke bron en welke casusfeiten die conclusie dragen. Bronnen: de officiële links op B4 en de bronnenlijst van deze les.
+-->
 
 ---
 
-## AVG bij Naaste
+## Voordoen · Van zorgnotitie naar ontwerpvraag
 
-Zorgnotities en medicatiegegevens bevatten persoonsgegevens over gezondheid.
+**Instructievoorbeeld voor B4 — A1, zorgnotities in een testomgeving.**
 
-Ontwerpvragen:
-- Wie mag welke gegevens zien?
-- Welke gegevens zijn noodzakelijk?
-- Wat mag de bouwer ermee doen?
-- Hoe ontdekken en behandelen we een datalek?
+| Denkstap | Uitwerking |
+|---|---|
+| Bekend | Het verzoek betreft echte zorgnotities |
+| Ontbreekt | Waarom die nodig zijn en wie erbij kan |
+| Te onderzoeken | Doel, noodzakelijkheid en toegestane toegang |
+| Ontwerpkeuze | Eerst met synthetische gegevens testen |
+| Bewijs bij die keuze | Beschrijving en controle van de gebruikte testdataset |
+
+Die ontwerpkeuze is onze oefeninvulling, geen letterlijk wetsartikel.
 
 <!--
-⏱ 10–15. Verwacht “we vragen gewoon toestemming”. Neem dat serieus als voorstel en laat de student uitleggen voor welke verwerking en door welke partij.
+⏱ 10–15. Werk de keten hardop uit: ik zie zorgnotities en stel eerst vragen over de verwerking. Dan pas kies ik een mogelijke invulling. Laat zien waarom een verklaring “we werken zorgvuldig” nog geen bewijs over de gebruikte dataset geeft. Vraag wie de dataset controleert en koppel die eigenaar aan B1.
 
-Leg kort uit dat gezondheidsgegevens bijzondere persoonsgegevens zijn. Verwerking vraagt een passende grondslag én een toepasselijke uitzondering voor die bijzondere gegevens. “We vragen toestemming” is geen universele oplossing. De oefening neemt aan dat Naaste verwerkingsverantwoordelijke is en de bouwer voor afgesproken taken verwerker. Andere rollen, bijvoorbeeld de apotheek, beoordeel je apart. Bron: AVG artikelen 5, 6, 9, 25, 28 en 32.
+Behoud de juridische onderbouwing: gezondheidsgegevens zijn bijzondere persoonsgegevens; een passende grondslag én een toepasselijke uitzondering zijn nodig. “We vragen toestemming” is geen universele oplossing. In deze oefening behandelen we Naaste voor de appverwerking als verwerkingsverantwoordelijke en de bouwer voor afgesproken taken als verwerker. Andere verwerkingen beoordeel je apart. Bron: AVG artikelen 5, 6, 9, 25, 28 en 32, via de bronkaart.
 
-Houd de rolverdeling zichtbaar naast de casus. Het leerpunt is dat je een verwerking en de bijbehorende verantwoordelijkheid moet kunnen aanwijzen, voordat je een oplossing kiest.
---> 
+Dit is een voorgedane ontwerpvraag, geen complete rechtmatigheidsbeoordeling. Het voorbeeld laat bewust een open informatievraag staan. De klas past straks dezelfde redenering toe op een andere gegevenssoort; geef daarvan nog niet de uitwerking.
+-->
 
 ---
 
@@ -171,29 +177,31 @@ Laat zien waar B4 de voorwaarden noemt. Studenten hoeven de termijnen nu niet ui
 
 ---
 
-## Ronde 1 · Wanneer geldt dit?
+## Samen proberen, daarna jullie kader
 
-Vul op B4 in:
+**25–30 · Samen:** de bouwer wil nu chatgeschiedenis (A5) gebruiken in plaats van zorgnotities. Welke vragen uit het voorbeeld blijven nodig? Wat moeten we opnieuw onderzoeken?
 
-1. beschermd belang;
-2. partij of activiteit waarop het kader ziet;
-3. wat we al weten over Naaste;
-4. welke informatie ontbreekt;
-5. voorlopige conclusie met voorwaarde.
+**30–40 · Zelf:** werk jullie toegewezen kader uit op **B4**:
+
+- beschermd belang en betrokken partij of activiteit;
+- bekende feiten en ontbrekende informatie;
+- voorlopige conclusie met voorwaarde.
+
+Gebruik de bronkaart. Een open vraag krijgt een concrete vervolgstap.
 
 <!--
-⏱ 25–40. De kwaliteit van deze ronde zit in de reden achter de conclusie. Loop langs en vraag bij elke stellige zin: “Op welk casusfeit en welke bron rust dit?”
+⏱ 25–40. Vijf minuten gezamenlijk de variant verkennen. Verwacht “chat is minder gevoelig”; vraag waarop dat berust en welke inhoud de casus daadwerkelijk beschrijft. Laat de klas vragen formuleren over inhoud, doel, toegang en rollen. Vul onbekende chatinhoud niet zelf in.
 
-Een goede conclusie mag “nader onderzoeken” zijn, mits concreet staat welke informatie ontbreekt en wie die levert. Een poster die zegt “alles geldt” zonder reden is onvoldoende. Laat bij AVG het gebruik van cliëntgegevens als duidelijke aanleiding benoemen en bij Cbw/CRA de ontbrekende scopegegevens.
+Daarna tien minuten in teams aan het toegewezen kader. Bij AVG mag het team de variant verder onderzoeken; Cbw- en CRA-teams gebruiken de oorspronkelijke testomgeving als aanleiding en onderzoeken hun eigen partij- of productvragen. De gezamenlijke AVG-verkenning bewijst geen toepasselijkheid van de andere kaders.
 
-Stuur “nog onderzoeken” alleen terug als niet duidelijk is wat onderzocht moet worden. Een begrensde open vraag is sterker dan een antwoord dat de casus niet kan dragen.
---> 
+Vraag bij elke stellige zin naar casusfeit en bron. “Nader onderzoeken” is bruikbaar als duidelijk is welke informatie ontbreekt en wie die levert. Houd de juridische peildatum zichtbaar. De twee ontwerpvragen komen in ronde 2; laat teams daar een andere keuze dan het voorgedane testdatavoorbeeld uitwerken.
+-->
 
 ---
 
 ## Ronde 2 · Twee ontwerpvragen
 
-Vertaal jullie kader naar twee keuzes bij Naaste.
+Vertaal jullie kader naar twee keuzes bij Naaste. Werk minstens één andere keuze uit dan het voorgedane voorbeeld met testdata.
 
 Per keuze: **asset, risico, ontwerpvraag, eigenaar, bewijs**.
 

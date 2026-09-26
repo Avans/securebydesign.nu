@@ -41,8 +41,8 @@ Neem één antwoord, zonder alle rollen nu uit te leggen. Aan het einde moet elk
 
 | Tijd | Onderdeel |
 |---|---|
-| 0–25 | Verhaal, terugblik en begrippen |
-| 25–65 | Aan het werk in casusteams |
+| 0–25 | Casus, uitleg en uitgewerkt voorbeeld |
+| 25–65 | Zelf toepassen en testen in casusteams |
 | 65–85 | Terug & verdieping |
 | 85–90 | Afsluiting |
 
@@ -101,36 +101,48 @@ Dit zijn oefenrollen, geen vastgesteld organigram. Werkelijke mandaten moet een 
 
 ---
 
-## RACI-light
+## Voordoen · Wie beoordeelt het testverzoek?
 
-- **R · Responsible:** voert de activiteit uit.
-- **A · Accountable:** draagt de eindverantwoordelijkheid voor deze activiteit.
-- **C · Consulted:** levert vooraf advies.
-- **I · Informed:** krijgt de uitkomst.
+**Oefenbesluit:** echte zorgnotities naar de testomgeving kopiëren?
 
-In deze oefening heeft elke rij **één A** en minstens één R.
+| Rol | Wie in dit oefenmodel? | Waarom? |
+|---|---|---|
+| R · bereidt de beoordeling voor | Securitycoördinator | Verzamelt risico’s en alternatieven |
+| A · beslist | Directeur | Heeft hier het afgesproken mandaat |
+| C · adviseert vooraf | FG en zorgteamleider | Gegevensbescherming en zorgbelang |
+| I · ontvangt de uitkomst | Bouwer | Moet weten wat is toegestaan |
+
+De kopie uitvoeren is een **andere activiteit**, met een eigen rolverdeling.
 
 <!--
-⏱ 15–20. Verwacht dat teams de directeur overal A maken en de bouwer overal R. Pak één activiteit: kan de directeur die beslissing beoordelen, en weet de bouwer wat hij moet uitvoeren? Maak de activiteit kleiner als het antwoord vaag blijft.
+⏱ 15–20. Werk deze ene rij hardop uit: eerst baken ik de activiteit af als het beoordelen van het verzoek. Dan zoek ik wie het besluit kan dragen, wie de beoordeling voorbereidt, wiens advies vooraf nodig is en wie de uitkomst moet weten. De bouwer staat hier bij I omdat dit de beoordeling betreft, niet de technische uitvoering. Die afbakening voorkomt dat letters willekeurig worden.
 
-Eén A per rij is hier een ontwerpregel, geen juridisch bewijs van aansprakelijkheid. R en A mogen bij dezelfde rol liggen als dat uitvoerbaar is. C denkt vooraf mee, I krijgt de uitkomst. De FG adviseert en houdt onafhankelijk toezicht op gegevensbescherming; maak die niet automatisch eigenaar van ieder securitybesluit.
---> 
+R staat voor Responsible, A voor Accountable, C voor Consulted en I voor Informed. In deze oefening één A en minstens één R; rollen mogen gecombineerd worden als dat uitvoerbaar blijft. Het mandaat van de directeur is een oefenaanname, geen gevolg van de functietitel alleen. De FG adviseert en houdt onafhankelijk toezicht en krijgt hier geen besluitverantwoordelijkheid. Dit is geen juridisch aansprakelijkheidsmodel.
+
+Laat een student vertellen waarom de bouwer bij een aparte uitvoeringsrij juist R kan zijn. Vraag vervolgens welke informatie de coördinator nog moet verzamelen. Geef de overige vier rijen van B1 niet weg.
+-->
 
 ---
 
-## Een besluit krijgt een grens
+## Samen proberen · Akkoord met welke grens?
 
-**Oefenvoorbeeld:** de directeur wijst de kopie af en laat de bouwer de fout eerst met synthetische gegevens onderzoeken.
+**Oefenbesluit:** de directeur wijst de kopie af. De bouwer onderzoekt de fout met synthetische gegevens.
 
-Vastleggen: reden, uitvoerder, deadline, bewijs van uitvoering en moment van heroverweging.
+**Voorgedaan:** de securitycoördinator bewaart besluit en testverslag. De directeur beoordeelt die vrijdag om 16:00 opnieuw: is er voortgang en blijft veilige zorg mogelijk?
 
-Een spoedroute vermeldt ook wie buiten kantooruren kan beslissen.
+**Variant:** om 15:00 blijkt de directeur onbereikbaar en duurt de storing voort.
+
+Vul samen aan: wie mag nu beslissen, wat doet de bouwer voorlopig en wanneer escaleert de coördinator?
+
+*Rollen en tijden zijn oefenafspraken.*
 
 <!--
-⏱ 20–25. Het oefenbesluit voorkomt de kopie, maar de fout kan langer blijven bestaan. Laat die prijs hardop noemen. Anders lijkt een veilig besluit een keuze zonder nadeel.
+⏱ 20–25. Twee minuten voor het besluit en de controle: synthetische gegevens beperken blootstelling van echte notities, maar de fout kan langer blijven bestaan. Verbind reden, uitvoerder, bewijs en heroverweging hardop. De tijd op de slide is gekozen voor deze oefening, geen wettelijke norm.
 
-Vraag vervolgens: “Wanneer moet dit opnieuw op tafel?” Zoek een waarneembare aanleiding, bijvoorbeeld dat de fout de zorg onveilig maakt. Een andere keuze is bespreekbaar met onderbouwde voorwaarden en bevoegdheden; risicoacceptatie heft wettelijke verplichtingen niet op. Laat één student reden, uitvoerder, deadline en bewijs aan elkaar verbinden.
---> 
+Geef de klas daarna drie minuten voor de variant. Schrijf één gezamenlijke aanvulling op het bord. Verwacht “de bouwer beslist dan”; vraag welk mandaat dat onderbouwt. Een vervanger moet bevoegd zijn en een route hebben om het zorgbelang mee te wegen. Studenten mogen een rol voorstellen mits zij die als oefenafspraak vastleggen. Bij mogelijk onveilige zorg gaat de beoordeling naar een bevoegd zorgprofessional.
+
+Sluit af met wat de wijziging raakt: het doel blijft gelijk, maar vervanging en escalatie moeten nu expliciet worden. Risicoacceptatie heft wettelijke verplichtingen niet op. De rest van B1 werken teams zelfstandig uit.
+-->
 
 ---
 
@@ -154,10 +166,10 @@ Vul werkblad **B1** in voor:
 4. opvolgen van een externe securitymelding;
 5. accepteren van een resterend risico.
 
-Schrijf eerst per rij wat het besluit precies omvat.
+Schrijf eerst per rij wat het besluit precies omvat. Gebruik de voorgedane rij als referentie; werk de andere vier besluiten zelf uit en toets de testdata-rij aan jullie eigen mandaten.
 
 <!--
-⏱ 25–40. Vijf minuten om besluiten af te bakenen, tien om rollen toe te wijzen. Laat ze nog geen letters invullen als de activiteit onduidelijk is. “Incident afhandelen” omvat te veel; “besluiten dat de koppeling tijdelijk stopt” kun je bespreken.
+⏱ 25–40. Vijf minuten om de vier nieuwe besluiten af te bakenen, acht om rollen toe te wijzen en twee om de voorbeeldrij aan de eigen oefenmandaten te toetsen. Laat ze nog geen letters invullen als de activiteit onduidelijk is. “Incident afhandelen” omvat te veel; “besluiten dat de koppeling tijdelijk stopt” kun je bespreken.
 
 Gebruik directeur, zorgteamleider, bouwer, securitycoördinator en FG als oefenrollen. Een extra rol mag, met reden. Loop rond met: “Wat beslist de A hier?” Bij twee A’s vraag je wie bij onenigheid het laatste woord heeft. Laat het team de rij herstellen in plaats van zelf alle letters voor te zeggen.
 --> 

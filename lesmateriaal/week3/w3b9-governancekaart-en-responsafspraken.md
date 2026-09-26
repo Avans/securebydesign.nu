@@ -85,24 +85,23 @@ Laat bij één voorbeeld de verbinding helemaal volgen: asset, risico, besluit, 
 
 ---
 
-## De kwaliteitslat
+## Samen vergelijken · Kan een collega hiermee verder?
 
-Een ander team kan op jullie kaart vinden:
+**A:** “De bouwer controleert toegang.”
 
-- wie beslist en wie vervangt;
-- welke afspraken bewijs vragen;
-- hoe een signaal tot respons leidt;
-- welke vragen nog openstaan.
+**B · oefenfragment:** “Elke vrijdag vergelijkt de coördinator beëindigde mantelzorgrelaties met de intrekregistraties. Afwijkingen gaan naar de zorgteamleider, die herstel laat uitvoeren en controleren.”
 
-Elke open vraag heeft een eigenaar en een volgende stap.
+Wijs in B **risico, uitvoerder, bewijs en opvolging** aan. Wat ontbreekt nog, bijvoorbeeld bij afwezigheid?
+
+Jullie kaart verbindt eigen afspraken uit B1–B8; ze hoeft die niet volledig te herhalen.
 
 <!--
-⏱ 10–15. Laat de criteria gebruiken als vragen van een onbekende collega. “Waar vind ik de eigenaar?” is bruikbaarder dan “staat het kopje eigenaarschap erin?”
+⏱ 10–15. Gebruik één kort contrast om de kwaliteitslat zichtbaar te maken. Wijs bij A hardop aan welke vragen een onbekende collega nog heeft. Laat de klas vervolgens zelf de bruikbare onderdelen en de gaten in B vinden. Dat fragment is een oefenafspraak uit het toegangsvoorbeeld, geen modelantwoord voor B9.
 
-B9 bevat acht rubrieken. Vraag niet om alle eerdere tekst over te schrijven. De kaart is een samenvatting met verwijzingen naar de werkbladen. Eén of twee pagina’s plus bijlagen is voldoende. Een open vraag mag blijven staan als het team uitlegt hoe die opgelost wordt.
+Verwacht dat studenten B compleet noemen omdat de zin langer is. Vraag dan waar de vervanger staat en waar de collega de registratie vindt. Ook een verbeterd fragment kan nog onvoldoende uitvoerbaar zijn. Elke open vraag krijgt daarom een eigenaar en een volgende stap.
 
-Geef nog geen modelantwoord. Je wilt zien hoe teams hun eigen stukken verbinden en waar die verbinding nog ontbreekt.
---> 
+B9 bevat acht rubrieken; één of twee pagina’s met verwijzingen naar werkbladen volstaan. Laat geen volledige governancekaart zien vóór de zelfstandige integratie. Studenten moeten hun eigen keuzes verbinden en de nachtdiensttest laat zien waar dat nog niet lukt.
+-->
 
 ---
 

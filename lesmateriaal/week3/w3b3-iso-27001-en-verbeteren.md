@@ -41,8 +41,8 @@ Het belangrijkste leerpunt is de stap van uitkomst naar verbetering. Een groen v
 
 | Tijd | Onderdeel |
 |---|---|
-| 0–25 | Verhaal, terugblik en begrippen |
-| 25–65 | Aan het werk in casusteams |
+| 0–25 | Casus, uitleg en uitgewerkt voorbeeld |
+| 25–65 | Samen proberen en uitwerken in casusteams |
 | 65–85 | Terug & verdieping |
 | 85–90 | Afsluiting |
 
@@ -121,21 +121,48 @@ Als Check en Do hetzelfde antwoord krijgen, laat je twee verschillende werkwoord
 
 ---
 
-## Keuzes en scope
+## Voordoen · De afspraak op een controlkaart
 
-Een beheersmaatregel krijgt een reden die bij de risico’s past.
+**Oefenuitwerking van B3 — scope: mantelzorgtoegang tot Naaste.**
 
-De organisatie legt vast welke maatregelen nodig zijn en hoe zij die toepast.
+| Veld | Ingevuld voorbeeld |
+|---|---|
+| Risico en doel | R2 / A3: na einde relatie geen toegang meer |
+| Eigenaar / uitvoerder | Zorgteamleider / bouwer |
+| Handeling | Teamleider geeft bevestigd eindmoment door; bouwer trekt rechten en sessies in |
+| Aanleiding | Elke bevestigde beëindiging |
+| Bewijs | Verzoek, intrekregistratie en account- en sessiecontrole |
 
-Bij een certificaat blijft de **scope** van het managementsysteem belangrijk.
+De rolverdeling is een oefenaanname.
 
 <!--
-⏱ 20–25. Teams willen graag weten welke lijst ze moeten afwerken. Vraag eerst wat binnen hun scope valt en welk risico zij proberen te beheersen.
+⏱ 20–23. Loop hardop van risico naar handeling: het probleem is achterblijvende toegang, dus alleen het account labelen als “inactief” is geen bruikbaar einddoel. Ik wil ook weten wat met sessies gebeurt. De teamleider bewaakt de relatie en het eindmoment; de bouwer voert de technische intrekking uit. Dit is een oefenmandaat.
 
-Noem op hoofdlijnen dat de verklaring van toepasselijkheid, Statement of Applicability, keuzes over relevante beheersmaatregelen vastlegt. Alle mogelijke controls blind afvinken is niet de les. Geef geen claim dat een bepaalde set van drie controls voldoende is voor ISO-certificering. Bron: ISO/IEC 27001, openbaar overzicht en normreferentie in bronnen-week3.md.
+Wijs aan hoe dit de eerste velden van B3 invult. Het bewijs verbindt verzoek aan uitvoering én de waargenomen toestand. De scope op de slide begrenst het voorbeeld; daarmee is niet alle leverancierstoegang automatisch afgedekt. De volgende slide maakt de kaart af met beoordeling en opvolging.
 
-Een lange lijst zonder reden is nog geen onderbouwde keuze. Laat één maatregel koppelen aan één risico voordat je verdergaat.
---> 
+Een beheersmaatregel krijgt een reden bij het risico. De verklaring van toepasselijkheid, Statement of Applicability, legt keuzes over relevante beheersmaatregelen vast. Deze ene controlkaart is geen volledige invulling van ISO/IEC 27001. Bron: https://www.iso.org/standard/27001.
+-->
+
+---
+
+## Voordoen · Wanneer werkt de afspraak?
+
+**Vervolg van dezelfde controlkaart — fictieve oefennormen.**
+
+| Veld | Ingevuld voorbeeld |
+|---|---|
+| Criterium | Geen relevante toegang of actieve sessie na het bevestigde eindmoment |
+| Controle | Coördinator vergelijkt elke vrijdag alle beëindigingen van die week met bewijs |
+| Bij afwijking | Bouwer herstelt direct; teamleider laat oorzaak onderzoeken |
+| Vervolg | Coördinator controleert herstel en rapporteert de volgende vrijdag opnieuw |
+
+Een onbekende accountstatus telt niet als bewijs van geslaagde intrekking.
+
+<!--
+⏱ 23–25. Maak de kaart af. Ik kies een criterium vóór ik controleer, anders kan ik een tegenvallende uitkomst achteraf groen praten. Wijs het verschil aan tussen de intrekking bij elke beëindiging en de wekelijkse beoordeling van het proces. Een gevonden actieve toegang blijft niet liggen tot vrijdag: de bouwer herstelt die direct.
+
+Laat een student de hele lijn navertellen: risico, eigenaar, handeling, bewijs, beoordeling en reactie. Vrijdag is een oefenkeuze, geen ISO-eis. Gebruik voor een echte situatie passende termijnen en bevoegdheden. De variant doen we direct aan het begin van de werkronde.
+-->
 
 ---
 
@@ -149,24 +176,23 @@ Een lange lijst zonder reden is nog geen onderbouwde keuze. Laat één maatregel
 
 ---
 
-## Ronde 1 · Een maatregel ontwerpen
+## Samen proberen, daarna jullie controlkaart
 
-Vul B3 in:
+**25–30 · Samen:** een mantelzorger krijgt een beperktere rol; de relatie eindigt niet. Wat verandert aan aanleiding, handeling en criterium van het voorbeeld?
 
-- asset en risico;
-- doel van de maatregel;
-- eigenaar en uitvoerder;
-- handeling en frequentie;
-- bewijs dat je bewaart;
-- criterium voor voldoende werking.
+**30–40 · Zelf:** kies een ander risico uit jullie risicoprofiel en een bevinding uit B2. Vul alle velden van **B3** in.
+
+Controleer de lijn: **risico → handeling → bewijs → beoordeling → opvolging**.
+
+Kies eigen oefennormen en onderbouw ze.
 
 <!--
-⏱ 25–40. Vijftien minuten voor een eerste controlkaart. Begin bij het risico en het gewenste effect; vul pas daarna de controle in. Anders wordt het formulier een verzameling losse goede bedoelingen.
+⏱ 25–40. Gebruik de eerste vijf minuten om met de klas de rolwisseling uit te werken. Neem niet klakkeloos “alles intrekken” over: gewenste en niet meer passende toegang verschillen. Laat studenten aangeven welk bewijs die grens controleert. Schrijf hun variant naast het model, geen tweede compleet docentantwoord.
 
-Modelleer desnoods één begin: A3, toegang blijft bestaan na intrekking van een mantelzorgrelatie. Doel: intrekking bereikt alle relevante accounts en sessies. Studenten kiezen zelf een controleerbaar criterium. Maak duidelijk dat frequenties en percentages oefennormen zijn en geen ISO-eisen.
+Daarna tien minuten zelfstandig met een ander risico, bijvoorbeeld een eigen risico rond testdata of informatieactualiteit. Zo moeten teams de redenering overzetten naar een andere situatie. Het oude account blijft het voorbeeld voor de cyclus; de tegenvallende controle in ronde 2 gebruiken we als gezamenlijke oefenprikkel, waarna teams bepalen welke vergelijkbare afwijking bij hun eigen kaart past.
 
-Loop langs met: “Waaraan zou je straks zien dat intrekking is gelukt?” Laat een student het antwoord opzoeken op de kaart, niet alleen mondeling geven.
---> 
+Loop langs met: “Welk resultaat zou jouw criterium tegenspreken?” Alle negen velden van B3 moeten samen een uitvoerbare afspraak vormen. Als een frequentie uit het voorbeeld is gekopieerd, vraag waarom die ook bij dit risico past.
+-->
 
 ---
 
@@ -176,12 +202,12 @@ Loop langs met: “Waaraan zou je straks zien dat intrekking is gelukt?” Laat 
 
 Wat doe je vandaag? Wat verander je aan het proces?
 
-Noteer op B3 een vervolgcontrole met datum, eigenaar en beslisregel.
+Bespreek eerst het toegangsvoorbeeld. Bedenk daarna een vergelijkbare afwijking bij jullie eigen controlkaart en label die als oefenuitkomst. Noteer op B3 correctie, verbetering en vervolgcontrole.
 
 <!--
 ⏱ 40–55. Dit is het kantelpunt van het blok. De controle valt tegen; dat is informatie waarmee je moet werken. Laat teams eerst zeggen wat ze nu herstellen en daarna wat ze aan het proces veranderen.
 
-Laat teams directe correctie en structurele verbetering apart noteren. Twee van tien is 20% in deze steekproef, geen onderbouwde uitspraak over alle accounts. Vraag of de gemiste accounts een gezamenlijk kenmerk hebben, zoals een externe leverancier. Die informatie ontbreekt en moet als onderzoeksvraag terugkomen.
+Gebruik vijf minuten voor het toegangsvoorbeeld en tien voor een expliciet fictieve afwijking bij het eigen risico. Laat teams directe correctie en structurele verbetering apart noteren. Twee van tien is 20% in deze steekproef, geen onderbouwde uitspraak over alle accounts. Vraag of de gemiste accounts een gezamenlijk kenmerk hebben, zoals een externe leverancier. Die informatie ontbreekt en moet als onderzoeksvraag terugkomen.
 
 Als iemand “de medewerker beter instrueren” zegt, vraag je welke waarneming daarop wijst. Een oorzaak die nog niet is onderzocht blijft een hypothese.
 --> 

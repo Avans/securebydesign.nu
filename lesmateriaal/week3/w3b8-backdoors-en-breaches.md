@@ -114,23 +114,23 @@ Vraag bij een onbekende procedure welk probleem zij moet helpen onderzoeken. Laa
 
 ---
 
-## De proefbeurt
+## De proefbeurt · Eerst de onderzoeksvraag
 
-De woordvoerder formuleert:
+**Los oefensignaal, buiten het verborgen spel:** een gebruiker meldt een onbekende aanmelding.
 
-“Wij onderzoeken … omdat …
-We verwachten … te kunnen vaststellen.
-Als dat niet lukt, weten we nog niet …”
+**Voorgedaan:** “We willen weten of een aanmelding is geregistreerd en wat de registratie daarover laat zien. De melding alleen bewijst geen overname.”
 
-De observator noteert hoe de beslissing tot stand komt.
+**Samen:** kies een passende procedurekaart. Welk resultaat zou jullie oordeel veranderen? Wat blijft onbekend als de procedure niets oplevert?
+
+De observator noteert **vraag, gekozen actie en grens van de conclusie**.
 
 <!--
-⏱ 15–20. Denk in de proefbeurt hardop: wat weten we, welke vraag willen we beantwoorden en waarom kiezen we deze procedure? Laat ook zien wat je daarna vastlegt.
+⏱ 15–20. Gebruik twee minuten om het losse oefensignaal hardop te onderzoeken. Benoem wat je wel weet en waarom je nog geen aanvaller of methode aanwijst. Laat de spelers daarna drie minuten de procedure kiezen en uitleggen wat de uitkomst toevoegt. Kies geen kaart voor hen voordat ze hun vraag hebben benoemd.
 
-Demonstreer met een niet-geheime situatie. Laat de spelers zien hoe een gekozen procedure en de officiële speluitkomst tot terugkoppeling leiden. Gebruik de procedurebonus en wachttijd zoals in de gids. De demonstratie is voorbereiding, geen verkapte elfde spelbeurt.
+De Incident Master demonstreert met de beschikbare officiële kaarten hoe een procedure en de officiële speluitkomst tot terugkoppeling leiden. Gebruik bonus, wachttijd en dobbelregels volgens de Visual Guide. Het losse signaal staat buiten het geheime scenario en telt niet als elfde spelbeurt. Verzin geen extra spelregels bij dit voorbeeld.
 
-Controleer vóór de echte ronde of een niet-technische student de keuze kan navertellen. De demonstratie is geslaagd als iedereen kan meedenken over de vraag, niet alleen over de kaartnaam.
---> 
+Laat een niet-technische student de redenering teruggeven. Een lege of niet-beschikbare registratie betekent niet automatisch dat niets gebeurde. De voorbeeldvraag moet helpen gezamenlijk te redeneren; de echte ronde blijft open.
+-->
 
 ---
 

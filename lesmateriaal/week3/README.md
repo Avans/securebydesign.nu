@@ -1,6 +1,6 @@
 # Week 3 · lesmateriaal, blok 1 t/m 9
 
-> **Status:** eerste versie · **Versie:** 0.1 · **Laatst bijgewerkt:** 2026-09-07
+> **Status:** eerste versie · **Versie:** 0.2 · **Laatst bijgewerkt:** 2026-09-27
 > Thema: **Governance & organisatie**, inclusief incident response.
 
 Negen Markdown-lesbestanden, uitgewerkt in dezelfde vorm als [week 1](../week1/README.md). De inhoud volgt de negen blokken van de [Fundament-praatplaat](../../app/content/fundament.nl.ts). De [inhoudelijke beoordeling](00-inhoudelijke-beoordeling.md) legt de keuzes en aanscherpingen uit.
@@ -23,6 +23,33 @@ De lesbestanden hebben dezelfde Marp-frontmatter, een titeldeel, leerdoelen, tij
 
 De vier fasen zijn **Verhaal**, **Aan het werk**, **Terug & verdieping** en **Afsluiting**. Opdrachten staan in afzonderlijke rondes. Elke les eindigt met individueel ophalen van kennis of reflectie, het bewaren van teamwerk en voorbereiding voor het volgende blok.
 
+## Voorbeelden als basis van de uitleg
+
+De didactische lijn is **voordoen → samen proberen → zelfstandig toepassen**,
+naar de aanpak van week 1. Instructievoorbeelden staan zichtbaar op de slides;
+de speaker notes bevatten de redenering, verwachte reacties en vervolgvragen.
+De zelfstandige opdracht vraagt telkens om een andere situatie, een aanvulling
+of een eigen onderbouwde keuze. Volledige docentantwoorden blijven apart.
+
+| Blok | Voorgedaan of vergeleken | Gezamenlijke stap en zelfstandig vervolg |
+|---|---|---|
+| 1 | RACI voor het beoordelen van een testverzoek, met reden per rol | Afwezige beslisser; daarna overige besluiten en eigen escalatieroute |
+| 2 | Back-upclaim langs bewijs en herstelcontrole | Trainingsclaim aanvullen; daarna eigen controles en leveranciersgesprek |
+| 3 | Complete controlkaart voor intrekking, verdeeld over twee slides | Rolwisseling; daarna ander risico en eigen afwijking / verbeterlog |
+| 4 | Testverzoek vanuit drie kaders; één ontwerpvraag uitgewerkt | Chatgeschiedenis als variant; daarna eigen kader en ontwerpvragen |
+| 5 | Medicatieroute en afspraak over verstoring / herstel | Vraag bij een kwetsbaar onderdeel; daarna andere ketenverbinding uitwerken |
+| 6 | Vage meldinstructie naast drie uitvoerbare stappen | Defecte meldknop; daarna eigen procedure en test door een ander team |
+| 7 | Onbewezen geruststelling naast een begrensde mededeling | Ontbrekende informatie benoemen; daarna incidenttijdlijn en eigen bericht |
+| 8 | Los oefensignaal met voorgedane onderzoeksvraag | Samen procedure kiezen; daarna het verborgen spelscenario |
+| 9 | Vage afspraak naast een concreet, nog onvolledig fragment | Bruikbaarheid beoordelen; daarna eigen governancekaart en nachtdiensttest |
+
+Blokken 3 en 4 gebruiken de eerste vijf minuten van de werkronde voor samen
+proberen; de zelfstandige eerste uitwerking duurt daarna tien minuten.
+In de andere uitlegblokken past de gezamenlijke stap binnen minuut 0–25.
+Blokken 7–9 behouden hun incident-, spel- en integratieritme. De totale lestijd
+blijft 90 minuten. Fictieve mandaten en tijdnormen zijn oefenkeuzes;
+de inhoudelijke juridische peildatum is niet gewijzigd.
+
 ## Lesritme
 
 | Blokken | Uitleg / terugblik | Werk | Verdieping | Afsluiting |
@@ -31,7 +58,7 @@ De vier fasen zijn **Verhaal**, **Aan het werk**, **Terug & verdieping** en **Af
 | 7 | 0–20 | 20–65 | 65–85 | 85–90 |
 | 8–9 | 0–15 | 15–65 | 65–85 | 85–90 |
 
-De eerste vijf minuten bevatten opening, doelen en planning. De sectie-overgangen kosten geen extra minuten. De individuele voorbereiding van 15–20 minuten valt buiten de lestijd. Teams bestaan uit 3–4 studenten, gemengd tech/non-tech.
+De eerste vijf minuten van elk blok bevatten opening, doelen en planning. De sectie-overgangen kosten geen extra minuten. De individuele voorbereiding van 15–20 minuten valt buiten de lestijd. Teams bestaan uit 3–4 studenten, gemengd tech/non-tech.
 
 ## Casus en doorlopende opbrengst
 

@@ -41,8 +41,8 @@ Daar zit de breedte van dit blok. Bij de afsluiting moet ieder kunnen uitleggen 
 
 | Tijd | Onderdeel |
 |---|---|
-| 0–25 | Verhaal, terugblik en begrippen |
-| 25–65 | Aan het werk in casusteams |
+| 0–25 | Casus, uitleg en uitgewerkt voorbeeld |
+| 25–65 | Zelf toepassen en testen in casusteams |
 | 65–85 | Terug & verdieping |
 | 85–90 | Afsluiting |
 
@@ -82,62 +82,73 @@ Als iemand meteen een aanvaller noemt, vraag je welk casusfeit daarop wijst. Een
 
 ---
 
-## Drie verbindingen
+## Voordoen · De route van medicatiegegevens
 
-| Verbinding | Voorbeeld bij Naaste |
+**Apotheek → koppeling → Naaste-app → verzorgende**
+
+| Verbinding | Wat gaat erover? | Wat kan misgaan? |
+|---|---|---|
+| Apotheek → app | Gegevens: A2, medicatie | Oude informatie lijkt actueel |
+| Hosting → app | Dienst: bereikbaarheid | App is niet bereikbaar |
+| Bouwer → app | Toegang voor onderhoud | Onbedoelde wijziging |
+
+De eerste storing kan bestaan terwijl de hosting goed werkt.
+
+<!--
+⏱ 10–15. Teken de eerste route hardop na. Ik begin bij de informatie die de verzorgende nodig heeft en werk terug naar de bron. Aan elke pijl geef ik betekenis: data, dienst of toegang. Zo wordt duidelijk waarom een groene serverstatus mijn eerste probleem niet oplost.
+
+Laat een student aanwijzen welke pijl in de openingssituatie onderzocht moet worden. Er is nog geen bewijs welke partij de storing veroorzaakt; de kaart laat de afhankelijkheid zien. Maak het verschil tussen vaststaande casusrelaties en getekende technische vereenvoudigingen expliciet.
+
+Laat iemand de route navertellen zonder technisch jargon. De gevolgkolom verklaart waarom de verbinding op de kaart staat; alleen namen en pijlen zijn niet genoeg. We werken één afspraak voor deze route voor en laten de overige verbindingen aan de teams.
+-->
+
+---
+
+## Voordoen · Een afspraak bij verouderde informatie
+
+**Oefenafspraak voor A2; kanaal en tijden zijn fictief.**
+
+| Onderdeel | Uitwerking |
 |---|---|
-| Gegevens | Apotheek levert medicatiegegevens |
-| Toegang | Bouwer kan onderhoud uitvoeren |
-| Dienst | Hosting houdt de toepassing bereikbaar |
+| Signaal en eigenaar | Geen verwachte update: zorgteamleider laat actualiteit beoordelen |
+| Contact | Coördinator meldt laatste update via afgesproken leverancierskanaal |
+| Bewijs | Ticket met tijdstip, ontvangst en herstelbevinding |
+| Escalatie | Na 15 minuten geen ontvangst: coördinator belt vervangend contact |
+| Terugval | Teamleider schakelt bevoegde zorgprofessional en afgesproken zorgroute in |
+| Controle | Bouwer toont nieuwe update; teamleider laat bruikbaarheid beoordelen |
 
-Teken bij elke verbinding wat misgaat als zij uitvalt of misbruikt wordt.
+Een bereikbare server alleen sluit het ticket niet.
 
 <!--
-⏱ 10–15. Laat iemand zonder technische achtergrond de route van één zorgnotitie navertellen. Een verbinding die hij niet kan uitleggen vraagt een duidelijker label.
+⏱ 15–20. Verbind de storing stap voor stap aan een afspraak. De verbinding levert gegevens, dus herstelbewijs moet iets over gegevensactualiteit zeggen. Een serverping beantwoordt een andere vraag. Denk hardop voor waarom eigenaar, contact en bewijs nodig zijn.
 
-Laat de kaart breder worden dan een netwerkdiagram. De mantelzorger, de helpdesk en de contactpersoon van de leverancier horen ook bij het proces. Een technische student mag protocollen toevoegen, maar moet de betekenis in gewone taal blijven uitleggen.
+De vijftien minuten zijn een demonstratienorm, geen veilige universele termijn of wettelijke eis. Bij urgente gevolgen moet passende escalatie eerder kunnen. De zorgroute en bevoegdheden moeten echt worden afgesproken voordat deze tekst een uitvoerbare procedure is; studenten geven geen medicatieadvies. Zeg welke onderdelen van dit voorbeeld nog lokale invulling vragen.
 
-Je wilt drie soorten verbindingen herkenbaar houden, zonder de kaart vol te tekenen. Vraag bij elk extra detail wat de lezer erdoor kan besluiten.
---> 
+Benoem ook de grens van de ketenkaart: een bouwer kan onderaannemers inschakelen. Welke kopieën en toegangen daar bestaan is een informatievraag. De testhoster op B5 is een fictieve uitbreiding, geen vastgesteld extra casusfeit. Teams onderzoeken straks wie ontbrekende informatie opvraagt.
+-->
 
 ---
 
-## Afhankelijkheid en vertrouwen
+## Samen proberen · Een kwetsbaar onderdeel
 
-Een leverancier kan weer andere partijen inschakelen.
+Een **SBOM** beschrijft softwareonderdelen en hun relaties. Dit is alleen een fictief conceptvoorbeeld uit B5:
 
-Vragen voor Naaste:
-- Waar staan kopieën van gegevens?
-- Wie kan erbij?
-- Wie meldt een incident aan wie?
-- Wie kan een kwetsbare component vervangen?
-- Hoe werkt de zorg als een dienst uitvalt?
+| Onderdeel | Versie | Gebruikt door |
+|---|---|---|
+| BerichtModule | 1.8 | Naaste-app |
+| KoppelClient | 3.2 | Naaste-app |
 
-<!--
-⏱ 15–20. Hier is een vraagteken nuttiger dan een extra verzonnen bedrijfsnaam. Laat zien hoe je een onbekende afhankelijkheid tekent zonder haar als feit te presenteren.
+De bouwer meldt een mogelijke kwetsbaarheid in **BerichtModule 1.8**.
 
-Teken zelf één onbekende achter de bouwer, bijvoorbeeld de testhoster. Zeg expliciet dat dit een oefenaanname is. De ketenkaart maakt zichtbaar waar vragen nodig zijn, niet dat iedere onbekende leverancier onveilig is. Bespreek welke afspraak doorgegeven moet worden aan onderaannemers.
-
-Vraag wie bij Naaste die informatie bij de bouwer kan ophalen. Dan wordt onzekerheid een uit te voeren actie in plaats van een vaag ongemak.
---> 
-
----
-
-## SBOM: softwareonderdelen in beeld
-
-Een **Software Bill of Materials** beschrijft softwarecomponenten en hun onderlinge relaties.
-
-Daarmee kun je gericht onderzoeken of een gemelde kwetsbaarheid een gebruikt onderdeel raakt.
-
-Daarna zijn nog beoordeling, herstel en controle nodig.
+Wat kun je aanwijzen? Wat weet je nog niet? Vul samen één controlevraag aan voordat je herstel kiest.
 
 <!--
-⏱ 20–25. Pak de fictieve onderdelenlijst uit B5 erbij en laat een student aanwijzen wat hij erop kan terugvinden. Vraag daarna wat hij nog steeds niet weet.
+⏱ 20–25. Laat de klas eerst het genoemde onderdeel vinden. Vraag daarna of zij nu kan zeggen dat Naaste is aangevallen. Verwacht van sommigen een te snelle conclusie: versieherkenning ondersteunt onderzoek, geen bewijs van misbruik.
 
-Bron: https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity/software-supply-chain-security-guidance-20. Vergelijk dit met een onderdelenlijst, zonder te suggereren dat de lijst ook kwaliteit garandeert. Laat een student het onderscheid met de ketenkaart benoemen: componenten versus bredere relaties, mensen, diensten en gegevens. Op B5 staat een kleine fictieve onderdelenlijst, geen volledige standaardconforme SBOM.
+Laat gezamenlijk één vraag formuleren over de gebruikte configuratie en één over controle na vervanging. Een gerepareerde versie is volgens B5 beschikbaar, maar of de configuratie geraakt wordt is onbekend. De volledige scenario-uitwerking blijft teamwerk. Vergelijk met de medicatieroute: opnieuw vraagt herstel om passend bewijs, maar hier gaat het om een softwarecomponent.
 
-Als de klas de lijst als keurmerk behandelt, ga terug naar het verschil tussen weten welke onderdelen je hebt en weten hoe ze in deze toepassing functioneren.
---> 
+De kleine tabel is geen volledige of standaardconforme SBOM. Bron: https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity/software-supply-chain-security-guidance-20. Een onderdelenlijst beschrijft componenten; een ketenkaart bevat daarnaast partijen, diensten en gegevens. Laat een niet-technische student dat verschil teruggeven.
+-->
 
 ---
 
@@ -160,7 +171,7 @@ Voeg per verbinding toe:
 - betrokken asset;
 - gevolg van uitval of misbruik.
 
-Markeer minstens twee onbekende schakels.
+Gebruik de voorgedane medicatieroute als begin en werk de overige verbindingen zelf uit. Markeer minstens twee onbekende schakels.
 
 <!--
 ⏱ 25–40. Vijftien minuten tekenen. Laat teams A1–A6 gebruiken, zodat de relatie met het eigen canvas leesbaar blijft. Een nieuwe naam voor hetzelfde asset maakt de overdracht onnodig lastig.
@@ -194,7 +205,7 @@ Bij scenario A vraag je: “Wat moet je nog weten over deze toepassing?” Bij B
 
 ## Ronde 3 · Een ketenafspraak
 
-Vul voor de kritischste verbinding in:
+Kies een andere verbinding dan de voorgedane medicatieroute, bijvoorbeeld onderhoudstoegang of de testhoster. Vul in:
 
 **afspraak · eigenaar · bewijs · controle · escalatie · terugval**
 

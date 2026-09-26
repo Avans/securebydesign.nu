@@ -117,6 +117,25 @@ Onderstaande stand beschrijft de repository op 26 september 2026.
 De `depreso.md`-bestanden zijn plaatsaanduidingen. `lesmateriaal/p.md` bevat een
 eerdere opdrachttekst voor het maken van de week-1-presentaties.
 
+## Didactische aanpak
+
+Week 1 is de referentie voor de lesopbouw: **voordoen → samen proberen →
+zelfstandig toepassen**. Een herkenbare situatie introduceert het begrip. Op de
+slides wordt vervolgens één voorbeeld uitgewerkt, inclusief de afweging achter
+de uitkomst. Studenten vullen samen een variant aan en passen de aanpak daarna
+toe op een eigen situatie.
+
+Voorbeelden dragen dus ook de uitleg; ze staan niet alleen in een opdracht of
+in de speaker notes. Notes helpen de docent hardop redeneren, reacties bespreken
+en het denkwerk aan studenten overdragen. Een instructievoorbeeld mag zichtbaar
+zijn; antwoordmodellen van zelfstandige opdrachten en verborgen spelinformatie
+blijven docentmateriaal. Fictieve details en zelfgekozen normen blijven herkenbaar
+als oefenaannames.
+
+Deze aanpak wordt binnen de bestaande lestijd verwerkt, met behoud van de eigen
+vorm van spellen, incidentoefeningen en integratielessen. De [README van week 3](lesmateriaal/week3/README.md)
+beschrijft de voorbeelden per blok. De onderhoudsafspraken staan in [AGENTS.md](AGENTS.md).
+
 ## Lokale ontwikkelwerkplek
 
 Open `/ontwikkeling` tijdens lokaal ontwikkelen. De werkplek staat niet in het

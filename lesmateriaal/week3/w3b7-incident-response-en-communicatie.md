@@ -118,21 +118,25 @@ Vraag wat de gekozen actie mogelijk onmogelijk maakt voor de andere activiteit. 
 
 ---
 
-## Een bruikbaar eerste bericht
+## Samen vergelijken · Wat kun je al zeggen?
 
-Een eerste bericht geeft:
+**Bekend bij de start:** een onderzoeker meldt zichtbare zorggegevens in een testomgeving.
 
-**wat bekend is, wat nog onbekend is, mogelijke gevolgen, genomen maatregelen, handelingsadvies en een contactpunt.**
+**A:** “Er is geen reden tot zorg; niemand heeft gegevens gelezen.”
 
-Het noemt ook wanneer de volgende update komt.
+**B:** “Wij hebben een melding ontvangen over zichtbare zorggegevens. Of gegevens zijn ingezien, is nog niet vastgesteld.”
+
+Welke zin blijft binnen de bekende informatie? Voeg samen één vraag toe die het vervolgbericht moet beantwoorden.
+
+Later schrijven jullie zelf het bericht van 5 februari, 12:00.
 
 <!--
-⏱ 17–20. Lees een geruststellende zin zonder onderbouwing voor, bijvoorbeeld “er is niets aan de hand”. Vraag wat je zou moeten weten om dat te mogen zeggen.
+⏱ 17–20. Laat een student de onbewezen zekerheid in A aanwijzen. Verwoord bij B je redenering: de melding is bekend, de omvang en mogelijke inzage nog niet. De voorbeeldzin voegt geen latere casusfeiten toe en zegt ook niet dat onderzoek al is uitgevoerd.
 
-Benoem dat de tekst voor deze les een communicatie-oefening is. Een formele datalekmelding moet aan de toepasselijke eisen voldoen. Vermijd geruststelling die niet door feiten wordt gedragen. “We weten nog niet wie gegevens heeft ingezien” is informatie, mits het bericht ook zegt wat Naaste doet en waar mensen terechtkunnen. Bron voor de vereiste onderdelen: EDPB, zie bronnenlijst.
+Geef de klas daarna het denkwerk: welke vraag zou een mantelzorger nu stellen? Oogst handelingsadvies, mogelijke gevolgen, maatregelen, contact en volgende update. Die horen samen met bekende en onbekende informatie in hun latere bericht. De zin op de slide is bewust slechts een fragment, geen volledig bericht of antwoordmodel.
 
-Laat vervolgens een zin formuleren die de onzekerheid eerlijk benoemt én een volgende stap geeft. Alleen “we weten het niet” laat de lezer nog zonder handelingsperspectief.
---> 
+Dit is een communicatie-oefening; een formele datalekmelding moet aan de toepasselijke eisen voldoen. Bron: EDPB, zie bronnenlijst. Geef de uitkomst of chronologie van de gebeurteniskaartjes nog niet weg. Teams mogen straks alleen feiten gebruiken die op het gevraagde tijdstip bekend zijn.
+-->
 
 ---
 

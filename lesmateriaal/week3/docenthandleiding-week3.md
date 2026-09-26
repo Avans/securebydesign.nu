@@ -1,6 +1,6 @@
 # Week 3 · docenthandleiding
 
-> **Status:** eerste versie · **Versie:** 0.1 · **Laatst bijgewerkt:** 2026-09-07
+> **Status:** eerste versie · **Versie:** 0.2 · **Laatst bijgewerkt:** 2026-09-27
 > Niet als studenthand-out uitdelen. De lesnotities staan daarnaast, net als in week 1, onder ieder onderdeel in HTML-commentaar.
 
 ## Gebruik
@@ -10,6 +10,27 @@ De negen lesbestanden volgen week 1: 90 minuten, uitleg met vragen, een werkrond
 Laat gemengde teams van 3–4 doorwerken vanuit hun eigen contextcanvas en risicoprofiel. Gebruik alleen bij ontbrekend voorwerk de expliciet fictieve startset in [casus-naaste-week3.md](casus-naaste-week3.md). Een keuze is beoordeelbaar als de reden, rol en resterende onzekerheid duidelijk zijn. Technische termen verdienen geen extra waardering boven een begrijpelijke, correcte uitleg.
 
 De kwaliteitscriteria hieronder zijn **formatief**. Ze vervangen geen bestaande toetsmatrijs, toetsregeling of examenrubric.
+
+## Voordoen en het denkwerk overdragen
+
+Gebruik de instructievoorbeelden op de slides om de afweging hardop te laten
+horen. Laat de klas daarna de aangegeven variant aanvullen. Een goed ingevuld
+voorbeeld is geen invuloefening: vraag waarom een rol, controle of bewijsstuk
+past en wat bij de variant verandert. De [README](README.md) benoemt de lijn per blok.
+
+Blokken 3 en 4 gebruiken minuut 25–30 voor de gezamenlijke variant en 30–40
+voor de eerste zelfstandige uitwerking. De overige tijdvakken blijven gelijk.
+In B3 kiezen teams vervolgens een ander risico dan het voorgedane toegangsrisico;
+na bespreking van de steekproef bedenken zij een passende fictieve afwijking
+voor hun eigen kaart. In B5 kiezen zij voor de ketenafspraak een andere verbinding
+dan de voorgedane medicatieroute. B1 en B2 bewaren het instructievoorbeeld als
+referentie, maar vragen zelfstandige uitwerking van de overige besluiten en claims.
+
+De fragmenten in blokken 7 en 9 zijn bewust onvolledig en geven geen volledige
+incidentuitkomst of governancekaart weg. De proef in blok 8 gebruikt een los
+signaal buiten het verborgen scenario; officiële spelregels blijven leidend.
+Antwoordrichtingen hieronder zijn docentmateriaal en worden pas na de betreffende
+zelfstandige opdracht gedeeld. Oefentijden zijn geen wettelijke normen.
 
 ## Antwoordrichtingen per blok
 
@@ -31,7 +52,7 @@ De kwaliteitscriteria hieronder zijn **formatief**. Ze vervangen geen bestaande 
 
 - A: directeur binnen vastgesteld mandaat.
 - R: securitycoördinator organiseert beoordeling en besluitvastlegging.
-- C: zorgteamleider, FG en technisch verantwoordelijke van de bouwer.
+- C: zorgteamleider en FG; voeg waar nodig een technisch verantwoordelijke van de bouwer toe als adviseur.
 - I: de uitvoerende ontwikkelaar en relevante beheerrol.
 
 Maak **uitvoering van een goedgekeurde handeling** zo nodig een aparte rij met de bouwer als R. Dit voorkomt dat voorbereiding, besluit en uitvoering in één onduidelijke activiteit verdwijnen. De RACI verandert wettelijke verantwoordelijkheden niet.
@@ -44,7 +65,9 @@ Een goede spoedroute benoemt een bevoegde vervanger, een veilige tijdelijke werk
 
 **Ontwerp:** de bevoegde teamleider registreert een geverifieerde wijziging. De uitvoerder trekt de relevante rechten en sessies in. Een controleur vergelijkt de wijziging met de systeemstatus. De risico-eigenaar krijgt afwijkingen terug.
 
-**Oefennorm:** maandelijkse controle van tien recente intrekkingen, plus directe opvolging van gemelde afwijkingen. Dit is een gekozen oefenfrequentie, geen ISO- of AVG-norm.
+**Oefennorm op de slides:** de coördinator vergelijkt elke vrijdag alle beëindigingen van die week met de intrekregistraties en account- en sessiecontroles. Het criterium is geen relevante toegang na het bevestigde eindmoment. Gevonden afwijkingen worden direct hersteld; de teamleider laat de oorzaak onderzoeken en de coördinator controleert herstel en de volgende week opnieuw. Dit is een gekozen oefenfrequentie, geen ISO- of AVG-norm.
+
+De afzonderlijke steekproef van tien intrekkingen in ronde 2 is een fictieve tegenvallende controle-uitkomst, geen wijziging van deze voorbeeldafspraak. Teams bespreken die en formuleren vervolgens een vergelijkbare afwijking voor hun eigen risico.
 
 Bij twee actieve accounts: directe correctie organiseren, herkomst onderzoeken, proces verbeteren en herhalen. De verhouding twee op tien zegt op zichzelf nog niets betrouwbaar over de gehele populatie.
 

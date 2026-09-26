@@ -41,8 +41,8 @@ Het leerdoel is een werkwijze verbeteren op basis van wat je observeert.
 
 | Tijd | Onderdeel |
 |---|---|
-| 0–25 | Verhaal, terugblik en begrippen |
-| 25–65 | Aan het werk in casusteams |
+| 0–25 | Casus, uitleg en uitgewerkt voorbeeld |
+| 25–65 | Zelf toepassen en testen in casusteams |
 | 65–85 | Terug & verdieping |
 | 85–90 | Afsluiting |
 
@@ -121,21 +121,42 @@ Bij “hij kan toch inloggen” laat je authenticatie en autorisatie uit elkaar 
 
 ---
 
-## Een procedure voor drukke momenten
+## Voordoen · Van “meld problemen” naar een stap
 
-Een korte procedure vermeldt:
+**Vaag:** “Bij verdachte berichten waarschuw je iemand.”
 
-**aanleiding, uitvoerder, stappen, uitzonderingen, escalatie en bewijs.**
+**Oefenuitwerking:**
+1. De medewerker opent geen link en meldt het tijdstip via de interne meldknop.
+2. De dienstdoende coördinator bevestigt ontvangst en registreert wie beoordeelt.
+3. Blijft bevestiging 10 minuten uit, dan belt de medewerker het vervangende meldpunt uit de interne contactlijst.
 
-Een verzekering kan financiële gevolgen onder voorwaarden opvangen. De uitvoering van beveiliging en incidentrespons blijft nodig.
+Meldknop, dienst en termijn zijn oefenaannames. Het ticket bewaart melding en opvolging.
 
 <!--
-⏱ 20–25. Laat een student de zin “meld problemen” uitvoeren in gedachten. Waar begint hij, en wat heeft hij daarvoor nodig? Gebruik zijn ontbrekende informatie om de zin te verbeteren.
+⏱ 20–23. Lees eerst alleen de vage zin. Denk hardop voor waar een nieuwe collega vastloopt: wie is iemand, waar vind ik die en hoe weet ik dat de melding is aangekomen? Laat daarna zien welke zin elk gat invult.
 
-Behandel verzekering in één minuut als mogelijke risico-overdracht, met voorwaarden en uitsluitingen, zonder polisadvies. Werk daarna één procedurezin om: “meld problemen” wordt “bij vermoeden van verkeerd toegewezen toegang registreert de servicedesk de melding en schakelt de dienstdoende coördinator in”. Studenten vullen zelf tijd en kanaal in als oefenafspraak.
+De drie stappen zijn het begin van een meldprocedure, niet de volledige incidentrespons. Bevestiging betekent dat iemand het signaal heeft ontvangen, niet dat het incident opgelost is. Bij urgente schade is een snellere spoedroute nodig. De tien minuten en de interne meldknop zijn fictieve keuzes die beschikbaar en passend moeten zijn.
 
-De voorbeeldzin is een begin. Laat de klas zelf aanwijzen welk kanaal en welke tijdafspraak nog ontbreken, zodat zij het voorbeeld niet als kant-en-klare procedure kopieert.
---> 
+Behoud het onderscheid met financiële risico-overdracht: een verzekering kan gevolgen onder voorwaarden opvangen, maar voert deze stappen niet uit. Houd dat bij één zin; vandaag gaat het om een werkwijze die de medewerker kan uitvoeren.
+-->
+
+---
+
+## Samen proberen · De meldknop werkt niet
+
+Lees de vage zin en de drie stappen als een nieuwe invalkracht.
+
+**Variant:** de interne meldknop is onbereikbaar. De vaste teamleider is vrij.
+
+Speel de eerste handeling hardop uit. Waar moet je alsnog raden?
+
+Schrijf samen één vervangende stap met **rol, bereikbaar kanaal en bewijs**. Markeer wat daarvoor vooraf geregeld moet zijn.
+
+<!--
+⏱ 23–25. Laat een student de medewerker spelen en een ander de ontvanger. Eerst de vage instructie: zodra de speler moet raden stop je. Daarna het uitgewerkte voorbeeld met de defecte meldknop. Ook een betere procedure heeft uitzonderingen nodig.
+
+Oogst één aanvulling, bijvoorbeeld een intern beschikbaar alternatief meldpunt met vervanger en eigen registratie als het ticketsysteem uitvalt. Vraag waar de invalkracht dat adres of nummer vindt. Gebruik uitsluitend oefenkanalen. Geef geen complete procedure: de teams werken straks een eigen route uit en laten die door anderen testen.
+-->
 
 ---
 
@@ -151,7 +172,7 @@ De voorbeeldzin is een begin. Laat de klas zelf aanwijzen welk kanaal en welke t
 
 ## Ronde 1 · Procedure op één blad
 
-Schrijf maximaal zes stappen. Elke stap noemt een handeling en een rol.
+Kies op B6 toegangsintrekking of een verdachte melding. Schrijf maximaal zes stappen met een handeling en een rol. Werk een andere verstoring uit dan de defecte meldknop, bijvoorbeeld een actieve sessie na afsluiting.
 
 Voeg toe:
 - wat de medewerker veilig kan doen;

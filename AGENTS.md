@@ -28,6 +28,17 @@
 - Houd de interface tweetalig via `app/content/lessen.nl.ts` en `.en.ts`. Het lesmateriaal zelf blijft net als de kaartsets Nederlands; vermeld dit op de Engelse routes.
 - Controleer wijzigingen aan omzetting of review met `npm run test:lessons`, `npm run build` en relevante browsercontroles. Controleer dat docentnotities en reviewroutes niet in de productiebuild terechtkomen.
 
+## Didactische opbouw van lessen
+
+- Gebruik week 1 als didactische referentie: laat een herkenbaar voorbeeld het begrip introduceren en draag het denkwerk daarna geleidelijk over aan studenten. De kern is **voordoen → samen proberen → zelfstandig toepassen**.
+- Werk vóór een nieuwe zelfstandige opdracht minstens één representatief voorbeeld zichtbaar uit op de slides. Laat zien hoe je van casusfeit via afweging naar een ingevulde rij, controle of afspraak komt. Een leeg format, definitielijst of voorbeeld dat alleen in speaker notes staat is daarvoor niet voldoende.
+- Laat de klas vervolgens een kleine variant aanvullen of twee uitwerkingen vergelijken. Geef bij zelfstandig werk een andere situatie of gewijzigde voorwaarde, zodat studenten moeten redeneren en niet alleen overschrijven.
+- Gebruik voorbeelden in de uitleg én de oefening. Bouw voort op dezelfde casus, assets en eerdere opbrengsten; voeg waar nuttig een herkenbaar alledaags contrast toe. Markeer fictieve details, mandaten, termijnen en normen als oefenaannames. Behoud bronverwijzingen en juridische voorwaarden.
+- Schrijf speaker notes als praktische begeleiding voor een collega: wat denk je hardop voor, welke reactie verwacht je, waarop vraag je door en wanneer laat je studenten het overnemen? Houd notes, slides en werkbladen met elkaar in overeenstemming.
+- Bewaar onderscheid tussen een zichtbaar instructievoorbeeld en het antwoordmodel van de zelfstandige opdracht. Het eerste hoort op de slides; het tweede blijft docentmateriaal. Geef bij incidenten en spellen geen latere informatie of verborgen uitkomsten vooraf weg.
+- Pas deze aanpak aan de werkvorm aan. Een spel, incidentoefening of integratieles hoeft niet dezelfde reeks uitlegsheets te krijgen. Houd bestaande lestijd en leerdoelen aan; vervang uitleg waar nodig in plaats van voorbeelden boven op een volle les te stapelen.
+- Controleer na inhoudelijke wijzigingen tijdvakken, casusfeiten, assetcodes, werkbladverwijzingen en de leesbaarheid van de slides in de lokale viewer.
+
 ## Vormgeving en hergebruik
 
 - Behoud de bestaande praatplaatstijl: warme papierachtergrond met subtiel raster en textuur, donkere inkt, gekleurde accenten, afgeronde kaarten, dunne randen en zachte schaduwen. Introduceer geen nieuwe visuele stijl voor een extra pagina.

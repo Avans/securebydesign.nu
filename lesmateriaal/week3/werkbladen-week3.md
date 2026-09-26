@@ -1,6 +1,6 @@
 # Werkbladen week 3
 
-> **Status:** eerste versie · **Versie:** 0.1 · **Laatst bijgewerkt:** 2026-09-07
+> **Status:** eerste versie · **Versie:** 0.2 · **Laatst bijgewerkt:** 2026-09-27
 > Studentmateriaal. Kopieer per les het betreffende onderdeel naar een eigen Markdown-bestand of werk op papier. De docentantwoorden staan apart.
 
 **Team:** …  **Datum:** …  **Versie:** …
@@ -8,6 +8,8 @@
 Alle bedragen, tijdnormen, dossierfeiten en componenten hieronder zijn fictieve oefengegevens, behalve expliciet genoemde wetgevingsinformatie. Geef zelfgekozen invullingen het label *aanname* of *oefennorm*.
 
 ## B1 · Rollen en escalatie
+
+Gebruik de voorgedane testdata-rij als referentie. Werk de andere vier besluiten zelf uit en toets ook de voorbeeldrij aan jullie eigen oefenmandaten.
 
 R = uitvoerder, A = eindverantwoordelijke voor de activiteit, C = vooraf geraadpleegd, I = geïnformeerd. In deze oefening staat per rij één A en minstens één R.
 
@@ -36,6 +38,8 @@ Peerreview: waar moest de lezer om uitleg vragen? Welke regel hebben jullie aang
 
 ### Het fictieve leveranciersdossier
 
+De back-upclaim wordt op de slides voorgedaan; de trainingsclaim starten we samen. Neem de eerste als referentie op en werk de overige claims zelfstandig verder uit. Kies daarna zelf twee controles.
+
 1. **“Wij zijn ISO 27001-gecertificeerd.”** Het meegeleverde overzicht noemt alleen de productiehosting. De testomgeving en onderaannemers worden niet genoemd.
 2. **“Iedere medewerker volgde de awarenessmodule.”** Het portaal toont 100% afronding. Er is geen verslag van een oefening met de meldroute.
 3. **“Iedere nacht slaagt de back-up.”** Er zijn groene taakmeldingen van de afgelopen maand. De laatste bekende hersteltest is achttien maanden geleden, vóór de huidige appversie.
@@ -59,6 +63,8 @@ Voorwaarde voor akkoord met de leverancier: …
 
 ## B3 · Controlkaart en verbeterlog
 
+Na het voorbeeld over beëindigde toegang oefenen we samen met een rolwisseling. Kies voor jullie eigen kaart een ander risico uit het risicoprofiel en een bevinding uit B2. Vul alle velden in en onderbouw zelfgekozen oefennormen.
+
 | Veld | Invulling |
 |---|---|
 | Risico-ID en asset | … |
@@ -71,7 +77,11 @@ Voorwaarde voor akkoord met de leverancier: …
 | Controlemoment en beoordelaar | … |
 | Actie als het criterium niet wordt gehaald | … |
 
-**Controle-uitkomst voor ronde 2:** van tien beëindigde toegangen blijken er twee nog actief. Over de selectie van deze steekproef is verder niets bekend.
+**Gezamenlijke controle-uitkomst voor ronde 2 (toegangsvoorbeeld):** van tien beëindigde toegangen blijken er twee nog actief. Over de selectie van deze steekproef is verder niets bekend.
+
+Bespreek eerst correctie en verbetering bij dit voorbeeld. Bedenk daarna een vergelijkbare afwijking bij jullie eigen controlkaart, label die als fictieve oefenuitkomst en vul daarvoor het verbeterlog in.
+
+**Onze fictieve controle-uitkomst:** …
 
 | Directe correctie | Onderzoek naar oorzaak | Structurele verbetering | Eigenaar | Deadline | Vervolgcontrole |
 |---|---|---|---|---|---|
@@ -80,6 +90,8 @@ Voorwaarde voor akkoord met de leverancier: …
 Welke uitspraak over alle accounts kunnen jullie met deze steekproef nog niet onderbouwen? …
 
 ## B4 · Wetgevingsposter
+
+We starten samen met chatgeschiedenis als variant op de testkopie. Werk daarna jullie toegewezen kader uit. Neem bij de twee ontwerpvragen minstens één andere keuze dan de voorgedane testdata-keuze. De juridische bronpeildatum hieronder blijft 7 september 2026.
 
 ### Bronkaart AVG
 
@@ -122,6 +134,8 @@ Welke tekst is een verplichting, welke is jullie gekozen invulling? …
 
 ## B5 · Ketenkaart en verstoringen
 
+De medicatieroute is voorgedaan. Gebruik die als begin van de kaart, werk de overige verbindingen zelf uit en kies voor jullie ketenafspraak een andere verbinding, bijvoorbeeld onderhoudstoegang of de testhoster.
+
 Teken de partijen uit de casus. Verbind ze met lijnen voor **data**, **toegang** en **dienstverlening**. Benoem A1–A6 bij relevante verbindingen. Voeg gevolg van uitval of misbruik toe. Markeer onbekende relaties.
 
 **Fictieve uitbreiding:** de bouwer gebruikt een externe testhoster. Onbekend is of daar echte gegevens staan en wie toegang heeft.
@@ -147,6 +161,8 @@ Per scenario: ontbrekende informatie, contactrol, beslisser, tijdelijke maatrege
 | … | … | … | … | … | … |
 
 ## B6 · Procedure en proef
+
+Gebruik het meldvoorbeeld als referentie. Ontwerp een eigen procedure voor de gekozen route en werk een andere verstoring uit dan de gezamenlijk geoefende defecte meldknop. Test vervolgens met onderstaande proefscenario’s.
 
 **Route:** toegangsintrekking / verdachte melding.
 

@@ -1,6 +1,6 @@
 export default {
   otherFiles: 'Other files', otherIntro: 'Additional Markdown by week, including teacher materials. Available locally only.', fileLoading: 'Loading files…', fileError: 'Could not load files.', fileOpen: 'Read file', sourceFile: 'Source file', backWeek: 'Back to week overview',
-  showNotes: 'Teacher view', hideNotes: 'Hide notes', speakerNotes: 'Speaker notes', notesLoading: 'Loading notes…', notesError: 'Could not load notes. Open the lesson through localhost.', retryNotes: 'Try again', noNotes: 'No notes for this slide.',
+  showNotes: 'Show notes', hideNotes: 'Hide notes', speakerNotes: 'Speaker notes', notesLoading: 'Loading notes…', notesError: 'Could not load notes. Open the lesson through localhost.', retryNotes: 'Try again', noNotes: 'No notes for this slide.',
   title: 'Explore', accent: 'the lessons', kicker: 'Foundation · course materials',
   intro: 'From the first design decision to a substantiated security dossier. Choose a week, open a lesson and read at your own pace.',
   week: 'Week', block: 'Block', lessons: 'lessons', minutes: '90 minutes', draft: 'First draft',
