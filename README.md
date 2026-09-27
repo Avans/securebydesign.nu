@@ -164,6 +164,9 @@ reviewvelden blijven Nederlands. Zie de [technische werkwijze](tooling/lessons/R
 
 ## Lokaal draaien en controleren
 
+De gebruiker beheert de lokale server. Agents starten of herstarten deze alleen
+op expliciet verzoek, ook wanneer zij een wijziging in de browser willen controleren.
+
 De eenvoudigste manier om alles lokaal te starten:
 
 ```bash

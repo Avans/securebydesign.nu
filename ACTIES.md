@@ -4,6 +4,9 @@ Gebruik `- [ ]` voor een open actie en `- [x]` voor een afgeronde actie.
 Voeg eventueel een eigenaar, deadline of verwijzing naar een les toe aan de tekst.
 
 ## Open acties
+- [ ] Mark - Opnemen toets in opf
+- [ ] Allen - Start project niet toch al wat eerder?
+- [ ] Allen - Doornemen eerste weken, denk aan team kickoff bedrijfs presentaties ook vanuit project
 - [ ] Allen - Doornemen OPF
 - [ ] Mark en Irma - Tekst edubadge aanpassen
 - [ ] Mark - checken wat de stand van de docentstages is

@@ -23,7 +23,7 @@
 - Toon studentlessen via `LessonSlides.vue`, één Markdown-onderdeel per slide. Behoud slidekeuze via de URL, toetsenbediening en printen van alle slides. Studentbijlagen en de lokale review blijven doorlopende leesweergaven.
 - Gewone Markdown-tekst verschijnt in de lokale studentenweergave. Houd docentnotities in `<!-- ... -->`; markeer een volledig docentonderdeel met `<!-- review:teacher-only -->` tussen de Marp-scheidingen. Controleer zichtbare tekst ook inhoudelijk op antwoordmodellen: de omzetter kan dit niet automatisch beoordelen.
 - Houd docenthandleidingen, ruwe Markdown met notities en lokale reviews buiten publieke imports, productiegegevens en `public/`. Studentbijlagen moeten expliciet in de selectie worden opgenomen. Bestaande openbare PDF’s hebben hun eigen inhoud en worden hierdoor niet aangepast.
-- De gehele `/ontwikkeling`-werkplek en de lokale API’s zijn uitsluitend voor de lokale ontwikkelserver. Behoud hun uitsluiting uit productie en de controles op lokale toegang. Start met `./run.sh` of `npm run dev`.
+- De gehele `/ontwikkeling`-werkplek en de lokale API’s zijn uitsluitend voor de lokale ontwikkelserver. Behoud hun uitsluiting uit productie en de controles op lokale toegang. Start de server alleen op expliciet verzoek van de gebruiker met `./run.sh` of `npm run dev`.
 - Reviewfeedback staat in `.data/lesreviews/` en wordt niet met Git gedeeld. Verwerk feedback op verzoek in de genoemde Markdown-bron; controleer bronvingerafdruk, onderdeeltitels en regelnummers om verschoven opmerkingen niet verkeerd toe te passen. Opslaan van feedback betekent niet dat de lestekst is aangepast of publicatie is goedgekeurd.
 - Houd de interface tweetalig via `app/content/lessen.nl.ts` en `.en.ts`. Het lesmateriaal zelf blijft net als de kaartsets Nederlands; vermeld dit op de Engelse routes.
 - Controleer wijzigingen aan omzetting of review met `npm run test:lessons`, `npm run build` en relevante browsercontroles. Controleer dat docentnotities en reviewroutes niet in de productiebuild terechtkomen.
@@ -70,7 +70,7 @@
 ## Werkwijze en controle
 
 - Bekijk voor een wijziging de actuele component, inhoud en relevante gedeelde styles. Bewaar bestaande gebruikerswijzigingen buiten de opdracht.
-- Start lokaal met `npm run dev`; controleer code- en templatewijzigingen met `npm run build`. Voor alleen documentatiewijzigingen is geen build nodig.
+- Start of herstart nooit zelfstandig een lokale dev- of previewserver, ook niet voor browsercontroles. De gebruiker beheert die zelf; starten mag alleen na een expliciet verzoek. Gebruik voor controles een al draaiende server of meld dat visuele controle niet kon worden uitgevoerd. Controleer code- en templatewijzigingen met `npm run build`. Voor alleen documentatiewijzigingen is geen build nodig.
 - Controleer UI-wijzigingen waar mogelijk in de browser op desktop en mobiel, inclusief uitklappen, navigatie en taalwissel. Een geslaagde build is geen visuele controle; meld het als die controle niet kon worden uitgevoerd.
 - Controleer bij roosterwijzigingen ook aantallen en totalen en bij nieuwe pagina's de daadwerkelijke bereikbaarheid via de navigatie.
 - Houd gegenereerde bestanden, dependencies en lokale configuratie buiten Git volgens `.gitignore`; voeg geen `node_modules`, `.nuxt`, `.output` of `.env` toe.
