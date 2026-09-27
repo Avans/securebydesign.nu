@@ -1,8 +1,8 @@
 <script setup>
 const { locale, localePath } = useI18nNav()
 const links = computed(() => locale.value === 'en'
-  ? [['', 'Development'], ['/lessen', 'Lessons'], ['/acties', 'Actions'], ['/concepten', 'Drafts'], ['/review', 'Reviews']]
-  : [['', 'Ontwikkeling'], ['/lessen', 'Lessen'], ['/acties', 'Acties'], ['/concepten', 'Concepten'], ['/review', 'Reviews']])
+  ? [['', 'Development'], ['/lessen', 'Lessons'], ['/weekoverzicht', 'Week overview'], ['/acties', 'Actions'], ['/concepten', 'Drafts'], ['/review', 'Reviews']]
+  : [['', 'Ontwikkeling'], ['/lessen', 'Lessen'], ['/weekoverzicht', 'Weekoverzicht'], ['/acties', 'Acties'], ['/concepten', 'Concepten'], ['/review', 'Reviews']])
 </script>
 <template><nav class="wrap development-nav" :aria-label="locale === 'en' ? 'Development workspace' : 'Ontwikkelwerkplek'"><NuxtLink v-for="[path, title] in links" :key="path" :to="localePath(`/ontwikkeling${path}`)">{{ title }}</NuxtLink></nav></template>
 <style scoped>

@@ -9,6 +9,7 @@ is, kan Nuxt een andere kiezen.
 
 - `/ontwikkeling`: centrale ingang, alleen lokaal. De kaarten tonen week 1–4, de projectopzet en OPF, maximaal vijf open acties (bestandsvolgorde; geen aanmaakdatums), vijf laatst gewijzigde Markdown-concepten (bestandstijd, zonder README) en vijf open reviews. Niet beoordeelde documenten, reviews met aanpassingen en gewijzigde bronnen tellen als open.
 - `/ontwikkeling/opf`: lokale leesweergave van het expliciet geselecteerde `.data/opf-voorbereiding/Voorbereiding OPF.md`; geen algemene toegang tot `.data/`.
+- `/ontwikkeling/weekoverzicht`: extra kaart en navigatie-item voor de gewenste weekopbouw en impact, met de huidige stand ter vergelijking. Leest alleen `lesmateriaal/weekopbouw-gewenst.md` en `lesmateriaal/weekopbouw-huidige-stand.md`; alleen-lezen, geen symlinks of willekeurige paden. De interface is tweetalig; de documenten blijven Nederlands. Route en API zijn uitsluitend lokaal beschikbaar.
 - `/ontwikkeling/acties`: Markdown-taaklijst in `ACTIES.md`, toevoegen slaat meteen op; na afvinken of bron bewerken expliciet opslaan.
 - `/ontwikkeling/concepten`: alleen-lezen Markdown-viewer voor `draft_inprogress/`; geen symlinks of willekeurige bestanden.
 - `/ontwikkeling/lessen`: overzicht met zoekfunctie, vier weken en links naar studentbijlagen.

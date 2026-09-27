@@ -79,6 +79,9 @@ useHead({ title: computed(() => `${actions ? t.value.actions : concepts ? t.valu
           <li><NuxtLink :to="localePath('/ontwikkeling/opf')">{{ t.opf }} →</NuxtLink></li>
         </ul>
         </template>
+        <ul v-else-if="card.path === '/weekoverzicht'" class="dashboard-list">
+          <li v-for="document in t.weekOverviewLinks" :key="document.file"><NuxtLink :to="{ path: localePath('/ontwikkeling/weekoverzicht'), query: { bestand: document.file } }">{{ document.label }} →</NuxtLink></li>
+        </ul>
         <template v-else>
           <h3>{{ index === 1 ? t.latestActions : index === 2 ? t.latestDrafts : t.openReviews }}</h3>
           <p v-if="error" role="alert">{{ t.loadError }}</p><p v-else-if="!data" role="status">{{ t.loading }}</p>
@@ -88,7 +91,7 @@ useHead({ title: computed(() => `${actions ? t.value.actions : concepts ? t.valu
           <template v-else-if="index === 2"><ul v-if="data.drafts.length" class="dashboard-list"><li v-for="draft in data.drafts" :key="draft.file"><NuxtLink :to="{ path: localePath('/ontwikkeling/concepten'), query: { bestand: draft.file } }" lang="nl">{{ draft.title }}</NuxtLink><small>{{ t.updated }} {{ new Date(draft.updatedAt).toLocaleDateString(locale === 'en' ? 'en-GB' : 'nl-NL') }}</small></li></ul><p v-else>{{ t.noDrafts }}</p></template>
           <template v-else><ul v-if="data.reviews.length" class="dashboard-list"><li v-for="review in data.reviews" :key="review.id"><NuxtLink :to="localePath(`/ontwikkeling/review/${review.id}`)" lang="nl">{{ review.title }}</NuxtLink><small>{{ t.reviewStatus[review.status] }}</small></li></ul><p v-else>{{ t.noReviews }}</p></template>
         </template>
-        <NuxtLink class="go" :to="localePath(`/ontwikkeling${card.path}`)">{{ t.allItems }}<template v-if="data && index > 0"> ({{ index === 1 ? data.actionCount : index === 2 ? data.draftCount : data.reviewCount }})</template> →</NuxtLink>
+        <NuxtLink class="go" :to="localePath(`/ontwikkeling${card.path}`)">{{ t.allItems }}<template v-if="data && index > 0 && index < 4"> ({{ index === 1 ? data.actionCount : index === 2 ? data.draftCount : data.reviewCount }})</template> →</NuxtLink>
       </section>
     </div>
     <p v-else-if="error" role="alert">{{ t.loadError }}</p>

@@ -121,3 +121,30 @@ test('additional lesson files only include regular Markdown in the four week fol
     assert.ok(!html.includes('href="../../.env"'))
   } finally { await rm(dir, { recursive: true, force: true }) }
 })
+
+test('week overview only reads the two selected documents and rejects symlinks and traversal', async () => {
+  const { weekOverviewData } = await import('./workspace-api.mjs')
+  const { symlink, rename } = await import('node:fs/promises')
+  const dir = await mkdtemp(path.join(tmpdir(), 'week-overview-'))
+  try {
+    await mkdir(path.join(dir, 'lesmateriaal'))
+    await writeFile(path.join(dir, 'lesmateriaal/weekopbouw-gewenst.md'), '# Desired\n[Current](weekopbouw-huidige-stand.md)\n[Private](../.env)\n<script>bad()</script>')
+    await writeFile(path.join(dir, 'lesmateriaal/weekopbouw-huidige-stand.md'), '# Current')
+    const result = await weekOverviewData(dir)
+    assert.equal(result.file, 'weekopbouw-gewenst.md')
+    assert.ok(result.html.includes('/ontwikkeling/weekoverzicht?bestand=weekopbouw-huidige-stand.md'))
+    assert.ok(!result.html.includes('href="../.env"'))
+    assert.ok(!result.html.includes('<script>'))
+    assert.ok((await weekOverviewData(dir, 'weekopbouw-huidige-stand.md')).html.includes('Current'))
+    assert.ok((await weekOverviewData(dir, undefined, 'en')).html.includes('/en/ontwikkeling/weekoverzicht?bestand='))
+    for (const file of ['../.env', 'week1/README.md', '/etc/passwd', ['weekopbouw-gewenst.md']]) {
+      await assert.rejects(weekOverviewData(dir, file), { statusCode: 404 })
+    }
+    await rm(path.join(dir, 'lesmateriaal/weekopbouw-gewenst.md'))
+    await symlink(path.join(dir, 'lesmateriaal/weekopbouw-huidige-stand.md'), path.join(dir, 'lesmateriaal/weekopbouw-gewenst.md'))
+    await assert.rejects(weekOverviewData(dir), { statusCode: 404 })
+    await rename(path.join(dir, 'lesmateriaal'), path.join(dir, 'linked-materials'))
+    await symlink(path.join(dir, 'linked-materials'), path.join(dir, 'lesmateriaal'))
+    await assert.rejects(weekOverviewData(dir, 'weekopbouw-huidige-stand.md'), { statusCode: 404 })
+  } finally { await rm(dir, { recursive: true, force: true }) }
+})

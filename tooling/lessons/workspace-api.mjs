@@ -1,5 +1,5 @@
 import { eventHandler, getHeader, getQuery, readBody, createError, setHeader } from 'h3'
-import { readFile, readdir, writeFile, rename, stat } from 'node:fs/promises'
+import { readFile, readdir, writeFile, rename, stat, lstat } from 'node:fs/promises'
 import path from 'node:path'
 import MarkdownIt from 'markdown-it'
 import { digest, loadLessons } from './content.mjs'
@@ -53,6 +53,23 @@ export async function lessonFiles(root) {
   return files.sort()
 }
 
+// Explicit read-only selection: no arbitrary paths or symlinked documents/directories.
+export const weekOverviewFiles = ['weekopbouw-gewenst.md', 'weekopbouw-huidige-stand.md']
+export async function weekOverviewData(root, file = weekOverviewFiles[0], locale = 'nl') {
+  if (!weekOverviewFiles.includes(file)) throw createError({ statusCode: 404 })
+  const directory = path.join(root, 'lesmateriaal')
+  const target = path.join(directory, file)
+  try {
+    if (!(await lstat(directory)).isDirectory() || !(await lstat(target)).isFile()) throw createError({ statusCode: 404 })
+    const source = await readFile(target, 'utf8')
+    const viewer = `${locale === 'en' ? '/en' : ''}/ontwikkeling/weekoverzicht`
+    return { file, html: renderDraft(source, file, weekOverviewFiles, viewer) }
+  } catch (error) {
+    if (error.code === 'ENOENT') throw createError({ statusCode: 404 })
+    throw error
+  }
+}
+
 export async function dashboardData(root) {
   const source = await readFile(path.join(root, 'ACTIES.md'), 'utf8')
   let fence = false
@@ -90,6 +107,7 @@ export function workspaceHandler(root) {
     setHeader(event, 'Cache-Control', 'no-store')
     const query = getQuery(event)
     if (event.method === 'GET') {
+      if (query.kind === 'week-overview') return weekOverviewData(root, query.file, query.locale)
       if (query.kind === 'lesson-files') {
         const files = await lessonFiles(root)
         if (!query.file) return { files: files.filter(file => !/^week[1-4]\/w[1-4]b\d+-/.test(file)) }
