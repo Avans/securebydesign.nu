@@ -54,7 +54,7 @@ export async function lessonFiles(root) {
 }
 
 // Explicit read-only selection: no arbitrary paths or symlinked documents/directories.
-export const weekOverviewFiles = ['weekopbouw-gewenst.md', 'weekopbouw-huidige-stand.md']
+export const weekOverviewFiles = ['weekopbouw-gewenst.md', 'weekopbouw-huidige-stand.md', 'opf-v0.2-leesbaar.md', 'opf-impact-weekopbouw-mark.md']
 export async function weekOverviewData(root, file = weekOverviewFiles[0], locale = 'nl') {
   if (!weekOverviewFiles.includes(file)) throw createError({ statusCode: 404 })
   const directory = path.join(root, 'lesmateriaal')

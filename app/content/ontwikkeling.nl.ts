@@ -5,10 +5,12 @@ export default {
   week: 'Week', project: 'Projectopzet', opf: 'OPF', opfHint: 'Lokale voorbereiding van het onderwijsprogramma.',
   lessonMaterials: 'Lesmateriaal',
   weekOverview: 'Weekoverzicht',
-  weekOverviewHint: 'De gewenste weekopbouw en de impact op lessen, toetsing en project. Vergelijk met de huidige stand. Beide documenten zijn Nederlandstalig.',
+  weekOverviewHint: 'De gewenste weekopbouw, de huidige stand en het OPF met de impact van de voorgestelde wijzigingen. De documenten zijn Nederlandstalig.',
   weekOverviewLinks: [
     { file: 'weekopbouw-gewenst.md', label: 'Gewenste weekopbouw & impact' },
     { file: 'weekopbouw-huidige-stand.md', label: 'Huidige stand ter vergelijking' },
+    { file: 'opf-v0.2-leesbaar.md', label: 'OPF v0.2 · leesbare versie' },
+    { file: 'opf-impact-weekopbouw-mark.md', label: 'OPF · impact wijzigingen Mark' },
   ],
   latestActions: 'Open acties', latestDrafts: 'Laatst gewijzigde concepten', openReviews: 'Documenten met open review',
   noActions: 'Geen open acties.', noDrafts: 'Nog geen concepten.', noReviews: 'Alle documenten zijn beoordeeld.',

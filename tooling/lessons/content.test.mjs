@@ -122,7 +122,7 @@ test('additional lesson files only include regular Markdown in the four week fol
   } finally { await rm(dir, { recursive: true, force: true }) }
 })
 
-test('week overview only reads the two selected documents and rejects symlinks and traversal', async () => {
+test('week overview only reads selected documents and rejects symlinks and traversal', async () => {
   const { weekOverviewData } = await import('./workspace-api.mjs')
   const { symlink, rename } = await import('node:fs/promises')
   const dir = await mkdtemp(path.join(tmpdir(), 'week-overview-'))
@@ -130,12 +130,16 @@ test('week overview only reads the two selected documents and rejects symlinks a
     await mkdir(path.join(dir, 'lesmateriaal'))
     await writeFile(path.join(dir, 'lesmateriaal/weekopbouw-gewenst.md'), '# Desired\n[Current](weekopbouw-huidige-stand.md)\n[Private](../.env)\n<script>bad()</script>')
     await writeFile(path.join(dir, 'lesmateriaal/weekopbouw-huidige-stand.md'), '# Current')
+    await writeFile(path.join(dir, 'lesmateriaal/opf-v0.2-leesbaar.md'), '# OPF\n[Impact](opf-impact-weekopbouw-mark.md)')
+    await writeFile(path.join(dir, 'lesmateriaal/opf-impact-weekopbouw-mark.md'), '# Impact\n[OPF](opf-v0.2-leesbaar.md)')
     const result = await weekOverviewData(dir)
     assert.equal(result.file, 'weekopbouw-gewenst.md')
     assert.ok(result.html.includes('/ontwikkeling/weekoverzicht?bestand=weekopbouw-huidige-stand.md'))
     assert.ok(!result.html.includes('href="../.env"'))
     assert.ok(!result.html.includes('<script>'))
     assert.ok((await weekOverviewData(dir, 'weekopbouw-huidige-stand.md')).html.includes('Current'))
+    assert.ok((await weekOverviewData(dir, 'opf-v0.2-leesbaar.md')).html.includes('/ontwikkeling/weekoverzicht?bestand=opf-impact-weekopbouw-mark.md'))
+    assert.ok((await weekOverviewData(dir, 'opf-impact-weekopbouw-mark.md', 'en')).html.includes('/en/ontwikkeling/weekoverzicht?bestand=opf-v0.2-leesbaar.md'))
     assert.ok((await weekOverviewData(dir, undefined, 'en')).html.includes('/en/ontwikkeling/weekoverzicht?bestand='))
     for (const file of ['../.env', 'week1/README.md', '/etc/passwd', ['weekopbouw-gewenst.md']]) {
       await assert.rejects(weekOverviewData(dir, file), { statusCode: 404 })

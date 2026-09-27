@@ -4,6 +4,8 @@
 
 **Status:** de genoemde weken en de duur van kickoff, bedrijfspresentaties en teambuilding komen uit de gebruikerswens. De precieze blokindeling, vervangende werkvormen en overige tijdsduren hieronder zijn **voorstellen**, geen reeds doorgevoerde rooster- of toetsbesluiten. Website, lesdecks en OPF zijn nog niet aangepast.
 
+De aangeleverde OPF v0.2 is afzonderlijk beschikbaar als [leesbare versie](opf-v0.2-leesbaar.md). De [OPF-impactanalyse](opf-impact-weekopbouw-mark.md) koppelt dit voorstel aan concrete rijen, cellen en inzet. Let daarbij op de nog open kalenderkoppeling: de huidige OPF-kolom voor week 8 staat als herfstvakantie gemarkeerd.
+
 ## 1. Beoordeling van de voorgestelde lijn
 
 Dit is een logischere gezamenlijke opbouw. Studenten zien meteen waar de minor naartoe werkt, ontmoeten vroeg de opdrachtgevers en bouwen vervolgens als team aan opdrachtbegrip, resultaten en oplevering. De mijlpalen krijgen zo ieder een eigen vraag:

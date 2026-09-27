@@ -5,10 +5,12 @@ export default {
   week: 'Week', project: 'Project outline', opf: 'OPF', opfHint: 'Local preparation of the education programme.',
   lessonMaterials: 'Course materials',
   weekOverview: 'Week overview',
-  weekOverviewHint: 'The proposed weekly structure and its impact on lessons, assessment and the project. Compare it with the current structure. Both documents are in Dutch.',
+  weekOverviewHint: 'The proposed weekly structure, the current structure and the OPF teaching plan with the impact of the proposed changes. The documents are in Dutch.',
   weekOverviewLinks: [
     { file: 'weekopbouw-gewenst.md', label: 'Proposed weekly structure & impact' },
     { file: 'weekopbouw-huidige-stand.md', label: 'Current structure for comparison' },
+    { file: 'opf-v0.2-leesbaar.md', label: 'OPF v0.2 · readable version' },
+    { file: 'opf-impact-weekopbouw-mark.md', label: 'OPF · impact of Mark’s changes' },
   ],
   latestActions: 'Open actions', latestDrafts: 'Recently updated drafts', openReviews: 'Documents awaiting review',
   noActions: 'No open actions.', noDrafts: 'No drafts yet.', noReviews: 'All documents have been reviewed.',
