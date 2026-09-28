@@ -1,0 +1,3 @@
+blok 1:
+presentatie: beta. Nog teveel folien.
+ex, opl: alfa. Gegenereerd door LLM, nog niet gereviewed.
