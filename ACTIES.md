@@ -4,12 +4,27 @@ Gebruik `- [ ]` voor een open actie en `- [x]` voor een afgeronde actie.
 Voeg eventueel een eigenaar, deadline of verwijzing naar een les toe aan de tekst.
 
 ## Open acties
-- [ ] Mark en Irma - Tekst edubadge aanpassen
+- [ ] Ernst - Brightspace excel hokuspokus
+- [ ] Eind Event in OWB300
+- [ ] P2 - Rubric project
+- [ ] P2 - Opstellen rubrics voor het portfolio en profiel
+- [ ] Stefan - Brightspace vullen en presentatie stijl
+- [ ] P2 - Afstemmen gastcollege's
+- [ ] P2 - Afstemmen projecten
+- [ ] P2 - Opzet onderzoek
+- [ ] Stefan - Profiel Werkplaats en feedback
+- [ ] Mark - Project eind p1
+- [ ] Mark - Assessments in OPF
+- [ ] Ernst - Week 2 - Eind P1
+- [ ] Mark - Week 3 Afronden - Voor de herfstvakantie
+- [ ] Mark - Opzet maken week 4 - Voor de herfstvakantie
+- [ ] Stefan - Week 1 afronden - Voor de herfstvakantie
+- [x] Mark en Irma - Tekst edubadge aanpassen
 - [ ] Mark - checken wat de stand van de docentstages is
-- [ ] Mark - Even checken wat de stand van inschrijvingen is
+- [x] Mark - Even checken wat de stand van inschrijvingen is
 - [ ] Allen - Naaste casus is erg zorg kunnen we deze wat opschuiven naar de maakindustrie meer brainport
 - [ ] Mark - Tweede cursus datums doorgeven voor PQ nummer
-- [ ] Mark - Docent melen ter voorbereiding
+- [x] Mark - Docent melen ter voorbereiding
 
 ### Weekopbouw en ontwikkelstatus · controle 29 september 2026
 
