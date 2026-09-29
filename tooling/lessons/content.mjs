@@ -45,7 +45,9 @@ export async function loadLessons(root, { privateData = false } = {}) {
   for (const week of [1, 2, 3, 4]) {
     const dir = path.join(root, 'lesmateriaal', `week${week}`)
     for (const name of (await readdir(dir)).sort()) {
-      const match = name.match(/^w(\d)b(\d+)-.+\.md$/)
+      // Separate exercises and answer keys are source material, not standalone lessons.
+      if (/-(ex|opl)\.md$/i.test(name)) continue
+      const match = name.match(/^w(\d)b(\d+)(?:-.+)?\.md$/)
       if (match && Number(match[1]) === week) sources.push({ file: `lesmateriaal/week${week}/${name}`, week, block: Number(match[2]), id: `week-${week}/blok-${match[2]}`, kind: 'lesson' })
     }
   }

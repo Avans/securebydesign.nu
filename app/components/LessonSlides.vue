@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ lesson: { type: Object, required: true }, t: { type: Object, required: true } })
+const props = defineProps({ lesson: { type: Object, required: true }, t: { type: Object, required: true }, showNotes: { type: Boolean, default: true }, label: { type: String, default: '' } })
 const route = useRoute()
 const router = useRouter()
 const teacherMode = ref(false)
@@ -94,14 +94,14 @@ onBeforeUnmount(() => {
     <div class="deck-heading">
       <label for="slide-picker">{{ t.chooseSlide }}</label>
       <select id="slide-picker" :value="current" @change="go(Number($event.target.value))"><option v-for="(s, index) in lesson.sections" :key="s.id" :value="index">{{ index + 1 }} · {{ s.title }}</option></select>
-      <button v-if="isDev" type="button" :aria-pressed="teacherMode" aria-controls="speaker-notes" @click="toggleNotes">{{ teacherMode ? t.hideNotes : t.showNotes }}</button>
+      <button v-if="isDev && showNotes" type="button" :aria-pressed="teacherMode" aria-controls="speaker-notes" @click="toggleNotes">{{ teacherMode ? t.hideNotes : t.showNotes }}</button>
       <button v-if="canFullscreen" type="button" @click="toggleFullscreen">{{ fullscreen ? t.exitFullscreen : t.fullscreen }}</button>
     </div>
     <p v-if="fullscreenError" class="deck-message" role="status">{{ t.fullscreenError }}</p>
     <div class="presenter-layout" :class="{ teaching: teacherMode }">
     <div class="slide-stage">
       <section v-for="(s, index) in lesson.sections" v-show="index === current" :key="s.id" class="slide" :aria-label="`${t.slide} ${index + 1}: ${s.title}`">
-        <div class="slide-label">{{ t.week }} {{ lesson.week }} · {{ t.block }} {{ lesson.block }}<span>{{ String(index + 1).padStart(2, '0') }} / {{ total }}</span></div>
+        <div class="slide-label"><span>{{ label || `${t.week} ${lesson.week} · ${t.block} ${lesson.block}` }}</span><span>{{ String(index + 1).padStart(2, '0') }} / {{ total }}</span></div>
         <div ref="panes" :data-slide="s.id" class="slide-scroll" tabindex="0" :aria-label="`${t.slide}: ${s.title}`" :aria-describedby="index === current ? 'slide-keyboard-help' : undefined"><LessonText :html="s.html" /></div>
       </section>
     </div>

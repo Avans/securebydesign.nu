@@ -1,9 +1,12 @@
 <script setup>
 import nl from '~/content/ontwikkeling.nl'
 import en from '~/content/ontwikkeling.en'
+import slidesNl from '~/content/lessen.nl'
+import slidesEn from '~/content/lessen.en'
 const route = useRoute()
 const { locale, localePath } = useI18nNav()
 const t = computed(() => locale.value === 'en' ? en : nl)
+const slideText = computed(() => locale.value === 'en' ? slidesEn : slidesNl)
 const file = computed(() => typeof route.query.bestand === 'string' ? route.query.bestand : 'weekopbouw-gewenst.md')
 const { data, error } = await useFetch('/__development', {
   server: false,
@@ -29,7 +32,13 @@ useHead({ title: computed(() => `${t.value.weekOverview} · Secure by Design`), 
     <p v-else-if="!data" role="status">{{ t.loading }}</p>
     <article v-else class="paper" lang="nl">
       <p class="source">{{ t.source }}: lesmateriaal/{{ data.file }}</p>
-      <LessonText :html="data.html" />
+      <nav v-if="data.sections" class="document-links" :aria-label="t.viewMode">
+        <NuxtLink :to="{ path: route.path, query: { bestand: file } }" :aria-current="route.query.weergave !== 'tekst' ? 'page' : undefined">{{ t.slidesView }}</NuxtLink>
+        <NuxtLink :to="{ path: route.path, query: { bestand: file, weergave: 'tekst' } }" :aria-current="route.query.weergave === 'tekst' ? 'page' : undefined">{{ t.readingView }}</NuxtLink>
+        <NuxtLink :to="localePath('/ontwikkeling/acties')">{{ t.actions }}</NuxtLink>
+      </nav>
+      <LessonSlides v-if="data.sections?.length && route.query.weergave !== 'tekst'" :key="data.file" :lesson="{ id: data.file, sections: data.sections }" :t="slideText" :show-notes="false" :label="t.statusPresentation" />
+      <LessonText v-else :html="data.html" />
     </article>
   </div>
 </template>

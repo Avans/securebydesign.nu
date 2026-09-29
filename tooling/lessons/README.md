@@ -9,7 +9,7 @@ is, kan Nuxt een andere kiezen.
 
 - `/ontwikkeling`: centrale ingang, alleen lokaal. De kaarten tonen week 1–4, de projectopzet en OPF, maximaal vijf open acties (bestandsvolgorde; geen aanmaakdatums), vijf laatst gewijzigde Markdown-concepten (bestandstijd, zonder README) en vijf open reviews. Niet beoordeelde documenten, reviews met aanpassingen en gewijzigde bronnen tellen als open.
 - `/ontwikkeling/opf`: lokale leesweergave van het expliciet geselecteerde `.data/opf-voorbereiding/Voorbereiding OPF.md`; geen algemene toegang tot `.data/`.
-- `/ontwikkeling/weekoverzicht`: extra kaart en navigatie-item voor de gewenste weekopbouw en impact, met de huidige stand ter vergelijking. Leest uitsluitend vier geselecteerde Markdown-bestanden in `lesmateriaal/`: `weekopbouw-gewenst.md`, `weekopbouw-huidige-stand.md`, `opf-v0.2-leesbaar.md` en `opf-impact-weekopbouw-mark.md`. Alleen-lezen, geen symlinks of willekeurige paden. De interface is tweetalig; de documenten blijven Nederlands. Route en API zijn uitsluitend lokaal beschikbaar. De leesbare OPF-versie is een momentopname van het aangeleverde Excelbestand; het originele `.xlsm` staat niet in de repo en wordt niet door deze viewer geopend.
+- `/ontwikkeling/weekoverzicht`: extra kaart en navigatie-item voor de gewenste weekopbouw en impact, met de huidige stand ter vergelijking. Leest uitsluitend vijf geselecteerde Markdown-bestanden in `lesmateriaal/`: `weekopbouw-gewenst.md`, `weekopbouw-huidige-stand.md`, `opf-v0.2-leesbaar.md` `opf-impact-weekopbouw-mark.md` en `weekopbouw-presentatie.md`. De presentatie bevat de statuscontrole en actiecodes, gebruikt `---` als slidescheiding en opent met dezelfde slidebediening als lessen. Via de weergavelinks is ook doorlopende tekst beschikbaar. `ACTIES.md` bevat de afvinkbare taken. Alleen-lezen, geen symlinks of willekeurige paden. De interface is tweetalig; de documenten blijven Nederlands. Route en API zijn uitsluitend lokaal beschikbaar. De leesbare OPF-versie is een momentopname van het aangeleverde Excelbestand; het originele `.xlsm` staat niet in de repo en wordt niet door deze viewer geopend.
 - `/ontwikkeling/acties`: Markdown-taaklijst in `ACTIES.md`, toevoegen slaat meteen op; na afvinken of bron bewerken expliciet opslaan.
 - `/ontwikkeling/concepten`: alleen-lezen Markdown-viewer voor `draft_inprogress/`; geen symlinks of willekeurige bestanden.
 - `/ontwikkeling/lessen`: overzicht met zoekfunctie, vier weken en links naar studentbijlagen.
@@ -50,9 +50,8 @@ stilzwijgend: de tweede opslag geeft een conflictmelding.
 
 ## Bronnen en publicatie
 
-`content.mjs` leest lesbestanden met namen zoals `w1b1-intro.md` uit de vier
-weekmappen van `lesmateriaal/` en maakt er HTML van. Momenteel zijn alleen week 1
-en 3 uitgewerkt. Nieuwe lesbestanden voor week 2 en 4 verschijnen automatisch als
+`content.mjs` leest lesbestanden met namen zoals `w1b1-intro.md` of `w2b1.md` uit de vier
+weekmappen van `lesmateriaal/` en maakt er HTML van. Week 1 en 3 bevatten elk negen lesdecks. Week 2 heeft gedeeltelijk materiaal voor B1; de hoofdles `w2b1.md` is als conceptdeck zichtbaar. De beoordeling staat in `week2/00-inhoudelijke-beoordeling.md`. Losse `-ex.md`- en `-opl.md`-bestanden worden bewust niet als studentles geselecteerd om dubbele routes en zichtbare antwoordmodellen te voorkomen. Deze blijven als lokale overige bestanden beschikbaar. Nieuwe lesbestanden voor week 2 en 4 verschijnen automatisch als
 ze deze naamconventie volgen. Het kopieert geen volledige Markdown naar `public/`.
 Studentbijlagen worden expliciet geselecteerd in de lijst `attachments`:
 werkbladen, casus Naaste en incidentoefening van week 3. Docenthandleidingen,

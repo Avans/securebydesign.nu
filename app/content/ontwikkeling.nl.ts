@@ -6,7 +6,9 @@ export default {
   lessonMaterials: 'Lesmateriaal',
   weekOverview: 'Weekoverzicht',
   weekOverviewHint: 'De gewenste weekopbouw, de huidige stand en het OPF met de impact van de voorgestelde wijzigingen. De documenten zijn Nederlandstalig.',
+  statusPresentation: 'Weekopbouw en ontwikkelstatus', viewMode: 'Weergave', slidesView: 'Presentatie', readingView: 'Doorlopende tekst',
   weekOverviewLinks: [
+    { file: 'weekopbouw-presentatie.md', label: 'Presentatie & ontwikkelstatus' },
     { file: 'weekopbouw-gewenst.md', label: 'Gewenste weekopbouw & impact' },
     { file: 'weekopbouw-huidige-stand.md', label: 'Huidige stand ter vergelijking' },
     { file: 'opf-v0.2-leesbaar.md', label: 'OPF v0.2 · leesbare versie' },

@@ -14,6 +14,10 @@
 - Werk historische kopieën niet automatisch bij. Maak voor nieuwe versies of exports een afzonderlijk bestand of een nieuwe verzameling.
 - Het archief is geen onderdeel van de actieve website. Plaats het niet in `public/` en gebruik gearchiveerde inhoud niet als actuele bron voor websitewijzigingen.
 
+## Markdown als bron
+
+- Gebruik binnen Secure by Design Markdown-bestanden als bron voor lesmateriaal, presentaties, analyses en actielijsten. De website rendert deze bronnen. Maak andere documentformaten alleen als afgeleide export op verzoek.
+
 ## Lessenbibliotheek en lokale reviews
 
 - `/ontwikkeling` is de lokale ingang voor lessen, reviews, acties en concepten. Registreer deze routes alleen tijdens ontwikkeling; `/lessen` en `/review/lessen` bestaan niet meer. Zet de werkplek niet in het publieke hoofdmenu of op de homepage. Neem ook de lesgegevens niet op in productie.

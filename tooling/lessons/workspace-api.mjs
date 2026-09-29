@@ -2,7 +2,7 @@ import { eventHandler, getHeader, getQuery, readBody, createError, setHeader } f
 import { readFile, readdir, writeFile, rename, stat, lstat } from 'node:fs/promises'
 import path from 'node:path'
 import MarkdownIt from 'markdown-it'
-import { digest, loadLessons } from './content.mjs'
+import { digest, loadLessons, splitLesson } from './content.mjs'
 
 // Only regular Markdown files in the draft directory are selectable; never follow symlinks.
 export async function draftFiles(root, folder = '') {
@@ -54,7 +54,7 @@ export async function lessonFiles(root) {
 }
 
 // Explicit read-only selection: no arbitrary paths or symlinked documents/directories.
-export const weekOverviewFiles = ['weekopbouw-gewenst.md', 'weekopbouw-huidige-stand.md', 'opf-v0.2-leesbaar.md', 'opf-impact-weekopbouw-mark.md']
+export const weekOverviewFiles = ['weekopbouw-gewenst.md', 'weekopbouw-huidige-stand.md', 'opf-v0.2-leesbaar.md', 'opf-impact-weekopbouw-mark.md', 'weekopbouw-presentatie.md']
 export async function weekOverviewData(root, file = weekOverviewFiles[0], locale = 'nl') {
   if (!weekOverviewFiles.includes(file)) throw createError({ statusCode: 404 })
   const directory = path.join(root, 'lesmateriaal')
@@ -63,6 +63,12 @@ export async function weekOverviewData(root, file = weekOverviewFiles[0], locale
     if (!(await lstat(directory)).isDirectory() || !(await lstat(target)).isFile()) throw createError({ statusCode: 404 })
     const source = await readFile(target, 'utf8')
     const viewer = `${locale === 'en' ? '/en' : ''}/ontwikkeling/weekoverzicht`
+    if (file === 'weekopbouw-presentatie.md') {
+      const sections = splitLesson(source).filter(s => !s.teacherOnly).map(s => ({
+        id: s.id, title: s.title, html: renderDraft(s.text, file, weekOverviewFiles, viewer),
+      }))
+      return { file, sections, html: sections.map(s => s.html).join('\n') }
+    }
     return { file, html: renderDraft(source, file, weekOverviewFiles, viewer) }
   } catch (error) {
     if (error.code === 'ENOENT') throw createError({ statusCode: 404 })
@@ -110,7 +116,10 @@ export function workspaceHandler(root) {
       if (query.kind === 'week-overview') return weekOverviewData(root, query.file, query.locale)
       if (query.kind === 'lesson-files') {
         const files = await lessonFiles(root)
-        if (!query.file) return { files: files.filter(file => !/^week[1-4]\/w[1-4]b\d+-/.test(file)) }
+        if (!query.file) {
+          const selected = new Set((await loadLessons(root, { privateData: true })).filter(item => item.kind === 'lesson').map(item => item.file.replace(/^lesmateriaal\//, '')))
+          return { files: files.filter(file => !selected.has(file)) }
+        }
         if (!files.includes(query.file)) throw createError({ statusCode: 404 })
         const source = await readFile(path.join(root, 'lesmateriaal', query.file), 'utf8')
         return { file: query.file, html: renderDraft(source.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, ''), query.file, files, '/ontwikkeling/bestanden') }

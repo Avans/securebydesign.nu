@@ -1,5 +1,7 @@
 # Weekopbouw Secure by Design — huidige stand
 
+**Presentatie en actuele ontwikkelstatus:** bekijk de [slides met statuscontrole van 29 september 2026](weekopbouw-presentatie.md). Onderstaande analyse bewaart de stand van 27 september. Het nieuwe week-2-materiaal en de actuele reviewstatus staan in de presentatie.
+
 **Peildatum: 27 september 2026.** Analyse van de huidige website-inhoud en het beschikbare lesmateriaal. Dit document beschrijft wat er nu staat; het is geen nieuw rooster of besluit om activiteiten te verplaatsen. Weeknummers zijn onderwijsweken, geen vastgestelde kalenderdata.
 
 ## 1. De hoofdlijn

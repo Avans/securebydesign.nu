@@ -6,7 +6,9 @@ export default {
   lessonMaterials: 'Course materials',
   weekOverview: 'Week overview',
   weekOverviewHint: 'The proposed weekly structure, the current structure and the OPF teaching plan with the impact of the proposed changes. The documents are in Dutch.',
+  statusPresentation: 'Weekly structure and development status', viewMode: 'View', slidesView: 'Presentation', readingView: 'Continuous text',
   weekOverviewLinks: [
+    { file: 'weekopbouw-presentatie.md', label: 'Presentation & development status' },
     { file: 'weekopbouw-gewenst.md', label: 'Proposed weekly structure & impact' },
     { file: 'weekopbouw-huidige-stand.md', label: 'Current structure for comparison' },
     { file: 'opf-v0.2-leesbaar.md', label: 'OPF v0.2 · readable version' },
