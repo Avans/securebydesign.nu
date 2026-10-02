@@ -36,7 +36,7 @@ app/
 └── app.vue         Verbindt de layout met de huidige pagina
 ```
 
-De hoofdonderdelen zijn Home, Fundament, Professioneel Profiel, Project,
+De hoofdonderdelen zijn Fundament, Professioneel Profiel, Project,
 Eind Event, Partners en Contact. Daarnaast zijn er pagina’s voor canvases,
 kaartsets, bingo, de attack-tree-challenge en de breach-writeup.
 Nederlands staat op de basisroutes; de Engelse pagina’s staan onder `/en/`.
