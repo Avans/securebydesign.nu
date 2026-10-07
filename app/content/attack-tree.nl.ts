@@ -35,7 +35,7 @@ export default {
     s4: {
       no: '05',
       h: 'Meedenken?',
-      sub: 'De challenge is nog een voorstel — feedback op de doelkaarten, de puntentelling of de tijdsindeling is welkom. Gebruik de feedbackknop rechtsonder, of neem contact op.'
+      sub: 'De challenge is nog een voorstel — feedback op de doelkaarten, de puntentelling of de tijdsindeling is welkom. Neem contact op.'
     }
   },
 

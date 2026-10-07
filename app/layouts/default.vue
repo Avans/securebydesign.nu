@@ -51,7 +51,6 @@
       </div>
     </footer>
 
-    <FeedbackButton />
   </div>
 </template>
 

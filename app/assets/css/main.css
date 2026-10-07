@@ -174,7 +174,7 @@ h1.title em{font-style:italic; color:var(--w3)}
 
 /* ---------- print ----------
    Printen dient hier één doel: printklaar lesmateriaal (kaartsets, canvases)
-   op papier krijgen. De site-chrome — nav, footer, feedbackknop, papiertextuur —
+   op papier krijgen. De site-chrome — nav, footer, papiertextuur —
    hoort daar nooit bij. De paginacomponent bepaalt zelf de vellen en marges. */
 @media print{
   @page{size:A4; margin:8mm}

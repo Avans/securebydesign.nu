@@ -35,7 +35,7 @@ export default {
     s4: {
       no: '05',
       h: 'Want to weigh in?',
-      sub: 'The challenge is still a proposal — feedback on the goal cards, the scoring or the timing is welcome. Use the feedback button in the corner, or get in touch.'
+      sub: 'The challenge is still a proposal — feedback on the goal cards, the scoring or the timing is welcome. Get in touch.'
     }
   },
 

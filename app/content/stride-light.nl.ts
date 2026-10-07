@@ -30,7 +30,7 @@ export default {
     s4: {
       no: '04',
       h: 'Meedenken?',
-      sub: 'Het canvas is nog een voorstel — feedback op de vraagformuleringen, de banden of de casus is welkom. Gebruik de feedbackknop rechtsonder, of neem contact op.'
+      sub: 'Het canvas is nog een voorstel — feedback op de vraagformuleringen, de banden of de casus is welkom. Neem contact op.'
     }
   },
 

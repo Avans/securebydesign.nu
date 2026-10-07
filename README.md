@@ -28,7 +28,7 @@ app/
 ├── content/        Inhoud, meestal in aparte .nl.ts- en .en.ts-bestanden
 │   ├── kaartsets/  Principe-, dreigings- en dilemmakaarten
 │   └── spel/       Security bingo
-├── components/     Herbruikbare paginaopbouw, weekkaarten en feedbackknop
+├── components/     Herbruikbare paginaopbouw en weekkaarten
 ├── layouts/        Navigatie, taalwissel en footer
 ├── assets/css/     Algemene vormgeving en gedeelde weekkaartstyles
 ├── composables/    Hulpfuncties voor taal en interne links

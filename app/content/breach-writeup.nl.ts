@@ -39,7 +39,7 @@ export default {
     s5: {
       no: '05',
       h: 'Meedenken?',
-      sub: 'De casus is nog een voorstel — feedback op de tijdlijn, de toon van de communicatie of de zwaarte van het incident is welkom. Gebruik de feedbackknop rechtsonder, of neem contact op.'
+      sub: 'De casus is nog een voorstel — feedback op de tijdlijn, de toon van de communicatie of de zwaarte van het incident is welkom. Neem contact op.'
     }
   },
 

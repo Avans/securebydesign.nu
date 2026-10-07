@@ -30,7 +30,7 @@ export default {
     s4: {
       no: '04',
       h: 'Want to weigh in?',
-      sub: 'The canvas is still a proposal — feedback on the fields, the order or the case is welcome. Use the feedback button in the corner, or get in touch.'
+      sub: 'The canvas is still a proposal — feedback on the fields, the order or the case is welcome. Get in touch.'
     }
   },
 

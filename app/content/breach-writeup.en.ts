@@ -39,7 +39,7 @@ export default {
     s5: {
       no: '05',
       h: 'Want to think along?',
-      sub: 'The case is still a proposal — feedback on the timeline, the tone of the communication or the severity of the incident is welcome. Use the feedback button at the bottom right, or get in touch.'
+      sub: 'The case is still a proposal — feedback on the timeline, the tone of the communication or the severity of the incident is welcome. Get in touch.'
     }
   },
 
